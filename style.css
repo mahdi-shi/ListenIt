@@ -25,6 +25,7 @@
     width: 35px;
     height: 35px;
     user-select: none;
+    filter: brightness(80%);
 }
 .container .navBar #account{
     width: 40px;
@@ -43,6 +44,7 @@
     height: 40px;
     cursor: pointer;
     user-select: none;
+    filter: brightness(80%);
 }
 .container .navBar #accountTxt{
     position: absolute;
@@ -62,6 +64,7 @@
     cursor: pointer;
     transition: 0.3s;
     user-select: none;
+    filter: brightness(80%);
 }
 .container .navBar .header{
     position:absolute;
@@ -69,6 +72,7 @@
     top: 28px;
     color: #fff;
     font-weight: bold;
+    user-select: none;
     font-size: 2.2em;
 }
 .container .navBar .itIcon{
@@ -115,6 +119,143 @@
     float: left;
     width: 20%;
     height: 77vh;
-    background-color: ;
     top: 10vh;
+    overflow-y: auto;
+}
+.container .sideBar .mainOption{
+    position: absolute;
+    transform: translate(140px);
+    top: 7%;
+}
+.container .sideBar .mainOption li{
+    list-style: none;
+    color: rgb(192, 192, 192);
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s;
+}
+.container .sideBar .mainOption li:hover{
+    color: rgba(255, 0, 0, 0.849);
+}
+.container .sideBar .mainOption li svg{
+    transform: translate(10px,10px);
+    color: rgba(255, 0, 0, 0.651);
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s;
+    border: none;
+    padding-bottom: 5px;
+}
+.container .sideBar .mainOption li:hover svg{
+    color: red;
+}
+.container .sideBar .mainOption li:nth-child(1){
+    transform: translateX(8px);
+}
+.container .sideBar .mainOption li:nth-child(1) svg{
+    transform: translate(10px,10px);
+}
+.container .sideBar .mainOption li::before{
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 0px;
+    background-color: red;
+    border-radius: 20px;
+    transform: translate(65px,8px);
+    transition: 0.3s;
+}
+.container .sideBar .mainOption li:nth-child(1):before{
+    transform: translate(55px,13px);
+}
+.container .sideBar .mainOption li:hover::before{
+    height: 34px;
+}
+.container .sideBar .lineOne{
+    position: absolute;
+    height:2px;
+    width: 170px;
+    background-color: rgba(255, 0, 0, 0.596);
+    top: 39%;
+    left: 30%;
+}
+.container .sideBar .middleOption{
+    position: absolute;
+    transform: translate(140px,200px);
+}
+.container .sideBar .middleOption li{
+    list-style: none;
+    color: rgb(192, 192, 192);
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 10px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s;
+}
+.container .sideBar .middleOption li:nth-child(2)::before{
+    transform: translate(66px,8px);
+}
+.container .sideBar .middleOption li:nth-child(2) svg{
+    transform: translate(17px,10px);
+}
+.container .sideBar .middleOption li:nth-child(2){
+    transform: translateX(-10px);
+}
+.container .sideBar .middleOption li:nth-child(3){
+    transform: translateX(13px);
+}
+.container .sideBar .middleOption li:nth-child(3)::before{
+    transform: translate(47px,8px);
+}
+.container .sideBar .middleOption li:nth-child(4)::before{
+    transform: translate(56px,8px);
+}
+.container .sideBar .middleOption li:hover{
+    color: rgba(255, 0, 0, 0.849);
+}
+.container .sideBar .middleOption li svg{
+    transform: translate(10px,10px);
+    color: rgba(255, 0, 0, 0.651);
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s;
+    border: none;
+    padding-bottom: 5px;
+}
+.container .sideBar .middleOption li:hover svg{
+    color: red;
+}
+.container .sideBar .middleOption li:nth-child(1){
+    transform: translateX(1px);
+}
+.container .sideBar .middleOption li:nth-child(1) svg{
+    transform: translate(10px,10px);
+}
+.container .sideBar .middleOption li::before{
+    position: absolute;
+    content: "";
+    width: 3px;
+    height: 0px;
+    background-color: red;
+    border-radius: 20px;
+    transform: translate(65px,8px);
+    transition: 0.3s;
+}
+.container .sideBar .middleOption li:nth-child(1):before{
+    transform: translate(55px,13px);
+}
+.container .sideBar .middleOption li:hover::before{
+    height: 34px;
+}
+.container .sideBar .lineTwo{
+    position: absolute;
+    height:2px;
+    width: 170px;
+    background-color: rgba(255, 0, 0, 0.596);
+    top: 86%;
+    left: 30%;
 }
