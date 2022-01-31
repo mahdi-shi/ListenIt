@@ -18,45 +18,50 @@
 }
 .container .navBar .alarm{
     position: absolute;
-    top: 30px;
-    left: 40px;
+    top: 28px;
+    left:5%;
 }
 .container .navBar #alarm{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
+    user-select: none;
 }
 .container .navBar #account{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-color: rgb(71, 71, 71);
     position: absolute;
-    top: 20px;
+    top: 25px;
     left: 10.5%;
     justify-content: center;
     align-items: center;
     display: flex;
 }
 .container .navBar #account img{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
+    user-select: none;
 }
 .container .navBar #accountTxt{
     position: absolute;
     color: rgb(230, 230, 230);
-    left: 15%;
+    left: 14%;
     top: 30px;
-    font-size: 1.8em;
+    font-size: 1.5em;
     cursor: pointer;
+    user-select: none;
 }
 .container .navBar #moreProfileOption{
     position: absolute;
-    width: 25px;
-    height: 16px;
-    left: 24%;
-    top: 38px;
+    width: 20px;
+    height: 11px;
+    left: 21.6%;
+    top: 41px;
     cursor: pointer;
+    transition: 0.3s;
+    user-select: none;
 }
 .container .navBar .header{
     position:absolute;
@@ -75,4 +80,41 @@
 @keyframes itIcon{
     from{color: white;}
     to{color: red;}
+}
+.container .navBar #moreProfileOptionBox{
+    position: absolute;
+    width: 110px;
+    height: 0px;
+    border-radius: 6px;
+    background-color: rgb(67, 65, 77);
+    left: 15%;
+    top: 60px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+.container .navBar #moreProfileOptionBox ul{
+    position: absolute;
+    margin-left: 10px;
+}
+.container .navBar #moreProfileOptionBox ul li{
+    font-weight: bold;
+    font-size: 1.1em;
+    list-style: none;
+    margin-top: 6px;
+    cursor: pointer;
+    user-select: none;
+    color: rgb(196, 196, 196);
+    transition: 0.3s;
+}
+.container .navBar #moreProfileOptionBox ul li:hover{
+    color: rgb(196, 0, 0);
+}
+.container .sideBar{
+    position: absolute;
+    right: 0%;
+    float: left;
+    width: 20%;
+    height: 77vh;
+    background-color: ;
+    top: 10vh;
 }
