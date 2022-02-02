@@ -51,7 +51,7 @@
     color: rgb(230, 230, 230);
     left: 14%;
     top: 30px;
-    font-size: 1.5em;
+    font-size: 1.4em;
     cursor: pointer;
     user-select: none;
 }
@@ -59,7 +59,7 @@
     position: absolute;
     width: 20px;
     height: 11px;
-    left: 21.6%;
+    left: 21.2%;
     top: 41px;
     cursor: pointer;
     transition: 0.3s;
@@ -89,7 +89,7 @@
     position: absolute;
     width: 110px;
     height: 0px;
-    border-radius: 6px;
+    border-radius: 4px;
     background-color: rgb(67, 65, 77);
     left: 15%;
     top: 60px;
@@ -102,7 +102,7 @@
 }
 .container .navBar #moreProfileOptionBox ul li{
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1em;
     list-style: none;
     margin-top: 6px;
     cursor: pointer;
@@ -258,4 +258,271 @@
     background-color: rgba(255, 0, 0, 0.596);
     top: 86%;
     left: 30%;
+}
+.container .songControler{
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 90px;
+    background-color:#0c0c0c;
+}
+.container .songControler #play{
+    position: absolute;
+    fill: rgb(150, 0, 0);
+    left: 45%;
+    top: 15%;
+    user-select: none;
+    transition: .2s;
+    cursor: pointer;
+}
+.container .songControler #play:hover{
+    fill: red;
+}
+.container .songControler #skipNext{
+    position: absolute;
+    fill: rgb(150, 0, 0);
+    left: 49%;
+    top: 15%;
+    user-select: none;
+    cursor: pointer;
+    transition: .2s;
+}
+.container .songControler #skipNext:hover{
+    fill: red;
+}
+.container .songControler #skipBack{
+    position: absolute;
+    transform: rotate(180deg);
+    fill: rgb(150, 0, 0);
+    left: 41%;
+    top: 15%; 
+    user-select: none;
+    cursor: pointer;   
+    transition: 0.2s;
+}
+.container .songControler #skipBack:hover{
+    fill: red;
+}
+.container .songControler #repeat{
+    position: absolute;
+    fill: rgb(150, 0, 0);
+    left: 53%;
+    top: 17%; 
+    user-select: none;
+    cursor: pointer;   
+    transition: 0.2s;
+}
+.container .songControler #repeat:hover{
+    fill: red;
+}
+.container .songControler #orderPlay{
+    position: absolute;
+    fill: rgb(150, 0, 0);
+    left: 37%;
+    top: 15%; 
+    user-select: none;
+    cursor: pointer;   
+    transition: .2s;
+}
+.container .songControler #orderPlay:hover{
+    fill: red;
+}
+.container .songControler #voloumHigh{
+    position: absolute;
+    fill: rgb(150, 0, 0);
+    left: 88%;
+    top: 34%; 
+    user-select: none;
+    transition: 0.2s;
+    cursor: pointer;
+    display: none;   
+}
+.container .songControler #voloumHigh:hover{
+    fill: red;
+}
+.container .songControler #voloumEasy{
+    position: absolute;
+    fill: rgb(150, 0, 0);
+    left:88%;
+    top: 34%; 
+    user-select: none;
+    cursor: pointer;   
+    display: none;
+    transition: 0.2s;
+}
+.container .songControler #voloumEasy:hover{
+    fill: red;
+}
+.container .songControler #voloumNone{
+    position: absolute;
+    fill: rgb(150, 0, 0);
+    left: 88%;
+    top: 34%;
+    user-select: none;
+    cursor: pointer;  
+    transition: 0.2s; 
+}
+.container .songControler #voloumNone:hover{
+    fill: red;
+}
+.container .songControler #voloumBarValue{
+    -webkit-appearance: none;
+    outline: none;
+    height: 5px;
+    cursor: pointer;
+    margin: 0 15px;
+    width: 7%;
+    border-radius: 20px;
+    fill: rgb(192, 35, 35);
+    position: absolute;
+    left: 90.4%;
+    top: 50%;
+    background-color: rgb(55, 51, 82);
+}
+.container .songControler #voloumBarValue::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); 
+}
+.container .songControler #voloumRangeHelper{
+    position: absolute;
+    height: 5px;
+    cursor: pointer;
+    width: 00px;
+    border-radius: 20px;
+    background-color: rgb(255, 0, 0);
+    left: 91.4%;
+    top: 50%;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+.container .songControler #songImage{
+    position: absolute;
+    left: 1%;
+    top: 0;
+    width: 8%;
+    height: 100%;
+    background-color: rgb(32, 29, 37);
+    border-top: 2px solid black;
+}
+.container .songControler #pause{
+    position: absolute;
+    fill: rgb(190, 0, 0);
+    left: 45%;
+    top: 15%;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.3s;
+    display: none;
+}
+.container .songControler #pause:hover{
+    fill:red;
+}
+.container .songControler #songName #like{
+    position: absolute;
+    fill: rgb(190, 0, 0);
+    margin-left: 10px;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.container .songControler #songName #like:hover{
+    fill: red;
+}
+.container .songControler #songName #unlike{
+    position: absolute;
+    fill: rgb(190, 0, 0);
+    margin-left: 10px;
+    user-select: none;
+    cursor: pointer;
+    transform: translate(103px,-18px);
+    display: block;
+    transition: 0.2s;
+}
+.container .songControler #songName #unlike:hover{
+    fill: red;
+}
+.container .songControler #songName{
+    position: absolute;
+    color: rgb(184, 184, 184);
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    left: 10%;
+    top: 40%;
+    float: right;
+    text-align: right;
+    transition: 0.2s;
+}
+.container .songControler #songName:hover{
+    color: rgb(224, 224, 224);
+}
+.container .songControler #songArtistName{
+    position: absolute;
+    color: rgb(138, 138, 138);
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    left: 10%;
+    top: 64%;
+    font-size: 0.7em;
+    transition: 0.2s;
+    float: right;
+    text-align: right;
+}
+.container .songControler #songArtistName:hover{
+    color: rgb(156, 156, 156);
+}
+.container .songControler #progressBarValue{
+    position: absolute;
+    left: 25.0%;
+    top: 70%;
+    background-color: rgb(47, 42, 61);
+}
+.container .songControler #rangeHelper{
+    position: absolute;
+    height: 5px;
+    cursor: pointer;
+    width: 0px;
+    border-radius: 20px;
+    background-color: rgb(255, 0, 0);
+    left: 26.1%;
+    top: 70%;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+.container .songControler input[type = "range"]{
+    -webkit-appearance: none;
+    outline: none;
+    height: 5px;
+    cursor: pointer;
+    margin: 0 15px;
+    width: 40%;
+    border-radius: 20px;
+    fill: rgb(192, 35, 35);
+}
+.container .songControler input[type = "range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+   box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); 
+}
+.container .songControler #addSong{
+    position: absolute;
+    fill: rgb(150, 0, 0);
+    z-index: 20;
+    left: 86%;
+    top: 39%;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.container .songControler #addSong:hover{
+    fill: rgb(255, 0, 0)
 }
