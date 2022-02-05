@@ -18,30 +18,30 @@
 }
 .container .navBar .alarm{
     position: absolute;
-    top: 28px;
-    left:5%;
-}
+    top: 18px;
+    left:6%;
+}   
 .container .navBar #alarm{
-    width: 35px;
-    height: 35px;
+    width: 26px;
+    height: 26px;
     user-select: none;
     filter: brightness(80%);
 }
 .container .navBar #account{
-    width: 40px;
-    height: 40px;
+    width: 33px;
+    height: 33px;
     border-radius: 50%;
     background-color: rgb(71, 71, 71);
     position: absolute;
-    top: 25px;
+    top: 13px;
     left: 10.5%;
     justify-content: center;
     align-items: center;
     display: flex;
 }
 .container .navBar #account img{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
     user-select: none;
     filter: brightness(80%);
@@ -49,18 +49,18 @@
 .container .navBar #accountTxt{
     position: absolute;
     color: rgb(230, 230, 230);
-    left: 14%;
-    top: 30px;
-    font-size: 1.4em;
+    left: 13.4%;
+    top: 19px;
+    font-size: 1.2em;
     cursor: pointer;
     user-select: none;
 }
 .container .navBar #moreProfileOption{
     position: absolute;
-    width: 20px;
-    height: 11px;
-    left: 21.2%;
-    top: 41px;
+    width: 17px;
+    height: 9px;
+    left: 19.7%;
+    top: 26px;
     cursor: pointer;
     transition: 0.3s;
     user-select: none;
@@ -91,10 +91,11 @@
     height: 0px;
     border-radius: 4px;
     background-color: rgb(67, 65, 77);
-    left: 15%;
-    top: 60px;
+    left: 13%;
+    top: 45px;
     overflow: hidden;
     transition: 0.2s;
+    z-index: 2000;
 }
 .container .navBar #moreProfileOptionBox ul{
     position: absolute;
@@ -176,7 +177,7 @@
 }
 .container .sideBar .lineOne{
     position: absolute;
-    height:2px;
+    height:1px;
     width: 170px;
     background-color: rgba(255, 0, 0, 0.596);
     top: 39%;
@@ -253,18 +254,19 @@
 }
 .container .sideBar .lineTwo{
     position: absolute;
-    height:2px;
+    height:1px;
     width: 170px;
     background-color: rgba(255, 0, 0, 0.596);
     top: 86%;
     left: 30%;
 }
+/*                 songs controler style                 */
 .container .songControler{
     position: absolute;
     bottom: 0%;
     width: 100%;
     height: 90px;
-    background-color:#0c0c0c;
+    background-color:#0f0d0d;
 }
 .container .songControler #play{
     position: absolute;
@@ -360,7 +362,8 @@
     top: 34%;
     user-select: none;
     cursor: pointer;  
-    transition: 0.2s; 
+    transition: 0.2s;
+    display: block; 
 }
 .container .songControler #voloumNone:hover{
     fill: red;
@@ -429,6 +432,7 @@
     user-select: none;
     cursor: pointer;
     transition: 0.2s;
+    transform: translate(-10px,10px);
 }
 .container .songControler #songName #like:hover{
     fill: red;
@@ -439,7 +443,7 @@
     margin-left: 10px;
     user-select: none;
     cursor: pointer;
-    transform: translate(103px,-18px);
+    transform: translate(-10px,10px);
     display: block;
     transition: 0.2s;
 }
@@ -493,6 +497,21 @@
     left: 26.1%;
     top: 70%;
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    z-index: 90;
+}
+.container .songControler #songTimeLeft{
+    position: absolute;
+    font-size: 0.9em;
+    color: rgb(179, 179, 179);
+    left: 23%;
+    top: 63%;
+}
+.container .songControler #songTimeRemaining{
+    position: absolute;
+    font-size: 0.9em;
+    color: rgb(179, 179, 179);
+    left: 67%;
+    top: 63%;
 }
 .container .songControler input[type = "range"]{
     -webkit-appearance: none;
@@ -503,6 +522,7 @@
     width: 40%;
     border-radius: 20px;
     fill: rgb(192, 35, 35);
+  
 }
 .container .songControler input[type = "range"]::-webkit-slider-thumb{
     -webkit-appearance: none;
@@ -511,13 +531,14 @@
     background-color: #ff0000;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 100;
-   box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); 
+   box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); ;
+}
+.container .songControler input[type = "range"]:hover::-webkit-slider-thumb{
+    display: block;
 }
 .container .songControler #addSong{
     position: absolute;
     fill: rgb(150, 0, 0);
-    z-index: 20;
     left: 86%;
     top: 39%;
     transition: 0.2s;
@@ -525,4 +546,20 @@
 }
 .container .songControler #addSong:hover{
     fill: rgb(255, 0, 0)
+}   
+/*             home panel style               */
+.container .home{
+    position: absolute;
+    width: 87%;
+    height: 74%;
+    border: 2px solid black;
+    transform: translate(-30px,55px);
+}
+.container .songControler #hider{
+    width: 100%;
+    height: 100%;
+    z-index: 700;
+    background-color: black;
+    opacity: 0.7;
+    display: block;
 }
