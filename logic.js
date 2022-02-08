@@ -64,11 +64,13 @@ noneVoloum.addEventListener("click",() => {
     noneVoloum.style.display = "none";
     highVoloum.style.display = "block";
     voloumBarValue.value = 100;
+    voloumRangeHelper.style.width = 90 + "px";
 })
 highVoloum.addEventListener("click",() => {
     noneVoloum.style.display = "block";
     highVoloum.style.display = "none";
     voloumBarValue.value = 0;
+    voloumRangeHelper.style.width = 0 + "px";
 })
 voloumBarValue.addEventListener("click",() => {
     if(voloumBarValue.value < 30){
@@ -132,7 +134,7 @@ function voloumRangeChainger(){
     voloumRangeHelper.style.width = voloumValue.value - 3 + "px";
 }
 
-// select the sidebar items
+// select the sideBar items
 
 const itemHome = document.querySelector("#homeItem");
 const itemHomeSvg = document.querySelector("#homeItemSvg");
@@ -261,3 +263,9 @@ itemArtists.addEventListener("click",() => {
     itemArtists.style.color = "rgba(255, 0, 0, 0.849)";
     itemArtistsSvg.style.fill = "red";
 })
+
+//pull and push slider 
+
+const mfySong = document.querySelectorAll(".mfyLi");
+const pullMfysong = document.querySelector(".pullMfysong");
+const pushMfysong = document.querySelector(".pushMfysong")

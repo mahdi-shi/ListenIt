@@ -8,7 +8,7 @@
     position: absolute;
     width: 100%;
     height: 100vh;
-    background-color: rgb(27, 27, 27);
+    background-color: #14131b;
     overflow: hidden;
 }
 .container .navBar{
@@ -68,12 +68,13 @@
 }
 .container .navBar .header{
     position:absolute;
-    left: 84%;
-    top: 28px;
+    left: 85%;
+    top: 22px;
     color: #fff;
     font-weight: bold;
     user-select: none;
     font-size: 2.2em;
+    z-index: 18;
 }
 .container .navBar .itIcon{
     animation-name: itIcon;
@@ -118,15 +119,17 @@
     position: absolute;
     right: 0%;
     float: left;
-    width: 20%;
-    height: 77vh;
-    top: 10vh;
+    width: 16%;
+    height: 86vh;
+    top: 0vh;
     overflow-y: auto;
+    box-shadow: -8px 0px 10px rgba(0,0,0,0.5);
+    z-index: 10;
 }
 .container .sideBar .mainOption{
     position: absolute;
-    transform: translate(140px);
-    top: 7%;
+    transform: translate(100px);
+    top: 13%;
 }
 .container .sideBar .mainOption li{
     list-style: none;
@@ -180,12 +183,12 @@
     height:1px;
     width: 170px;
     background-color: rgba(255, 0, 0, 0.596);
-    top: 39%;
-    left: 30%;
+    top: 42%;
+    left: 16%;
 }
 .container .sideBar .middleOption{
     position: absolute;
-    transform: translate(140px,200px);
+    transform: translate(100px,230px);
 }
 .container .sideBar .middleOption li{
     list-style: none;
@@ -257,16 +260,18 @@
     height:1px;
     width: 170px;
     background-color: rgba(255, 0, 0, 0.596);
-    top: 86%;
-    left: 30%;
+    top: 82%;
+    left: 16%;
 }
 /*                 songs controler style                 */
 .container .songControler{
     position: absolute;
     bottom: 0%;
     width: 100%;
+    z-index: 12;
     height: 90px;
-    background-color:#0f0d0d;
+    background-color:#14131b;
+    box-shadow: 0 0 10px rgba(0,0,0,0.9);
 }
 .container .songControler #play{
     position: absolute;
@@ -396,7 +401,7 @@
     position: absolute;
     height: 5px;
     cursor: pointer;
-    width: 00px;
+    width: 0px;
     border-radius: 20px;
     background-color: rgb(255, 0, 0);
     left: 91.4%;
@@ -531,14 +536,14 @@
     background-color: #ff0000;
     border-radius: 50%;
     cursor: pointer;
-   box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); ;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); ;
 }
 .container .songControler input[type = "range"]:hover::-webkit-slider-thumb{
     display: block;
 }
 .container .songControler #addSong{
     position: absolute;
-    fill: rgb(150, 0, 0);
+    fill: rgb(255, 0, 0);
     left: 86%;
     top: 39%;
     transition: 0.2s;
@@ -547,14 +552,6 @@
 .container .songControler #addSong:hover{
     fill: rgb(255, 0, 0)
 }   
-/*             home panel style               */
-.container .home{
-    position: absolute;
-    width: 87%;
-    height: 74%;
-    border: 2px solid black;
-    transform: translate(-30px,55px);
-}
 .container .songControler #hider{
     width: 100%;
     height: 100%;
@@ -562,4 +559,196 @@
     background-color: black;
     opacity: 0.7;
     display: block;
+}
+/*             home panel style               */
+.container .home{
+    position: absolute;
+    width: 81.2%;
+    height: 74%;
+    background: rgb(18, 18, 26);
+    transform: translate(40px,55px);
+    border: border;
+    z-index: 1;
+    overflow-y: scroll;
+}
+.container .home::-webkit-scrollbar{
+    width: 12px;
+}
+.container .home::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .home .madeForYou{
+    position: absolute;
+    height: 360px;
+    width: 100%;
+    overflow: hidden;
+}
+.container .home .madeForYou h2{
+    color: white;
+    font-size: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    margin-left: 20px;
+    user-select: none;
+}.container .home .madeForYou ul{
+    position: absolute;
+    transform: translate(10px,30px);
+    display: flex;
+    height: 100%;
+    width: auto ;
+    z-index: 300;
+    overflow-x: hidden;
+}
+
+.container .home .madeForYou ul li{
+    display: inline-block;
+    margin-left: 10px;
+    position: relative;
+    transition: 0.8s;
+}
+.lightMove{
+    animation-name: lightMove;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 5s;
+    animation-fill-mode: both;
+}
+.container .home .madeForYou ul li div{
+    position: relative;
+    width: 220px;
+    height: 280px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.3s;
+    overflow: hidden;
+    z-index: 10;
+}
+.container .home .madeForYou ul li div span{
+    position: absolute;
+    width: 500px;
+    height: 60px;
+    background-color: rgb(146, 145, 145);
+    opacity: 0.1;
+    transform: rotateZ(45deg);
+    filter: blur(2px);
+    top: 440px;
+    left: -100px;
+    z-index: 30;
+}
+@keyframes lightMove{
+    0%{
+        top: 440px;
+    }
+    100%{
+        top: -200;
+    }
+}
+.container .home .madeForYou ul li div:hover{
+    background-color: rgb(48, 49, 70)
+}
+.container .home .madeForYou ul li div .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+}
+.container .home .madeForYou ul li div .image .mfyPlayBox{
+    width: 70px;
+    height: 70px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,120px);
+}
+.container .home .madeForYou ul li div:hover .image .mfyPlayBox{
+    opacity: 1;
+}
+.container .home .madeForYou ul li div .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .home .madeForYou ul li div .mfySongName{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    top: 78%;
+    left: 8%;
+    user-select: none;
+    font-size: 1.1em;
+}
+.container .home .madeForYou ul li div .mfyArtistSongName{
+    position: absolute;
+    top: 87%;
+    left: 8%;
+    font-size: 0.9em;
+    color: rgb(201, 201, 201);
+    user-select: none;
+}
+.container .home .madeForYou ul .pullMfysong{
+    position: absolute;
+    background: radial-gradient(rgb(41, 41, 43),rgb(31, 31, 37));
+    border-radius: 50%;
+    width: 50px;
+    z-index: 60;
+    height: 50px;
+    cursor: pointer;
+    display: block;
+    opacity: 0;
+    transform: translateY(-40px);
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(25, 24, 36);
+    transform:translateX(1030px);
+    top: 100px;
+    transition: 0.3s;
+}
+.container .home .madeForYou ul .pullMfysong:hover{
+    border: 3px solid rgb(184, 0, 0);
+}
+.container .home .madeForYou ul .pullMfysong svg{
+    fill:red;
+    transform: rotateZ(-90deg);
+    border-radius: 50%;
+    position: absolute;
+    left: 23%;
+    top: 20%;
+}
+.container .home .madeForYou ul .pushMfysong{
+    position: absolute;
+    background: radial-gradient(rgb(41, 41, 43),rgb(31, 31, 37));
+    border-radius: 50%;
+    width: 50px;
+    z-index: 60;
+    height: 50px;
+    cursor: pointer;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(25, 24, 36);
+    transform:translateX(40px);
+    top: 100px;
+    transition: 0.3s;
+    opacity: 0;
+}
+.container .home .madeForYou ul .pushMfysong:hover{
+    border: 3px solid rgb(175, 0, 0);
+}
+.container .home .madeForYou ul .pushMfysong svg{
+    fill:red;
+    transform: rotateZ(90deg);
+    border-radius: 50%;
+    position: absolute;
+    left: 23%;
+    top: 20%;
 }
