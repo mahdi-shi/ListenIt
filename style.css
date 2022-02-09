@@ -758,7 +758,7 @@
 }
 .container .home .recentlyPlayed{
     position: absolute;
-    height: 360px;
+    height: 370px;
     width: 100%;
     top: 400px;
     overflow: hidden;
@@ -771,7 +771,7 @@
     user-select: none;
 }.container .home .recentlyPlayed ul{
     position: absolute;
-    transform: translate(10px,30px);
+    transform: translate(10px,25px);
     display: flex;
     height: 100%;
     width: auto ;
@@ -990,6 +990,7 @@
     width: 98%;
     left: 20px;
     transform: translateY(890px);
+    overflow: hidden;
 }
 .container .home .yourFavoriteArtists h2{
     color: white;
@@ -997,4 +998,119 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
     margin-left: 20px;
     user-select: none;
+}
+.container .home .yourFavoriteArtists ul{
+    position: absolute;
+    transform: translate(0px,25px);
+    display: flex;
+    height: 100%;
+    width: auto ;
+    z-index: 300;
+    overflow-x: hidden;
+}
+
+.container .home .yourFavoriteArtists ul li{
+    display: inline-block;
+    margin-left: 10px;
+    position: relative;
+    transition: 0.8s;
+}
+.container .home .yourFavoriteArtists ul li div{
+    position: relative;
+    width: 340px;
+    height: 400px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.3s;
+    overflow: hidden;
+    z-index: 10;
+}
+.container .home .yourFavoriteArtists ul li div:hover{
+    background-color: rgb(48, 49, 70)
+}
+.container .home .yourFavoriteArtists ul li div .image{
+    position: absolute;
+    width: 84%;
+    height: 76%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+}
+
+.container .home .yourFavoriteArtists ul li div .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .home .yourFavoriteArtists ul li div  .yfaName{
+    color: aliceblue;
+    position: absolute;
+    top: 87%;
+    left: 10%;
+}
+.container .home .yourFavoriteArtists ul .pullrpsong{
+    position: absolute;
+    background: radial-gradient(rgb(41, 41, 43),rgb(31, 31, 37));
+    border-radius: 50%;
+    width: 50px;
+    z-index: 60;
+    height: 50px;
+    cursor: pointer;
+    display: block;
+    opacity: 0;
+    transform: translateY(-40px);
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(25, 24, 36);
+    transform:translateX(1030px);
+    top: 100px;
+    transition: 0.3s;
+}
+.container .home .yourFavoriteArtists ul .pullrpsong:hover{
+    border: 3px solid rgb(184, 0, 0);
+}
+.container .home .yourFavoriteArtists ul .pullrpsong svg{
+    fill:red;
+    transform: rotateZ(-90deg);
+    border-radius: 50%;
+    position: absolute;
+    left: 23%;
+    top: 20%;
+}
+.container .home .yourFavoriteArtists ul .pushMfysong{
+    position: absolute;
+    background: radial-gradient(rgb(41, 41, 43),rgb(31, 31, 37));
+    border-radius: 50%;
+    width: 50px;
+    z-index: 60;
+    height: 50px;
+    cursor: pointer;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(25, 24, 36);
+    transform:translateX(40px);
+    top: 100px;
+    transition: 0.3s;
+    opacity: 0;
+}
+.container .home .yourFavoriteArtists ul .pushMfysong:hover{
+    border: 3px solid rgb(175, 0, 0);
+}
+.container .home .yourFavoriteArtists ul .pushMfysong svg{
+    fill:red;
+    transform: rotateZ(90deg);
+    border-radius: 50%;
+    position: absolute;
+    left: 23%;
+    top: 20%;
 }
