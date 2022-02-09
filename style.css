@@ -579,6 +579,7 @@
 }
 .container .home::-webkit-scrollbar-thumb {
     background: rgb(43, 40, 56);
+    cursor: pointer;
 }
 .container .home .madeForYou{
     position: absolute;
@@ -918,13 +919,82 @@
 }
 .container .home .aboutListenIt{
     position: relative;
-    width: 740px;
-    height: 600px;
+    width: 1060px;
+    height: 400px;
     background-color: rgb(30, 31, 49);
     opacity: 0.9;
     border-radius: 7px;
     transition: 0.3s;
     overflow: hidden;
     z-index: 10;
-    top: 770px;
+    transform: translate(20px,860px);
+}
+.container .home .aboutListenItHeader{
+    color: white;
+    font-size: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    margin-left: 20px;
+    user-select: none;
+    position: absolute;
+    left: 10px;
+    top: 810px;
+}
+.container .home .aboutListenIt p{
+    font-weight: bold;
+    color: rgb(200, 193, 216);
+    font-size: 1.4em;
+    margin: 30px;
+    line-height: 30px;
+}
+.container .home .aboutListenIt .musicIcon{
+    fill:rgb(48, 50, 78);
+    filter: brightness(1%);
+    transform: rotateZ(40deg);
+    position: absolute;
+    left: 43%;
+    top: 30%;
+    opacity: 0.2;
+}
+.container .home .aboutListenIt .aboutListenItH3{
+    color: red;
+    font-size: 5em;
+    filter: brightness(60%);
+    position: absolute;
+    left: 5%;
+    top: 73%;
+}
+.container .home .aboutListenIt .connections{
+    position: absolute;
+    left: 82%;
+    top: 86%;
+}
+.container .home .aboutListenIt .connections li{
+    display: inline-block;
+    transition: 0.3;
+}
+.container .home .aboutListenIt .connections li svg{
+       fill: #830000;
+       cursor: pointer;
+       transition: 0.3s;
+}
+.container .home .aboutListenIt .connections li svg:hover{
+    fill: red;
+}
+@keyframes moveAboutIt{
+    0%{transform: translateY(70px);opacity: 0;}
+    100%{transform: translateY(0px);opacity: 1;}
+}
+.container .home .yourFavoriteArtists{
+    position: absolute;
+    height: 450px;
+    width: 98%;
+    left: 20px;
+    transform: translateY(890px);
+}
+.container .home .yourFavoriteArtists h2{
+    color: white;
+    font-size: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    margin-left: 20px;
+    user-select: none;
 }

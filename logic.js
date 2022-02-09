@@ -269,3 +269,4 @@ itemArtists.addEventListener("click",() => {
 const mfySong = document.querySelectorAll(".mfyLi");
 const pullMfysong = document.querySelector(".pullMfysong");
 const pushMfysong = document.querySelector(".pushMfysong")
+
