@@ -1114,3 +1114,73 @@
     left: 23%;
     top: 20%;
 }
+.container .home .mixesForYou{
+    position: absolute;
+    height: 250px;
+    width: 98%;
+    left: 20px;
+    transform: translateY(1370px);
+    overflow: hidden;
+}
+.container .home .mixesForYou h2{
+    color: white;
+    font-size: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    margin-left: 20px;
+    user-select: none;
+}
+.container .home .mixesForYou .mfyListBox{
+    position: relative;
+    width: 540px;
+    height: 250px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    transition: 0.3s;
+    overflow: hidden;
+    z-index: 10;
+} 
+.container .home .mixesForYou .mfyListBox:hover{
+    background-color: rgb(45, 47, 71);
+}
+.container .home .mixesForYou .mfyListBox .image{
+    position: absolute;
+    width: 43%;
+    height: 70%;
+    left: 3%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+}
+.container .home .mixesForYou .mfyListBox .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .home .mixesForYou .mfyListBox .mfySongName{
+    color: aliceblue;
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    cursor: pointer;
+}
+.container .home .mixesForYou .mfyListBox .mfyArtistSongName{
+    color: rgb(167, 167, 167);
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    cursor: pointer;
+}
+.container .home .mixesForYou .mfyListBox .image .mfyPlayBox{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 110%;
+    top: 20%;
+    cursor: pointer;
+}
