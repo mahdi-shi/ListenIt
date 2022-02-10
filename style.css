@@ -1317,3 +1317,119 @@
     left: 23%;
     top: 20%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container .home .yourFavoriteSongStyle{
+    position: absolute;
+    height: 880px;
+    width: 1070px;
+    left: 20px;
+    transform: translateY(2080px);
+    overflow: hidden;
+}
+.container .home .yourFavoriteSongStyle h2{
+    color: white;
+    font-size: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    margin-left: 20px;
+    user-select: none;
+    transform: translateY(20px);
+}
+.container .home .yourFavoriteSongStyle ul{
+    position: absolute;
+    transform: translate(0px,25px);
+    height: auto;
+    width: 100% ;
+    z-index: 300;
+    overflow-x: hidden;
+}
+
+.container .home .yourFavoriteSongStyle ul li{
+    margin-top: 10px;
+    position: relative;
+    transition: 0.8s;
+    margin-left: 20px;
+    list-style: none;
+}
+.container .home .yourFavoriteSongStyle ul li div{
+    position: relative;
+    width: 940px;
+    height: 250px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.3s;
+    overflow: hidden;
+    z-index: 10;
+}
+.container .home .yourFavoriteSongStyle ul li div:hover{
+    background-color: rgb(48, 49, 70)
+}
+.container .home .yourFavoriteSongStyle ul li div .image{
+    position: absolute;
+    width: 31%;
+    height: 87%;
+    transform: translateX(-50%);
+    left: 18%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+}
+.container .home .yourFavoriteSongStyle ul li div .image .yfssPlayBox{
+    opacity: 1;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 277%;
+    top: 60%;
+    opacity: 0;
+    transform: 0.3s;
+}
+.container .home .yourFavoriteSongStyle ul li div:hover .image .yfssPlayBox{
+    opacity: 1;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 277%;
+    top: 60%;
+    opacity: 1;
+}
+.container .home .yourFavoriteSongStyle ul li div .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .home .yourFavoriteSongStyle ul li div  .yfssName{
+    color: aliceblue;
+    position: absolute;
+    top: 64%;
+    left: 37%;
+    font-size: 2.6em;
+    z-index: 10;
+}
