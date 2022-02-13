@@ -572,6 +572,56 @@
     border: border;
     z-index: 1;
     overflow-y: scroll;
+    overflow-x: hidden;
+}
+.container .home .backgroundObject{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.container .home .backgroundObject .blob{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 330px;
+    left: 0px;
+    opacity: 0.7;
+}
+.container .home .backgroundObject .blob:nth-child(2){
+    filter: blur(30px);
+}
+.container .home .backgroundObject .blob2{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1602px;
+    left: 900px;
+    opacity: 0.7;
+}
+.container .home .backgroundObject .blob22{
+    filter: blur(60px);
+}
+.container .home .backgroundObject .blob3{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 2322px;
+    left: 0px;
+    opacity: 0.7;
+}
+.container .home .backgroundObject .blob32{
+    filter: blur(30px);
 }
 .container .home::-webkit-scrollbar{
     width: 12px;
