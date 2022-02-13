@@ -264,9 +264,218 @@ itemArtists.addEventListener("click",() => {
     itemArtistsSvg.style.fill = "red";
 })
 
-//pull and push slider 
+//pull and push of home made for you boxes slider 
 
 const mfySong = document.querySelectorAll(".mfyLi");
-const pullMfysong = document.querySelector(".pullMfysong");
-const pushMfysong = document.querySelector(".pushMfysong")
+const pullMfysong = document.querySelectorAll(".pullMfysong");
+const pushMfysong = document.querySelectorAll(".pushMfysong");
+const rightCursor = document.querySelectorAll(".rightCursor");
+const leftCursor = document.querySelectorAll(".leftCursor");
+let counter = 1;
 
+rightCursor[0].addEventListener("mouseover",() => {
+    pullMfysong[0].style.opacity = 1;
+})
+rightCursor[0].addEventListener("mouseout",() => {
+    pullMfysong[0].style.opacity = 0;
+})
+pullMfysong[0].addEventListener("mouseover",() => {
+    pullMfysong[0].style.opacity = 1;  
+})
+pullMfysong[0].addEventListener("mouseout",() => {
+    pullMfysong[0].style.opacity = 0;  
+})
+leftCursor[0].addEventListener("mouseover",() => {
+    if(counter != 1) pushMfysong[0].style.opacity = 1;
+})
+leftCursor[0].addEventListener("mouseout",() => {
+    pushMfysong[0].style.opacity = 0;
+})
+pushMfysong[0].addEventListener("mouseover",() => {
+    if(counter != 1) pushMfysong[0].style.opacity = 1;  
+})
+pushMfysong[0].addEventListener("mouseout",() => {
+    pushMfysong[0].style.opacity = 0;  
+})
+
+pullMfysong[0].addEventListener("click",() => {
+    if(counter == mfySong.length){
+        return false;
+    }
+    else{
+        mfySong[0].style.marginLeft= mfySong[0].clientWidth * -counter + 10 * -counter + "px";
+        counter++;
+    }
+})
+pushMfysong[0].addEventListener("click",() => {
+    if(counter == 1){
+        return false
+    }
+    else{
+        mfySong[0].style.marginLeft = -mfySong[0].clientWidth * counter + mfySong[0].clientWidth + mfySong[0].clientWidth + 1 * counter + "px";
+        counter--;    
+    }
+
+})
+
+//pull and push of home Recently Played boxes slider
+
+const rpSong = document.querySelector(".rpLi");
+const pullRpsong = document.querySelector(".pullRpsong");
+const pushRpsong = document.querySelector(".pushRpsong");
+const rightCursor2 = document.querySelector(".rightCursor2");
+const leftCursor2 = document.querySelector(".leftCursor2");
+let counter2 = 1;
+
+rightCursor2.addEventListener("mouseover",() => {
+    pullRpsong.style.opacity = 1;
+})
+rightCursor2.addEventListener("mouseout",() => {
+    pullRpsong.style.opacity = 0;
+})
+pullRpsong.addEventListener("mouseover",() => {
+    pullRpsong.style.opacity = 1;  
+})
+pullRpsong.addEventListener("mouseout",() => {
+    pullRpsong.style.opacity = 0;  
+})
+leftCursor2.addEventListener("mouseover",() => {
+    if(counter2 != 1) pushRpsong.style.opacity = 1;
+})
+leftCursor2.addEventListener("mouseout",() => {
+    pushRpsong.style.opacity = 0;
+})
+pushRpsong.addEventListener("mouseover",() => {
+    if(counter2 != 1) pushRpsong.style.opacity = 1;  
+})
+pushRpsong.addEventListener("mouseout",() => {
+    pushRpsong.style.opacity = 0;  
+})
+
+pullRpsong.addEventListener("click",() => {
+    if(counter2 == rpSong.length){
+        return false;
+    }
+    else{
+        rpSong.style.marginLeft = rpSong.clientWidth * -counter2 + 10 * -counter2 + "px";
+        counter2++;
+    }
+})
+pushRpsong.addEventListener("click",() => {
+    if(counter2 == 1){
+        return false
+    }
+    else{
+        rpSong.style.marginLeft = -rpSong.clientWidth * counter2 + rpSong.clientWidth + rpSong.clientWidth + 1 * counter2 + "px";
+        counter2--;    
+    }
+
+})
+
+//pull and push of home favorite artists boxes slider
+
+const yfaSong = document.querySelector(".yfaLi");
+const pullyfasong = document.querySelector(".pullyfasong");
+const pushyfasong = document.querySelector(".pushyfasong");
+const rightCursor3 = document.querySelector(".rightCursor3");
+const leftCursor3 = document.querySelector(".leftCursor3");
+let counter3 = 1;
+
+rightCursor3.addEventListener("mouseover",() => {
+    pullyfasong.style.opacity = 1;
+})
+rightCursor3.addEventListener("mouseout",() => {
+    pullyfasong.style.opacity = 0;
+})
+pullyfasong.addEventListener("mouseover",() => {
+    pullyfasong.style.opacity = 1;  
+})
+pullyfasong.addEventListener("mouseout",() => {
+    pullyfasong.style.opacity = 0;  
+})
+leftCursor3.addEventListener("mouseover",() => {
+    if(counter3 != 1) pushyfasong.style.opacity = 1;
+})
+leftCursor3.addEventListener("mouseout",() => {
+    pushyfasong.style.opacity = 0;
+})
+pushyfasong.addEventListener("mouseover",() => {
+    if(counter3 != 1) pushyfasong.style.opacity = 1;  
+})
+pushyfasong.addEventListener("mouseout",() => {
+    pushyfasong.style.opacity = 0;  
+})
+
+pullyfasong.addEventListener("click",() => {
+    if(counter3 == yfaSong.length){
+        return false;
+    }
+    else{
+        yfaSong.style.marginLeft = yfaSong.clientWidth * -counter3 + 10 * -counter3 + "px";
+        counter3++;
+    }
+})
+pushyfasong.addEventListener("click",() => {
+    if(counter3 == 1){
+        return false
+    }
+    else{
+        yfaSong.style.marginLeft = -yfaSong.clientWidth * counter3 + yfaSong.clientWidth + yfaSong.clientWidth + 1 * counter3 + "px";
+        counter3--;    
+    }
+
+})
+
+//pull and push of home palylist boxes slider
+
+const ypLi = document.querySelector(".ypLi");
+const pullPlsong = document.querySelector(".pullPlsong");
+const pushPlsong = document.querySelector(".pushPlsong");
+const rightCursor4 = document.querySelector(".rightCursor4");
+const leftCursor4 = document.querySelector(".leftCursor4");
+let counter4 = 1;
+
+rightCursor4.addEventListener("mouseover",() => {
+    pullPlsong.style.opacity = 1;
+})
+rightCursor4.addEventListener("mouseout",() => {
+    pullPlsong.style.opacity = 0;
+})
+pullPlsong.addEventListener("mouseover",() => {
+    pullPlsong.style.opacity = 1;  
+})
+pullPlsong.addEventListener("mouseout",() => {
+    pullPlsong.style.opacity = 0;  
+})
+leftCursor4.addEventListener("mouseover",() => {
+    if(counter4 != 1) pushPlsong.style.opacity = 1;
+})
+leftCursor4.addEventListener("mouseout",() => {
+    pushPlsong.style.opacity = 0;
+})
+pushPlsong.addEventListener("mouseover",() => {
+    if(counter4 != 1) pushPlsong.style.opacity = 1;  
+})
+pushPlsong.addEventListener("mouseout",() => {
+    pushPlsong.style.opacity = 0;  
+})
+
+pullPlsong.addEventListener("click",() => {
+    if(counter4 == ypLi.length){
+        return false;
+    }
+    else{
+        ypLi.style.marginLeft = ypLi.clientWidth * -counter4 + 10 * -counter4 + "px";
+        counter4++;
+    }
+})
+pushPlsong.addEventListener("click",() => {
+    if(counter4 == 1){
+        return false
+    }
+    else{
+        ypLi.style.marginLeft = -ypLi.clientWidth * counter4 + ypLi.clientWidth + ypLi.clientWidth + 1 * counter4 + "px";
+        counter4--;    
+    }
+
+})
