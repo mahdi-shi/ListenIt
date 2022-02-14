@@ -7,7 +7,7 @@ let RbtnState = false
 Rbtn.addEventListener("click",() => {
     if(RbtnState == false){
         Rbtn.style.transform = "rotate("+180+"deg)";
-        moreProfileOptionBox.style.height = 140 + "px";
+        moreProfileOptionBox.style.height = 120 + "px";
         RbtnState = true;
     }
     else if(RbtnState = true){
@@ -479,3 +479,51 @@ pushPlsong.addEventListener("click",() => {
     }
 
 })
+//home panel
+    const homeItem = document.querySelector("#homeItem");
+    homeItem.addEventListener("click",() => {
+        homePnl.style.display = "block";
+        libraryPnl.style.display = "none";    
+    });
+
+// library panel 
+
+const libraryItem = document.querySelector("#libraryItem");
+const libraryPnl = document.querySelector("#library");
+const homePnl = document.querySelector("#home");
+const libraryPnlItem1 = document.querySelector(".libraryPnlItem1");
+const libraryPnlItem2 = document.querySelector(".libraryPnlItem2");
+const libraryPnlItem3 = document.querySelector(".libraryPnlItem3");
+const playlistPnl = document.querySelector(".playlistPnl");
+const likesPnl = document.querySelector(".likesPnl");
+const artistsPnl = document.querySelector(".artistsPnl")
+
+libraryItem.addEventListener("click",() => {
+    homePnl.style.display = "none";
+    libraryPnl.style.display = "block";    
+});
+
+libraryPnlItem1.addEventListener("click",() => {
+    libraryPnlItem1.style.color = "#d80000";
+    libraryPnlItem2.style.color = "rgb(233, 233, 233)";
+    libraryPnlItem3.style.color = "rgb(233, 233, 233)";
+    playlistPnl.style.display = "block";
+    likesPnl.style.display = "none";
+    artistsPnl.style.display = "none";
+});
+libraryPnlItem2.addEventListener("click",() => {
+    libraryPnlItem1.style.color = "rgb(233, 233, 233)";
+    libraryPnlItem2.style.color = "#d80000";
+    libraryPnlItem3.style.color = "rgb(233, 233, 233)";
+    likesPnl.style.display = "block";
+    artistsPnl.style.display = "none"
+    playlistPnl.style.display = "none";
+});
+libraryPnlItem3.addEventListener("click",() => {
+    libraryPnlItem1.style.color = "rgb(233, 233, 233)";
+    libraryPnlItem2.style.color = "rgb(233, 233, 233)";
+    libraryPnlItem3.style.color = "#d80000";
+    artistsPnl.style.display = "block";
+    playlistPnl.style.display = "none";
+    likesPnl.style.display = "none";
+});
