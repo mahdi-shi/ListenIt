@@ -716,6 +716,14 @@
     background-color: rgb(20, 19, 32);
     border-radius: 8px;
     overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .home .madeForYou ul li div .image p{
+    font-size: 3.8em;
+    color:rgba(76, 78, 109, 0.397);
+    font-weight: bold;
 }
 .container .home .madeForYou ul li div .image .mfyPlayBox{
     width: 70px;
@@ -895,6 +903,14 @@
     background-color: rgb(20, 19, 32);
     border-radius: 8px;
     overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .home .recentlyPlayed ul li div .image p{
+    font-size: 3.8em;
+    color:rgba(76, 78, 109, 0.397);
+    font-weight: bold;
 }
 .container .home .recentlyPlayed ul li div .image .rpPlayBox{
     width: 70px;
@@ -1131,8 +1147,15 @@
     background-color: rgb(20, 19, 32);
     border-radius: 8px;
     overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
-
+.container .home .yourFavoriteArtists ul li div .image p{
+    font-size: 3.8em;
+    color:rgba(76, 78, 109, 0.397);
+    font-weight: bold;
+}
 .container .home .yourFavoriteArtists ul li div .image img{
     position: absolute;
     left: 0;
@@ -1264,6 +1287,11 @@
     border-radius: 8px;
     overflow: visible;
 }
+.container .home .mixesForYou ul li div .image p{
+    font-size: 3.8em;
+    color:rgba(76, 78, 109, 0.397);
+    font-weight: bold;
+}
 .container .home .mixesForYou .mfyListBox .image img{
     position: absolute;
     left: 0;
@@ -1352,8 +1380,15 @@
     background-color: rgb(20, 19, 32);
     border-radius: 8px;
     overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
-
+.container .home .yourPlaylist ul li div .image p{
+    font-size: 3.8em;
+    color:rgba(76, 78, 109, 0.397);
+    font-weight: bold;
+}
 .container .home .yourPlaylist ul li div .image img{
     position: absolute;
     left: 0;
@@ -1507,6 +1542,14 @@
     background-color: rgb(20, 19, 32);
     border-radius: 8px;
     overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .home .yourFavoriteSongStyle ul li div .image p{
+    font-size: 3.8em;
+    color:rgba(76, 78, 109, 0.397);
+    font-weight: bold;
 }
 .container .home .yourFavoriteSongStyle ul li div .image .yfssPlayBox{
     opacity: 1;
@@ -1591,7 +1634,8 @@
     width: 100%;
     height: 80%;
     display: none;
-    top: 20%;
+    overflow-y: auto;
+    top: 24%;
 }
 .container .library .artistsPnl{
     position: relative;
@@ -1653,6 +1697,14 @@
     background-color: rgb(20, 19, 32);
     border-radius: 8px;
     overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .library .playListPnl .AplayList .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
 }
 .container .library .playListPnl .AplayList .image .mfyPlayBox{
     width: 50px;
@@ -1831,4 +1883,93 @@
     color: black;
     background-color: rgb(146, 149, 182);
     border: none;
+}
+
+.container .library .likesPnl::-webkit-scrollbar{
+    width: 9px;
+}
+.container .library .likesPnl::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .library .likesPnl::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .library .likesPnl .AsongLiked{
+    position: relative;
+    width: 200px;
+    height: 240px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 50px;
+    margin-left:60px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+}
+.container .library .likesPnl .AsongLiked:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .library .likesPnl .AsongLiked .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .library .likesPnl .AsongLiked .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .library .likesPnl .AsongLiked .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .library .likesPnl .AsongLiked:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .library .likesPnl .AsongLiked .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .library .likesPnl .AsongLiked .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .library .likesPnl .AsongLiked .mfySongName{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    top: 78%;
+    left: 8%;
+    user-select: none;
+    font-size: 1.1em;
+}
+.container .library .likesPnl .AsongLiked .mfyArtistSongName{
+    position: absolute;
+    top: 88%;
+    left: 8%;
+    font-size: 0.8em;
+    color: rgb(201, 201, 201);
+    user-select: none;
 }
