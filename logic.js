@@ -527,3 +527,45 @@ libraryPnlItem3.addEventListener("click",() => {
     playlistPnl.style.display = "none";
     likesPnl.style.display = "none";
 });
+//create a playlist
+
+const plDetailsPnlBtn = document.querySelector(".addPlaylist");
+const plDetailsPnl = document.querySelector(".addPlaylistDetails");
+const hiderPnl = document.querySelector(".hiderPnl");
+const addPlaylistDetailsButton = document.querySelector("#addPlaylistDetailsButton");
+const addPlaylistDetailsDescriptionBox = document.querySelector("#addPlaylistDetailsDescriptionBox");
+const addPlaylistDetailsNameBox = document.querySelector("#addPlaylistDetailsNameBox");
+const addPlaylistDetailsImageBox = document.querySelector("#addPlaylistDetailsImageBox");
+
+plDetailsPnlBtn.addEventListener("click",() => {
+    hiderPnl.style.display = "block";
+    hiderPnl.style.opacity = 0.5;
+    plDetailsPnl.style.display = "block";
+    setTimeout(() =>{
+        plDetailsPnl.style.transform = " translate("+-50+"%,"+-50+"%)";
+        plDetailsPnl.style.opacity = 1;
+    },10)
+})
+hiderPnl.addEventListener("click",() => {
+    hiderPnl.style.display = "none";
+    hiderPnl.style.opacity = 0;
+    plDetailsPnl.style.transform = " translate("+-50+"%,"+-20+"%)";
+    plDetailsPnl.style.opacity = 0;
+    setTimeout(() =>{
+        plDetailsPnl.style.display = "none";
+
+    },100)
+})
+
+addPlaylistDetailsButton.addEventListener("click",() => {
+    addPlaylistDetailsDescriptionBox.value = "";
+    addPlaylistDetailsImageBox.value = "";
+    addPlaylistDetailsNameBox.value = "";
+    hiderPnl.style.display = "none";
+    hiderPnl.style.opacity = 0;
+    plDetailsPnl.style.transform = " translate("+-50+"%,"+-20+"%)";
+    plDetailsPnl.style.opacity = 0;
+    setTimeout(() =>{
+        plDetailsPnl.style.display = "none";
+    },100)
+})

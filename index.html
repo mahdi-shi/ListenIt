@@ -596,15 +596,98 @@
         </div>
         <!-------------------- Library panel ---------------------->
         <div class="library" id="library"> 
+          <div class="hiderPnl">
+
+          </div>
           <ul>
             <li class="libraryPnlItem1">Playlist</li>
             <li class="libraryPnlItem2">Likes</li>
             <li class="libraryPnlItem3">Artists</li>
           </ul>
 
-          <div class="playListPnl"></div>
-          <div class="likesPnl"></div>
-          <div class="artistsPnl"></div>
+          <div class="playListPnl">
+            <div class="addPlaylist">
+              <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+              </svg>
+            </div>
+            <div class="AplayList" style="margin-left: 320px;">
+              <div class="image">
+                <img class="mfyPlayBox" src="images/play-64.png" alt="loading">
+
+              </div>
+              <h3 class="mfySongName">name</h3>
+            </div>
+            <div class="AplayList">
+              <div class="image">
+                <img class="mfyPlayBox" src="images/play-64.png" alt="loading">
+
+              </div>
+              <h3 class="mfySongName">name</h3>
+            </div>
+            <div class="AplayList">
+              <div class="image">
+                <img class="mfyPlayBox" src="images/play-64.png" alt="loading">
+
+              </div>
+              <h3 class="mfySongName">name</h3>
+            </div>
+            <div class="AplayList">
+              <div class="image">
+                <img class="mfyPlayBox" src="images/play-64.png" alt="loading">
+
+              </div>
+              <h3 class="mfySongName">name</h3>
+            </div>
+            <div class="AplayList">
+              <div class="image">
+                <img class="mfyPlayBox" src="images/play-64.png" alt="loading">
+
+              </div>
+              <h3 class="mfySongName">name</h3>
+            </div>
+            <div class="AplayList">
+              <div class="image">
+                <img class="mfyPlayBox" src="images/play-64.png" alt="loading">
+
+              </div>
+              <h3 class="mfySongName">name</h3>
+            </div>
+            <div class="AplayList">
+              <div class="image">
+                <img class="mfyPlayBox" src="images/play-64.png" alt="loading">
+
+              </div>
+              <h3 class="mfySongName">name</h3>
+            </div>
+            <div class="addPlaylistDetails">
+              <h2>New playlist details</h2>
+              <ul>
+                <li>
+                  <p>playlist name</p>
+                  <input type="text" id="addPlaylistDetailsNameBox">
+                </li>
+                <li>
+                  <p>playlist image</p>
+                  <input type="file" accept="image/*,.pdf,jpg" id="addPlaylistDetailsImageBox">
+                </li>
+                <li>
+                  <p>playlist description</p>
+                  <textarea id="addPlaylistDetailsDescriptionBox" onchange="textareaFixed()"></textarea>
+                </li>
+              </ul>
+              <i>Lt</i>
+              <button id="addPlaylistDetailsButton">Create</button>
+            </div>
+          </div>
+
+          <div class="likesPnl">
+
+          </div>
+
+          <div class="artistsPnl">
+            
+          </div>
         </div>
     </div>
 </body>
