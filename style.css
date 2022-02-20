@@ -1642,7 +1642,18 @@
     width: 100%;
     height: 80%;
     display: none;
+    overflow-y: auto;
     top: 20%;
+}
+.container .library .artistsPnl::-webkit-scrollbar{
+    width: 9px;
+}
+.container .library .artistsPnl::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .library .artistsPnl::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
 }
 .container .library .playListPnl .addPlaylist{
     position: absolute;
@@ -1972,4 +1983,74 @@
     font-size: 0.8em;
     color: rgb(201, 201, 201);
     user-select: none;
+}
+.container .library .artistsPnl .artist{
+    position: relative;
+    width: 260px;
+    height: 320px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 50px;
+    margin-left:10px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+}
+.container .library .artistsPnl .artist:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .library .artistsPnl .artist .image{
+    position: absolute;
+    width: 84%;
+    height: 74%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .library .artistsPnl .artist .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .library .artistsPnl .artist .image .mfyPlayBox{
+    width: 70px;
+    height: 70px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(140px,160px);
+}
+.container .library .artistsPnl .artist:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(140px,140px);
+}
+.container .library .artistsPnl .artist .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .library .artistsPnl .artist .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .library .artistsPnl .artist .mfySongName{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    top: 85%;
+    left: 10%;
+    user-select: none;
+    font-size: 1.3em;
 }
