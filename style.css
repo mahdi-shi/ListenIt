@@ -567,7 +567,7 @@
 .container .home{
     position: absolute;
     width: 81.2%;
-    height: 74%;
+    height: 77%;
     background: rgb(18, 18, 26);
     transform: translate(40px,55px);
     border: border;
@@ -2053,4 +2053,291 @@
     left: 10%;
     user-select: none;
     font-size: 1.3em;
+}
+/*----------------Search panel style----------------*/
+.container .search{
+    position: absolute;
+    width: 1142px;
+    height: 460px;
+    top: 80px;
+    display: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container .search .searchBackgroundObject{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.container .search .searchBackgroundObject .searchBlob{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 230px;
+    left: 0px;
+    opacity: 0.7;
+}
+.container .search .searchBackgroundObject .searchBlob:nth-child(2){
+    filter: blur(30px);
+}
+.container .search .searchBackgroundObject .searchBlob2{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1602px;
+    left: 900px;
+    opacity: 0.7;
+}
+.container .search .searchBackgroundObject .Blob22{
+    filter: blur(60px);
+}
+.container .search .searchBackgroundObject .searchBlob3{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 2322px;
+    left: 0px;
+    opacity: 0.7;
+}
+.container .search .searchBackgroundObject .Blob32{
+    filter: blur(30px);
+}
+.container .search .searchBackgroundObject .searchBlob4{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 2922px;
+    left: 800px;
+    opacity: 0.7;
+}
+.container .search .searchBackgroundObject .Blob42{
+    filter: blur(30px);
+}
+.container .search .searchBackgroundObject .searchBlob5{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 3622px;
+    left: 700px;
+    opacity: 0.7;
+}
+.container .search .searchBackgroundObject .Blob52{
+    filter: blur(30px);
+}
+.container .search::-webkit-scrollbar{
+    width: 9px;
+}
+.container .search::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .search::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .search #searchBox{
+    position: absolute;
+    width: 60px;
+    height: 47px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    left: 20%;
+    top: 1%;
+    transition: 0.5s;
+}
+.container .search #searchBox:hover .sahdow{
+    background: linear-gradient(180deg,rgba(255,0,0,0.05),transparent,transparent);
+}
+.container .search #searchBox:hover input{
+    color: rgb(185, 23, 23);
+}
+.container .search #searchBox:hover::-webkit-input-placeholder{
+    color: rgb(100, 32, 32);
+}
+.container .search #searchBox input{
+    position:relative;
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 10px 20px;
+    outline: none;
+    font-size: 1.2em;
+    color: rgb(185, 23, 23);
+    background: linear-gradient(#343244,#181c25);
+    box-shadow: none;
+    z-index: 10;
+    transition: 0.3s;
+}
+.container .search #searchBox input::-webkit-input-placeholder{
+    color: transparent;
+}
+.container .search #searchBox input{
+    color: transparent;
+}
+.container .search #searchBox .shadow{
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: calc(100% + 50px);
+    height: 200px;
+    background: none;
+    transform-origin: top;
+    transform: skew(45deg);
+    pointer-events: none;
+    transition: 0.3s;
+    display:none;
+}
+.container .search #searchBox .shadow::before{
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #14131b;
+    z-index: 11;
+}
+.container .search #searchBox::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 100%;
+    background:linear-gradient(rgb(65, 64, 83),rgb(52, 50, 73),#393646);
+    z-index: 11;
+    filter: blur(1px);
+}
+.container .search #searchBox::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    right: -1;
+    width: 10px;
+    height: 100%;
+    background:#1a1b2e;
+    z-index: 11;
+    filter: blur(1px);
+}
+.container .search #searchBox #searchIcon{
+    position: absolute;
+    right: 20px;
+    fill: rgb(197, 0, 0);
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 12;
+    transition: 0.2s;
+}
+.container .search #searchBox #searchIcon:hover{
+    filter: drop-shadow( 0 0 20px rgba(255,0,0,1));
+}
+.container .search #searchBoxHelper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+.container .search .aSongStyle{
+    width: 500px;
+    height: 350px;
+    border-radius: 9px;
+    background-color: rgb(30, 31, 49);
+    position: relative;
+    transform: translate(100px,140px);
+    box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+    opacity: 0.8;
+    transition: 0.3s;
+}
+.container .search .aSongStyle img{
+}
+.container .search .aSongStyle h3{
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 0 7px rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 50%;
+    top: 69%;
+    font-size: 2em;
+    user-select: none;
+    transform: translate(-50%,80%);
+}
+.container .search .aSongStyle:nth-child(3){
+    transform: translate(530px,140px);
+}
+.container .search .aSongStyle:nth-child(4){
+    transform: translate(130px,80px);
+}
+.container .search .aSongStyle:nth-child(5){
+    transform: translate(600px,100px);
+}
+.container .search .aSongStyle:nth-child(6){
+    transform: translate(200px,60px);
+}
+.container .search .aSongStyle:nth-child(7){
+    transform: translate(400px,90px);
+}
+.container .search .aSongStyle:nth-child(8){
+    transform: translate(70px,10px);
+}
+.container .search .aSongStyle:nth-child(9){
+    transform: translate(480px,-50px);
+}
+.container .search .aSongStyle:nth-child(10){
+    transform: translate(80px,-250px);
+}
+.container .search .aSongStyle:nth-child(11){
+    transform: translate(540px,-290px);
+}
+.container .search .aSongStyle:nth-child(12){
+    transform: translate(170px,-390px);
+}
+.container .search .aSongStyle:nth-child(13){
+    transform: translate(480px,-440px);
+}
+.container .search .aSongStyle:nth-child(14){
+    transform: translate(40px,-490px);
+}
+.container .search .aSongStyle:nth-child(15){
+    transform: translate(500px,-620px);
+}
+.container .search .aSongStyle:nth-child(16){
+    transform: translate(70px,-700px);
+}
+.container .search .aSongStyle .yfssPlayBox{
+    width: 70px;
+    height: 70px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(363px,220px);
+    cursor: pointer;
+    transform: 0.3s;
+}
+.container .search .aSongStyle .yfssPlayBox:hover{
+    filter: drop-shadow(0 0 10px rgba(255,0,0,0.5));
+}
+.container .search .aSongStyle:hover .yfssPlayBox{
+    opacity: 1;
+    transform: translate(363px,200px);
+}
+.container .search .aSongStyle:hover{
+    background-color: rgb(43, 41, 65);
+    z-index: 10;
 }

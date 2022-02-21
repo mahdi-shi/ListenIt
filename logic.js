@@ -230,6 +230,7 @@ itemPlaylist.addEventListener("click",() => {
     itemLikesSvg.style.fill = "rgba(255, 0, 0, 0.651)";
     itemArtists.style.color = "rgb(192, 192, 192)";
     itemArtistsSvg.style.fill = "rgba(255, 0, 0, 0.651)";
+
 })
 itemLikes.addEventListener("click",() => {
     itemHome.style.color = "rgb(192, 192, 192)";
@@ -483,7 +484,8 @@ pushPlsong.addEventListener("click",() => {
     const homeItem = document.querySelector("#homeItem");
     homeItem.addEventListener("click",() => {
         homePnl.style.display = "block";
-        libraryPnl.style.display = "none";    
+        libraryPnl.style.display = "none";
+        searchPnl.style.display = "none"    
     });
 
 // library panel 
@@ -501,6 +503,7 @@ const artistsPnl = document.querySelector(".artistsPnl")
 libraryItem.addEventListener("click",() => {
     homePnl.style.display = "none";
     libraryPnl.style.display = "block";    
+    searchPnl.style.display = "none"
 });
 
 libraryPnlItem1.addEventListener("click",() => {
@@ -568,4 +571,57 @@ addPlaylistDetailsButton.addEventListener("click",() => {
     setTimeout(() =>{
         plDetailsPnl.style.display = "none";
     },100)
+})
+
+// search panel 
+
+const searchItem = document.querySelector("#searchItem");
+const searchPnl = document.querySelector("#search");
+const searchBox = document.querySelector("#searchBox");
+const searchTxtBox = document.querySelector("#searchTxtBox");
+const searchBoxHelper = document.getElementById("searchBoxHelper");
+const searchIcon = document.querySelector("#searchIcon");
+
+searchItem.addEventListener("click",() => {
+    homePnl.style.display = "none";
+    libraryPnl.style.display = "none";
+    searchPnl.style.display = "block"
+})
+searchBox.addEventListener("mouseover",() => {
+    searchBox.style.width = 370 + "px";
+})
+searchBox.addEventListener("click",() => {
+    searchTxtBox.style.boxShadow = (0+"px "+5+"px "+5+"px rgba("+255+", "+0+", "+0+","+0.2+"),"+0+"px "+5+"px "+10+"px rgba("+255+", "+0+", "+0+","+0.2);
+})
+searchBoxHelper.addEventListener("click",() => {
+    searchTxtBox.style.boxShadow = "none";
+    searchBox.style.width = 60 + "px";
+    searchTxtBox.style.color = "transparent";
+})
+searchBox.addEventListener("mouseout",() => {
+    searchTxtBox.style.color = "rgb(185, 23, 23)";
+})
+
+//config sideBar linking
+
+
+
+itemPlaylist.addEventListener("click",() => {
+    libraryPnl.style.display = "block";
+    searchPnl.style.display = "none";
+    homePnl.style.display = "none";
+})
+itemLikes.addEventListener("click",() => {
+    libraryPnl.style.display = "block";
+    searchPnl.style.display = "none";
+    homePnl.style.display = "none";
+
+    libraryPnlItem2.focus()
+})
+itemArtists.addEventListener("click",() => {
+    libraryPnl.style.display = "block";
+    searchPnl.style.display = "none";
+    homePnl.style.display = "none";
+
+    libraryPnlItem3.focus()
 })
