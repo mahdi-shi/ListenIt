@@ -486,6 +486,8 @@ pushPlsong.addEventListener("click",() => {
         homePnl.style.display = "block";
         libraryPnl.style.display = "none";
         searchPnl.style.display = "none"    
+        accountPnl.style.display = "none";
+        accountPnl2.style.display = "none";
     });
 
 // library panel 
@@ -504,6 +506,7 @@ libraryItem.addEventListener("click",() => {
     homePnl.style.display = "none";
     libraryPnl.style.display = "block";    
     searchPnl.style.display = "none"
+    accountPnl.style.display = "none";
 });
 
 libraryPnlItem1.addEventListener("click",() => {
@@ -586,6 +589,9 @@ searchItem.addEventListener("click",() => {
     homePnl.style.display = "none";
     libraryPnl.style.display = "none";
     searchPnl.style.display = "block"
+    accountPnl.style.display = "none";
+    accountPnl2.style.display = "none";
+
 })
 searchBox.addEventListener("mouseover",() => {
     searchBox.style.width = 370 + "px";
@@ -608,11 +614,15 @@ itemPlaylist.addEventListener("click",() => {
     libraryPnl.style.display = "block";
     searchPnl.style.display = "none";
     homePnl.style.display = "none";
+    accountPnl.style.display = "none";    
+    accountPnl2.style.display = "none";
 })
 itemLikes.addEventListener("click",() => {
     libraryPnl.style.display = "block";
     searchPnl.style.display = "none";
     homePnl.style.display = "none";
+    accountPnl.style.display = "none";
+    accountPnl2.style.display = "none";
 
     libraryPnlItem2.focus()
 })
@@ -620,7 +630,8 @@ itemArtists.addEventListener("click",() => {
     libraryPnl.style.display = "block";
     searchPnl.style.display = "none";
     homePnl.style.display = "none";
-
+    accountPnl.style.display = "none";
+    accountPnl2.style.display = "none";
     libraryPnlItem3.focus()
 })
 
@@ -676,4 +687,41 @@ pushRSsong.addEventListener("click",() => {
         counter5--;    
     }
 
+})
+
+// account linking page
+
+const accountPnl = document.querySelector(".account");
+const accountPnl2 = document.querySelector(".account2")
+
+function accountLink(){
+
+    if(atenticationState == false){
+        accountPnl.style.display = "block";
+        accountPnl2.style.display = "none";
+        libraryPnl.style.display = "none";
+        searchPnl.style.display = "none";
+        homePnl.style.display = "none";    
+    }
+    else{
+        accountPnl2.style.display = "block";
+        accountPnl.style.display = "none";
+        libraryPnl.style.display = "none";
+        searchPnl.style.display = "none";
+        homePnl.style.display = "none";     
+    }
+}
+
+//set sing up
+
+const singUpBtn = document.querySelector("#singUpBtn");
+let atenticationState = false;
+
+singUpBtn.addEventListener("click",() => {
+    atenticationState = true
+    accountPnl2.style.display = "none";
+    accountPnl.style.display = "none";
+    libraryPnl.style.display = "none";
+    searchPnl.style.display = "none";
+    homePnl.style.display = "block";   
 })

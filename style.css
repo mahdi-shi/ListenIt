@@ -2499,3 +2499,254 @@
     z-index: 20;
     opacity: 0;
 }
+
+/*----------------account panel style----------------*/
+
+.container .account{
+    position: absolute;
+    top: 60px;
+    width: 1142px;
+    height: 480px;
+    display: none;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.container .account .searchBackgroundObject{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.container .account .searchBackgroundObject .searchBlob{
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 230px;
+    left: -100px;
+    opacity: 0.7;
+}
+.container .account .searchBackgroundObject .searchBlob:nth-child(2){
+    filter: blur(30px);
+}
+.container .account .searchBackgroundObject .searchBlob2{
+    position: absolute;
+    width: 440px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 33px;
+    left: 960px;
+    opacity: 0.7;
+}
+.container .account .searchBackgroundObject .Blob22{
+    filter: blur(60px);
+}
+.container .account h2{
+    font-weight: bold;
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+    margin-left: 50px;
+    transform: translateY(20px);
+}
+.container .account .form{
+    position: absolute;
+    width: 590px;
+    height: 410px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    transition: 0.3s;
+    overflow: hidden;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+}
+.container .account .form h3{
+    position: absolute;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 20px;
+}
+.container .account .form p{
+    position: relative;
+    left: 10%;
+    top: 15%;
+    margin-top: 10px;
+    color: #aaa5cf;
+    font-weight: bold;
+    font-size: 1.2em;
+    user-select: none;
+}
+.container .account .form input{
+    position: relative;
+    left: 30%;
+    top: 7%;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1em;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #8780b4;
+    border-bottom: 2px solid rgb(90, 85, 138);
+    padding: 5px;
+    transition: 0.3s;
+}
+.container .account .form input::placeholder{
+    color: #645f85;
+}
+.container .account .form input:focus{
+    border-bottom: 2px solid rgb(139, 133, 187);
+    color: #9f99ca;
+}
+.container .account .form button{
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    color: #9f99ca;
+    left: 78%;
+    top: 85%;
+    border:2px solid #9f99ca;
+    background-color: transparent;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.container .account .form button:hover{
+    background-color: #9f99ca;
+    border: none;
+    color: rgb(30, 31, 49);
+}
+.container .account2{
+    position: absolute;
+    top: 60px;
+    width: 1142px;
+    height: 480px;
+    display: none;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.container .account2 .searchBackgroundObject{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.container .account2 .searchBackgroundObject .searchBlob{
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 230px;
+    left: -100px;
+    opacity: 0.7;
+}
+.container .account2 .searchBackgroundObject .searchBlob:nth-child(2){
+    filter: blur(30px);
+}
+.container .account2 .searchBackgroundObject .searchBlob2{
+    position: absolute;
+    width: 440px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 33px;
+    left: 960px;
+    opacity: 0.7;
+}
+.container .account2 .searchBackgroundObject .Blob22{
+    filter: blur(60px);
+}
+.container .account2 h2{
+    font-weight: bold;
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+    margin-left: 50px;
+    transform: translateY(20px);
+}
+.container .account2 .form2{
+    position: absolute;
+    width: 590px;
+    height: 410px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    transition: 0.3s;
+    overflow: hidden;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+}
+.container .account2 .form2 h3{
+    position: absolute;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 20px;
+}
+.container .account2 .form2 p{
+    position: relative;
+    left: 10%;
+    top: 15%;
+    margin-top: 10px;
+    color: #aaa5cf;
+    font-weight: bold;
+    font-size: 1.2em;
+    user-select: none;
+}
+.container .account2 .form2 input{
+    position: relative;
+    left: 30%;
+    top: 7%;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1em;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #8780b4;
+    border-bottom: 2px solid rgb(90, 85, 138);
+    padding: 5px;
+    transition: 0.3s;
+}
+.container .account2 .form2 input::placeholder{
+    color: #645f85;
+}
+.container .account2 .form2 input:focus{
+    border-bottom: 2px solid rgb(139, 133, 187);
+    color: #9f99ca;
+}
+.container .account2 .form2 button{
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    color: #9f99ca;
+    left: 78%;
+    top: 85%;
+    border:2px solid #9f99ca;
+    background-color: transparent;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.container .account2 .form2 button:hover{
+    background-color: #9f99ca;
+    border: none;
+    color: rgb(30, 31, 49);
+}
