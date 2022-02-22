@@ -2319,6 +2319,9 @@
 .container .search .aSongStyle:nth-child(16){
     transform: translate(70px,-700px);
 }
+.container .search .aSongStyle:nth-child(17){
+    transform: translate(470px,-800px);
+}
 .container .search .aSongStyle .yfssPlayBox{
     width: 70px;
     height: 70px;
@@ -2340,4 +2343,159 @@
 .container .search .aSongStyle:hover{
     background-color: rgb(43, 41, 65);
     z-index: 10;
+}
+.container .search .recentlySearched{
+    position: absolute;
+    height: 400px;
+    width: 98%;
+    left: 20px;
+    transform: translateY(120px);
+    overflow: hidden;
+    z-index: 10;
+}
+.container .search .recentlySearched h2{
+    color: white;
+    font-size: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    margin-left: 20px;
+    user-select: none;
+}
+.container .search .recentlySearched ul{
+    position: absolute;
+    transform: translate(30px,25px);
+    display: flex;
+    height: 100%;
+    width: auto ;
+    z-index: 300;
+    overflow-x: hidden;
+}
+
+.container .search .recentlySearched ul li{
+    display: inline-block;
+    margin-left: 10px;
+    position: relative;
+    transition: 0.8s;
+}
+.container .search .recentlySearched ul li div{
+    position: relative;
+    width: 240px;
+    height: 300px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: 0.3s;
+    overflow: hidden;
+    z-index: 10;
+}
+.container .search .recentlySearched ul li div:hover{
+    background-color: rgb(48, 49, 70)
+}
+.container .search .recentlySearched ul li div .image{
+    position: absolute;
+    width: 84%;
+    height: 76%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .search .recentlySearched ul li div .image p{
+    font-size: 3.8em;
+    color:rgba(76, 78, 109, 0.397);
+    font-weight: bold;
+}
+.container .search .recentlySearched ul li div .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .search .recentlySearched ul li div  .rsName{
+    color: aliceblue;
+    position: absolute;
+    top: 87%;
+    left: 10%;
+}
+.container .search .recentlySearched ul .pullRSsong{
+    position: absolute;
+    background: radial-gradient(rgb(41, 41, 43),rgb(31, 31, 37));
+    border-radius: 50%;
+    width: 50px;
+    z-index: 60;
+    height: 50px;
+    cursor: pointer;
+    display: block;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(25, 24, 36);
+    transform:translate(1000px,30px);
+    top: 100px;
+    transition: 0.3s;
+}
+.container .search .recentlySearched ul .pullRSsong:hover{
+    border: 3px solid rgb(184, 0, 0);
+}
+.container .search .recentlySearched ul .pullRSsong svg{
+    fill:red;
+    transform: rotateZ(-90deg);
+    border-radius: 50%;
+    position: absolute;
+    left: 23%;
+    top: 20%;
+}
+.container .search .recentlySearched ul .pushRSsong{
+    position: absolute;
+    background: radial-gradient(rgb(41, 41, 43),rgb(31, 31, 37));
+    border-radius: 50%;
+    width: 50px;
+    z-index: 60;
+    height: 50px;
+    cursor: pointer;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(25, 24, 36);
+    transform:translate(40px,30px);
+    top: 100px;
+    transition: 0.3s;
+    opacity: 0;
+}
+.container .search .recentlySearched ul .pushRSsong:hover{
+    border: 3px solid rgb(175, 0, 0);
+}
+.container .search .recentlySearched ul .pushRSsong svg{
+    fill:red;
+    transform: rotateZ(90deg);
+    border-radius: 50%;
+    position: absolute;
+    left: 23%;
+    top: 20%;
+}
+.container .search .recentlySearched .rightCursor5{
+    position: absolute;
+    width: 60px;
+    height: 100%;
+    background-color: red;
+    transform: translateX(1020px);
+    opacity: 0;
+    z-index: 20;
+}
+.container .search .recentlySearched .leftCursor5 {
+    position: absolute;
+    width: 60px;
+    height: 100%;
+    background-color: red;
+    transform: translateX(10px);
+    z-index: 20;
+    opacity: 0;
 }

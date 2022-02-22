@@ -604,8 +604,6 @@ searchBox.addEventListener("mouseout",() => {
 
 //config sideBar linking
 
-
-
 itemPlaylist.addEventListener("click",() => {
     libraryPnl.style.display = "block";
     searchPnl.style.display = "none";
@@ -624,4 +622,58 @@ itemArtists.addEventListener("click",() => {
     homePnl.style.display = "none";
 
     libraryPnlItem3.focus()
+})
+
+//pull and push of home palylist boxes slider
+
+const rsLi = document.querySelector(".rsLi");
+const pullRSsong = document.querySelector(".pullRSsong");
+const pushRSsong = document.querySelector(".pushRSsong");
+const rightCursor5 = document.querySelector(".rightCursor5");
+const leftCursor5 = document.querySelector(".leftCursor5");
+let counter5 = 1;
+
+rightCursor5.addEventListener("mouseover",() => {
+    pullRSsong.style.opacity = 1;
+})
+rightCursor5.addEventListener("mouseout",() => {
+    pullRSsong.style.opacity = 0;
+})
+pullRSsong.addEventListener("mouseover",() => {
+    pullRSsong.style.opacity = 1;  
+})
+pullRSsong.addEventListener("mouseout",() => {
+    pullRSsong.style.opacity = 0;  
+})
+leftCursor5.addEventListener("mouseover",() => {
+    if(counter5 != 1) pushRSsong.style.opacity = 1;
+})
+leftCursor5.addEventListener("mouseout",() => {
+    pushRSsong.style.opacity = 0;
+})
+pushRSsong.addEventListener("mouseover",() => {
+    if(counter5 != 1) pushRSsong.style.opacity = 1;  
+})
+pushRSsong.addEventListener("mouseout",() => {
+    pushRSsong.style.opacity = 0;  
+})
+
+pullRSsong.addEventListener("click",() => {
+    if(counter5 == rsLi.length){
+        return false;
+    }
+    else{
+        rsLi.style.marginLeft = rsLi.clientWidth * -counter5 + 10 * -counter5 + "px";
+        counter5++;
+    }
+})
+pushRSsong.addEventListener("click",() => {
+    if(counter5 == 1){
+        return false
+    }
+    else{
+        rsLi.style.marginLeft = -rsLi.clientWidth * counter5 + rsLi.clientWidth + rsLi.clientWidth + 1 * counter5 + "px";
+        counter5--;    
+    }
+
 })
