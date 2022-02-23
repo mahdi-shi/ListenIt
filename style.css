@@ -2750,3 +2750,114 @@
     border: none;
     color: rgb(30, 31, 49);
 }
+
+/*----------------account panel style----------------*/
+
+.container .profilePnl{
+    position: absolute;
+    top: 60px;
+    width: 1142px;
+    height: 480px;
+    display: none;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.container .profilePnl h2{
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 2em;
+    transform: translate(70px,20px);
+
+}
+.container .profilePnl .profileImage{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    background-color: rgb(30, 31, 49);
+    position: absolute;
+    left: 65%;
+    top: 6%;
+    transition: 0.2s;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .profilePnl .profileImage:hover{
+    background-color: rgb(39, 40, 65);
+}
+.container .profilePnl .profileImage svg:nth-child(1){
+    fill: #444064;
+}
+.container .profilePnl .profileImage svg:nth-child(2){
+    fill: #444064;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%,20px);
+    opacity: 0;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.container .profilePnl .profileImage:hover svg:nth-child(2){
+    transform: translate(-50%,0);
+    opacity: 1;
+}
+.container .profilePnl .profileImage svg:nth-child(1):hover ~ svg:nth-child(2){
+    transform: translate(-50%,0);
+    opacity: 1;
+}
+.container .profilePnl h3{
+    position: relative;
+    transform: translate(110px,50px);
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #b0a9df;
+    margin-top: 10px;
+    user-select: none;
+}
+.container .profilePnl .profileUsernameValue{
+    position: relative;
+    transform: translate(260px,17px);
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #4e496d;
+    margin-top: 10px;
+    user-select: none;
+}
+.container .profilePnl .profileBioValue{
+    background-color: transparent;
+    border: 2px solid #3c3853;
+    border-radius:6px;
+    position: absolute;
+    left: 180px;
+    transform: translateY(10px);
+    resize: none;
+    color: #4e496d;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 8px;
+    transform: 0.2s;
+    height: 160px;
+    width: 250px;
+}
+.container .profilePnl button{
+    width: 100px;
+    height: 33px;
+    border: 2px solid #8c87a5;
+    border-radius: 5px;
+    position: absolute;
+    left: 110px;
+    top: 370px;
+    background-color: transparent;
+    color: #8c87a5;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.container .profilePnl button:hover{
+    background-color:#8c87a5 ;
+    border: none;
+    color: black;
+}

@@ -488,6 +488,7 @@ pushPlsong.addEventListener("click",() => {
         searchPnl.style.display = "none"    
         accountPnl.style.display = "none";
         accountPnl2.style.display = "none";
+        profilePnl.style.display = "none";
     });
 
 // library panel 
@@ -507,6 +508,8 @@ libraryItem.addEventListener("click",() => {
     libraryPnl.style.display = "block";    
     searchPnl.style.display = "none"
     accountPnl.style.display = "none";
+    accountPnl2.style.display = "none";
+    profilePnl.style.display = "none";
 });
 
 libraryPnlItem1.addEventListener("click",() => {
@@ -591,7 +594,7 @@ searchItem.addEventListener("click",() => {
     searchPnl.style.display = "block"
     accountPnl.style.display = "none";
     accountPnl2.style.display = "none";
-
+    profilePnl.style.display = "none";
 })
 searchBox.addEventListener("mouseover",() => {
     searchBox.style.width = 370 + "px";
@@ -615,6 +618,7 @@ itemPlaylist.addEventListener("click",() => {
     searchPnl.style.display = "none";
     homePnl.style.display = "none";
     accountPnl.style.display = "none";    
+    profilePnl.style.display = "none";
     accountPnl2.style.display = "none";
 })
 itemLikes.addEventListener("click",() => {
@@ -622,6 +626,7 @@ itemLikes.addEventListener("click",() => {
     searchPnl.style.display = "none";
     homePnl.style.display = "none";
     accountPnl.style.display = "none";
+    profilePnl.style.display = "none";
     accountPnl2.style.display = "none";
 
     libraryPnlItem2.focus()
@@ -631,6 +636,7 @@ itemArtists.addEventListener("click",() => {
     searchPnl.style.display = "none";
     homePnl.style.display = "none";
     accountPnl.style.display = "none";
+    profilePnl.style.display = "none";
     accountPnl2.style.display = "none";
     libraryPnlItem3.focus()
 })
@@ -702,6 +708,7 @@ function accountLink(){
         libraryPnl.style.display = "none";
         searchPnl.style.display = "none";
         homePnl.style.display = "none";    
+        profilePnl.style.display = "none";
     }
     else{
         accountPnl2.style.display = "block";
@@ -709,6 +716,7 @@ function accountLink(){
         libraryPnl.style.display = "none";
         searchPnl.style.display = "none";
         homePnl.style.display = "none";     
+        profilePnl.style.display = "none";
     }
 }
 
@@ -724,4 +732,20 @@ singUpBtn.addEventListener("click",() => {
     libraryPnl.style.display = "none";
     searchPnl.style.display = "none";
     homePnl.style.display = "block";   
+    profilePnl.style.display = "none";
 })
+
+//profile setting
+
+const profilePnl = document.querySelector(".profilePnl");
+
+itemProfile.addEventListener("click",() => {
+    profilePnl.style.display = "block";
+    accountPnl2.style.display = "none";
+    accountPnl.style.display = "none";
+    libraryPnl.style.display = "none";
+    searchPnl.style.display = "none";
+    homePnl.style.display = "none";   
+
+})
+
