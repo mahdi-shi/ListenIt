@@ -2264,6 +2264,16 @@
     transition: 0.3s;
 }
 .container .search .aSongStyle img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    border-radius: 12px;
+    filter: brightness(85%);
+    transition: 0.4s;
+}
+.container .search .aSongStyle img:hover{
+    filter: brightness(120%);
 }
 .container .search .aSongStyle h3{
     text-align: center;
@@ -2276,9 +2286,10 @@
     font-size: 2em;
     user-select: none;
     transform: translate(-50%,80%);
+    z-index: 100;
 }
 .container .search .aSongStyle:nth-child(3){
-    transform: translate(530px,140px);
+    transform: translate(530px,40px);
 }
 .container .search .aSongStyle:nth-child(4){
     transform: translate(130px,80px);
@@ -2751,7 +2762,7 @@
     color: rgb(30, 31, 49);
 }
 
-/*----------------account panel style----------------*/
+/*----------------profile panel style----------------*/
 
 .container .profilePnl{
     position: absolute;
@@ -2860,4 +2871,1623 @@
     background-color:#8c87a5 ;
     border: none;
     color: black;
+}
+
+/*----------------game songs style----------------*/
+
+.container .gameStyle{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container .gameStyle img{
+    position: absolute;
+    width: 700px;
+    height: 500px;
+    left: 240px;
+    top: -100px;
+}
+.container .gameStyle .imageHelper{
+    position: absolute;
+    width: 1170px;
+    height: 300px;
+    left: 0px;
+    top: 250px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .gameStyle h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+}
+.container .gameStyle::-webkit-scrollbar{
+    width: 9px;
+}
+.container .gameStyle::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .gameStyle::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .gameStyle .aGameSong{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,200px);
+}
+.container .gameStyle .aGameSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .gameStyle .aGameSong .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .gameStyle .aGameSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .gameStyle .aGameSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .gameStyle .aGameSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .gameStyle .aGameSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .gameStyle .aGameSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .gameStyle .aGameSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 81%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+.container .gameStyle .aGameSong .mfyArtistSongName{
+    position: absolute;
+    color :rgb(182, 182, 182);
+    top: 87%;
+    left: 8%;
+    user-select: none;
+    font-size: 0.9em;
+}
+
+/*----------------chill songs style----------------*/
+
+.container .chillStyle{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container .chillStyle img{
+    position: absolute;
+    width: 1170px;
+    height: 500px;
+    left: 0px;
+}
+.container .chillStyle .imageHelper{
+    position: absolute;
+    width: 1170px;
+    height: 300px;
+    left: 0px;
+    top: 250px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .chillStyle h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+    z-index: 10;
+}
+.container .chillStyle::-webkit-scrollbar{
+    width: 9px;
+}
+.container .chillStyle::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .chillStyle::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .chillStyle .aChillSong{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,200px);
+}
+.container .chillStyle .aChillSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .chillStyle .aChillSong .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .chillStyle .aChillSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .chillStyle .aChillSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .chillStyle .aChillSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .chillStyle .aChillSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .chillStyle .aChillSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .chillStyle .aChillSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 81%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+.container .chillStyle .aChillSong .mfyArtistSongName{
+    position: absolute;
+    color :rgb(182, 182, 182);
+    top: 87%;
+    left: 8%;
+    user-select: none;
+    font-size: 0.9em;
+}
+
+/*---------------Fucos songs style----------------*/
+
+.container .focusStyle{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container .focusStyle img{
+    position: absolute;
+    width:1170px;
+    height: 600px;
+    left: 0px;
+    top: -100px;
+}
+.container .focusStyle .imageHelper{
+    position: absolute;
+    width: 1170px;
+    height: 300px;
+    left: 0px;
+    top: 200px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .focusStyle h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+}
+.container .focusStyle::-webkit-scrollbar{
+    width: 9px;
+}
+.container .focusStyle::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .focusStyle::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .focusStyle .aFocusSong{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,200px);
+}
+.container .focusStyle .aFocusSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .focusStyle .aFocusSong .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .focusStyle .aFocusSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .focusStyle .aFocusSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .focusStyle .aFocusSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .focusStyle .aFocusSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .focusStyle .aFocusSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .focusStyle .aFocusSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 81%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+.container .focusStyle .aFocusSong .mfyArtistSongName{
+    position: absolute;
+    color :rgb(182, 182, 182);
+    top: 87%;
+    left: 8%;
+    user-select: none;
+    font-size: 0.9em;
+}
+
+/*---------------Study songs style----------------*/
+
+.container .studyStyle{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container .studyStyle img{
+    position: absolute;
+    width:1170px;
+    height: 600px;
+    left: 0px;
+    top: -100px;
+    filter: brightness(70%);
+
+}
+.container .studyStyle .imageHelper{
+    position: absolute;
+    width: 1170px;
+    height: 300px;
+    left: 0px;
+    top: 200px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .studyStyle h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+}
+.container .studyStyle::-webkit-scrollbar{
+    width: 9px;
+}
+.container .studyStyle::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .studyStyle::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .studyStyle .aStudySong{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,200px);
+}
+.container .studyStyle .aStudySong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .studyStyle .aStudySong .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .studyStyle .aStudySong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .studyStyle .aStudySong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .studyStyle .aStudySong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .studyStyle .aStudySong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .studyStyle .aStudySong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .studyStyle .aStudySong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 81%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+.container .studyStyle .aStudySong .mfyArtistSongName{
+    position: absolute;
+    color :rgb(182, 182, 182);
+    top: 87%;
+    left: 8%;
+    user-select: none;
+    font-size: 0.9em;
+}
+
+/*---------------Anime songs style----------------*/
+
+.container .animeStyle{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container .animeStyle img{
+    position: absolute;
+    width:1140px;
+    height: 600px;
+    left: 0px;
+    top:0px;
+}
+.container .animeStyle .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 300px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .animeStyle h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+}
+.container .animeStyle::-webkit-scrollbar{
+    width: 9px;
+}
+.container .animeStyle::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .animeStyle::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .animeStyle .aAnimeSong{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,200px);
+}
+.container .animeStyle .aAnimeSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .animeStyle .aAnimeSong .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .animeStyle .aAnimeSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .animeStyle .aAnimeSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .animeStyle .aAnimeSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .animeStyle .aAnimeSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .animeStyle .aAnimeSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .animeStyle .aAnimeSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 81%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+.container .animeStyle .aAnimeSong .mfyArtistSongName{
+    position: absolute;
+    color :rgb(182, 182, 182);
+    top: 87%;
+    left: 8%;
+    user-select: none;
+    font-size: 0.9em;
+}
+
+/*---------------Rap songs style----------------*/
+
+.container .RapStyle{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container .RapStyle img{
+    position: absolute;
+    width:1140px;
+    height: 600px;
+    left: 0px;
+    top:0px;
+}
+.container .RapStyle .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 300px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .RapStyle h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+    z-index: 100;
+}
+.container .RapStyle::-webkit-scrollbar{
+    width: 9px;
+}
+.container .RapStyle::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .RapStyle::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .RapStyle .aRapSong{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,250px);
+}
+.container .RapStyle .aRapSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .RapStyle .aRapSong .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .RapStyle .aRapSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .RapStyle .aRapSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .RapStyle .aRapSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .RapStyle .aRapSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .RapStyle .aRapSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .RapStyle .aRapSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 81%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+.container .RapStyle .aRapSong .mfyArtistSongName{
+    position: absolute;
+    color :rgb(182, 182, 182);
+    top: 87%;
+    left: 8%;
+    user-select: none;
+    font-size: 0.9em;
+}
+
+/*---------------Pop songs style----------------*/
+
+.container .PopStyle{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container .PopStyle img{
+    position: absolute;
+    width:1140px;
+    height: 640px;
+    left: 0px;
+    top:0px;
+}
+.container .PopStyle .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 340px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .PopStyle h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+    z-index: 100;
+
+}
+.container .PopStyle::-webkit-scrollbar{
+    width: 9px;
+    z-index: 1000;
+}
+.container .PopStyle::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+    z-index: 1000;
+
+}
+.container .PopStyle::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+    z-index: 1000;
+
+}
+.container .PopStyle .aPopSong{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,240px);
+}
+.container .PopStyle .aPopSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .PopStyle .aPopSong .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .PopStyle .aPopSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .PopStyle .aPopSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .PopStyle .aPopSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .PopStyle .aPopSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .PopStyle .aPopSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .PopStyle .aPopSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 81%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+.container .PopStyle .aPopSong .mfyArtistSongName{
+    position: absolute;
+    color :rgb(182, 182, 182);
+    top: 87%;
+    left: 8%;
+    user-select: none;
+    font-size: 0.9em;
+}
+
+/*----------------chill songs style----------------*/
+
+.container .rAndbStyle{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container .rAndbStyle img{
+    position: absolute;
+    width:1140px;
+    height: 640px;
+    left: 0px;
+    top:-140px;
+}
+.container .rAndbStyle .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 200px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .rAndbStyle h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+    z-index: 100;
+}
+.container .rAndbStyle::-webkit-scrollbar{
+    width: 9px;
+}
+.container .rAndbStyle::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .rAndbStyle::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .rAndbStyle .arANDbSong{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,250px);
+}
+.container .rAndbStyle .arANDbSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .rAndbStyle .arANDbSong .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .rAndbStyle .arANDbSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .rAndbStyle .arANDbSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .rAndbStyle .arANDbSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .rAndbStyle .arANDbSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .rAndbStyle .arANDbSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .rAndbStyle .arANDbSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 81%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+.container .rAndbStyle .arANDbSong .mfyArtistSongName{
+    position: absolute;
+    color :rgb(182, 182, 182);
+    top: 87%;
+    left: 8%;
+    user-select: none;
+    font-size: 0.9em;
+}
+
+/*----------------calmness songs style----------------*/
+
+.container .calmnessStyle{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container .calmnessStyle img{
+    position: absolute;
+    width:1140px;
+    height: 640px;
+    left: 0px;
+    top:-140px;
+}
+.container .calmnessStyle .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 200px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .calmnessStyle h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+    z-index: 100;
+}
+.container .calmnessStyle::-webkit-scrollbar{
+    width: 9px;
+}
+.container .calmnessStyle::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .calmnessStyle::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .calmnessStyle .aCalmnessSong{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,230px);
+}
+.container .calmnessStyle .aCalmnessSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .calmnessStyle .aCalmnessSong .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .calmnessStyle .aCalmnessSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .calmnessStyle .aCalmnessSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .calmnessStyle .aCalmnessSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .calmnessStyle .aCalmnessSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .calmnessStyle .aCalmnessSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .calmnessStyle .aCalmnessSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 81%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+.container .calmnessStyle .aCalmnessSong .mfyArtistSongName{
+    position: absolute;
+    color :rgb(182, 182, 182);
+    top: 87%;
+    left: 8%;
+    user-select: none;
+    font-size: 0.9em;
+}
+
+/*----------------Classic songs style----------------*/
+
+.container .ClassicStyle{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container .ClassicStyle img{
+    position: absolute;
+    width:1140px;
+    height: 840px;
+    left: 0px;
+    user-select: none;
+    top:-260px;
+}
+.container .ClassicStyle .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 290px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .ClassicStyle h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+    z-index: 100;
+}
+.container .ClassicStyle::-webkit-scrollbar{
+    width: 9px;
+}
+.container .ClassicStyle::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .ClassicStyle::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .ClassicStyle .aClassicSong{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,250px);
+}
+.container .ClassicStyle .aClassicSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .ClassicStyle .aClassicSong .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .ClassicStyle .aClassicSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .ClassicStyle .aClassicSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .ClassicStyle .aClassicSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .ClassicStyle .aClassicSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .ClassicStyle .aClassicSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .ClassicStyle .aClassicSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 81%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+.container .ClassicStyle .aClassicSong .mfyArtistSongName{
+    position: absolute;
+    color :rgb(182, 182, 182);
+    top: 87%;
+    left: 8%;
+    user-select: none;
+    font-size: 0.9em;
+}
+
+/*----------------Russian songs style----------------*/
+
+.container .russianStyle{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container .russianStyle img{
+    position: absolute;
+    width:1140px;
+    height: 540px;
+    left: 0px;
+    user-select: none;
+    top:0px;
+}
+.container .russianStyle .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 250px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .russianStyle h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+    z-index: 100;
+}
+.container .russianStyle::-webkit-scrollbar{
+    width: 9px;
+}
+.container .russianStyle::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .russianStyle::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .russianStyle .aRussianSong{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,250px);
+}
+.container .russianStyle .aRussianSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .russianStyle .aRussianSong .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .russianStyle .aRussianSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .russianStyle .aRussianSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .russianStyle .aRussianSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .russianStyle .aRussianSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .russianStyle .aRussianSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .russianStyle .aRussianSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 81%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+.container .russianStyle .aRussianSong .mfyArtistSongName{
+    position: absolute;
+    color :rgb(182, 182, 182);
+    top: 87%;
+    left: 8%;
+    user-select: none;
+    font-size: 0.9em;
+}
+
+/*----------------Heavy songs style----------------*/
+
+.container .heavyStyle{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container .heavyStyle img{
+    position: absolute;
+    width:1140px;
+    height: 540px;
+    left: 0px;
+    user-select: none;
+    top:0px;
+}
+.container .heavyStyle .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 250px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .heavyStyle h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+    z-index: 100;
+}
+.container .heavyStyle::-webkit-scrollbar{
+    width: 9px;
+}
+.container .heavyStyle::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .heavyStyle::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .heavyStyle .aHeavySong{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,280px);
+}
+.container .heavyStyle .aHeavySong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .heavyStyle .aHeavySong .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .heavyStyle .aHeavySong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .heavyStyle .aHeavySong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .heavyStyle .aHeavySong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .heavyStyle .aHeavySong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .heavyStyle .aHeavySong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .heavyStyle .aHeavySong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 81%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+.container .heavyStyle .aHeavySong .mfyArtistSongName{
+    position: absolute;
+    color :rgb(182, 182, 182);
+    top: 87%;
+    left: 8%;
+    user-select: none;
+    font-size: 0.9em;
+}
+
+/*----------------Canada songs style----------------*/
+
+.container .canadaStyle{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container .canadaStyle img{
+    position: absolute;
+    width:1140px;
+    height: 540px;
+    left: 0px;
+    user-select: none;
+    top:0px;
+}
+.container .canadaStyle .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 240px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .canadaStyle h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+    z-index: 100;
+}
+.container .canadaStyle::-webkit-scrollbar{
+    width: 9px;
+}
+.container .canadaStyle::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .canadaStyle::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .canadaStyle .aCanadaSong{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,260px);
+}
+.container .canadaStyle .aCanadaSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .canadaStyle .aCanadaSong .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .canadaStyle .aCanadaSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .canadaStyle .aCanadaSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .canadaStyle .aCanadaSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .canadaStyle .aCanadaSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .canadaStyle .aCanadaSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .canadaStyle .aCanadaSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 81%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+.container .canadaStyle .aCanadaSong .mfyArtistSongName{
+    position: absolute;
+    color :rgb(182, 182, 182);
+    top: 87%;
+    left: 8%;
+    user-select: none;
+    font-size: 0.9em;
 }
