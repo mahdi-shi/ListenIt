@@ -4491,3 +4491,973 @@
     user-select: none;
     font-size: 0.9em;
 }
+
+/*----------------Artist panels----------------*/
+
+/*------------------jonys songs-----------------*/
+
+.container .jonyArts{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: block;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1099;
+    display: none;
+}
+.container .jonyArts button{
+    position: absolute;
+    top: 30px;
+    left: 990px;
+    z-index: 150;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid red;
+    color: red;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: transparent;
+    transition: 0.3s;
+}
+.container .jonyArts button:hover{
+    color: black;
+    background-color: red;
+    border: none;
+}
+.container .jonyArts img{
+    position: absolute;
+    width:1140px;
+    height: 540px;
+    left: 0px;
+    user-select: none;
+    top:0px;
+}
+.container .jonyArts .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 250px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .jonyArts h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+    z-index: 100;
+}
+.container .jonyArts::-webkit-scrollbar{
+    width: 9px;
+}
+.container .jonyArts::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .jonyArts::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .jonyArts .aJonySong{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,290px);
+}
+.container .jonyArts .aJonySong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .jonyArts .aJonySong .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .jonyArts .aJonySong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .jonyArts .aJonySong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .jonyArts .aJonySong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .jonyArts .aJonySong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .jonyArts .aJonySong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .jonyArts .aJonySong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 81%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+
+/*------------------isak songs-----------------*/
+
+.container .jonyArts{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: block;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1099;
+    display: none;
+}
+.container .jonyArts button{
+    position: absolute;
+    top: 30px;
+    left: 990px;
+    z-index: 150;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid red;
+    color: red;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: transparent;
+    transition: 0.3s;
+}
+.container .jonyArts button:hover{
+    color: black;
+    background-color: red;
+    border: none;
+}
+.container .jonyArts img{
+    position: absolute;
+    width:1140px;
+    height: 540px;
+    left: 0px;
+    user-select: none;
+    top:0px;
+}
+.container .jonyArts .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 250px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .jonyArts h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+    z-index: 100;
+}
+.container .jonyArts::-webkit-scrollbar{
+    width: 9px;
+}
+.container .jonyArts::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .jonyArts::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .jonyArts .aJonySong{
+    position: relative;
+    width: 220px;
+    height: 260px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,290px);
+}
+.container .jonyArts .aJonySong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .jonyArts .aJonySong .image{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .jonyArts .aJonySong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .jonyArts .aJonySong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .jonyArts .aJonySong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .jonyArts .aJonySong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .jonyArts .aJonySong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .jonyArts .aJonySong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 81%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+
+/*------------------isak songs-----------------*/
+
+.container .isakArts{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1099;
+}
+.container .isakArts button{
+    position: absolute;
+    top: 30px;
+    left: 990px;
+    z-index: 150;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid red;
+    color: red;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: transparent;
+    transition: 0.3s;
+}
+.container .isakArts button:hover{
+    color: black;
+    background-color: red;
+    border: none;
+}
+.container .isakArts img{
+    position: absolute;
+    width:1140px;
+    height: 540px;
+    left: 0px;
+    user-select: none;
+    top:0px;
+}
+.container .isakArts .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 248px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .isakArts h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+    z-index: 100;
+}
+.container .isakArts::-webkit-scrollbar{
+    width: 9px;
+}
+.container .isakArts::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .isakArts::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .isakArts .aIsakSong{
+    position: relative;
+    width: 220px;
+    height: 240px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,290px);
+}
+.container .isakArts .aIsakSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .isakArts .aIsakSong .image{
+    position: absolute;
+    width: 84%;
+    height: 70%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .isakArts .aIsakSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .isakArts .aIsakSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .isakArts .aIsakSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .isakArts .aIsakSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .isakArts .aIsakSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .isakArts .aIsakSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 84%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+
+/*------------------isak songs-----------------*/
+
+.container .mozartArts{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1099;
+}
+.container .mozartArts button{
+    position: absolute;
+    top: 30px;
+    left: 990px;
+    z-index: 150;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid red;
+    color: red;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: transparent;
+    transition: 0.3s;
+}
+.container .mozartArts button:hover{
+    color: black;
+    background-color: red;
+    border: none;
+}
+.container .mozartArts img{
+    position: absolute;
+    width:1140px;
+    height: 990px;
+    left: 0px;
+    user-select: none;
+    top:0px;
+}
+.container .mozartArts .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 690px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .mozartArts h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+    z-index: 100;
+}
+.container .mozartArts::-webkit-scrollbar{
+    width: 9px;
+}
+.container .mozartArts::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .mozartArts::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .mozartArts .aMozartSong{
+    position: relative;
+    width: 220px;
+    height: 240px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,290px);
+}
+.container .mozartArts .aMozartSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .mozartArts .aMozartSong .image{
+    position: absolute;
+    width: 84%;
+    height: 70%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .mozartArts .aMozartSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .mozartArts .aMozartSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .mozartArts .aMozartSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .mozartArts .aMozartSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .mozartArts .aMozartSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .mozartArts .aMozartSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 84%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+
+/*------------------rauf and faik songs-----------------*/
+
+.container .raufANDfaik{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1099;
+}
+.container .raufANDfaik button{
+    position: absolute;
+    top: 30px;
+    left: 990px;
+    z-index: 150;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid red;
+    color: red;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: transparent;
+    transition: 0.3s;
+}
+.container .raufANDfaik button:hover{
+    color: black;
+    background-color: red;
+    border: none;
+}
+.container .raufANDfaik img{
+    position: absolute;
+    width:1140px;
+    height: 990px;
+    left: 0px;
+    user-select: none;
+    top:0px;
+}
+.container .raufANDfaik .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 690px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .raufANDfaik h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+    z-index: 100;
+}
+.container .raufANDfaik::-webkit-scrollbar{
+    width: 9px;
+}
+.container .raufANDfaik::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .raufANDfaik::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .raufANDfaik .arAndfSong{
+    position: relative;
+    width: 220px;
+    height: 240px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,290px);
+}
+.container .raufANDfaik .arAndfSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .raufANDfaik .arAndfSong .image{
+    position: absolute;
+    width: 84%;
+    height: 70%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .raufANDfaik .arAndfSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .raufANDfaik .arAndfSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .raufANDfaik .arAndfSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .raufANDfaik .arAndfSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .raufANDfaik .arAndfSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .raufANDfaik .arAndfSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 84%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+
+/*------------------Lubalin songs-----------------*/
+
+.container .lubalinArts{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1099;
+}
+.container .lubalinArts button{
+    position: absolute;
+    top: 30px;
+    left: 990px;
+    z-index: 150;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid red;
+    color: red;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: transparent;
+    transition: 0.3s;
+}
+.container .lubalinArts button:hover{
+    color: black;
+    background-color: red;
+    border: none;
+}
+.container .lubalinArts img{
+    position: absolute;
+    width:1140px;
+    height: 700px;
+    left: 0px;
+    user-select: none;
+    top:0px;
+}
+.container .lubalinArts .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 410px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .lubalinArts h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,10px);
+    z-index: 100;
+}
+.container .lubalinArts::-webkit-scrollbar{
+    width: 9px;
+}
+.container .lubalinArts::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .lubalinArts::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .lubalinArts .aLubalinSong{
+    position: relative;
+    width: 220px;
+    height: 240px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,290px);
+}
+.container .lubalinArts .aLubalinSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .lubalinArts .aLubalinSong .image{
+    position: absolute;
+    width: 84%;
+    height: 70%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .lubalinArts .aLubalinSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .lubalinArts .aLubalinSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .lubalinArts .aLubalinSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .lubalinArts .aLubalinSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .lubalinArts .aLubalinSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .lubalinArts .aLubalinSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 84%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
+
+/*------------------Lubalin songs-----------------*/
+
+.container .aaryanShahArts{
+    position: absolute;
+    width: 84.6%;
+    height: 77%;
+    display: none;
+    top: 10%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1099;
+}
+.container .aaryanShahArts button{
+    position: absolute;
+    top: 30px;
+    left: 990px;
+    z-index: 150;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid red;
+    color: red;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: transparent;
+    transition: 0.3s;
+}
+.container .aaryanShahArts button:hover{
+    color: black;
+    background-color: red;
+    border: none;
+}
+.container .aaryanShahArts img{
+    position: absolute;
+    width:1140px;
+    height: 630px;
+    left: 0px;
+    user-select: none;
+    top:0px;
+}
+.container .aaryanShahArts .imageHelper{
+    position: absolute;
+    width: 1150px;
+    height: 300px;
+    left: 0px;
+    top: 330px;
+    background:linear-gradient(transparent,#14131b);
+}
+.container .aaryanShahArts h1{
+    position: absolute;
+    font-size: 2.2em;
+    color: #fff;
+    transform: translate(70px,30px);
+    z-index: 100;
+}
+.container .aaryanShahArts::-webkit-scrollbar{
+    width: 9px;
+}
+.container .aaryanShahArts::-webkit-scrollbar-track{
+    background-color: rgb(26, 24, 24);
+}
+.container .aaryanShahArts::-webkit-scrollbar-thumb {
+    background: rgb(43, 40, 56);
+    cursor: pointer;
+}
+.container .aaryanShahArts .aAaryanShahSong{
+    position: relative;
+    width: 220px;
+    height: 240px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 40px;
+    margin-left: 30px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.9;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    display: inline-block;
+    transform: translate(80px,290px);
+}
+.container .aaryanShahArts .aAaryanShahSong:hover{
+    background-color: rgb(47, 49, 77);
+}
+.container .aaryanShahArts .aAaryanShahSong .image{
+    position: absolute;
+    width: 84%;
+    height: 70%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 8px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .aaryanShahArts .aAaryanShahSong .image p{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 4em;
+}
+.container .aaryanShahArts .aAaryanShahSong .image .mfyPlayBox{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(123px,140px);
+}
+.container .aaryanShahArts .aAaryanShahSong:hover .image .mfyPlayBox{
+    opacity: 1;
+    transform: translate(123px,120px);
+}
+.container .aaryanShahArts .aAaryanShahSong .image .mfyPlayBox:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
+}
+.container .aaryanShahArts .aAaryanShahSong .image img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .aaryanShahArts .aAaryanShahSong .mfySongName{
+    position: absolute;
+    color :rgb(255, 255, 255);
+    top: 84%;
+    left: 8%;
+    transform: translateY(-9px);
+    user-select: none;
+    font-size: 1.1em;
+}
