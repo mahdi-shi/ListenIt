@@ -5461,3 +5461,290 @@
     user-select: none;
     font-size: 1.1em;
 }
+
+/*------------------screern hider for song player box-----------------*/
+
+.container #screenHider{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: #000;
+    opacity: 0.6;
+    display: block;
+    transition: 0.2s;
+}
+.container .songPlayerMiddleBox{
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    background-color:#161829;
+    z-index: 180;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    transition: 0.2s;
+}
+.container .songPlayerMiddleBox #closeBtn{
+    position: absolute;
+    left: 88%;
+    top: 1%;
+    fill: rgb(51, 53, 82);
+    cursor: pointer;
+    user-select: none;
+    transition: 0.2s;
+}
+.container .songPlayerMiddleBox #closeBtn:hover{
+    fill: rgb(81, 83, 112);
+}
+.container .songPlayerMiddleBox #likeEmptyBtn{
+    position: absolute;
+    left: 4%;
+    top: 3%;
+    cursor: pointer;
+    font: inherit;
+    fill: #b00000;
+    transition: 0.2s;
+    display: block;
+}
+.container .songPlayerMiddleBox #likeEmptyBtn:hover{
+    fill: red;
+}
+.container .songPlayerMiddleBox #likeFullBtn{
+    position: absolute;
+    left: 4%;
+    top: 3%;
+    fill: #b00000;
+    cursor: pointer;
+    transition: 0.2s;
+    display: none;
+}
+.container .songPlayerMiddleBox #likeFullBtn:hover{
+    fill: red;
+}
+.container .songPlayerMiddleBox #playSongBtn{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 87%;
+    cursor: pointer;
+    fill: #b00000;
+    display: block;
+    transition: 0.1s;
+}
+.container .songPlayerMiddleBox #playSongBtn:hover{
+    fill: red;
+}
+.container .songPlayerMiddleBox #pauseSongBtn{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 87%;
+    cursor: pointer;
+    display: none;
+}
+.container .songPlayerMiddleBox #nextSongBtn{
+    position: absolute;
+    left: 60%;
+    top: 87%;
+    fill: #b00000;
+    display: block;
+    transition: 0.1s;    cursor: pointer;
+}
+.container .songPlayerMiddleBox #nextSongBtn:hover{
+    fill: red;
+}
+.container .songPlayerMiddleBox #beforeSongBtn{
+    position: absolute;
+    left: 27%;
+    top: 87%;
+    fill: #b00000;
+    display: block;
+    transition: 0.1s;   
+     transform: rotate(180deg);
+    cursor: pointer;
+}
+.container .songPlayerMiddleBox #beforeSongBtn:hover{
+    fill: red;
+}
+.container .songPlayerMiddleBox #songRepeatBtn{
+    position: absolute;
+    left: 77%;
+    top: 88%;
+    display: block;
+    transform: rotate(180deg);
+    cursor: pointer;
+    fill: #b00000;
+    transition: 0.1s;
+}
+.container .songPlayerMiddleBox #songRepeatBtn:hover{
+    fill: red;
+}
+.container .songPlayerMiddleBox #songOrderBtn{
+    position: absolute;
+    left: 13%;
+    top: 88%;
+    display: block;
+    transform: rotate(180deg);
+    transition: 0.1s;
+    fill: #b00000;
+    cursor: pointer;
+}
+.container .songPlayerMiddleBox #songOrderBtn:hover{
+    fill: red;
+}
+.container .songPlayerMiddleBox input[type = "range"]{
+    -webkit-appearance: none;
+    outline: none;
+    height: 5px;
+    cursor: pointer;
+    margin: 0 15px;
+    width: 80%;
+    border-radius: 20px;
+    fill: rgb(192, 35, 35);
+}
+.container .songPlayerMiddleBox input[type = "range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); ;
+}
+.container .songPlayerMiddleBox input[type = "range"]:hover::-webkit-slider-thumb{
+    display: block;
+}
+.container .songPlayerMiddleBox #progressBarValue2{
+    position: absolute;
+    left: 5.0%;
+    top: 80%;
+    background-color: rgb(47, 42, 61);
+}
+.container .songPlayerMiddleBox #rangeHelper2{
+    position: absolute;
+    height: 5px;
+    cursor: pointer;
+    width: 0px;
+    border-radius: 20px;
+    background-color: rgb(255, 0, 0);
+    left: 9%;
+    top: 80%;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    z-index: 90;
+}
+.container .songPlayerMiddleBox #audioLowBtn{
+    position: absolute;
+    top: 68%;
+    left: 2%;
+    transform: rotate(-90deg);
+    cursor: pointer;
+    fill: #b00000;
+    transition: 0.2s;
+}
+.container .songPlayerMiddleBox #audioLowBtn:hover{
+    fill: red;
+}
+.container .songPlayerMiddleBox #audioMiddleBtn{
+    position: absolute;
+    top: 67%;
+    left: 2%;
+    transform: rotate(-90deg);
+    cursor: pointer;
+    fill: #b00000;
+    display: none;
+}
+.container .songPlayerMiddleBox #audioMiddleBtn:hover{
+    fill: red;
+}
+.container .songPlayerMiddleBox #audioUpBtn{
+    position: absolute;
+    top: 66%;
+    left: 2%;
+    transform: rotate(-90deg);
+    cursor: pointer;
+    fill: #b00000;
+    display: none;
+    transition: 0.2s;
+}
+.container .songPlayerMiddleBox #audioUpBtn:hover{
+    fill: red;
+}
+.container .songPlayerMiddleBox #addPlayListBtn:hover{
+    fill: red;
+}
+.container .songPlayerMiddleBox #addPlayListBtn{
+    position: absolute;
+    top: 70%;
+    left: 88%;
+    cursor: pointer;
+    transition: 0.2s;
+    fill: #b00000;
+}
+.container .songPlayerMiddleBox #voloumBarValue2{
+    -webkit-appearance: none;
+    outline: none;
+    height: 5px;
+    cursor: pointer;
+    margin: 0 15px;
+    width: 19%;
+    border-radius: 20px;
+    fill: rgb(192, 35, 35);
+    position: absolute;
+    left: -5.5%;
+    top: 59%;
+    transform: rotate(-90deg);
+    background-color: rgb(55, 51, 82);
+}
+.container .songPlayerMiddleBox #voloumBarValue2::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); 
+}
+.container .songPlayerMiddleBox #voloumRangeHelper2{
+    position: fixed;
+    height: 10px;
+    cursor: pointer;
+    width: 5px;
+    border-radius: 20px;
+    background-color: rgb(255, 0, 0);
+    left: 7.3%;
+    top: 65%;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+.container .songPlayerMiddleBox #fullScreenBtn{
+    position: absolute;
+    transition: 0.2s;
+    left: 15%;
+    cursor: pointer;
+    fill: #b00000;
+    top: 2.4%;
+}
+.container .songPlayerMiddleBox #fullScreenBtn:hover{
+    fill: red;
+}
+.container .songPlayerMiddleBox .PlayerimageBox{
+    position: absolute;
+    width: 73%;
+    height: 54%;
+    background-color: #181a2e;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    left: 13%;
+    top: 12%;
+}
+.container .songPlayerMiddleBox #MiddleSongName{
+    color: #8780b4;
+    text-align: center;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold
+}

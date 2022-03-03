@@ -480,7 +480,9 @@ pushPlsong.addEventListener("click",() => {
     }
 
 })
+
 //home panel
+
 const homeItem = document.querySelector("#homeItem");
 homeItem.addEventListener("click",() => {
     homePnl.style.display = "block";
@@ -1180,4 +1182,117 @@ canadaStylePnl.addEventListener("click",() => {
     russianStyle.style.display = "none";
     heavyStyle.style.display = "none";
     canadaStyle.style.display = "block";
+})
+
+// control the progress bar value 2
+
+const progressBarValue2 = document.querySelector("#progressBarValue2");
+const progressBarValueHelper2 = document.querySelector("#rangeHelper2");
+const voloumBarValue2 = document.querySelector("#voloumBarValue2");
+const voloumRangeHelper2 = document.querySelector("#voloumRangeHelper2");
+
+function rangeChainger2(){
+    progressBarValueHelper2.style.width = progressBarValue2.value * 11 / 3.5 - 1 + "px";
+}
+function voloumRangeChainger2(){
+    voloumRangeHelper2.style.height = voloumBarValue2.value - 30 + "px";
+    let i = -voloumBarValue2.value + 40;
+    voloumRangeHelper2.style.transform = "translateY("+ i+"px"+")";
+}
+
+// audio vollom 
+
+const audioLowBtn = document.querySelector("#audioLowBtn");
+const audioMiddleBtn = document.querySelector("#audioMiddleBtn");
+const audioUpBtn = document.querySelector("#audioUpBtn");
+
+audioLowBtn.addEventListener("click",() => {
+    audioLowBtn.style.display = "none";
+    audioUpBtn.style.display = "block";
+    voloumBarValue2.value = 100;
+    voloumRangeHelper2.style.height = 72 + "px";
+    voloumRangeHelper2.style.transform = "translateY("+ -63 +"px"+")";
+})
+audioUpBtn.addEventListener("click",() => {
+    audioLowBtn.style.display = "block";
+    audioUpBtn.style.display = "none";
+    voloumBarValue2.value = 0;
+    voloumRangeHelper2.style.height = 0 + "px";
+})
+voloumBarValue.addEventListener("click",() => {
+    if(voloumBarValue.value < 30){
+        audioLowBtn.style.display = "block"
+        audioMiddleBtn.style.display = "none";
+        audioUpBtn.style.display = "none";
+    }
+    else if(voloumBarValue.value < 70){
+        audioLowBtn.style.display = "none"
+        audioMiddleBtn.style.display = "block";
+        audioUpBtn.style.display = "none";
+    }
+    else if(voloumBarValue.value < 100){
+        audioLowBtn.style.display = "none"
+        audioMiddleBtn.style.display = "none";
+        audioUpBtn.style.display = "block";    
+    }
+})
+
+//close the middel player Box
+
+const closeBtn = document.querySelector("#closeBtn");
+const screenHider = document.querySelector("#screenHider");
+const songPlayerMiddleBox = document.querySelector(".songPlayerMiddleBox");
+
+closeBtn.addEventListener("click",() => {
+    songPlayerMiddleBox.style.opacity = 0;
+    songPlayerMiddleBox.style.transform = "translate(-50%,-40%)"
+    screenHider.style.opacity = 0;
+    setTimeout(() => {
+        screenHider.style.display = "none";
+        songPlayerMiddleBox.style.display = "none";
+    },100)
+})
+
+// order play song setting
+
+const songRepeatBtn = document.querySelector("#songRepeatBtn");
+const songOrderBtn = document.querySelector("#songOrderBtn");
+let songOrderState = false;
+let songRepeatState = false;
+
+songRepeatBtn.addEventListener("click",() =>{
+    if(songRepeatState == false){
+        songRepeatBtn.style.fill = "red";
+        songOrderBtn.style.fill = "rgb(150, 0, 0)";
+        songRepeatState = true;
+    }
+    else{
+        songRepeatBtn.style.fill = "rgb(150, 0, 0)";
+        songRepeatState = false;    
+    }
+})
+songOrderBtn.addEventListener("click",() =>{
+    if(songOrderState == false){
+        songOrderBtn.style.fill = "red";
+        songRepeatBtn.style.fill = "rgb(150, 0, 0)";
+        songOrderState = true;
+    }
+    else{
+        songOrderBtn.style.fill = "rgb(150, 0, 0)";
+        songOrderState = false;    
+    }
+})
+
+//like the middle songs
+
+const likeFullBtn = document.querySelector("#likeFullBtn");
+const likeEmptyBtn = document.querySelector("#likeEmptyBtn");
+
+likeFullBtn.addEventListener("click",() =>{
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+})
+likeEmptyBtn.addEventListener("click",() =>{
+    likeFullBtn.style.display = "block";
+    likeEmptyBtn.style.display = "none";
 })
