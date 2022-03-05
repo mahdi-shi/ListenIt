@@ -470,6 +470,20 @@
     text-align: right;
     transition: 0.2s;
 }
+.container .songControler #middlePlayerOpener{
+    color: red;
+    position: absolute;
+    left: 82.5%;
+    top: -6%;
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(10px);
+}
+.container .songControler:hover #middlePlayerOpener{
+    opacity: 1;
+    transform: translateY(0px);
+}
 .container .songControler #songName:hover{
     color: rgb(224, 224, 224);
 }
@@ -561,7 +575,7 @@
     z-index: 700;
     background-color: black;
     opacity: 0.7;
-    display: block  ;
+    display: none;
 }
 /*             home panel style               */
 .container .home{
@@ -5470,8 +5484,8 @@
     height: 100%;
     z-index: 100;
     background-color: #000;
-    opacity: 0.6;
-    display: block;
+    opacity: 0;
+    display: none;
     transition: 0.2s;
 }
 .container .songPlayerMiddleBox{
@@ -5485,6 +5499,8 @@
     left: 50%;
     top: 50%;
     transition: 0.2s;
+    display: none;
+    opacity: 1;
 }
 .container .songPlayerMiddleBox #closeBtn{
     position: absolute;
@@ -5557,12 +5573,12 @@
 }
 .container .songPlayerMiddleBox #beforeSongBtn{
     position: absolute;
-    left: 27%;
+    left: 30%;
     top: 87%;
     fill: #b00000;
     display: block;
     transition: 0.1s;   
-     transform: rotate(180deg);
+    transform: rotate(180deg);
     cursor: pointer;
 }
 .container .songPlayerMiddleBox #beforeSongBtn:hover{
@@ -5570,8 +5586,8 @@
 }
 .container .songPlayerMiddleBox #songRepeatBtn{
     position: absolute;
-    left: 77%;
-    top: 88%;
+    left: 75%;
+    top: 87.6%;
     display: block;
     transform: rotate(180deg);
     cursor: pointer;
@@ -5583,8 +5599,8 @@
 }
 .container .songPlayerMiddleBox #songOrderBtn{
     position: absolute;
-    left: 13%;
-    top: 88%;
+    left: 17%;
+    top: 87.7%;
     display: block;
     transform: rotate(180deg);
     transition: 0.1s;
@@ -5747,4 +5763,246 @@
     left: 50%;
     transform: translateX(-50%);
     font-weight: bold
+}
+.container .fullScreenSongPlayer{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #161726;
+    z-index: 10000;
+    transition: 0.3s;
+    opacity: 0;
+    display: none;
+}
+.container .fullScreenSongPlayer #closeFullSBtn{
+    position: absolute;
+    left: 96%;
+    top: 2%;
+    fill: #4c4f6b;
+    cursor: pointer;
+    user-select: none;
+    transition:0.2s;
+    z-index: 10;
+}
+.container .fullScreenSongPlayer #closeFullSBtn:hover{
+    fill:#6c71a3;
+}
+.container .fullScreenSongPlayer #playSongFullSBtn{
+    position: absolute;
+    left: 7%;
+    top: 90%;
+    cursor: pointer;
+    fill: #b00000;
+    display: block;
+    transition: 0.1s;
+    z-index: 10;
+}
+.container .fullScreenSongPlayer #playSongFullSBtn:hover{
+    fill: red;
+}
+.container .fullScreenSongPlayer #pauseSongFullSBtn{
+    position: absolute;
+    left: 7%;
+    transform: translateX(-50%);
+    top: 90%;
+    cursor: pointer;
+    display: none;
+    z-index: 10;
+}
+.container .fullScreenSongPlayer #nextSongFullSBtn{
+    position: absolute;
+    left: 10%;
+    top: 90%;
+    fill: #b00000;
+    display: block;
+    transition: 0.1s;    cursor: pointer;
+    z-index: 10;
+}
+.container .fullScreenSongPlayer #nextSongFullSBtn:hover{
+    fill: red;
+}
+.container .fullScreenSongPlayer #beforeSongFullSBtn{
+    position: absolute;
+    left: 4%;
+    top: 90%;
+    fill: #b00000;
+    display: block;
+    transition: 0.1s;   
+    transform: rotate(180deg);
+    cursor: pointer;
+    z-index: 10;
+}
+.container .fullScreenSongPlayer #beforeSongFullSBtn:hover{
+    fill: red;
+}
+.container .fullScreenSongPlayer #songRepeatFullSBtn{
+    position: absolute;
+    left: 1%;
+    top: 90%;
+    display: block;
+    transform: rotate(180deg);
+    cursor: pointer;
+    fill: #b00000;
+    transition: 0.1s;
+    z-index: 10;
+}
+.container .fullScreenSongPlayer #songRepeatFullSBtn:hover{
+    fill: red;
+}
+.container .fullScreenSongPlayer #songOrderFullSBtn{
+    position: absolute;
+    left: 13.3%;
+    top: 90.4%;
+    display: block;
+    transform: rotate(180deg);
+    transition: 0.1s;
+    fill: #b00000;
+    cursor: pointer;
+    z-index: 10;
+}
+.container .fullScreenSongPlayer #songOrderFullSBtn:hover{
+    fill: red;
+}
+.container .fullScreenSongPlayer input[type = "range"]{
+    -webkit-appearance: none;
+    outline: none;
+    height: 5px;
+    cursor: pointer;
+    margin: 0 15px;
+    width: 63%;
+    border-radius: 20px;
+    fill: rgb(192, 35, 35);
+}
+.container .fullScreenSongPlayer input[type = "range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); ;
+}
+.container .fullScreenSongPlayer input[type = "range"]:hover::-webkit-slider-thumb{
+    display: block;
+}
+.container .fullScreenSongPlayer #progressBarFullSValue2{
+    position: absolute;
+    left: 20%;
+    top: 93%;
+    background-color: rgb(47, 42, 61);
+}
+.container .fullScreenSongPlayer #rangeHelper2FullS{
+    position: absolute;
+    height: 5px;
+    cursor: pointer;
+    width: 0px;
+    border-radius: 20px;
+    background-color: rgb(255, 0, 0);
+    left: 21.2%;
+    top: 93%;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    z-index: 90;
+}
+.container .fullScreenSongPlayer #voloumBarFullSValue2{
+    -webkit-appearance: none;
+    outline: none;
+    height: 5px;
+    cursor: pointer;
+    margin: 0 15px;
+    width: 6%;
+    border-radius: 20px;
+    fill: rgb(192, 35, 35);
+    position: absolute;
+    left: 92%;
+    top: 93%;
+    background-color: rgb(55, 51, 82);
+}
+.container .fullScreenSongPlayer #voloumBarFullSValue2::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); 
+}
+.container .fullScreenSongPlayer #voloumRangeHelper2FullS{
+    position: fixed;
+    height: 5px;
+    cursor: pointer;
+    width: 0px;
+    border-radius: 20px;
+    background-color: rgb(255, 0, 0);
+    left: 93%;
+    top: 93%;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+.container .fullScreenSongPlayer #audioLowBtn2{
+    position: absolute;
+    top: 89.6%;
+    left: 89%;
+    cursor: pointer;
+    fill: #b00000;
+    transition: 0.2s;
+}
+.container .fullScreenSongPlayer #audioLowBtn2:hover{
+    fill: red;
+}
+.container .fullScreenSongPlayer #audioMiddleBtn2{
+    position: absolute;
+    top: 89.6%;
+    left: 89.3%;
+    cursor: pointer;
+    fill: #b00000;
+    display: none;
+}
+.container .fullScreenSongPlayer #audioMiddleBtn2:hover{
+    fill: red;
+}
+.container .fullScreenSongPlayer #audioUpBtn2{
+    position: absolute;
+    top: 89.6%;
+    left: 89.6%;
+    cursor: pointer;
+    fill: #b00000;
+    display: none;
+    transition: 0.2s;
+}
+.container .fullScreenSongPlayer #audioUpBtn2:hover{
+    fill: red;
+}
+.container .fullScreenSongPlayer #FullSTimeLeft{
+    user-select: none;
+    position: absolute;
+    font-weight: bold;
+    color: rgba(255,255,255,0.5);
+    top: 92%;
+    left: 18%;
+}
+.container .fullScreenSongPlayer #FullSTimeRiming{
+    user-select: none;
+    position: absolute;
+    font-weight: bold;
+    color: rgba(255,255,255,0.5);
+    top: 92%;
+    left: 85%;
+}
+.container .fullScreenSongPlayer .PlayerimageBoxFullS{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.container .fullScreenSongPlayer .PlayerimageBoxFullS img{
+    width: 100%;
+    height: 100%;
+    filter: blur(5px);
+}
+.show{
+    transition: 0.4s;
+    opacity: 1;
+}
+.show2{
+    opacity: 0;
+    transition: 0.4s;
 }
