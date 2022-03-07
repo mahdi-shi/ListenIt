@@ -1632,6 +1632,7 @@
     display: block;
     top: 24%;
     overflow-y: auto;
+    padding-bottom: 40px;
 }
 .container .library .playListPnl::-webkit-scrollbar{
     width: 9px;
@@ -1683,6 +1684,7 @@
     cursor: pointer;
     transition: 0.3s;
 }
+
 .container .library .playListPnl .addPlaylist:hover{
     border:10px solid rgb(79, 81, 116);
 }
@@ -1708,6 +1710,9 @@
     z-index: 10;
     display: inline-block;
 }
+.container .library .playListPnl .AplayList:nth-child(3){
+    margin-left: 320px;
+}
 .container .library .playListPnl .AplayList:hover{
     background-color: rgb(47, 49, 77);
 }
@@ -1725,6 +1730,16 @@
     justify-content: center;
     align-items: center;
     display: flex;
+}
+.container .library .playListPnl .AplayList .image .playlistImage{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    filter: brightness(70%);
+    transition: 0.3s;
+}
+.container .library .playListPnl .AplayList:hover .image .playlistImage{
+    filter: brightness(100%);
 }
 .container .library .playListPnl .AplayList .image p{
     color: rgba(35, 36, 51, 0.685);

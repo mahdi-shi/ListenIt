@@ -567,6 +567,7 @@ libraryPnlItem3.addEventListener("click",() => {
 });
 //create a playlist
 
+const playListPnl = document.querySelector(".playListPnl");
 const plDetailsPnlBtn = document.querySelector(".addPlaylist");
 const plDetailsPnl = document.querySelector(".addPlaylistDetails");
 const hiderPnl = document.querySelector(".hiderPnl");
@@ -597,8 +598,6 @@ hiderPnl.addEventListener("click",() => {
 
 addPlaylistDetailsButton.addEventListener("click",() => {
     addPlaylistDetailsDescriptionBox.value = "";
-    addPlaylistDetailsImageBox.value = "";
-    addPlaylistDetailsNameBox.value = "";
     hiderPnl.style.display = "none";
     hiderPnl.style.opacity = 0;
     plDetailsPnl.style.transform = " translate("+-50+"%,"+-20+"%)";
@@ -606,6 +605,84 @@ addPlaylistDetailsButton.addEventListener("click",() => {
     setTimeout(() =>{
         plDetailsPnl.style.display = "none";
     },100)
+
+    try{
+    let Aplaylist = document.createElement("div");
+    let playlistName = document.createElement("H3");
+    let playlistNameContent = document.createTextNode(addPlaylistDetailsNameBox.value);
+    let playlistImageBox = document.createElement("div");
+    let playlistDefulfImage = document.createElement("p");
+    let playlistDefulfImageContent = document.createTextNode("Lt");    
+    let playSongImage = document.createElement("img");
+    let playlistImage = document.createElement("img");
+    let playlistImagePath = addPlaylistDetailsImageBox.value;
+
+    var input = addPlaylistDetailsImageBox;
+    var fReader = new FileReader();
+    fReader.readAsDataURL(input.files[0]);
+    fReader.onloadend = function(event){
+    var img = playlistImage
+    img.src = event.target.result;
+    }
+
+    playlistImage.classList.add("playlistImage");
+    playlistImage.src = playlistImagePath;
+    playlistImageBox.appendChild(playlistImage);
+    
+    playSongImage.classList.add("mfyPlayBox");
+    playSongImage.src = "images/play-64.png";
+    playlistImageBox.append(playSongImage);
+    Aplaylist.classList.add("AplayList");
+    playlistImageBox.classList.add("image");
+    playlistImageBox.appendChild(playlistDefulfImage)
+    playlistName.appendChild(playlistNameContent)
+    playlistName.classList.add("mfySongName");
+    playlistDefulfImage.appendChild(playlistDefulfImageContent);
+    Aplaylist.appendChild(playlistName);
+    Aplaylist.appendChild(playlistImageBox);
+    playListPnl.appendChild(Aplaylist);
+    }
+    catch{
+        let Aplaylist = document.createElement("div");
+
+        let playlistName = document.createElement("H3");
+    
+        let playlistNameContent = document.createTextNode(addPlaylistDetailsNameBox.value);
+    
+        let playlistImageBox = document.createElement("div");
+    
+        let playlistDefulfImage = document.createElement("p");
+    
+        let playlistDefulfImageContent = document.createTextNode("Lt");    
+    
+        let playSongImage = document.createElement("img");
+    
+        playSongImage.classList.add("mfyPlayBox");
+    
+        playSongImage.src = "images/play-64.png";
+    
+        playlistImageBox.append(playSongImage);
+    
+        Aplaylist.classList.add("AplayList");
+    
+        playlistImageBox.classList.add("image");
+    
+        playlistImageBox.appendChild(playlistDefulfImage)
+    
+        playlistName.appendChild(playlistNameContent)
+    
+        playlistName.classList.add("mfySongName");
+    
+        playlistDefulfImage.appendChild(playlistDefulfImageContent);
+        Aplaylist.appendChild(playlistName);
+        Aplaylist.appendChild(playlistImageBox);
+    
+        playListPnl.appendChild(Aplaylist);
+    
+    }
+
+    addPlaylistDetailsNameBox.value = "";
+    addPlaylistDetailsImageBox.value = "";
 })
 
 // search panel 
@@ -665,7 +742,7 @@ itemPlaylist.addEventListener("click",() => {
     rapStyle.style.display = "none";
     accountPnl2.style.display = "none";
     gameStyle.style.display = "none";
-    chillStyle.tyle.display = "none";
+    chillStyle.style.display = "none";
     focusStyle.style.display = "none";
     studyStyle.style.display = "none";
     PopStyle.style.display = "none";
@@ -867,7 +944,7 @@ itemProfile.addEventListener("click",() => {
     homePnl.style.display = "none";   
     gameStyle.style.display = "none";
     chillStyle.style.display = "none";
-    focusStyle.tyle.display = "none";
+    focusStyle.style.display = "none";
     animeStyle.style.display = "none";
     rapStyle.style.display = "none";
     calmnessStyle.style.display = "none";
