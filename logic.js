@@ -607,15 +607,15 @@ addPlaylistDetailsButton.addEventListener("click",() => {
     },100)
 
     try{
-    let Aplaylist = document.createElement("div");
-    let playlistName = document.createElement("H3");
-    let playlistNameContent = document.createTextNode(addPlaylistDetailsNameBox.value);
-    let playlistImageBox = document.createElement("div");
-    let playlistDefulfImage = document.createElement("p");
-    let playlistDefulfImageContent = document.createTextNode("Lt");    
-    let playSongImage = document.createElement("img");
-    let playlistImage = document.createElement("img");
-    let playlistImagePath = addPlaylistDetailsImageBox.value;
+    var Aplaylist = document.createElement("div");
+    var playlistName = document.createElement("H3");
+    var playlistNameContent = document.createTextNode(addPlaylistDetailsNameBox.value);
+    var playlistImageBox = document.createElement("div");
+    var playlistDefulfImage = document.createElement("p");
+    var playlistDefulfImageContent = document.createTextNode("Lt");    
+    var playSongImage = document.createElement("img");
+    var playlistImage = document.createElement("img");
+    var playlistImagePath = addPlaylistDetailsImageBox.value;
 
     var input = addPlaylistDetailsImageBox;
     var fReader = new FileReader();
@@ -628,10 +628,9 @@ addPlaylistDetailsButton.addEventListener("click",() => {
     playlistImage.classList.add("playlistImage");
     playlistImage.src = playlistImagePath;
     playlistImageBox.appendChild(playlistImage);
-    
     playSongImage.classList.add("mfyPlayBox");
     playSongImage.src = "images/play-64.png";
-    playlistImageBox.append(playSongImage);
+    playlistImageBox.appendChild(playSongImage);
     Aplaylist.classList.add("AplayList");
     playlistImageBox.classList.add("image");
     playlistImageBox.appendChild(playlistDefulfImage)
@@ -641,6 +640,50 @@ addPlaylistDetailsButton.addEventListener("click",() => {
     Aplaylist.appendChild(playlistName);
     Aplaylist.appendChild(playlistImageBox);
     playListPnl.appendChild(Aplaylist);
+    Aplaylist.dataset.songName = playlistName.innerHTML;
+
+    var playlistPnlName = document.createElement("H3");
+    var playlistPnlNameContent = document.createTextNode(addPlaylistDetailsNameBox.value);
+    playlistPnlName.appendChild(playlistPnlNameContent);
+    var AplaylistPnl = document.createElement("div");
+    AplaylistPnl.classList.add("AplaylistPnl");
+    var AplaylistImageBG = document.createElement("img");
+    AplaylistImageBG.classList.add("AplaylistImageBG");
+    AplaylistPnl.appendChild(AplaylistImageBG);
+    playlistPnlName.classList.add("AplaylistPnlName");
+    AplaylistPnl.appendChild(playlistPnlName);
+    var playlistPnlImagePath = addPlaylistDetailsImageBox.value;
+    AplaylistImageBG.src = playlistPnlImagePath;
+    var AplaylistPnlImageHelper = document.createElement("div");
+    AplaylistPnlImageHelper.classList.add("AplaylistPnlImageHelper");
+    AplaylistPnl.appendChild(AplaylistPnlImageHelper);
+    AplaylistPnl.dataset.PnlSongName = playlistName.innerHTML;
+    playListPnl.appendChild(AplaylistPnl);
+
+    AplaylistPnl.style.display = "none";
+
+    var input2 = addPlaylistDetailsImageBox;
+    var fReader2 = new FileReader();
+    fReader2.readAsDataURL(input2.files[0]);
+    fReader2.onloadend = function(event){
+    var img2 = AplaylistImageBG;
+    img2.src = event.target.result;
+    }
+
+    let AplaylistPnls = document.querySelectorAll(".AplaylistPnl");
+
+    Aplaylist.addEventListener("click",() =>{
+        AplaylistPnl.style.display = "block";
+        hiderPnl.style.display = "block";
+    })
+    AplaylistPnl.addEventListener("click",() =>{
+        AplaylistPnl.style.display = "none";
+        hiderPnl.style.display = "none";
+    })
+
+
+    addPlaylistDetailsNameBox.value = "";
+    addPlaylistDetailsImageBox.value = "";
     }
     catch{
         let Aplaylist = document.createElement("div");
@@ -675,15 +718,15 @@ addPlaylistDetailsButton.addEventListener("click",() => {
     
         playlistDefulfImage.appendChild(playlistDefulfImageContent);
         Aplaylist.appendChild(playlistName);
-        Aplaylist.appendChild(playlistImageBox);
-    
+        Aplaylist.appendChild(playlistImageBox);    
         playListPnl.appendChild(Aplaylist);
-    
-    }
 
-    addPlaylistDetailsNameBox.value = "";
-    addPlaylistDetailsImageBox.value = "";
-})
+        addPlaylistDetailsNameBox.value = "";
+        addPlaylistDetailsImageBox.value = "";
+}
+});
+
+// show AplaylistPnl with clicking AplalylistBox
 
 // search panel 
 
