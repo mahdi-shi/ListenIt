@@ -19,7 +19,7 @@
 }
 .container .navBar .alarm{
     position: absolute;
-    top: 18px;
+    top: 10px;
     left:6%;
 }   
 .container .navBar #alarm{
@@ -28,7 +28,7 @@
     user-select: none;
     filter: brightness(80%);
 }
-.container .navBar #account{
+.container .navBar .goz li #account{
     width: 33px;
     height: 33px;
     border-radius: 50%;
@@ -40,14 +40,15 @@
     align-items: center;
     display: flex;
 }
-.container .navBar #account img{
+.container .navBar .goz li #account img{
     width: 30px;
     height: 30px;
     cursor: pointer;
     user-select: none;
-    filter: brightness(80%);
+    filter: brightness(100%);
+    border-radius: 50%;
 }
-.container .navBar #accountTxt{
+.container .navBar .goz li #accountTxt{
     position: absolute;
     color: rgb(230, 230, 230);
     left: 13.4%;
@@ -55,17 +56,27 @@
     font-size: 1.2em;
     cursor: pointer;
     user-select: none;
+    overflow-x: visible;
 }
-.container .navBar #moreProfileOption{
-    position: absolute;
+.container .navBar .goz li #moreProfileOption{
+    position: relative;
     width: 17px;
     height: 9px;
-    left: 19.7%;
-    top: 26px;
+    top: 21px;
     cursor: pointer;
     transition: 0.3s;
     user-select: none;
     filter: brightness(80%);
+    margin-left:40px ;
+}
+.container .navBar .goz{
+    position: absolute;
+    left: 10%;
+}
+.container .navBar .goz li{
+    position: relative;
+    margin-left: 44px;
+    display: inline;
 }
 .container .navBar .header{
     position:absolute;
@@ -93,8 +104,8 @@
     height: 0px;
     border-radius: 4px;
     background-color: rgb(64, 61, 87);
-    left: 13%;
-    top: 45px;
+    left: 16%;
+    top: 50px;
     overflow: hidden;
     transition: 0.2s;
     z-index: 300;
@@ -115,6 +126,21 @@
 }
 .container .navBar #moreProfileOptionBox ul li:hover{
     color: rgb(196, 0, 0);
+}
+.container .navBar #messageBox{
+    width: 360px;
+    height: 30px;
+    position: absolute;
+    left: 56%;
+    top: 20px;
+}
+.container .navBar #messageBox #messageBoxTxt{
+    color: #b00000;  
+    font-weight: bold;
+    font-size: 1.2em;
+    transform: translateY(-30px);
+    opacity: 0;
+    transition: 0.3s;
 }
 .container .sideBar{
     position: absolute;
@@ -2805,6 +2831,14 @@
     cursor: pointer;
     transition: 0.2s;
 }
+.container .account .form #singUpError{
+    position: absolute;
+    font-weight: bold;
+    color: #b00000;
+    font-size: 1.1em;
+    top: 86%;
+    left: 10%;
+}
 .container .account .form button:hover{
     background-color: #9f99ca;
     border: none;
@@ -2893,6 +2927,14 @@
     font-size: 1.2em;
     user-select: none;
 }
+.container .account2 .form2 #singInError{
+    position: absolute;
+    font-weight: bold;
+    color: #b00000;
+    font-size: 1.1em;
+    top: 86%;
+    left: 10%;
+}
 .container .account2 .form2 input{
     position: relative;
     left: 30%;
@@ -2946,6 +2988,12 @@
     overflow-y: hidden;
     overflow-x: hidden;
 }
+.container .profilePnl #profImgUploadSelect{
+    opacity: 1;
+    position: absolute;
+    left: 74%;
+    top: 99%;
+}
 .container .profilePnl h2{
     color: rgb(255, 255, 255);
     font-weight: bold;
@@ -2982,8 +3030,23 @@
     opacity: 0;
     transition: 0.3s;
     cursor: pointer;
+    z-index: 400;
 }
 .container .profilePnl .profileImage:hover svg:nth-child(2){
+    transform: translate(-50%,0);
+    opacity: 1;
+}
+.container .profilePnl .profileImage .profImg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius:50%;
+    z-index: 399;
+    opacity: 0;
+}
+.container .profilePnl .profileImage .profImg:hover ~ svg:nth-child(2){
     transform: translate(-50%,0);
     opacity: 1;
 }
@@ -3004,10 +3067,22 @@
     position: relative;
     transform: translate(260px,17px);
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1em;
+    padding: 4px;
     color: #4e496d;
     margin-top: 10px;
     user-select: none;
+    background-color: transparent;
+    border: 2px solid #3c3853;
+    border-radius:6px;   
+}
+.container .profilePnl #editHider{
+    position: absolute;
+    width: 340px;
+    height: 300px;
+    transform: translateX(180px);
+    user-select: none;
+    z-index: 100;
 }
 .container .profilePnl .profileBioValue{
     background-color: transparent;

@@ -2,7 +2,8 @@
 
 const Rbtn = document.getElementById("moreProfileOption");
 const moreProfileOptionBox = document.getElementById("moreProfileOptionBox");
-let RbtnState = false
+let RbtnState = false;
+const navBar = document.querySelector(".navBar");
 
 Rbtn.addEventListener("click",() => {
     if(RbtnState == false){
@@ -162,10 +163,13 @@ itemHome.addEventListener("click",() => {
     itemProfileSvg.style.fill = "rgba(255, 0, 0, 0.651)";
     itemPlaylist.style.color = "rgb(192, 192, 192)";
     itemPlaylistSvg.style.fill = "rgba(255, 0, 0, 0.651)";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     itemLikes.style.color = "rgb(192, 192, 192)";
     itemLikesSvg.style.fill = "rgba(255, 0, 0, 0.651)";
     itemArtists.style.color = "rgb(192, 192, 192)";
     itemArtistsSvg.style.fill = "rgba(255, 0, 0, 0.651)";
+    moreProfileOptionBox.style.height = 0 + "px";
 })
 itemLibrary.addEventListener("click",() => {
     itemHome.style.color = "rgb(192, 192, 192)";
@@ -177,11 +181,14 @@ itemLibrary.addEventListener("click",() => {
     itemProfile.style.color = "rgb(192, 192, 192)";
     itemProfileSvg.style.fill = "rgba(255, 0, 0, 0.651)";
     itemPlaylist.style.color = "rgb(192, 192, 192)";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     itemPlaylistSvg.style.fill = "rgba(255, 0, 0, 0.651)";
     itemLikes.style.color = "rgb(192, 192, 192)";
     itemLikesSvg.style.fill = "rgba(255, 0, 0, 0.651)";
     itemArtists.style.color = "rgb(192, 192, 192)";
     itemArtistsSvg.style.fill = "rgba(255, 0, 0, 0.651)";
+    moreProfileOptionBox.style.height = 0 + "px";
 })
 itemSearch.addEventListener("click",() => {
     itemHome.style.color = "rgb(192, 192, 192)";
@@ -193,6 +200,8 @@ itemSearch.addEventListener("click",() => {
     itemProfile.style.color = "rgb(192, 192, 192)";
     itemProfileSvg.style.fill = "rgba(255, 0, 0, 0.651)";
     itemPlaylist.style.color = "rgb(192, 192, 192)";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     itemPlaylistSvg.style.fill = "rgba(255, 0, 0, 0.651)";
     itemLikes.style.color = "rgb(192, 192, 192)";
     itemLikesSvg.style.fill = "rgba(255, 0, 0, 0.651)";
@@ -210,6 +219,8 @@ itemProfile.addEventListener("click",() => {
     itemProfileSvg.style.fill = "red";
     itemPlaylist.style.color = "rgb(192, 192, 192)";
     itemPlaylistSvg.style.fill = "rgba(255, 0, 0, 0.651)";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     itemLikes.style.color = "rgb(192, 192, 192)";
     itemLikesSvg.style.fill = "rgba(255, 0, 0, 0.651)";
     itemArtists.style.color = "rgb(192, 192, 192)";
@@ -224,6 +235,8 @@ itemPlaylist.addEventListener("click",() => {
     itemSearchSvg.style.fill = "rgba(255, 0, 0, 0.651)"
     itemProfile.style.color = "rgb(192, 192, 192)";
     itemProfileSvg.style.fill = "rgba(255, 0, 0, 0.651)";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     itemPlaylist.style.color = "rgba(255, 0, 0, 0.849)";
     itemPlaylistSvg.style.fill = "red";
     itemLikes.style.color = "rgb(192, 192, 192)";
@@ -239,6 +252,8 @@ itemLikes.addEventListener("click",() => {
     itemLibrarySvg.style.fill = "rgba(255, 0, 0, 0.651)";
     itemSearch.style.color = "rgb(192, 192, 192)";
     itemSearchSvg.style.fill = "rgba(255, 0, 0, 0.651)"
+            moreProfileOptionBox.style.height = 0 + "px";
+
     itemProfile.style.color = "rgb(192, 192, 192)";
     itemProfileSvg.style.fill = "rgba(255, 0, 0, 0.651)";
     itemPlaylist.style.color = "rgb(192, 192, 192)";
@@ -253,6 +268,8 @@ itemArtists.addEventListener("click",() => {
     itemHomeSvg.style.fill = "rgba(255, 0, 0, 0.651)";
     itemLibrary.style.color = "rgb(192, 192, 192)"
     itemLibrarySvg.style.fill = "rgba(255, 0, 0, 0.651)";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     itemSearch.style.color = "rgb(192, 192, 192)";
     itemSearchSvg.style.fill = "rgba(255, 0, 0, 0.651)"
     itemProfile.style.color = "rgb(192, 192, 192)";
@@ -493,6 +510,8 @@ homeItem.addEventListener("click",() => {
     profilePnl.style.display = "none";
     gameStyle.style.display = "none";
     chillStyle.style.display = "none";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     focusStyle.style.display = "none";
     studyStyle.style.display = "none";
     animeStyle.style.display = "none";
@@ -531,6 +550,8 @@ libraryItem.addEventListener("click",() => {
     focusStyle.style.display = "none";
     studyStyle.style.display = "none";
     animeStyle.style.display = "none";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     rapStyle.style.display = "none";
     PopStyle.style.display = "none";
     rANDbStyle.style.display = "none";
@@ -544,6 +565,8 @@ libraryItem.addEventListener("click",() => {
 libraryPnlItem1.addEventListener("click",() => {
     libraryPnlItem1.style.color = "#d80000";
     libraryPnlItem2.style.color = "rgb(233, 233, 233)";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     libraryPnlItem3.style.color = "rgb(233, 233, 233)";
     playlistPnl.style.display = "block";
     likesPnl.style.display = "none";
@@ -553,6 +576,8 @@ libraryPnlItem2.addEventListener("click",() => {
     libraryPnlItem1.style.color = "rgb(233, 233, 233)";
     libraryPnlItem2.style.color = "#d80000";
     libraryPnlItem3.style.color = "rgb(233, 233, 233)";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     likesPnl.style.display = "block";
     artistsPnl.style.display = "none"
     playlistPnl.style.display = "none";
@@ -560,6 +585,8 @@ libraryPnlItem2.addEventListener("click",() => {
 libraryPnlItem3.addEventListener("click",() => {
     libraryPnlItem1.style.color = "rgb(233, 233, 233)";
     libraryPnlItem2.style.color = "rgb(233, 233, 233)";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     libraryPnlItem3.style.color = "#d80000";
     artistsPnl.style.display = "block";
     playlistPnl.style.display = "none";
@@ -747,6 +774,8 @@ searchItem.addEventListener("click",() => {
     gameStyle.style.display = "none";
     chillStyle.style.display = "none";
     focusStyle.style.display = "none";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     studyStyle.style.display = "none";
     animeStyle.style.display = "none";
     rapStyle.style.display = "none";
@@ -788,6 +817,8 @@ itemPlaylist.addEventListener("click",() => {
     chillStyle.style.display = "none";
     focusStyle.style.display = "none";
     studyStyle.style.display = "none";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     PopStyle.style.display = "none";
     calmnessStyle.style.display = "none";
     canadaStyle.style.display = "none";
@@ -805,6 +836,8 @@ itemLikes.addEventListener("click",() => {
     accountPnl2.style.display = "none";
     rapStyle.style.display = "none";
     gameStyle.style.display = "none";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     chillStyle.tyle.display = "none";
     focusStyle.style.display = "none";
     studyStyle.style.display = "none";
@@ -832,6 +865,8 @@ itemArtists.addEventListener("click",() => {
     studyStyle.style.display = "none";
     rANDbStyle.style.display = "none";
     heavyStyle.style.display = "none";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     calmnessStyle.style.display = "none";
     canadaStyle.style.display = "none";
     PopStyle.style.display = "none";
@@ -895,88 +930,10 @@ pushRSsong.addEventListener("click",() => {
 
 })
 
-// account linking page
-
-const accountPnl = document.querySelector(".account");
-const accountPnl2 = document.querySelector(".account2")
-
-function accountLink(){
-
-    if(atenticationState == false){
-        accountPnl.style.display = "block";
-        accountPnl2.style.display = "none";
-        libraryPnl.style.display = "none";
-        searchPnl.style.display = "none";
-        homePnl.style.display = "none";    
-        profilePnl.style.display = "none";
-        gameStyle.style.display = "none";
-        rapStyle.style.display = "none";
-        chillStyle.style.display = "none";
-       focusStyle.style.display = "none";
-        studyStyle.style.display = "none";
-        PopStyle.style.display = "none";
-        calmnessStyle.style.display = "none";
-        canadaStyle.style.display = "none";
-    classicStyle.style.display = "none";
-    rANDbStyle.style.display = "none";
-        heavyStyle.style.display = "none";
-        russianStyle.style.display = "none";
-        animeStyle.style.display = "none";
-    }
-    else{
-        accountPnl2.style.display = "block";
-        accountPnl.style.display = "none";
-        libraryPnl.style.display = "none";
-        searchPnl.style.display = "none";
-        homePnl.style.display = "none";     
-        profilePnl.style.display = "none";
-        gameStyle.style.display = "none";
-        rapStyle.style.display = "none";
-        chillStyle.style.display = "none";
-       focusStyle.style.display = "none";
-        studyStyle.style.display = "none";
-         PopStyle.style.display = "none";
-         calmnessStyle.style.display = "none";
-         canadaStyle.style.display = "none";
-    rANDbStyle.style.display = "none";
-        russianStyle.style.display = "none";
-    classicStyle.style.display = "none";
-        heavyStyle.style.display = "none";
-        animeStyle.style.display = "none";
-    }
-}
-
-//set sing up
-
-const singUpBtn = document.querySelector("#singUpBtn");
-let atenticationState = false;
-
-singUpBtn.addEventListener("click",() => {
-    atenticationState = true
-    accountPnl2.style.display = "none";
-    accountPnl.style.display = "none";
-    libraryPnl.style.display = "none";
-    searchPnl.style.display = "none";
-    homePnl.style.display = "block";   
-    profilePnl.style.display = "none";
-    gameStyle.style.display = "none";
-    chillStyle.style.display = "none";
-    focusStyle.style.display = "none";
-    studyStyle.tyle.display = "none";
-    animeStyle.style.display = "none";
-    calmnessStyle.style.display = "none";
-    PopStyle.style.display = "none";
-    canadaStyle.style.display = "none";
-    classicStyle.style.display = "none";
-        heavyStyle.style.display = "none";
-        russianStyle.style.display = "none";
-    rANDbStyle.style.display = "none";
-    rapStyle.style.display = "none";
-})
-
 //profile setting
 
 const profilePnl = document.querySelector(".profilePnl");
+
 
 itemProfile.addEventListener("click",() => {
     profilePnl.style.display = "block";
@@ -989,6 +946,8 @@ itemProfile.addEventListener("click",() => {
     chillStyle.style.display = "none";
     focusStyle.style.display = "none";
     animeStyle.style.display = "none";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     rapStyle.style.display = "none";
     calmnessStyle.style.display = "none";
     rANDbStyle.style.display = "none";
@@ -999,6 +958,8 @@ itemProfile.addEventListener("click",() => {
     classicStyle.style.display = "none";
     studyStyle.style.display = "none";
 })
+
+
 
 // song style linking
 
@@ -1042,6 +1003,8 @@ gameStylePnl.addEventListener("click",() => {
     focusStyle.style.display = "none";
     studyStyle.style.display = "none";
     animeStyle.style.display = "none";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     rapStyle.style.display = "none";
     PopStyle.style.display = "none";
     rANDbStyle.style.display = "none";
@@ -1062,6 +1025,8 @@ chillStylePnl.addEventListener("click",() => {
     chillStyle.style.display = "block";
     focusStyle.style.display = "none";
     studyStyle.style.display = "none";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     animeStyle.style.display = "none";
     rapStyle.style.display = "none";
     PopStyle.style.display = "none";
@@ -1082,6 +1047,8 @@ focusStylePnl.addEventListener("click",() => {
     gameStyle.style.display = "none";
     chillStyle.style.display = "none";
     focusStyle.style.display = "block";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     studyStyle.style.display = "none";
     animeStyle.style.display = "none";
     rapStyle.style.display = "none";
@@ -1105,6 +1072,8 @@ studyStylePnl.addEventListener("click",() => {
     focusStyle.style.display = "none";
     studyStyle.style.display = "block";
     animeStyle.style.display = "none";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     rapStyle.style.display = "none";
     PopStyle.style.display = "none";
     rANDbStyle.style.display = "none";
@@ -1125,6 +1094,8 @@ animeStylePnl.addEventListener("click",() => {
     chillStyle.style.display = "none";
     focusStyle.style.display = "none";
     studyStyle.style.display = "none";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     animeStyle.style.display = "block";
     rapStyle.style.display = "none";
     PopStyle.style.display = "none";
@@ -1145,6 +1116,8 @@ rapStylePnl.addEventListener("click",() => {
     gameStyle.style.display = "none";
     chillStyle.style.display = "none";
     focusStyle.style.display = "none";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     studyStyle.style.display = "none";
     animeStyle.style.display = "none";
     PopStyle.style.display = "none";
@@ -1166,6 +1139,8 @@ popStylePnl.addEventListener("click",() =>{
     gameStyle.style.display = "none";
     chillStyle.style.display = "none";
     calmnessStyle.style.display = "none";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     classicStyle.style.display = "none";
     focusStyle.style.display = "none";
     studyStyle.style.display = "none";
@@ -1187,6 +1162,8 @@ rANDbStylePnl.addEventListener("click",() =>{
     gameStyle.style.display = "none";
     chillStyle.style.display = "none";
     focusStyle.style.display = "none";
+            moreProfileOptionBox.style.height = 0 + "px";
+
     studyStyle.style.display = "none";
     animeStyle.style.display = "none";
     rapStyle.style.display = "none";
@@ -1209,6 +1186,7 @@ calmnessStylePnl.addEventListener("click",() =>{
     chillStyle.style.display = "none";
     focusStyle.style.display = "none";
     studyStyle.style.display = "none";
+    moreProfileOptionBox.style.height = 0 + "px";
     animeStyle.style.display = "none";
     rapStyle.style.display = "none";
     PopStyle.style.display = "none";
@@ -1229,6 +1207,7 @@ classicStylePnl.addEventListener("click",() =>{
     gameStyle.style.display = "none";
     chillStyle.style.display = "none";
     focusStyle.style.display = "none";
+    moreProfileOptionBox.style.height = 0 + "px";
     studyStyle.style.display = "none";
     animeStyle.style.display = "none";
     rapStyle.style.display = "none";
@@ -1254,6 +1233,7 @@ russianStylePnl.addEventListener("click",() => {
     animeStyle.style.display = "none";
     rapStyle.style.display = "none";
     PopStyle.style.display = "none";
+    moreProfileOptionBox.style.height = 0 + "px";
     rANDbStyle.style.display = "none";
     calmnessStyle.style.display = "none";
     classicStyle.style.display = "none";
@@ -1272,6 +1252,7 @@ heavyStylePnl.addEventListener("click",() => {
     chillStyle.style.display = "none";
     focusStyle.style.display = "none";
     studyStyle.style.display = "none";
+    moreProfileOptionBox.style.height = 0 + "px";
     animeStyle.style.display = "none";
     rapStyle.style.display = "none";
     PopStyle.style.display = "none";
@@ -1295,6 +1276,7 @@ canadaStylePnl.addEventListener("click",() => {
     studyStyle.style.display = "none";
     animeStyle.style.display = "none";
     rapStyle.style.display = "none";
+    moreProfileOptionBox.style.height = 0 + "px";
     PopStyle.style.display = "none";
     rANDbStyle.style.display = "none";
     calmnessStyle.style.display = "none";
@@ -1567,4 +1549,264 @@ fullScreenBtn.addEventListener("click",() => {
     setTimeout(() => {
         fullScreenSongPlayer.style.opacity = 1;
         fullScreenSongPlayer.style.transform = "translateY("+0+"px)";         
-    },111);})
+    },111);
+})
+
+// sing up developing
+
+const logUpBtn = document.querySelector("#singUpBtn");
+const emailTxtBox = document.querySelector("#Email");
+const userNameTxtBox = document.querySelector("#Uname");
+const passwordTxtBox = document.querySelector("#Pass");
+const rePasswordTxtBox = document.querySelector("#rePass");
+const singUpErrorTxt = document.querySelector("#singUpError");
+
+logUpBtn.addEventListener("click",() =>{
+    if(passwordTxtBox.value == rePasswordTxtBox.value){
+        console.log("goz");
+    }   
+    else{
+        singUpErrorTxt.innerHTML = "yout password and rePass not match"
+    }
+})
+
+
+
+// account linking page
+
+const accountPnl = document.querySelector(".account");
+const accountPnl2 = document.querySelector(".account2")
+
+function accountLink(){
+
+    if(atenticationState == false){
+        accountPnl.style.display = "block";
+        accountPnl2.style.display = "none";
+        libraryPnl.style.display = "none";
+        searchPnl.style.display = "none";
+        homePnl.style.display = "none";    
+        profilePnl.style.display = "none";
+        gameStyle.style.display = "none";
+        animeStyle.style.display = "none";
+        rapStyle.style.display = "none";
+        chillStyle.style.display = "none";
+        focusStyle.style.display = "none";
+         moreProfileOptionBox.style.height = 0 + "px";
+        studyStyle.style.display = "none";
+        PopStyle.style.display = "none";
+        calmnessStyle.style.display = "none";
+        canadaStyle.style.display = "none";
+        classicStyle.style.display = "none";
+        rANDbStyle.style.display = "none";
+        heavyStyle.style.display = "none";
+        russianStyle.style.display = "none";
+    }
+    else{
+        accountPnl2.style.display = "block";
+        accountPnl.style.display = "none";
+        libraryPnl.style.display = "none";
+        searchPnl.style.display = "none";
+        homePnl.style.display = "none";     
+        profilePnl.style.display = "none";
+        gameStyle.style.display = "none";
+        rapStyle.style.display = "none";
+        moreProfileOptionBox.style.height = 0 + "px";
+        chillStyle.style.display = "none";
+        focusStyle.style.display = "none";
+        classicStyle.style.display = "none";
+        studyStyle.style.display = "none";
+        PopStyle.style.display = "none";
+        calmnessStyle.style.display = "none";
+        canadaStyle.style.display = "none";
+        rANDbStyle.style.display = "none";
+        russianStyle.style.display = "none";
+        heavyStyle.style.display = "none";
+        animeStyle.style.display = "none";
+    }
+}
+
+//set sing up
+
+const singUpBtn = document.querySelector("#singUpBtn");
+let atenticationState = false;
+let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+let user;
+
+singUpBtn.addEventListener("click",() => {
+
+    if(passwordTxtBox.value == "" || userNameTxtBox.value == "" || emailTxtBox.value == "" || rePasswordTxtBox.value == ""){
+        singUpErrorTxt.innerHTML = "please complite the fields";
+    }
+    else{
+        if(passwordTxtBox.value == rePasswordTxtBox.value){
+            if(emailTxtBox.value.match(mailFormat)){
+                atenticationState = true
+    
+                user = {
+                    email : emailTxtBox.value,
+                    userName : userNameTxtBox.value,
+                    password : passwordTxtBox.value,
+                };
+    
+                accountPnl.style.display = "none";
+                libraryPnl.style.display = "none";
+                searchPnl.style.display = "none";
+                homePnl.style.display = "block";   
+                profilePnl.style.display = "none";
+                gameStyle.style.display = "none";
+                chillStyle.style.display = "none";
+                focusStyle.style.display = "none";
+                studyStyle.style.display = "none";
+                animeStyle.style.display = "none";
+                calmnessStyle.style.display = "none";
+                moreProfileOptionBox.style.height = 0 + "px";
+                PopStyle.style.display = "none";
+                canadaStyle.style.display = "none";
+                classicStyle.style.display = "none";
+                heavyStyle.style.display = "none";
+                russianStyle.style.display = "none";
+                rANDbStyle.style.display = "none";
+                rapStyle.style.display = "none";
+                accountPnl2.style.display = "none";    
+            }
+            else{
+                singUpErrorTxt.innerHTML = "your email is not formating to standard";
+            }
+        }   
+        else{
+            singUpErrorTxt.innerHTML = "yout password and rePass not match";
+        }
+    }
+})
+
+//loging developing
+
+const userTxtBox2 = document.querySelector("#Uname2");
+const passwordTxtBox2 = document.querySelector("#Pass2")
+const singInBtn = document.querySelector("#singInBtn");
+let accountTxt = document.querySelector("#accountTxt");
+const singInError = document.querySelector("#singInError");
+
+singInBtn.addEventListener("click",() =>{
+    if(userTxtBox2.value == "" || passwordTxtBox2.value == ""){
+        singInError.innerHTML = "please complite the fields";
+    }
+    else{
+        if(userTxtBox2.value == user.userName && passwordTxtBox2.value == user.password){
+            accountPnl.style.display = "none";
+                libraryPnl.style.display = "none";
+                searchPnl.style.display = "none";
+                homePnl.style.display = "none";   
+                profilePnl.style.display = "block";
+                gameStyle.style.display = "none";
+                chillStyle.style.display = "none";
+                focusStyle.style.display = "none";
+                studyStyle.style.display = "none";
+                animeStyle.style.display = "none";
+                calmnessStyle.style.display = "none";
+                        moreProfileOptionBox.style.height = 0 + "px";
+
+                PopStyle.style.display = "none";
+                canadaStyle.style.display = "none";
+                classicStyle.style.display = "none";
+                heavyStyle.style.display = "none";
+                russianStyle.style.display = "none";
+                rANDbStyle.style.display = "none";
+                rapStyle.style.display = "none";
+                accountPnl2.style.display = "none";
+                accountTxt.innerHTML = user.userName;
+                profileUsernameValue.value = user.userName;
+        }
+        else{
+            singInError.innerHTML = "you are not register please sing-Up";
+        }
+    }
+})
+
+// edit the profile details
+
+const profileEditBtn = document.querySelector("#profileEditBtn");
+let profEditState = false;
+const profileBioValue = document.querySelector(".profileBioValue");
+const editorHider = document.querySelector("#editHider");
+const profileUsernameValue = document.querySelector(".profileUsernameValue");
+const messageBoxTxt = document.querySelector("#messageBoxTxt");
+
+profileEditBtn.addEventListener("click",() =>{
+    if(atenticationState == true){
+        if(profEditState == false){
+            editorHider.style.display = "none";
+            profileEditBtn.style.backgroundColor = "#8c87a5";
+            profileEditBtn.style.color = "black";
+            profEditState = true;
+            profileEditBtn.addEventListener("mouseover",() =>{
+                profileEditBtn.style.color = "#8c87a5";
+                profileEditBtn.style.backgroundColor = "transparent";
+                profileEditBtn.style.border = "2px solid #8c87a5"
+            })
+            profileEditBtn.addEventListener("mouseout",() =>{
+                profileEditBtn.style.color = "black";
+                profileEditBtn.style.backgroundColor = "#8c87a5";
+                profileEditBtn.style.border = "none"
+            })
+        }
+        else{
+            editorHider.style.display = "block";
+            profileEditBtn.style.backgroundColor = "transparent";
+            profileEditBtn.style.color = "#8c87a5";
+            profEditState = false;
+            accountTxt.innerHTML = profileUsernameValue.value;
+            profileEditBtn.addEventListener("mouseover",() =>{
+                profileEditBtn.style.color = "black";
+                profileEditBtn.style.backgroundColor = "#8c87a5";
+                profileEditBtn.style.border = "none"
+            })
+            profileEditBtn.addEventListener("mouseout",() =>{
+                profileEditBtn.style.color = "#8c87a5";
+                profileEditBtn.style.backgroundColor = "transparent";
+                profileEditBtn.style.border = "2px solid #8c87a5"
+            })
+        }
+    }
+    else{
+        messageBoxTxt.innerHTML = "please create an account first"
+        messageBoxTxt.style.opacity = 1;
+        messageBoxTxt.style.transform = "translateY("+0+"px)";
+        setTimeout(()=>{
+            messageBoxTxt.style.transition = 0.3 + "s"; 
+            messageBoxTxt.style.opacity = 0;
+            messageBoxTxt.style.transform = "translateY("+-30+"px)";  
+       },5000)
+    }
+    
+})  
+
+const profImgUpload = document.querySelector("#profImgUpload");
+const profImgUploadSelect = document.querySelector("#profImgUploadSelect");
+const profImg = document.querySelector(".profImg");
+const account = document.querySelector("#account");
+const accountProfileImage = document.querySelector("#accountProfileImage");
+
+profImgUpload.addEventListener("click",() => {
+    profImgUploadSelect.click();
+})
+profImgUploadSelect.addEventListener("change",() => {
+    profImg.style.opacity = 1;
+    profImg.src = profImgUploadSelect.value;
+
+    var input3 = profImgUploadSelect;
+    var fReader3 = new FileReader();
+    fReader3.readAsDataURL(input3.files[0]);
+    fReader3.onloadend = function(event){
+    var img3 = profImg;
+    img3.src = event.target.result;
+    }
+
+    var input4 = profImgUploadSelect;
+    var fReader4 = new FileReader();
+    fReader4.readAsDataURL(input3.files[0]);
+    fReader4.onloadend = function(event){
+    var img4 = accountProfileImage;
+    img4.src = event.target.result;
+    }
+})
