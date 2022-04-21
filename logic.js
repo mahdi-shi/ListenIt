@@ -1626,6 +1626,28 @@ function accountLink(){
 
 //set sing up
 
+function panelsHider(){
+    accountPnl.style.display = "none";
+    libraryPnl.style.display = "none";
+    searchPnl.style.display = "none";
+    homePnl.style.display = "none";   
+    profilePnl.style.display = "none";
+    gameStyle.style.display = "none";
+    chillStyle.style.display = "none";
+    focusStyle.style.display = "none";
+    studyStyle.style.display = "none";
+    animeStyle.style.display = "none";
+    calmnessStyle.style.display = "none";
+    PopStyle.style.display = "none";
+    canadaStyle.style.display = "none";
+    classicStyle.style.display = "none";
+    heavyStyle.style.display = "none";
+    russianStyle.style.display = "none";
+    rANDbStyle.style.display = "none";
+    rapStyle.style.display = "none";
+    accountPnl2.style.display = "none";
+}
+
 const singUpBtn = document.querySelector("#singUpBtn");
 let atenticationState = false;
 let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -1721,7 +1743,6 @@ singInBtn.addEventListener("click",() =>{
         }
     }
 })
-
 // edit the profile details
 
 const profileEditBtn = document.querySelector("#profileEditBtn");
@@ -7545,4 +7566,66 @@ canadaSongControler.addEventListener("ended",() => {
         loadcanadaMusic(canadaSongsIndex);
         canadaSongControler.play();
     }
+})
+
+//search box developing for song styles
+
+let popStyle = document.querySelector(".PopStyle");
+let SearchTxtBox = document.querySelector("#searchTxtBox");
+
+searchIcon.addEventListener("click",() =>{
+
+    if(SearchTxtBox.value == "anime"){
+        panelsHider();
+        animeStyle.style.display = "block";
+    }
+    if(SearchTxtBox.value == "pop"){
+        panelsHider();
+        popStyle.style.display = "block";    
+    }
+    if(SearchTxtBox.value == "rap"){
+        panelsHider();
+        rapStyle.style.display = "block";    
+    }
+    if(SearchTxtBox.value == "r&b"){
+        panelsHider();
+        rANDbStyle.style.display = "block";    
+    }
+    if(SearchTxtBox.value == "russian"){
+        panelsHider();
+        russianStyle.style.display = "block";    
+    }
+    if(SearchTxtBox.value == "canada"){
+        panelsHider();
+        canadaStyle.style.display = "block";    
+    }
+    if(SearchTxtBox.value == "classic"){
+        panelsHider();
+        classicStyle.style.display = "block";    
+    }
+    if(SearchTxtBox.value == "chill"){
+        panelsHider();
+        chillStyle.style.display = "block";    
+    }
+    if(SearchTxtBox.value == "heavy"){
+        panelsHider();
+        heavyStyle.style.display = "block";    
+    }
+    if(SearchTxtBox.value == "study"){
+        panelsHider();
+        studyStyle.style.display = "block";    
+    }
+    if(SearchTxtBox.value == "calmness"){
+        panelsHider();
+        calmnessStyle.style.display = "block";    
+    }
+    if(SearchTxtBox.value == "focus"){
+        panelsHider();
+        focusStyle.style.display = "block";    
+    }
+    if(SearchTxtBox.value == "game"){
+        panelsHider();
+        gameStyle.style.display = "block"
+    }
+
 })
