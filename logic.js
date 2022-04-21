@@ -101,8 +101,8 @@ let orderPlayBtnState = false;
 repeatBtn.addEventListener("click",() =>{
     if(repeatBtnState == false){
         repeatBtn.style.fill = "red";
-        orderPlayBtn.style.fill = "rgb(150, 0, 0)";
-        repeatBtnState = true;
+        orderPlayBtn.style.fill = "rgb(150, 0, 0)";           
+        repeatBtnState = true;                              
     }
     else{
         repeatBtn.style.fill = "rgb(150, 0, 0)";
@@ -112,7 +112,7 @@ repeatBtn.addEventListener("click",() =>{
 orderPlayBtn.addEventListener("click",() =>{
     if(orderPlayBtnState == false){
         orderPlayBtn.style.fill = "red";
-        repeatBtn.style.fill = "rgb(150, 0, 0)";
+        repeatBtn.style.fill = "rgb(150, 0, 0)";                    
         orderPlayBtnState = true;
     }
     else{
@@ -990,7 +990,6 @@ const rapStylePnl = document.querySelector("#rapStylePnl");
 const animeStylePnl = document.querySelector("#animeStylePnl");
 const chillStylePnl = document.querySelector("#chillStylePnl");
 
-
 gameStylePnl.addEventListener("click",() => {
     profilePnl.style.display = "none";
     accountPnl2.style.display = "none";
@@ -1003,7 +1002,7 @@ gameStylePnl.addEventListener("click",() => {
     focusStyle.style.display = "none";
     studyStyle.style.display = "none";
     animeStyle.style.display = "none";
-            moreProfileOptionBox.style.height = 0 + "px";
+    moreProfileOptionBox.style.height = 0 + "px";
 
     rapStyle.style.display = "none";
     PopStyle.style.display = "none";
@@ -1025,7 +1024,7 @@ chillStylePnl.addEventListener("click",() => {
     chillStyle.style.display = "block";
     focusStyle.style.display = "none";
     studyStyle.style.display = "none";
-            moreProfileOptionBox.style.height = 0 + "px";
+    moreProfileOptionBox.style.height = 0 + "px";
 
     animeStyle.style.display = "none";
     rapStyle.style.display = "none";
@@ -1094,7 +1093,7 @@ animeStylePnl.addEventListener("click",() => {
     chillStyle.style.display = "none";
     focusStyle.style.display = "none";
     studyStyle.style.display = "none";
-            moreProfileOptionBox.style.height = 0 + "px";
+    moreProfileOptionBox.style.height = 0 + "px";
 
     animeStyle.style.display = "block";
     rapStyle.style.display = "none";
@@ -1134,22 +1133,22 @@ popStylePnl.addEventListener("click",() =>{
     accountPnl2.style.display = "none";
     accountPnl.style.display = "none";
     libraryPnl.style.display = "none";
+    searchPnl.style.display = "block";
     searchPnl.style.display = "none";
     homePnl.style.display = "none";   
     gameStyle.style.display = "none";
     chillStyle.style.display = "none";
     calmnessStyle.style.display = "none";
-            moreProfileOptionBox.style.height = 0 + "px";
-
+    moreProfileOptionBox.style.height = 0 + "px";
     classicStyle.style.display = "none";
     focusStyle.style.display = "none";
     studyStyle.style.display = "none";
     animeStyle.style.display = "none";
     rapStyle.style.display = "none";
     rANDbStyle.style.display = "none";
-        heavyStyle.style.display = "none";
-        russianStyle.style.display = "none";
-        canadaStyle.style.display = "none";
+    heavyStyle.style.display = "none";
+    russianStyle.style.display = "none";
+    canadaStyle.style.display = "none";
     PopStyle.style.display = "block";
 })
 rANDbStylePnl.addEventListener("click",() =>{
@@ -1808,5 +1807,5742 @@ profImgUploadSelect.addEventListener("change",() => {
     fReader4.onloadend = function(event){
     var img4 = accountProfileImage;
     img4.src = event.target.result;
+    }
+})
+
+// set the songs in pop sont style
+
+let focusSongsIndex = 1;
+let studySongsIndex = 1;
+let gameSongsIndex = 1;
+let chillSongsIndex = 1;
+let heavySongsIndex = 1;
+let russianSongsIndex = 1;
+let animeSongsIndex = 1;
+let canadaSongsIndex = 1;
+let classicSongsIndex = 1;
+let popSongsIndex = 1;
+let rapSongsIndex = 1;
+let rAndbSongsIndex = 1;
+
+function songStylesIndexClear(){
+    focusSongsIndex = 1;
+    studySongsIndex = 1;
+    gameSongsIndex = 1;
+    chillSongsIndex = 1;
+    heavySongsIndex = 1;
+    russianSongsIndex = 1;
+    animeSongsIndex = 1;
+    canadaSongsIndex = 1;
+    classicSongsIndex = 1;
+    popSongsIndex = 1;
+    rapSongsIndex = 1;
+    rAndbSongsIndex = 1;
+}
+
+const popSongsImg = document.querySelectorAll(".popSongsImg");
+const popSongsNames = document.querySelectorAll(".popSongsNames");
+const popSongsArtistsNames = document.querySelectorAll(".popSongsArtistName");
+const popSongsbuttonPlayer = document.querySelectorAll(".popSongsbuttonPlayer");
+const popSongControler = document.querySelector("#popSongControler");
+const popSongControlerSrc = document.querySelector("#popSongControlerSrc");
+
+
+for(let i = 0;i < popSongsbuttonPlayer.length;i++){
+    popSongsbuttonPlayer[i].addEventListener("click",() => {
+        songStylesIndexClear();
+        for(let j = 0;j < popStyleSongs.length;j++){
+            if(popSongsbuttonPlayer[i].dataset.songname == popStyleSongs[j].src){
+                console.log(popStyleSongs[j].src + " = " + popSongsbuttonPlayer[i].dataset.songname);
+                console.log(popStyleSongs[j].name);
+                songName.innerHTML = popStyleSongs[j].name;
+                songArtistName.innerHTML = popStyleSongs[j].artist;
+                songImage.src = "images/" + popStyleSongs[j].img + ".jpg";        
+                popSongControler.src = "tracks/pop/" + popStyleSongs[j].src + ".mp3";
+                songImage.style.display = "block";
+
+                focusSongControler.pause();
+                popSongControler.play();
+                chillSongControler.pause();
+                studySongControler.pause();
+                gameSongControler.pause();
+                rAndbSongControler.pause();
+                rapSongControler.pause();
+                animeSongControler.pause()
+                calmnessSongControler.pause();
+                classicSongControler.pause();
+                russianSongControler.pause();
+                heavySongControler.pause();
+                canadaSongControler.pause();
+
+                popSongsIndex = i + 1;
+            }
+            
+        }
+        /*songName.innerHTML = popStyleSongs[indexNumber - 1].name;
+        songArtistName.innerHTML = popStyleSongs[indexNumber - 1].artist;
+        songImage.src = "images/" + popStyleSongs[indexNumber - 1].img + ".jpg";
+        popSongControler.src = "tracks/pop/" + popStyleSongs[indexNumber - 1].src + ".mp3";
+        songImage.style.display = "block";
+    
+        popSongControler.play();
+  */  
+        playBtn.style.display = "none";
+        playBtn.style.fill = "red";
+        pauseBtn.style.fill = "red";
+        pauseBtn.style.display = "block";
+        songStatusPop = true;
+
+    })
+}
+
+popSongsNames[1].innerHTML = "Alien";
+popSongsNames[2].innerHTML = "Alien2";
+popSongsNames[3].innerHTML = "Another love";
+popSongsNames[4].innerHTML = "Bad habits";
+popSongsNames[5].innerHTML = "Christmas";
+popSongsNames[6].innerHTML = "Dont forget my love";
+popSongsNames[7].innerHTML = "Dont forget my love 2";
+popSongsNames[8].innerHTML = "Light switch";
+popSongsNames[9].innerHTML = "Love Enwantiti";
+popSongsNames[10].innerHTML = "Motley Crew";
+popSongsNames[11].innerHTML = "Never say never";
+popSongsNames[12].innerHTML = "Rose";
+popSongsNames[13].innerHTML = "Skate";
+popSongsNames[14].innerHTML = "Smack that";
+popSongsNames[15].innerHTML = "We car reach start";
+popSongsNames[16].innerHTML = "Rose";
+popSongsNames[17].innerHTML = "Light switch";
+popSongsNames[18].innerHTML = "Rose";
+popSongsNames[19].innerHTML = "Christmas";
+popSongsNames[20].innerHTML = "Rose";
+popSongsNames[21].innerHTML = "Smack that";
+popSongsNames[22].innerHTML = "Alien";
+
+popSongsArtistsNames[1].innerHTML = "School brich";
+popSongsArtistsNames[2].innerHTML = "Dinero";
+popSongsArtistsNames[3].innerHTML = "Tom odell";
+popSongsArtistsNames[4].innerHTML = "Sneeran";
+popSongsArtistsNames[5].innerHTML = "Bts";
+popSongsArtistsNames[6].innerHTML = "Diplo & Miguel";
+popSongsArtistsNames[7].innerHTML = "Diplo & Miguel";
+popSongsArtistsNames[8].innerHTML = "Charlie puth";
+popSongsArtistsNames[9].innerHTML = "Ckay";
+popSongsArtistsNames[10].innerHTML = "Justin Bieber";
+popSongsArtistsNames[11].innerHTML = "D.o Exo";
+popSongsArtistsNames[12].innerHTML = "Akon";
+popSongsArtistsNames[13].innerHTML = "Blake Shelton";
+popSongsArtistsNames[14].innerHTML = "Blake Shelton";
+popSongsArtistsNames[15].innerHTML = "Blake Shelton";
+popSongsArtistsNames[16].innerHTML = "Akon";
+popSongsArtistsNames[17].innerHTML = "Charlie puth";
+popSongsArtistsNames[18].innerHTML = "D.o Exo";
+popSongsArtistsNames[19].innerHTML = "Sneeran";
+popSongsArtistsNames[20].innerHTML = "D.o Exo";
+popSongsArtistsNames[21].innerHTML = "Akon";
+popSongsArtistsNames[22].innerHTML = "School brich";
+
+popSongsImg[1].src = "images/rauf&faikRt.jpg";
+popSongsImg[2].src = "images/81b2DvMD84L._SS500_.jpg";
+popSongsImg[3].src = "images/Tom-Odell-accordi-e-testo.jpg";
+popSongsImg[4].src = "images/Ed-Sheeran-Song-Whatsapp-Status-Video-Download-Full-Screen-Videos.jpg";
+popSongsImg[5].src = "images/91LsI86dyLL.jpg";
+popSongsImg[6].src = "images/download.jpg";
+popSongsImg[7].src = "images/download.jpg";
+popSongsImg[8].src = "images/artworks-000129843758-mpudez-t500x500.jpg";
+popSongsImg[9].src = "images/artworks-LqPz3TafTzeDCuG3-ZxFCLw-t500x500.jpg";
+popSongsImg[10].src = "images/download (1).jpg";
+popSongsImg[11].src = "images/d9fd88ff0d1810de7197f234d95f39ba.jpg";
+popSongsImg[12].src = "images/images.jpg";
+popSongsImg[12].src = "images/download (2).jpg";
+popSongsImg[13].src = "images/images.jpg";
+popSongsImg[14].src = "images/artworks-000129843758-mpudez-t500x500.jpg";
+popSongsImg[15].src = "images/artworks-LqPz3TafTzeDCuG3-ZxFCLw-t500x500.jpg";
+popSongsImg[16].src = "images/download (1).jpg";
+popSongsImg[17].src = "images/d9fd88ff0d1810de7197f234d95f39ba.jpg";
+popSongsImg[18].src = "images/images.jpg";
+popSongsImg[19].src = "images/download (2).jpg";
+popSongsImg[20].src = "images/bs-WMNsite-750.jpeg";
+popSongsImg[21].src = "images/download (2).jpg";
+popSongsImg[22].src = "images/bs-WMNsite-750.jpeg";
+popSongsImg[23].src = "images/rauf&faikRt.jpg";
+
+let popStyleSongs = [
+    {
+        name: "2u",
+        artist: "David guetta",
+        img: "chillBg",
+        src: "2u"
+    },
+    {
+        name: "Alien",
+        artist: "School brich",
+        img: "rauf&faikRt",
+        src: "alien"
+    },
+    {
+        name: "Alien2",
+        artist: "Dinero",
+        img: "81b2DvMD84L._SS500_",
+        src: "alien2"
+    },
+    {
+        name: "Another Love",
+        artist: "Tom odell",
+        img: "Tom-Odell-accordi-e-testo",
+        src: "anotherLove"
+    },
+    {
+        name: "Bad habits",
+        artist: "Sheeran",
+        img: "Ed-Sheeran-Song-Whatsapp-Status-Video-Download-Full-Screen-Videos",
+        src: "badHabits"
+    },
+    {
+        name: "Christmass",
+        artist: "Bts",
+        img: "91LsI86dyLL",
+        src: "christmas"
+    },
+    {
+        name: "Dont forget my love",
+        artist: "Diplo",
+        img: "download",
+        src: "dontForgetMyLove"
+    },
+    {
+        name: "Dont forget my love 2",
+        artist: "Diplo",
+        img: "download",
+        src: "dontForgetMyLove2"
+    },
+    {
+        name: "light Switch",
+        artist: "Charlie puth",
+        img: "artworks-000129843758-mpudez-t500x500",
+        src: "lightSwitch"
+    },
+    {
+        name: "Love enwantati",
+        artist: "Ckay",
+        img: "artworks-LqPz3TafTzeDCuG3-ZxFCLw-t500x500",
+        src: "loveEnwantiti"
+    },
+    {
+        name: "Motley crew",
+        artist: "justin beiber",
+        img: "download (1)",
+        src: "motleyCrew"
+    },
+    {
+        name: "Never say never",
+        artist: "D.o Exo",
+        img: "d9fd88ff0d1810de7197f234d95f39ba",
+        src: "neverSayNever"
+    },
+    {
+        name: "Rose",
+        artist: "D.o Exo",
+        img: "d9fd88ff0d1810de7197f234d95f39ba",
+        src: "rose"
+    },
+    {
+        name: "Skate",
+        artist: "Bruno mars",
+        img: "images",
+        src: "skate"
+    },
+    {
+        name: "Smack That",
+        artist: "Akon",
+        img: "download (2)",
+        src: "smackThat"
+    },
+    {
+        name: "Wa can reach the stars",
+        artist: "blake shelton",
+        img: "bs-WMNsite-750",
+        src: "weCanReachTheStars"
+    },
+    {
+        name: "Smack that",
+        artist: "blake shelton",
+        img: "artworks-000129843758-mpudez-t500x500",
+        src: "smackThat"
+    },
+    {
+        name: "Smack that",
+        artist: "blake shelton",
+        img: "artworks-000129843758-mpudez-t500x500",
+        src: "smackThat"
+    },
+    {
+        name: "We can reach the stars",
+        artist: "Justin bieber",
+        img: "download (1)",
+        src: "weCanReachTheStars"
+    },
+    {
+        name: "Rose",
+        artist: "Akon",
+        img: "d9fd88ff0d1810de7197f234d95f39ba",
+        src: "rose"
+    },
+    {
+        name: "Light switch",
+        artist: "Charlie puth",
+        img: "images",
+        src: "lightSwitch"
+    },
+    {
+        name: "Rose",
+        artist: "D.o exo",
+        img: "download (2)",
+        src: "rose"
+    },
+    {
+        name: "Christmas",
+        artist: "Sceeran",
+        img: "bs-WMNsite-750",
+        src: "christmas"
+    },
+    {
+        name: "Rose",
+        artist: "D.o exo",
+        img: "download (2)",
+        src: "rose"
+    },
+    {
+        name: "Smack that",
+        artist: "Akon",
+        img: "bs-WMNsite-750",
+        src: "smackThat"
+    },
+    {
+        name: "Alien",
+        artist: "Rauf & Falk",
+        img: "rauf&faikRt",
+        src: "alien"
+    },
+]
+
+const songControler = document.querySelector(".songControler"),
+songImage = document.querySelector("#songImageImg"),
+songName = document.querySelector("#songName"),
+songArtistName = document.querySelector("#songArtistName"),
+popStyleBtnPlayer = document.querySelector("#popStyleBtnPlayer");
+
+
+popStyleBtnPlayer.addEventListener("click",() => {
+    songStylesIndexClear();
+    loadPopMusic(popSongsIndex);
+})
+
+//load pop songs
+
+function loadPopMusic(indexNumber){
+    songName.innerHTML = popStyleSongs[indexNumber - 1].name;
+    songArtistName.innerHTML = popStyleSongs[indexNumber - 1].artist;
+    songImage.src = "images/" + popStyleSongs[indexNumber - 1].img + ".jpg";
+    popSongControler.src = "tracks/pop/" + popStyleSongs[indexNumber - 1].src + ".mp3";
+    songImage.style.display = "block";
+
+    focusSongControler.pause();
+    popSongControler.play();
+    chillSongControler.pause();
+    studySongControler.pause();
+    gameSongControler.pause();
+    rAndbSongControler.pause();
+    rapSongControler.pause();
+    animeSongControler.pause()
+    calmnessSongControler.pause();
+    classicSongControler.pause();
+    russianSongControler.pause();
+    heavySongControler.pause();
+    canadaSongControler.pause();
+
+    playBtn.style.display = "none";
+    playBtn.style.fill = "red";
+    pauseBtn.style.fill = "red";
+    pauseBtn.style.display = "block";
+
+    songStatusFocus = false;
+    songStatusStudy = false;
+    songStatusPop = true;
+    songStatusChill = false;
+    songStatusGame = false;
+    songStatusRAndb = false;
+    songStatusRap = false;
+    songStatusAnime = false;
+    songStatusCalmness = false;
+    songStatusClassic = false;
+    songStatusRussian = false;
+    songStatusHeavy = false;
+    songStatusCanada = false;
+}
+
+playBtn.addEventListener("click",() => {
+    popSongControler.play();
+})
+pauseBtn.addEventListener("click",() => {
+    popSongControler.pause();
+})
+
+const skipNext = document.querySelector("#skipNext"),
+skipBack = document.querySelector("#skipBack");
+
+skipNext.addEventListener("click",() => {
+    if(songStatusPop == true){
+        nextPopSong();
+    }
+})
+
+skipBack.addEventListener("click",() => {
+    if(songStatusPop == true){
+        beforePopSong();
+    }
+})
+
+//click next song button developing
+
+function nextPopSong(){
+    popSongsIndex ++;
+    popSongsIndex > popStyleSongs.length ? popSongsIndex = 1 : popStyleSongs = popStyleSongs;
+
+    loadPopMusic(popSongsIndex);
+
+}
+
+//click before song button developing
+
+function beforePopSong(){
+    popSongsIndex --;
+    popSongsIndex < 1 ? popSongsIndex = popStyleSongs.length  : popSongsIndex = popSongsIndex;
+
+    loadPopMusic(popSongsIndex);
+
+}
+
+//updata progressBar with songTime
+
+const progressBar = document.querySelector(".progressBar"),
+progressArea = document.querySelector(".progressArea");
+
+popSongControler.addEventListener("timeupdate",(e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+
+    let progressWith = (currentTime / duration) * 100;
+    progressBar.style.width = progressWith + "%";    
+
+    let songCurrentTime = document.querySelector("#songTimeLeft"),
+    songDurationTime = document.querySelector("#songTimeRemaining")
+
+    popSongControler.addEventListener("loadeddata", () => {
+
+        //update song total duration
+
+        let songDuration = popSongControler.duration;
+        let totalMin = Math.floor(songDuration / 60);
+        let totalSec = Math.floor(songDuration % 60);
+        songDurationTime.innerHTML = totalMin + ":" + totalSec;
+        if(totalSec < 10){
+            songDurationTime.innerHTML = totalMin + ":0" + totalSec;
+        }
+
+    });
+
+    //update song total current time 
+
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if(currentSec < 10){
+        songCurrentTime.innerHTML = currentMin + ":0" + currentSec;
+    }
+    else{
+        songCurrentTime.innerHTML = currentMin + ":" + currentSec;
+    }
+
+    //update playing song current time with progress bar 
+
+    progressArea.addEventListener("click",(e) => {
+        let progressWithVal = progressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = popSongControler.duration;
+
+        popSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
+});
+
+//developed the repeatand random play button 
+
+const repeatPlayButton = document.querySelector("#repeat");
+const randomPlayButton = document.querySelector("#orderPlay");
+
+let repeatState1 = false;
+let randomState1 = false;
+
+repeatPlayButton.addEventListener("click",() => {
+    if(repeatState1 == false){
+        repeatState1 = true;  
+    }
+    else{
+        repeatState1 = false;
+    }
+})
+randomPlayButton.addEventListener("click",() => {
+    if(randomState1 == false){
+        randomState1 = true;
+    }
+    else{
+        randomState1 = false;
+    }
+})
+
+popSongControler.addEventListener("ended",() => {
+    if(randomState1 == false && repeatState1 == false){
+        nextPopSong();
+    }
+    else if(randomState1 == false && repeatState1 == true){
+        popSongControler.currentTime = 0;
+        loadPopMusic(popSongsIndex);
+        popSongControler.play();   
+    }
+    else if(randomState1 == true && repeatState1 == false){
+        let randomIndex1 = Math.floor((Math.random() * popStyleSongs.length) + 1);
+
+        do{
+            randomIndex1 = Math.floor((Math.random() * popStyleSongs.length) + 1);            
+        }
+        while(popSongsIndex == randomIndex1)
+
+        popSongsIndex = randomIndex1;
+        loadPopMusic(popSongsIndex);
+        popSongControler.play();
+    }
+})
+
+// set the songs in chill sont style
+
+const chillSongsImg = document.querySelectorAll(".chillSongsImg");
+const chillSongsNames = document.querySelectorAll(".chillSongsNames");
+const chillSongsArtistsNames = document.querySelectorAll(".chillSongsArtistName");
+const chillSongsbuttonPlayer = document.querySelectorAll(".chillSongsbuttonPlayer");
+const chillSongControler = document.querySelector("#chillSongControler");
+const chillSongControlerSrc = document.querySelector("#chillSongControlerSrc");
+
+
+for(let i = 0;i < chillSongsbuttonPlayer.length;i++){
+    songStylesIndexClear();
+    chillSongsbuttonPlayer[i].addEventListener("click",() => {
+        //chillSongControlerSrc.src = "tracks/chill/"+ chillSongsbuttonPlayer[i].dataset.songname +".mp3";
+        //chillSongControler.src = chillSongControlerSrc.src;
+        //chillSongControler.play();
+        for(let j = 0;j < chillStyleSongs.length;j++){
+            if(chillSongsbuttonPlayer[i].dataset.songname == chillStyleSongs[j].src){
+                songName.innerHTML = chillStyleSongs[j].name;
+                songArtistName.innerHTML = chillStyleSongs[j].artist;
+                songImage.src = "images/" + chillStyleSongs[j].img + ".jpg";        
+                chillSongControler.src = "tracks/chill/" + chillStyleSongs[j].src + ".mp3";
+                songImage.style.display = "block";
+
+                focusSongControler.pause();
+                popSongControler.pause();
+                chillSongControler.play();
+                studySongControler.pause();
+                gameSongControler.pause();
+                rAndbSongControler.pause();
+                rapSongControler.pause();
+                animeSongControler.pause()
+                calmnessSongControler.pause();
+                classicSongControler.pause();
+                russianSongControler.pause();
+                heavySongControler.pause();
+                canadaSongControler.pause();
+
+                chillSongsIndex = i + 1;
+            }
+            
+        }
+        /*songName.innerHTML = chillStyleSongs[indexNumber - 1].name;
+        songArtistName.innerHTML = chillStyleSongs[indexNumber - 1].artist;
+        songImage.src = "images/" + chillStyleSongs[indexNumber - 1].img + ".jpg";
+        chillSongControler.src = "tracks/chill/" + chillStyleSongs[indexNumber - 1].src + ".mp3";
+        songImage.style.display = "block";
+    
+        chillSongControler.play();
+  */  
+        playBtn.style.display = "none";
+        playBtn.style.fill = "red";
+        pauseBtn.style.fill = "red";
+        pauseBtn.style.display = "block";
+        songStatusChill = true;
+        songStatusPop = false;
+
+    })
+}
+
+chillSongsNames[0].innerHTML = "Akdario";
+chillSongsNames[1].innerHTML = "Alkebana";
+chillSongsNames[2].innerHTML = "AllMyDays";
+chillSongsNames[3].innerHTML = "Antigone";
+chillSongsNames[4].innerHTML = "Ardour";
+chillSongsNames[5].innerHTML = "CatchingEyes";
+chillSongsNames[6].innerHTML = "DjPoolboi";
+chillSongsNames[7].innerHTML = "FriendsInSecret";
+chillSongsNames[8].innerHTML = "Gliding";
+chillSongsNames[9].innerHTML = "HowManyTime";
+chillSongsNames[10].innerHTML = "Idk";
+chillSongsNames[11].innerHTML = "Mahal";
+chillSongsNames[12].innerHTML = "NeverBefore";
+chillSongsNames[13].innerHTML = "Oasis";
+chillSongsNames[14].innerHTML = "Setareh";
+chillSongsNames[15].innerHTML = "StillNoRain";
+chillSongsNames[16].innerHTML = "TheLetter";
+chillSongsNames[17].innerHTML = "TimeCapsul";
+chillSongsNames[18].innerHTML = "TheLetter";
+chillSongsNames[19].innerHTML = "NeverBefore";
+chillSongsNames[20].innerHTML = "Poolboi";
+chillSongsNames[21].innerHTML = "Alkebana";
+chillSongsNames[22].innerHTML = "Alkebana";
+
+chillSongsArtistsNames[0].innerHTML = "Dario lessing";
+chillSongsArtistsNames[1].innerHTML = "Nora van elkon";
+chillSongsArtistsNames[2].innerHTML = "Forester";
+chillSongsArtistsNames[3].innerHTML = "Joris voorn";
+chillSongsArtistsNames[4].innerHTML = "Into the ether";
+chillSongsArtistsNames[5].innerHTML = "49th & Main";
+chillSongsArtistsNames[6].innerHTML = "Dj poolboi";
+chillSongsArtistsNames[7].innerHTML = "CRi";
+chillSongsArtistsNames[8].innerHTML = "Man with roses";
+chillSongsArtistsNames[9].innerHTML = "Joey pecoraro";
+chillSongsArtistsNames[10].innerHTML = "SepientDream";
+chillSongsArtistsNames[11].innerHTML = "Shadmehr aghili";
+chillSongsArtistsNames[12].innerHTML = "Gareth emery";
+chillSongsArtistsNames[13].innerHTML = "Attom";
+chillSongsArtistsNames[14].innerHTML = "Shadmehr aghilie";
+chillSongsArtistsNames[15].innerHTML = "Hosini";
+chillSongsArtistsNames[16].innerHTML = "Chris Malinchak";
+chillSongsArtistsNames[17].innerHTML = "Nick beman";
+chillSongsArtistsNames[18].innerHTML = "Chris Malinchak";
+chillSongsArtistsNames[19].innerHTML = "Gareth emery ";
+chillSongsArtistsNames[20].innerHTML = "Dj poolboi";
+chillSongsArtistsNames[21].innerHTML = "Nora van elken";
+
+chillSongsImg[0].src = "images/channels4_profilechannels4_profilechannels4_profile.jpg";
+chillSongsImg[1].src = "images/nora_van_elken_united_states_top_40_233.jpg";
+chillSongsImg[2].src = "images/download (4).jpg";
+chillSongsImg[3].src = "images/Joris-Voorn.jpg";
+chillSongsImg[4].src = "images/Beeple-Into-The-Ether-Token-Art.jpg";
+chillSongsImg[5].src = "images/ab6761610000e5eb4802b452348e2fc0c6d502f3.jpg";
+chillSongsImg[6].src = "images/djPoolboi.jpg";
+chillSongsImg[7].src = "images/cRi.jpg";
+chillSongsImg[8].src = "images/download (5).jpg";
+chillSongsImg[9].src = "images/joeyPecoraro.jpg";
+chillSongsImg[10].src = "images/spientdr eam.jpg";
+chillSongsImg[11].src = "images/shadmehr.jpg";
+chillSongsImg[12].src = "images/garethEmery.jpg";
+chillSongsImg[13].src = "images/attom.jpg";
+chillSongsImg[14].src = "images/shadmehr.jpg";
+chillSongsImg[15].src = "images/hosini.jpg";
+chillSongsImg[16].src = "images/chrisMalinchak.jpg";
+chillSongsImg[17].src = "images/nickBeman.jpg";
+chillSongsImg[18].src = "images/chrisMalinchak.jpg";
+chillSongsImg[19].src = "images/garethEmery.jpg";
+chillSongsImg[20].src = "images/djPoolboi.jpg";
+chillSongsImg[21].src = "images/nora_van_elken_united_states_top_40_233.jpg";
+chillSongsImg[22].src = "images/nora_van_elken_united_states_top_40_233.jpg";
+
+let chillStyleSongs = [
+    {
+        name: "Akdario",
+        artist: "Dario lessing",
+        img: "channels4_profilechannels4_profilechannels4_profile",
+        src: "akdario"
+    },
+    {
+        name: "Alkebana",
+        artist: "Nora van elken",
+        img: "nora_van_elken_united_states_top_40_233",
+        src: "alkebana"
+    },
+    {
+        name: "AllMyDays",
+        artist: "Forester",
+        img: "download (4)",
+        src: "allMyDays"
+    },
+    {
+        name: "Antigone",
+        artist: "Joris voorn",
+        img: "Joris-Voorn",
+        src: "antigone"
+    },
+    {
+        name: "Ardour",
+        artist: "Into the ether",
+        img: "Beeple-Into-The-Ether-Token-Art",
+        src: "ardour"
+    },
+    {
+        name: "CatchingEyes",
+        artist: "49th and main",
+        img: "ab6761610000e5eb4802b452348e2fc0c6d502f3",
+        src: "catchingEyes"
+    },
+    {
+        name: "DjPoolboi",
+        artist: "Dj poolboi",
+        img: "djPoolboi",
+        src: "djPoolboi"
+    },
+    {
+        name: "FriendsInSecret",
+        artist: "CRi",
+        img: "cRi",
+        src: "friendsInSecret"
+    },
+    {
+        name: "Gliding",
+        artist: "Man with roses",
+        img: "download (5)",
+        src: "gliding"
+    },
+    {
+        name: "HowManyTime",
+        artist: "Joey pecoraro",
+        img: "joeyPecoraro",
+        src: "howManyTime"
+    },
+    {
+        name: "Idk",
+        artist: "SepientDream",
+        img: "spientdr eam",
+        src: "idk"
+    },
+    {
+        name: "Mahal",
+        artist: "Shadmehr aghilie",
+        img: "shadmehr",
+        src: "mahal"
+    },
+    {
+        name: "NeverBefore",
+        artist: "Gareth emery",
+        img: "garethEmery",
+        src: "neverBefore"
+    },
+    {
+        name: "Oasis",
+        artist: "Attom",
+        img: "attom",
+        src: "oasis"
+    },
+    {
+        name: "Setareh",
+        artist: "Shadmehr aghilie",
+        img: "shadmehr",
+        src: "setareh"
+    },
+    {
+        name: "StillNoRain",
+        artist: "hosini",
+        img: "hosini",
+        src: "stillNoRain"
+    },
+    {
+        name: "TheLetter",
+        artist: "Chris malinchak",
+        img: "chrisMalinchak",
+        src: "theLetter"
+    },
+    {
+        name: "timeCapsul",
+        artist: "Nick Beman",
+        img: "nickBeman",
+        src: "timeCapsul"
+    },
+    {
+        name: "TheLetter",
+        artist: "Chris malinchak",
+        img: "chrisMalinchak",
+        src: "weCanReachTheStars"
+    },
+    {
+        name: "NeverBefore",
+        artist: "Gareth emery",
+        img: "garethEmery",
+        src: "rose"
+    },
+    {
+        name: "DjPoolboi",
+        artist: "Dj Poolboi",
+        img: "djPoolboi",
+        src: "lightSwitch"
+    },
+    {
+        name: "Alkebana",
+        artist: "Nora van elken",
+        img: "nora_van_elken_united_states_top_40_233",
+        src: "lightSwitch"
+    },
+    {
+        name: "NeverBefore",
+        artist: "Gareth emery",
+        img: "garethEmery",
+        src: "christmas"
+    },
+    {
+        name: "NeverBefore",
+        artist: "Gareth emery",
+        img: "garethEmery",
+        src: "rose"
+    },
+
+]
+
+const chillStyleBtnPlayer = document.querySelector("#chillStyleBtnPlayer")
+
+chillStyleBtnPlayer.addEventListener("click",() => {
+    songStylesIndexClear();
+    loadchillMusic(chillSongsIndex);
+})
+
+//load chill songs
+
+function loadchillMusic(indexNumber){
+    songName.innerHTML = chillStyleSongs[indexNumber - 1].name;
+    songArtistName.innerHTML = chillStyleSongs[indexNumber - 1].artist;
+    songImage.src = "images/" + chillStyleSongs[indexNumber - 1].img + ".jpg";
+    chillSongControler.src = "tracks/chill/" + chillStyleSongs[indexNumber - 1].src + ".mp3";
+    songImage.style.display = "block";
+
+    focusSongControler.pause();
+    popSongControler.pause();
+    chillSongControler.play();
+    studySongControler.pause();
+    gameSongControler.pause();
+    rAndbSongControler.pause();
+    rapSongControler.pause();
+    animeSongControler.pause()
+    calmnessSongControler.pause();
+    classicSongControler.pause();
+    russianSongControler.pause();
+    heavySongControler.pause();
+    canadaSongControler.pause();
+
+    playBtn.style.display = "none";
+    playBtn.style.fill = "red";
+    pauseBtn.style.fill = "red";
+    pauseBtn.style.display = "block";
+
+    songStatusFocus = false;
+    songStatusStudy = false;
+    songStatusPop = false;
+    songStatusChill = true;
+    songStatusGame = false;
+    songStatusRAndb = false;
+    songStatusRap = false;
+    songStatusAnime = false;
+    songStatusCalmness = false;
+    songStatusClassic = false;
+    songStatusRussian = false;
+    songStatusHeavy = false;
+    songStatusCanada = false;
+
+}
+
+playBtn.addEventListener("click",() => {
+    chillSongControler.play();
+})
+pauseBtn.addEventListener("click",() => {
+    chillSongControler.pause();
+})
+
+skipNext.addEventListener("click",() => {
+    if(songStatusChill == true){
+        nextChillSong();
+    }
+})
+
+skipBack.addEventListener("click",() => {
+    if(songStatusChill == true){
+        beforeChillSong();
+    }
+})
+
+//click next song button developing
+
+function nextChillSong(){
+    chillSongsIndex ++;
+    chillSongsIndex > chillStyleSongs.length ? chillSongsIndex = 1 : chillStyleSongs = chillStyleSongs;
+
+    loadchillMusic(chillSongsIndex);
+
+}
+
+//click before song button developing
+
+function beforeChillSong(){
+    chillSongsIndex --;
+    chillSongsIndex < 1 ? chillSongsIndex = chillStyleSongs.length : chillSongsIndex = chillSongsIndex;
+
+    loadchillMusic(chillSongsIndex);
+
+}
+
+//updata progressBar with songTime
+
+chillSongControler.addEventListener("timeupdate",(e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+
+    let progressWith = (currentTime / duration) * 100;
+    progressBar.style.width = progressWith + "%";    
+
+    let songCurrentTime = document.querySelector("#songTimeLeft"),
+    songDurationTime = document.querySelector("#songTimeRemaining")
+
+    chillSongControler.addEventListener("loadeddata", () => {
+
+        //update song total duration
+
+        let songDuration = chillSongControler.duration;
+        let totalMin = Math.floor(songDuration / 60);
+        let totalSec = Math.floor(songDuration % 60);
+        songDurationTime.innerHTML = totalMin + ":" + totalSec;
+        if(totalSec < 10){
+            songDurationTime.innerHTML = totalMin + ":0" + totalSec;
+        }
+
+    });
+
+    //update song total current time 
+
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if(currentSec < 10){
+        songCurrentTime.innerHTML = currentMin + ":0" + currentSec;
+    }
+    else{
+        songCurrentTime.innerHTML = currentMin + ":" + currentSec;
+    }
+
+    //update playing song current time with progress bar 
+
+    progressArea.addEventListener("click",(e) => {
+        let progressWithVal = progressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = chillSongControler.duration;
+
+        chillSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
+});
+
+//developed the repeatand random play button 
+
+let repeatState2 = false;
+let randomState2 = false;
+
+repeatPlayButton.addEventListener("click",() => {
+    if(repeatState2 == false){
+        repeatState2 = true;  
+    }
+    else{
+        repeatState2 = false;
+    }
+})
+randomPlayButton.addEventListener("click",() => {
+    if(randomState2 == false){
+        randomState2 = true;
+    }
+    else{
+        randomState2 = false;
+    }
+})
+
+chillSongControler.addEventListener("ended",() => {
+    if(randomState2 == false && repeatState2 == false){
+        nextChillSong();
+    }
+    else if(randomState2 == false && repeatState2 == true){
+        chillSongControler.currentTime = 0;
+        loadchillMusic(chillSongsIndex);
+        chillSongControler.play();   
+    }
+    else if(randomState2 == true && repeatState2 == false){
+        let randomIndex2 = Math.floor((Math.random() * chillStyleSongs.length) + 1);
+
+        do{
+            randomIndex2 = Math.floor((Math.random() * chillStyleSongs.length) + 1);  
+        }
+        while(chillSongsIndex == randomIndex2)
+
+        chillSongsIndex = randomIndex2;
+        loadchillMusic(chillSongsIndex);
+        chillSongControler.play();
+    }
+})
+
+// set the songs in focus sont style
+
+const focusSongsImg = document.querySelectorAll(".focusSongsImg");
+const focusSongsNames = document.querySelectorAll(".focusSongsNames");
+const focusSongsArtistsNames = document.querySelectorAll(".focusSongsArtistName");
+const focusSongsbuttonPlayer = document.querySelectorAll(".focusSongsbuttonPlayer");
+const focusSongControler = document.querySelector("#focusSongControler");
+const focusSongControlerSrc = document.querySelector("#focusSongControlerSrc");
+
+
+for(let i = 0;i < focusSongsbuttonPlayer.length;i++){
+    songStylesIndexClear();
+    focusSongsbuttonPlayer[i].addEventListener("click",() => {
+        for(let j = 0;j < focusStyleSongs.length;j++){
+            if(focusSongsbuttonPlayer[i].dataset.songname == focusStyleSongs[j].src){
+                songName.innerHTML = focusStyleSongs[j].name;
+                songArtistName.innerHTML = focusStyleSongs[j].artist;
+                songImage.src = focusStyleSongs[j].img;        
+                focusSongControler.src = "tracks/Focus/" + focusStyleSongs[j].src + ".mp3";
+                songImage.style.display = "block";
+
+                chillSongControler.pause();
+                focusSongControler.play();
+                popSongControler.pause();
+                studySongControler.pause();
+                rAndbSongControler.pause();
+                rapSongControler.pause();
+                calmnessSongControler.pause();
+                animeSongControler.pause();
+                classicSongControler.pause();
+                russianSongControler.pause();
+                heavySongControler.pause();
+                canadaSongControler.pause();
+
+                focusSongsIndex = i + 1;
+            }
+            
+        } 
+        playBtn.style.display = "none";
+        playBtn.style.fill = "red";
+        pauseBtn.style.fill = "red";
+        pauseBtn.style.display = "block";
+        songStatusFocus = true;
+
+    })
+}
+
+focusSongsNames[0].innerHTML = "akdario";
+focusSongsNames[1].innerHTML = "allHumanBeings";
+focusSongsNames[2].innerHTML = "byThisRiver";
+focusSongsNames[3].innerHTML = "DonaNobi";
+focusSongsNames[4].innerHTML = "DueTramonti";
+focusSongsNames[5].innerHTML = "etudesNo";
+focusSongsNames[6].innerHTML = "fromHome";
+focusSongsNames[7].innerHTML = "Ghosts";
+focusSongsNames[8].innerHTML = "gliding";
+focusSongsNames[9].innerHTML = "parliamentsOfOwls";
+focusSongsNames[10].innerHTML = "rolling";
+focusSongsNames[11].innerHTML = "roscian";
+focusSongsNames[12].innerHTML = "slowMomentSand";
+focusSongsNames[13].innerHTML = "theLastMen";
+focusSongsNames[14].innerHTML = "there'sNoReassenToCry";
+focusSongsNames[15].innerHTML = "waltzInB";
+focusSongsNames[16].innerHTML = "roscian";
+focusSongsNames[17].innerHTML = "roscian";
+focusSongsNames[18].innerHTML = "parliamentsOfOwls";
+focusSongsNames[19].innerHTML = "slowMomentSand";
+focusSongsNames[20].innerHTML = "etudesNo";
+focusSongsNames[21].innerHTML = "akdario";
+
+focusSongsArtistsNames[0].innerHTML = "Sven helbig";
+focusSongsArtistsNames[1].innerHTML = "Max richter";
+focusSongsArtistsNames[2].innerHTML = "Brain eno";
+focusSongsArtistsNames[3].innerHTML = "Max richter";
+focusSongsArtistsNames[4].innerHTML = "Ludovico einaudi";
+focusSongsArtistsNames[5].innerHTML = "Philip glass";
+focusSongsArtistsNames[6].innerHTML = "Olafur arnalds";
+focusSongsArtistsNames[7].innerHTML = "Stephan moccio";
+focusSongsArtistsNames[8].innerHTML = "Johann johansso";
+focusSongsArtistsNames[9].innerHTML = "Agnes obel";
+focusSongsArtistsNames[10].innerHTML = "Roedelius";
+focusSongsArtistsNames[11].innerHTML = "Agnes obel";
+focusSongsArtistsNames[12].innerHTML = "Roger eno";
+focusSongsArtistsNames[13].innerHTML = "Johann johansso";
+focusSongsArtistsNames[14].innerHTML = "Andrija pavlovic";
+focusSongsArtistsNames[15].innerHTML = "chad lawson";
+focusSongsArtistsNames[16].innerHTML = "Olafur arnalds";
+focusSongsArtistsNames[17].innerHTML = "Olafur arnalds";
+focusSongsArtistsNames[18].innerHTML = "Roedelius";
+focusSongsArtistsNames[19].innerHTML = "Stephan moccio";
+focusSongsArtistsNames[20].innerHTML = "Agnes obel";
+focusSongsArtistsNames[21].innerHTML = "Roedelius";
+
+focusSongsImg[0].src = "images/channels4_profilechannels4_profilechannels4_profile.jpg";
+focusSongsImg[1].src = "images/allHumanBeings.jpg";
+focusSongsImg[2].src = "images/byThisRiverSong.jpg";
+focusSongsImg[3].src = "images/waltzInB.jpg";
+focusSongsImg[4].src = "images/dueTramonti.jpg";
+focusSongsImg[5].src = "images/etudeNo.jpg";
+focusSongsImg[6].src = "images/fromHome.jpg";
+focusSongsImg[7].src = "images/ghost.jpg";
+focusSongsImg[8].src = "images/gliding.jpg";
+focusSongsImg[9].src = "images/parliamentsOfOwls.jpg";
+focusSongsImg[10].src = "images/rolling.jpg";
+focusSongsImg[11].src = "images/roscian.jpg";
+focusSongsImg[12].src = "images/slowMomentSand.jpg";
+focusSongsImg[13].src = "images/theLastMen.jpg";
+focusSongsImg[14].src = "images/there'sNoReassenToCry.jpg";
+focusSongsImg[15].src = "images/waltzInB.jpg";
+focusSongsImg[16].src = "images/roscian.jpg";
+focusSongsImg[17].src = "images/roscian.jpg";
+focusSongsImg[18].src = "images/parliamentsOfOwls.jpg";
+focusSongsImg[19].src = "images/slowMomentSand.jpg";
+focusSongsImg[20].src = "images/waltzInB.jpg";
+focusSongsImg[21].src = "images/channels4_profilechannels4_profilechannels4_profile.jpg";
+
+let focusStyleSongs = [
+    {
+        name: "Akdario",
+        artist: "Am abend",
+        img: "images/channels4_profilechannels4_profilechannels4_profile.jpg",
+        src: "akdario"
+    },
+    {
+        name: "allHumanBeings",
+        artist: "allHumanBeings",
+        img: "images/allHumanBeings.jpg",
+        src: "allHumanBeings"
+    },
+    {
+        name: "byThisRiver",
+        artist: "byThisRiverSong",
+        img: "images/byThisRiverSong.jpg",
+        src: "byThisRiver"
+    },
+    {
+        name: "DonaNobi",
+        artist: "Joris voorn",
+        img: "images/waltzInB.jpg",
+        src: "DonaNobi"
+    },
+    {
+        name: "DueTramonti",
+        artist: "Into the ether",
+        img: "images/dueTramonti.jpg",
+        src: "DueTramonti"
+    },
+    {
+        name: "etudesNo",
+        artist: "49th and main",
+        img: "images/etudeNo.jpg",
+        src: "etudesNo"
+    },
+    {
+        name: "fromHome",
+        artist: "Dj poolboi",
+        img: "images/fromHome.jpg",
+        src: "fromHome"
+    },
+    {
+        name: "Ghosts",
+        artist: "CRi",
+        img: "images/ghost.jpg",
+        src: "Ghosts"
+    },
+    {
+        name: "gliding",
+        artist: "Man with roses",
+        img: "images/gliding.jpg",
+        src: "gliding"
+    },
+    {
+        name: "parliamentsOfOwls",
+        artist: "Joey pecoraro",
+        img: "images/parliamentsOfOwls.jpg",
+        src: "parliamentsOfOwls"
+    },
+    {
+        name: "rolling",
+        artist: "SepientDream",
+        img: "images/rolling.jpg",
+        src: "rolling"
+    },
+    {
+        name: "roscian",
+        artist: "Shadmehr aghilie",
+        img: "images/roscian.jpg",
+        src: "roscian"
+    },
+    {
+        name: "slowMomentSand",
+        artist: "Gareth emery",
+        img: "images/slowMomentSand.jpg",
+        src: "slowMomentSand"
+    },
+    {
+        name: "theLastMen",
+        artist: "Attom",
+        img: "images/theLastMen.jpg",
+        src: "theLastMen"
+    },
+    {
+        name: "there'sNoReassenToCry",
+        artist: "Shadmehr aghilie",
+        img: "images/there'sNoReassenToCry.jpg",
+        src: "there'sNoReassenToCry"
+    },
+    {
+        name: "waltzInB",
+        artist: "hosini",
+        img: "images/waltzInB.jpg",
+        src: "waltzInB"
+    },
+    {
+        name: "theLastMen",
+        artist: "Attom",
+        img: "images/theLastMen.jpg",
+        src: "theLastMen"
+    },
+    {
+        name: "theLastMen",
+        artist: "Attom",
+        img: "images/theLastMen.jpg",
+        src: "theLastMen"
+    },
+    {
+        name: "slowMomentSand",
+        artist: "Gareth emery",
+        img: "images/slowMomentSand.jpg",
+        src: "slowMomentSand"
+    },
+    {
+        name: "waltzInB",
+        artist: "hosini",
+        img: "images/waltzInB.jpg",
+        src: "waltzInB"
+    },
+    {
+        name: "waltzInB",
+        artist: "hosini",
+        img: "images/waltzInB.jpg",
+        src: "waltzInB"
+    },
+    {
+        name: "slowMomentSand",
+        artist: "Gareth emery",
+        img: "images/slowMomentSand.jpg",
+        src: "slowMomentSand"
+    },
+]
+
+const focusStyleBtnPlayer = document.querySelector("#focusStyleBtnPlayer")
+
+focusStyleBtnPlayer.addEventListener("click",() => {
+    songStylesIndexClear();
+    loadfocusMusic(focusSongsIndex);
+})
+
+//load focus songs
+
+let songStatusFocus;
+
+function loadfocusMusic(indexNumber){
+    songName.innerHTML = focusStyleSongs[indexNumber - 1].name;
+    songArtistName.innerHTML = focusStyleSongs[indexNumber - 1].artist;
+    songImage.src = focusStyleSongs[indexNumber - 1].img;
+    focusSongControler.src = "tracks/Focus/" + focusStyleSongs[indexNumber - 1].src + ".mp3";
+    songImage.style.display = "block";
+
+    focusSongControler.play();
+    popSongControler.pause();
+    chillSongControler.pause();
+    studySongControler.pause();
+    gameSongControler.pause();
+    rAndbSongControler.pause();
+    rapSongControler.pause();
+    animeSongControler.pause()
+    calmnessSongControler.pause();
+    classicSongControler.pause();
+    russianSongControler.pause();
+    heavySongControler.pause();
+    canadaSongControler.pause();
+
+    playBtn.style.display = "none";
+    playBtn.style.fill = "red";
+    pauseBtn.style.fill = "red";
+    pauseBtn.style.display = "block";
+
+    songStatusFocus = true;
+    songStatusStudy = false;
+    songStatusPop = false;
+    songStatusChill = false;
+    songStatusGame = false;
+    songStatusRAndb = false;
+    songStatusRap = false;
+    songStatusAnime = false;
+    songStatusCalmness = false;
+    songStatusClassic = false;
+    songStatusRussian = false;
+    songStatusHeavy = false;
+    songStatusCanada = false;
+
+}
+
+playBtn.addEventListener("click",() => {
+    focusSongControler.play();
+})
+pauseBtn.addEventListener("click",() => {
+    focusSongControler.pause();
+})
+
+skipNext.addEventListener("click",() => {
+    if(songStatusFocus == true){
+        nextFocusSong();
+    }
+})
+
+skipBack.addEventListener("click",() => {
+    if(songStatusFocus == true){
+        beforeFocusSong();
+    }
+})
+
+//click next song button developing
+
+function nextFocusSong(){
+    focusSongsIndex ++;
+    focusSongsIndex > focusStyleSongs.length ? focusSongsIndex = 1 : focusStyleSongs = focusStyleSongs;
+
+    loadfocusMusic(focusSongsIndex);
+
+}
+
+//click before song button developing
+
+function beforeFocusSong(){
+    focusSongsIndex --;
+    focusSongsIndex < 1 ? focusSongsIndex = focusStyleSongs.length : focusSongsIndex = focusSongsIndex;
+
+    loadfocusMusic(focusSongsIndex);
+
+}
+
+//updata progressBar with songTime
+
+focusSongControler.addEventListener("timeupdate",(e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+
+    let progressWith = (currentTime / duration) * 100;
+    progressBar.style.width = progressWith + "%";    
+
+    let songCurrentTime = document.querySelector("#songTimeLeft"),
+    songDurationTime = document.querySelector("#songTimeRemaining")
+
+    focusSongControler.addEventListener("loadeddata", () => {
+
+        //update song total duration
+
+        let songDuration = focusSongControler.duration;
+        let totalMin = Math.floor(songDuration / 60);
+        let totalSec = Math.floor(songDuration % 60);
+        songDurationTime.innerHTML = totalMin + ":" + totalSec;
+        if(totalSec < 10){
+            songDurationTime.innerHTML = totalMin + ":0" + totalSec;
+        }
+
+    });
+
+    //update song total current time 
+
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if(currentSec < 10){
+        songCurrentTime.innerHTML = currentMin + ":0" + currentSec;
+    }
+    else{
+        songCurrentTime.innerHTML = currentMin + ":" + currentSec;
+    }
+
+    //update playing song current time with progress bar 
+
+    progressArea.addEventListener("click",(e) => {
+        let progressWithVal = progressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = focusSongControler.duration;
+
+        focusSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
+});
+
+//developed the repeatand random play button 
+
+let repeatState3 = false;
+let randomState3 = false;
+
+repeatPlayButton.addEventListener("click",() => {
+    if(repeatState3 == false){
+        repeatState3 = true;  
+    }
+    else{
+        repeatState3 = false;
+    }
+})
+randomPlayButton.addEventListener("click",() => {
+    if(randomState3 == false){
+        randomState3 = true;
+    }
+    else{
+        randomState3 = false;
+    }
+})
+
+focusSongControler.addEventListener("ended",() => {
+    if(randomState3 == false && repeatState3 == false){
+        nextFocusSong();
+    }
+    else if(randomState3 == false && repeatState3 == true){
+        focusSongControler.currentTime = 0;
+        loadfocusMusic(focusSongsIndex);
+        focusSongControler.play();   
+    }
+    else if(randomState3 == true && repeatState3 == false){
+        let randomIndex3 = Math.floor((Math.random() * focusStyleSongs.length) + 1);
+
+        do{
+            randomIndex3 = Math.floor((Math.random() * focusStyleSongs.length) + 1);            
+        }
+        while(focusSongsIndex == randomIndex3)
+
+        focusSongsIndex = randomIndex3;
+        loadfocusMusic(focusSongsIndex);
+        focusSongControler.play();
+    }
+})
+
+// set the songs in study sont style
+
+const studySongsImg = document.querySelectorAll(".studySongsImg");
+const studySongsNames = document.querySelectorAll(".studySongsNames");
+const studySongsArtistsNames = document.querySelectorAll(".studySongsArtistName");
+const studySongsbuttonPlayer = document.querySelectorAll(".studySongsbuttonPlayer");
+const studySongControler = document.querySelector("#studySongControler");
+const studySongControlerSrc = document.querySelector("#studySongControlerSrc");
+
+
+for(let i = 0;i < studySongsbuttonPlayer.length;i++){
+    songStylesIndexClear();
+    studySongsbuttonPlayer[i].addEventListener("click",() => {
+        for(let j = 0;j < studyStyleSongs.length;j++){
+            if(studySongsbuttonPlayer[i].dataset.songname == studyStyleSongs[j].src){
+                songName.innerHTML = studyStyleSongs[j].name;
+                songArtistName.innerHTML = studyStyleSongs[j].artist;
+                songImage.src = studyStyleSongs[j].img;        
+                studySongControler.src = "tracks/study/" + studyStyleSongs[j].src + ".mp3";
+                songImage.style.display = "block";
+
+                focusSongControler.pause();
+                popSongControler.pause();
+                chillSongControler.pause();
+                studySongControler.play();
+                gameSongControler.pause();
+                rAndbSongControler.pause();
+                rapSongControler.pause();
+                animeSongControler.pause()
+                calmnessSongControler.pause();
+                classicSongControler.pause();
+                russianSongControler.pause();
+                heavySongControler.pause();
+                canadaSongControler.pause();
+
+                studySongsIndex = i + 1;
+            }
+            
+        } 
+        playBtn.style.display = "none";
+        playBtn.style.fill = "red";
+        pauseBtn.style.fill = "red";
+        pauseBtn.style.display = "block";
+        songStatusClassic = true;
+
+    })
+}
+
+studySongsNames[0].innerHTML = "20Duty";
+studySongsNames[1].innerHTML = "Buffet";
+studySongsNames[2].innerHTML = "Crackling";
+studySongsNames[3].innerHTML = "Duendy";
+studySongsNames[4].innerHTML = "InTheTrees";
+studySongsNames[5].innerHTML = "Lost";
+studySongsNames[6].innerHTML = "ManWithRosses";
+studySongsNames[7].innerHTML = "Sabluem";
+studySongsNames[8].innerHTML = "Tamiami";
+studySongsNames[9].innerHTML = "TheRoadLess";
+studySongsNames[10].innerHTML = "ToghetherWeSuccesd";
+studySongsNames[11].innerHTML = "Whitby";
+studySongsNames[12].innerHTML = "Obra Dos";
+studySongsNames[13].innerHTML = "Driving";
+studySongsNames[14].innerHTML = "Circle of Fear";
+studySongsNames[15].innerHTML = "Long May It Sustain";
+studySongsNames[16].innerHTML = "ToghetherWeSuccesd";
+studySongsNames[17].innerHTML = "Lost";
+studySongsNames[18].innerHTML = "InTheTrees";
+studySongsNames[19].innerHTML = "ToghetherWeSuccesd";
+studySongsNames[20].innerHTML = "Lost";
+studySongsNames[21].innerHTML = "ToghetherWeSuccesd";
+
+studySongsArtistsNames[0].innerHTML = "Jacques ferrandi";
+studySongsArtistsNames[1].innerHTML = "Alicia premiere";
+studySongsArtistsNames[2].innerHTML = "Sean drake";
+studySongsArtistsNames[3].innerHTML = "Amity fall";
+studySongsArtistsNames[4].innerHTML = "saddest girl in the world";
+studySongsArtistsNames[5].innerHTML = "Annelie";
+studySongsArtistsNames[6].innerHTML = "Aeyes libe";
+studySongsArtistsNames[7].innerHTML = "Johann kurzweil";
+studySongsArtistsNames[8].innerHTML = "Toshi sakura";
+studySongsArtistsNames[9].innerHTML = "Giuseppina bianchi";
+studySongsArtistsNames[10].innerHTML = "Sylvia bakett";
+studySongsArtistsNames[11].innerHTML = "Stephan moccio";
+studySongsArtistsNames[12].innerHTML = "Helado negro";
+studySongsArtistsNames[13].innerHTML = "Grouper";
+studySongsArtistsNames[14].innerHTML = "Mark pritchard";
+studySongsArtistsNames[15].innerHTML = "A winged victory";
+studySongsArtistsNames[16].innerHTML = "Sylvia bakett";
+studySongsArtistsNames[17].innerHTML = "Sylvia bakett";
+studySongsArtistsNames[18].innerHTML = "saddest girl in the world";
+studySongsArtistsNames[19].innerHTML = "Sylvia bakett";
+studySongsArtistsNames[20].innerHTML = "Annelie";
+studySongsArtistsNames[21].innerHTML = "Sylvia bakett";
+
+studySongsImg[0].src = "images/20Duty.jpg";
+studySongsImg[1].src = "images/buffet.jpg";
+studySongsImg[2].src = "images/crackling.jpg";
+studySongsImg[3].src = "images/Duendy.jpg";
+studySongsImg[4].src = "images/inTheTrees.jpg";
+studySongsImg[5].src = "images/Lost.png";
+studySongsImg[6].src = "images//Man With Rosses.jpg";
+studySongsImg[7].src = "images/sabluem.jpg";
+studySongsImg[8].src = "images/tamiami.jpg";
+studySongsImg[9].src = "images/The RoadLess.jpg";
+studySongsImg[10].src = "images/To ghether We Succesd.jpg";
+studySongsImg[11].src = "images/Whitby.jpg";
+studySongsImg[12].src = "images/Obra Dos.jpg";
+studySongsImg[13].src = "images/Driving.jpg";
+studySongsImg[14].src = "images/Circle of Fear.jpg";
+studySongsImg[15].src = "images/Long May It Sustain.jpg";
+studySongsImg[16].src = "images/To ghether We Succesd.jpg";
+studySongsImg[17].src = "images/Lost.png";
+studySongsImg[18].src = "images/inTheTrees.jpg";
+studySongsImg[19].src = "images/To ghether We Succesd.jpg";
+studySongsImg[20].src = "images/Lost.png";
+studySongsImg[21].src = "images/To ghether We Succesd.jpg";
+
+let studyStyleSongs = [
+    {
+        name: "20Duty",
+        artist: "Jacques ferrandi",
+        img: "images/20Duty.jpg",
+        src: "20Duty"
+    },
+    {
+        name: "buffet",
+        artist: "Alicia premiere",
+        img: "images/buffet.jpg",
+        src: "buffet"
+    },
+    {
+        name: "crackling",
+        artist: "Sean drake",
+        img: "images/crackling.jpg",
+        src: "crackling"
+    },
+    {
+        name: "Duendy",
+        artist: "Amity fall",
+        img: "images/Duendy.jpg",
+        src: "Duendy"
+    },
+    {
+        name: "inTheTrees",
+        artist: "saddest girl in the world",
+        img: "images/inTheTrees.jpg",
+        src: "inTheTrees"
+    },
+    {
+        name: "Lost",
+        artist: "Annelie",
+        img: "images/Lost.png",
+        src: "Lost"
+    },
+    {
+        name: "Man With Rosses",
+        artist: "images/Man With Rosses.jpg",
+        img: "djPoolboi",
+        src: "ManWithRosses"
+    },
+    {
+        name: "Sabluem",
+        artist: "images/Sabluem.jpg",
+        img: "cRi",
+        src: "sabluem"
+    },
+    {
+        name: "Tamiami",
+        artist: "Toshi sakura",
+        img: "images/Tamiami.jpg",
+        src: "tamiami"
+    },
+    {
+        name: "The RoadLess",
+        artist: "Giuseppina bianchi",
+        img: "images/The RoadLess.jpg",
+        src: "theRoadLess"
+    },
+    {
+        name: "To ghether We Succesd",
+        artist: "Sylvia bakett",
+        img: "images/To ghether We Succesd.jpg",
+        src: "toghetherWeSuccesd"
+    },
+    {
+        name: "Whitby",
+        artist: "Stephan moccio",
+        img: "images/Whitby.jpg",
+        src: "whitby"
+    },
+    {
+        name: "Obra Dos",
+        artist: "Helado negro",
+        img: "images/Obra Dos.jpg",
+        src: "14 Obra Dos"
+    },
+    {
+        name: "Driving",
+        artist: "Grouper",
+        img: "images/Driving.jpg",
+        src: "18 Driving"
+    },
+    {
+        name: "Circle of Fear",
+        artist: "Mark pritchard",
+        img: "imagse/Circle of Fear.jpg",
+        src: "19 Circle of Fear"
+    },
+    {
+        name: "Long May It Sustain",
+        artist: "A winged victory",
+        img: "images/Long May It Sustain.jpg",
+        src: "20 Long May It Sustain"
+    },
+    {
+        name: "To ghether We Succesd",
+        artist: "Sylvia bakett",
+        img: "images/To ghether We Succesd.jpg",
+        src: "toghetherWeSuccesd"
+    },
+    {
+        name: "Lost",
+        artist: "Annelie",
+        img: "images/Lost.png",
+        src: "Lost"
+    },
+    {
+        name: "In The Trees",
+        artist: "saddest girl in the world",
+        img: "images/inTheTrees.jpg",
+        src: "inTheTrees"
+    },
+    {
+        name: "To ghether We Succesd",
+        artist: "Sylvia bakett",
+        img: "images/To ghether We Succesd.jpg",
+        src: "toghetherWeSuccesd"
+    },
+    {
+        name: "Lost",
+        artist: "Annelie",
+        img: "images/inTheTrees.png",
+        src: "Lost"
+    },
+    {
+        name: "To ghether we succesd",
+        artist: "Sylvia bakett",
+        img: "images/To ghether We Succesd.jpg",
+        src: "toghetherWeSuccesd"
+    },
+]
+
+const studyStyleBtnPlayer = document.querySelector("#studyStyleBtnPlayer")
+
+
+studyStyleBtnPlayer.addEventListener("click",() => {
+    songStylesIndexClear();
+    loadstudyMusic(studySongsIndex);
+})
+
+//load study songs
+
+let songStatusStudy;
+
+function loadstudyMusic(indexNumber){
+    songName.innerHTML = studyStyleSongs[indexNumber - 1].name;
+    songArtistName.innerHTML = studyStyleSongs[indexNumber - 1].artist;
+    songImage.src = studyStyleSongs[indexNumber - 1].img;
+    studySongControler.src = "tracks/study/" + studyStyleSongs[indexNumber - 1].src + ".mp3";
+    songImage.style.display = "block";
+
+    focusSongControler.pause();
+    popSongControler.pause();
+    chillSongControler.pause();
+    studySongControler.play();
+    gameSongControler.pause();
+    rAndbSongControler.pause();
+    rapSongControler.pause();
+    animeSongControler.pause()
+    calmnessSongControler.pause();
+    classicSongControler.pause();
+    russianSongControler.pause();
+    heavySongControler.pause();
+    canadaSongControler.pause();
+
+    playBtn.style.display = "none";
+    playBtn.style.fill = "red";
+    pauseBtn.style.fill = "red";
+    pauseBtn.style.display = "block";
+
+    songStatusFocus = false;
+    songStatusStudy = true;
+    songStatusPop = false;
+    songStatusChill = false;
+    songStatusGame = false;
+    songStatusRAndb = false;
+    songStatusRap = false;
+    songStatusAnime = false;
+    songStatusCalmness = false;
+    songStatusClassic = false;
+    songStatusRussian = false;
+    songStatusHeavy = false;
+    songStatusCanada = false;
+
+}
+
+playBtn.addEventListener("click",() => {
+    studySongControler.play();
+})
+pauseBtn.addEventListener("click",() => {
+    studySongControler.pause();
+})
+
+skipNext.addEventListener("click",() => {
+    if(songStatusStudy == true){
+        nextStudySong();
+    }
+})
+
+skipBack.addEventListener("click",() => {
+    if(songStatusStudy == true){
+        beforeStudySong();
+    }
+})
+
+//click next song button developing
+
+function nextStudySong(){
+    studySongsIndex ++;
+    studySongsIndex > studyStyleSongs.length ? studySongsIndex = 1 : studyStyleSongs = studyStyleSongs;
+
+    loadstudyMusic(studySongsIndex);
+
+}
+
+//click before song button developing
+
+function beforeStudySong(){
+    studySongsIndex --;
+    studySongsIndex < 1 ? russianSongsIndex = studyStyleSongs.length : studySongsIndex = studySongsIndex;
+
+    loadstudyMusic(studySongsIndex);
+
+}
+
+//updata progressBar with songTime
+
+studySongControler.addEventListener("timeupdate",(e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+
+    let progressWith = (currentTime / duration) * 100;
+    progressBar.style.width = progressWith + "%";    
+
+    let songCurrentTime = document.querySelector("#songTimeLeft"),
+    songDurationTime = document.querySelector("#songTimeRemaining")
+
+    studySongControler.addEventListener("loadeddata", () => {
+
+        //update song total duration
+
+        let songDuration = studySongControler.duration;
+        let totalMin = Math.floor(songDuration / 60);
+        let totalSec = Math.floor(songDuration % 60);
+        songDurationTime.innerHTML = totalMin + ":" + totalSec;
+        if(totalSec < 10){
+            songDurationTime.innerHTML = totalMin + ":0" + totalSec;
+        }
+
+    });
+
+    //update song total current time 
+
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if(currentSec < 10){
+        songCurrentTime.innerHTML = currentMin + ":0" + currentSec;
+    }
+    else{
+        songCurrentTime.innerHTML = currentMin + ":" + currentSec;
+    }
+
+    //update playing song current time with progress bar 
+
+    progressArea.addEventListener("click",(e) => {
+        let progressWithVal = progressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = studySongControler.duration;
+
+        studySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
+});
+
+//developed the repeatand random play button 
+
+let repeatState4 = false;
+let randomState4 = false;
+
+repeatPlayButton.addEventListener("click",() => {
+    if(repeatState4 == false){
+        repeatState4 = true;  
+    }
+    else{
+        repeatState4 = false;
+    }
+})
+randomPlayButton.addEventListener("click",() => {
+    if(randomState4 == false){
+        randomState4 = true;
+    }
+    else{
+        randomState4 = false;
+    }
+})
+
+studySongControler.addEventListener("ended",() => {
+    if(randomState4 == false && repeatState4 == false){
+        nextStudySong();
+    }
+    else if(randomState4 == false && repeatState4 == true){
+        studySongControler.currentTime = 0;
+        loadstudyMusic(studySongsIndex);
+        studySongControler.play();   
+    }
+    else if(randomState4 == true && repeatState4 == false){
+        let randomIndex4 = Math.floor((Math.random() * studyStyleSongs.length) + 1);
+
+        do{
+            randomIndex4 = Math.floor((Math.random() * studyStyleSongs.length) + 1);            
+        }
+        while(studySongsIndex == randomIndex4)
+
+        studySongsIndex = randomIndex4;
+        loadstudyMusic(studySongsIndex);
+        studySongControler.play();
+    }
+})
+
+// set the songs in game sont style
+
+const gameSongsImg = document.querySelectorAll(".gameSongsImg");
+const gameSongsNames = document.querySelectorAll(".gameSongsNames");
+const gameSongsArtistsNames = document.querySelectorAll(".gameSongsArtistName");
+const gameSongsbuttonPlayer = document.querySelectorAll(".gameSongsbuttonPlayer");
+const gameSongControler = document.querySelector("#gameSongControler");
+const gameSongControlerSrc = document.querySelector("#gameSongControlerSrc");
+
+
+for(let i = 0;i < gameSongsbuttonPlayer.length;i++){
+    gameSongsbuttonPlayer[i].addEventListener("click",() => {
+        songStylesIndexClear();
+        for(let j = 0;j < gameStyleSongs.length;j++){
+            if(gameSongsbuttonPlayer[i].dataset.songname == gameStyleSongs[j].src){
+                songName.innerHTML = gameStyleSongs[j].name;
+                songArtistName.innerHTML = gameStyleSongs[j].artist;
+                songImage.src = gameStyleSongs[j].img;        
+                gameSongControler.src = "tracks/game/" + gameStyleSongs[j].src + ".mp3";
+                songImage.style.display = "block";
+
+                focusSongControler.pause();
+                popSongControler.pause();
+                chillSongControler.pause();
+                studySongControler.pause();
+                gameSongControler.play();
+                rAndbSongControler.pause();
+                rapSongControler.pause();
+                animeSongControler.pause()
+                calmnessSongControler.pause();
+                classicSongControler.pause();
+                russianSongControler.pause();
+                heavySongControler.pause();
+                canadaSongControler.pause();
+
+                GameSongsIndex = i + 1;
+            }
+            
+        }
+       
+        playBtn.style.display = "none";
+        playBtn.style.fill = "red";
+        pauseBtn.style.fill = "red";
+        pauseBtn.style.display = "block";
+        songStatusGame = true;
+
+    })
+}
+
+gameSongsNames[0].innerHTML = "An old game";
+gameSongsNames[1].innerHTML = "Balcanistic";
+gameSongsNames[2].innerHTML = "Become Human";
+gameSongsNames[3].innerHTML = "Breath of the wind";
+gameSongsNames[4].innerHTML = "Chll of light";
+gameSongsNames[5].innerHTML = "Hollow knight";
+gameSongsNames[6].innerHTML = "Ezio's family";
+gameSongsNames[7].innerHTML = "Ghost in the shell";
+gameSongsNames[8].innerHTML = "Hollow knight";
+gameSongsNames[9].innerHTML = "Lahayahat";
+gameSongsNames[10].innerHTML = "Man With Rosses";
+gameSongsNames[11].innerHTML = "Melodaio";
+gameSongsNames[12].innerHTML = "One";
+gameSongsNames[13].innerHTML = "Seni";
+gameSongsNames[14].innerHTML = "Why do we fall";
+gameSongsNames[15].innerHTML = "Lahayahat";
+gameSongsNames[16].innerHTML = "Ezios family";
+gameSongsNames[17].innerHTML = "One";
+gameSongsNames[18].innerHTML = "Lahayahat";
+gameSongsNames[19].innerHTML = "Ezios family";
+gameSongsNames[20].innerHTML = "Lahayahat";
+
+gameSongsArtistsNames[0].innerHTML = "Moon beach";
+gameSongsArtistsNames[1].innerHTML = "Dj kantick";
+gameSongsArtistsNames[2].innerHTML = "Kara main";
+gameSongsArtistsNames[3].innerHTML = "Epilogue";
+gameSongsArtistsNames[4].innerHTML = "COL";
+gameSongsArtistsNames[5].innerHTML = "HK";
+gameSongsArtistsNames[6].innerHTML = "Jesper kyd";
+gameSongsArtistsNames[7].innerHTML = "Millennium";
+gameSongsArtistsNames[8].innerHTML = "HK";
+gameSongsArtistsNames[9].innerHTML = "Kantik";
+gameSongsArtistsNames[10].innerHTML = "copilot";
+gameSongsArtistsNames[11].innerHTML = "Chasm";
+gameSongsArtistsNames[12].innerHTML = "Bear mcCreary";
+gameSongsArtistsNames[13].innerHTML = "Dj kantick";
+gameSongsArtistsNames[14].innerHTML = "Hans zimmer";
+gameSongsArtistsNames[15].innerHTML = "Kantik";
+gameSongsArtistsNames[16].innerHTML = "Jesper kyd";
+gameSongsArtistsNames[17].innerHTML = "Bear mcCreary";
+gameSongsArtistsNames[18].innerHTML = "Kantik";
+gameSongsArtistsNames[19].innerHTML = "Jesper kyd";
+gameSongsArtistsNames[20].innerHTML = "Kantik";
+
+gameSongsImg[0].src = "images/An old game.png";
+gameSongsImg[1].src = "images/Balcanistic.jpg";
+gameSongsImg[2].src = "images/becomeHuman.jpg";
+gameSongsImg[3].src = "images/Breath of the wind.jpg";
+gameSongsImg[4].src = "images/Chll of light.jpg";
+gameSongsImg[5].src = "images/Hollow knight.jpg";
+gameSongsImg[6].src = "images//Ezios family.jpg";
+gameSongsImg[7].src = "images/Ghost in the shell.jpg";
+gameSongsImg[8].src = "images/Hollow knight.jpg";
+gameSongsImg[9].src = "images/Lahayahat.jpg";
+gameSongsImg[10].src = "images/Man With Rosses.jpg";
+gameSongsImg[11].src = "images/Melodaio.jpg";
+gameSongsImg[12].src = "images/One.png";
+gameSongsImg[13].src = "images/Seni.jpg";
+gameSongsImg[14].src = "images/Why do we fall.jpg";
+gameSongsImg[15].src = "images/Lahayahat.jpg";
+gameSongsImg[16].src = "images/Ezios family.jpg";
+gameSongsImg[17].src = "images/One.png";
+gameSongsImg[18].src = "images/Lahayahat.jpg";
+gameSongsImg[19].src = "images/Ezios family.jpg";
+gameSongsImg[20].src = "images/Lahayahat.jpg";
+
+let gameStyleSongs = [
+    {
+        name: "An old game",
+        artist: "Moon beach",
+        img: "images/An old game.png",
+        src: "anOldGame"
+    },
+    {
+        name: "Balcanistic",
+        artist: "Dj kantick",
+        img: "images/Balcanistic.jpg",
+        src: "balcanistic"
+    },
+    {
+        name: "Become Human",
+        artist: "Kara main",
+        img: "images/becomeHuman.jpg",
+        src: "becomeHuman"
+    },
+    {
+        name: "Breath of the wind",
+        artist: "Epilogue",
+        img: "images/Breath of the wind.jpg",
+        src: "breathOfTheWind"
+    },
+    {
+        name: "Chll of light",
+        artist: "COL",
+        img: "images/Chll of light.jpg",
+        src: "chllOfLight"
+    },
+    {
+        name: "Hollow knight",
+        artist: "HK",
+        img: "images/Hollow knight.jpg",
+        src: "hollowKnight"
+    },
+    {
+        name: "Ezio's family",
+        artist: "Jesper kyd",
+        img: "images/Ezios family.jpg",
+        src: "eziosFamily"
+    },
+    {
+        name: "Ghost in the shell",
+        artist: "Millennium",
+        img: "images/Ghost in the shell.jpg",
+        src: "ghostInTheShell"
+    },
+    {
+        name: "Hollow knight",
+        artist: "HK",
+        img: "images/Hollow knight.jpg",
+        src: "hollowKnight"
+    },
+    {
+        name: "Lahayahat",
+        artist: "HK",
+        img: "images/Lahayahat.jpg",
+        src: "lahayahat"
+    },
+    {
+        name: "Man With Rosses",
+        artist: "copilot",
+        img: "images/Man With Rosses.jpg",
+        src: "ManWithRosses"
+    },
+    {
+        name: "Melodaio",
+        artist: "Chasm",
+        img: "images/Melodaio.jpg",
+        src: "melodaio"
+    },
+    {
+        name: "One",
+        artist: "Bear mcCreary",
+        img: "images/One.png",
+        src: "one"
+    },
+    {
+        name: "seni",
+        artist: "Dj kantick",
+        img: "images/Seni.jpg",
+        src: "seni"
+    },
+    {
+        name: "Why do we fall",
+        artist: "Hans zimmer",
+        img: "images/Why do we fall.jpg",
+        src: "whyDoWeFall"
+    },
+    {
+        name: "Lahayahat",
+        artist: "Kantik",
+        img: "images/Lahayahat.jpg",
+        src: "lahayahat"
+    },
+    {
+        name: "Ezios family",
+        artist: "Jesper kyd",
+        img: "images/Ezios family.jpg",
+        src: "eziosFamily"
+    },
+    {
+        name: "One",
+        artist: "Bear mcCreary",
+        img: "images/One.png",
+        src: "one"
+    },
+    {
+        name: "Lahayahat",
+        artist: "Kantik",
+        img: "images/Lahayahat.jpg",
+        src: "lahayahat"
+    },
+    {
+        name: "Ezios family",
+        artist: "Jesper kyd",
+        img: "images/Ezios family.jpg",
+        src: "eziosFamily"
+    },
+    {
+        name: "Lahayahat",
+        artist: "Kantik",
+        img: "images/Lahayahat.jpg",
+        src: "lahayahat"
+    },
+]
+
+const gameStyleBtnPlayer = document.querySelector("#gameStyleBtnPlayer")
+
+gameStyleBtnPlayer.addEventListener("click",() => {
+    songStylesIndexClear();
+    loadgameMusic(gameSongsIndex);
+})
+
+//load game songs
+
+let songStatusGame;
+
+function loadgameMusic(indexNumber){
+    songName.innerHTML = gameStyleSongs[indexNumber - 1].name;
+    songArtistName.innerHTML = gameStyleSongs[indexNumber - 1].artist;
+    songImage.src = gameStyleSongs[indexNumber - 1].img;
+    gameSongControler.src = "tracks/game/" + gameStyleSongs[indexNumber - 1].src + ".mp3";
+    songImage.style.display = "block";
+
+    focusSongControler.pause();
+    popSongControler.pause();
+    chillSongControler.pause();
+    studySongControler.pause();
+    gameSongControler.play();
+    rAndbSongControler.pause();
+    rapSongControler.pause();
+    animeSongControler.pause()
+    calmnessSongControler.pause();
+    classicSongControler.pause();
+    russianSongControler.pause();
+    heavySongControler.pause();
+    canadaSongControler.pause();
+
+    playBtn.style.display = "none";
+    playBtn.style.fill = "red";
+    pauseBtn.style.fill = "red";
+    pauseBtn.style.display = "block";
+
+    songStatusFocus = false;
+    songStatusStudy = false;
+    songStatusPop = false;
+    songStatusChill = false;
+    songStatusGame = true;
+    songStatusRAndb = false;
+    songStatusRap = false;
+    songStatusAnime = false;
+    songStatusCalmness = false;
+    songStatusClassic = false;
+    songStatusRussian = false;
+    songStatusHeavy = false;
+    songStatusCanada = false;
+
+}
+
+playBtn.addEventListener("click",() => {
+    gameSongControler.play();
+})
+pauseBtn.addEventListener("click",() => {
+    gameSongControler.pause();
+})
+
+skipNext.addEventListener("click",() => {
+    if(songStatusGame == true){
+        nextGameSong();
+    }
+})
+
+skipBack.addEventListener("click",() => {
+    if(songStatusGame == true){
+        beforeGameSong();
+    }
+})
+
+//click next song button developing
+
+function nextGameSong(){
+    gameSongsIndex ++;
+    gameSongsIndex > gameStyleSongs.length ? gameSongsIndex = 1 : gameStyleSongs = gameStyleSongs;
+
+    loadgameMusic(gameSongsIndex);
+
+}
+
+//click before song button developing
+
+function beforeGameSong(){
+    gameSongsIndex --;
+    gameSongsIndex < 1 ? gameSongsIndex = gameStyleSongs.length : gameSongsIndex = gameSongsIndex;
+
+    loadgameMusic(gameSongsIndex);
+
+}
+
+//updata progressBar with songTime
+
+gameSongControler.addEventListener("timeupdate",(e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+
+    let progressWith = (currentTime / duration) * 100;
+    progressBar.style.width = progressWith + "%";    
+
+    let songCurrentTime = document.querySelector("#songTimeLeft"),
+    songDurationTime = document.querySelector("#songTimeRemaining")
+
+    gameSongControler.addEventListener("loadeddata", () => {
+
+        //update song total duration
+
+        let songDuration = gameSongControler.duration;
+        let totalMin = Math.floor(songDuration / 60);
+        let totalSec = Math.floor(songDuration % 60);
+        songDurationTime.innerHTML = totalMin + ":" + totalSec;
+        if(totalSec < 10){
+            songDurationTime.innerHTML = totalMin + ":0" + totalSec;
+        }
+
+    });
+
+    //update song total current time 
+
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if(currentSec < 10){
+        songCurrentTime.innerHTML = currentMin + ":0" + currentSec;
+    }
+    else{
+        songCurrentTime.innerHTML = currentMin + ":" + currentSec;
+    }
+
+    //update playing song current time with progress bar 
+
+    progressArea.addEventListener("click",(e) => {
+        let progressWithVal = progressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = gameSongControler.duration;
+
+        gameSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
+});
+
+//developed the repeatand random play button 
+
+let repeatState5 = false;
+let randomState5 = false;
+
+repeatPlayButton.addEventListener("click",() => {
+    if(repeatState5 == false){
+        repeatState5 = true;  
+    }
+    else{
+        repeatState5 = false;
+    }
+})
+randomPlayButton.addEventListener("click",() => {
+    if(randomState5 == false){
+        randomState5 = true;
+    }
+    else{
+        randomState5 = false;
+    }
+})
+
+gameSongControler.addEventListener("ended",() => {
+    if(randomState5 == false && repeatState5 == false){
+        nextGameSong();
+    }
+    else if(randomState5 == false && repeatState5 == true){
+        gameSongControler.currentTime = 0;
+        loadgameMusic(gameSongsIndex);
+        gameSongControler.play();   
+    }
+    else if(randomState5 == true && repeatState5 == false){
+        let randomIndex5 = Math.floor((Math.random() * gameStyleSongs.length) + 1);
+
+        do{
+            randomIndex5 = Math.floor((Math.random() * gameStyleSongs.length) + 1);            
+        }
+        while(gameSongsIndex == randomIndex5)
+
+        gameSongsIndex = randomIndex5;
+        loadgameMusic(gameSongsIndex);
+        gameSongControler.play();
+    }
+})
+
+
+// set the songs in game sont style
+
+const rAndbSongsImg = document.querySelectorAll(".rAndbSongsImg");
+const rAndbSongsNames = document.querySelectorAll(".rAndbSongsNames");
+const rAndbSongsArtistsNames = document.querySelectorAll(".rAndbSongsArtistName");
+const rAndbSongsbuttonPlayer = document.querySelectorAll(".rAndbSongsbuttonPlayer");
+const rAndbSongControler = document.querySelector("#rAndbSongControler");
+const rAndbSongControlerSrc = document.querySelector("#rAndbSongControlerSrc");
+
+
+for(let i = 0;i < rAndbSongsbuttonPlayer.length;i++){
+    rAndbSongsbuttonPlayer[i].addEventListener("click",() => {
+        songStylesIndexClear();
+        //rAndbSongControlerSrc.src = "tracks/rAndb/"+ rAndbSongsbuttonPlayer[i].dataset.songname +".mp3";
+        //rAndbSongControler.src = rAndbSongControlerSrc.src;
+        //rAndbSongControler.play();
+        for(let j = 0;j < rAndbStyleSongs.length;j++){
+            if(rAndbSongsbuttonPlayer[i].dataset.songname == rAndbStyleSongs[j].src){
+                songName.innerHTML = rAndbStyleSongs[j].name;
+                songArtistName.innerHTML = rAndbStyleSongs[j].artist;
+                songImage.src = rAndbStyleSongs[j].img;        
+                rAndbSongControler.src = "tracks/R&B/" + rAndbStyleSongs[j].src + ".mp3";
+                songImage.style.display = "block";
+
+                focusSongControler.pause();
+                popSongControler.pause();
+                chillSongControler.pause();
+                studySongControler.pause();
+                gameSongControler.pause();
+                rAndbSongControler.play();
+                rapSongControler.pause();
+                animeSongControler.pause()
+                calmnessSongControler.pause();
+                classicSongControler.pause();
+                russianSongControler.pause();
+                heavySongControler.pause();
+                canadaSongControler.pause();
+
+                rAndbSongsIndex = i + 1;
+            }
+            
+        }
+        /*songName.innerHTML = rAndbStyleSongs[indexNumber - 1].name;
+        songArtistName.innerHTML = rAndbStyleSongs[indexNumber - 1].artist;
+        songImage.src = "images/" + rAndbStyleSongs[indexNumber - 1].img + ".jpg";
+        rAndbSongControler.src = "tracks/rAndb/" +rAndbStyleSongs[indexNumber - 1].src + ".mp3";
+        songImage.style.display = "block";
+    
+       rAndbSongControler.play();
+  */  
+        playBtn.style.display = "none";
+        playBtn.style.fill = "red";
+        pauseBtn.style.fill = "red";
+        pauseBtn.style.display = "block";
+        songStatusrRAndb = true;
+
+    })
+}
+
+rAndbSongsNames[0].innerHTML = "Running On My Mind";
+rAndbSongsNames[1].innerHTML = "Bomb";
+rAndbSongsNames[2].innerHTML = "Confessions";
+rAndbSongsNames[3].innerHTML = "Find A Place";
+rAndbSongsNames[4].innerHTML = "French Kiss";
+rAndbSongsNames[5].innerHTML = "Good Feelings";
+rAndbSongsNames[6].innerHTML = "Up All Night";
+rAndbSongsNames[7].innerHTML = "Ma vie";
+rAndbSongsNames[8].innerHTML = "Please";
+rAndbSongsNames[9].innerHTML = "Forever Mine";
+rAndbSongsNames[10].innerHTML = "She needs me";
+rAndbSongsNames[11].innerHTML = "TPB";
+rAndbSongsNames[12].innerHTML = "She needs me";
+rAndbSongsNames[13].innerHTML = "She needs me";
+rAndbSongsNames[14].innerHTML = "Please";
+rAndbSongsNames[15].innerHTML = "Ma vie";
+rAndbSongsNames[16].innerHTML = "Ma vie";
+rAndbSongsNames[17].innerHTML = "Forever Mine";
+rAndbSongsNames[18].innerHTML = "Find A Place";
+rAndbSongsNames[19].innerHTML = "Forever Mine";
+rAndbSongsNames[20].innerHTML = "Find A Place";
+
+rAndbSongsArtistsNames[0].innerHTML = "Ali Gatie";
+rAndbSongsArtistsNames[1].innerHTML = "Trey songz";
+rAndbSongsArtistsNames[2].innerHTML = "Dadju";
+rAndbSongsArtistsNames[3].innerHTML = "Trey songz";
+rAndbSongsArtistsNames[4].innerHTML = "Trey songz";
+rAndbSongsArtistsNames[5].innerHTML = "Trey songz";
+rAndbSongsArtistsNames[6].innerHTML = "Khalid";
+rAndbSongsArtistsNames[7].innerHTML = "Dadju";
+rAndbSongsArtistsNames[8].innerHTML = "Dadju";
+rAndbSongsArtistsNames[9].innerHTML = "Kantik";
+rAndbSongsArtistsNames[10].innerHTML = "Robin thicke";
+rAndbSongsArtistsNames[11].innerHTML = "Trey songz";
+rAndbSongsArtistsNames[12].innerHTML = "Dadju";
+rAndbSongsArtistsNames[13].innerHTML = "Trey songz";
+rAndbSongsArtistsNames[14].innerHTML = "Trey songz";
+rAndbSongsArtistsNames[15].innerHTML = "Dadju";
+rAndbSongsArtistsNames[16].innerHTML = "Dadju";
+rAndbSongsArtistsNames[17].innerHTML = "Dadju";
+rAndbSongsArtistsNames[18].innerHTML = "Trey songz";
+rAndbSongsArtistsNames[19].innerHTML = "Robin thickez";
+rAndbSongsArtistsNames[20].innerHTML = "Trey songz";
+
+rAndbSongsImg[0].src = "images/Running On My Mind.jpg";
+rAndbSongsImg[1].src = "images/Bomb.jpg";
+rAndbSongsImg[2].src = "images/Confessions.jpg";
+rAndbSongsImg[3].src = "images/Find A Place.jpg";
+rAndbSongsImg[4].src = "images/French Kiss.jpg";
+rAndbSongsImg[5].src = "images/Good Feelings.jpg";
+rAndbSongsImg[6].src = "images/Up All Night.jpg";
+rAndbSongsImg[7].src = "images/Ma vie.jpg";
+rAndbSongsImg[8].src = "images/please.jpg";
+rAndbSongsImg[9].src = "images/Forever Mine.jpg";
+rAndbSongsImg[10].src = "images/She needs me.jpg";
+rAndbSongsImg[11].src = "images/TPB.jpg";
+rAndbSongsImg[12].src = "images/She needs me.jpg";
+rAndbSongsImg[13].src = "images/She needs me.jpg";
+rAndbSongsImg[14].src = "images/please.jpg";
+rAndbSongsImg[15].src = "images/Ma vie.jpg";
+rAndbSongsImg[16].src = "images/Ma vie.jpg";
+rAndbSongsImg[17].src = "images/Forever Mine.jpg";
+rAndbSongsImg[18].src = "images/Find A Place.jpg";
+rAndbSongsImg[19].src = "images/Forever Mine.jpg";
+rAndbSongsImg[20].src = "images/Find A Place.jpg";
+
+let rAndbStyleSongs = [
+    {
+        name: "Running On My Mind",
+        artist: "Ali Gatie",
+        img: "images/Running On My Mind.jpg",
+        src: "Ali Gatie - Running On My Mind (2020) MELOVAZ.NET"
+    },
+    {
+        name: "Bomb",
+        artist: "Trey songz",
+        img: "images/Bomb.jpg",
+        src: "Bomb (A.P.)"
+    },
+    {
+        name: "Confessions",
+        artist: "Dadju",
+        img: "images/Confessions.jpg",
+        src: "Confessions"
+    },
+    {
+        name: "Find A Place",
+        artist: "Trey songz",
+        img: "images/Find A Place.jpg",
+        src: "Find A Place"
+    },
+    {
+        name: "French Kiss",
+        artist: "Trey songz",
+        img: "images/French Kiss.jpg",
+        src: "French Kiss"
+    },
+    {
+        name: "Good Feelings",
+        artist: "Trey songz",
+        img: "images/Good Feelings.jpg",
+        src: "Good Feelings"
+    },
+    {
+        name: "Up All Night",
+        artist: "Khalid",
+        img: "images/Up All Night.jpg",
+        src: "Khalid - Up All Night (2019) MELOVAZ.NET"
+    },
+    {
+        name: "Ma vie",
+        artist: "Dadju",
+        img: "images/Ma vie.jpg",
+        src: "Ma vie"
+    },
+    {
+        name: "Please",
+        artist: "Dadju",
+        img: "images/Please.jpg",
+        src: "Please"
+    },
+    {
+        name: "Forever Mine",
+        artist: "Robin thicke",
+        img: "images/Forever Mine.jpg",
+        src: "Robin Thicke - Forever Mine (2020) MELOVAZ.NET"
+    },
+    {
+        name: "She Needs Me",
+        artist: "Trey songz",
+        img: "images/She Needs Me.jpg",
+        src: "She Needs Me"
+    },
+    {
+        name: "TPB",
+        artist: "Dadju",
+        img: "images/TPB.jpg",
+        src: "TPB"
+    },
+    {
+        name: "She Needs Me",
+        artist: "Trey songz",
+        img: "images/She Needs Me.jpg",
+        src: "She Needs Me"
+    },
+    {
+        name: "She Needs Me",
+        artist: "Trey songz",
+        img: "images/She Needs Me.jpg",
+        src: "She Needs Me"
+    },
+    {
+        name: "Please",
+        artist: "Dadju",
+        img: "images/Please.jpg",
+        src: "Please"
+    },
+    {
+        name: "Ma vie",
+        artist: "Dadju",
+        img: "images/Ma vie.jpg",
+        src: "Ma vie"
+    },
+    {
+        name: "Ma vie",
+        artist: "Dadju",
+        img: "images/Ma vie.jpg",
+        src: "Ma vie"
+    },
+    {
+        name: "Forever Mine",
+        artist: "Robin thicke",
+        img: "images/Forever Mine.jpg",
+        src: "Robin Thicke - Forever Mine (2020) MELOVAZ.NET"
+    },
+    {
+        name: "Find A Place",
+        artist: "Trey songz",
+        img: "images/Find A Place.jpg",
+        src: "Find A Place"
+    },
+    {
+        name: "Forever Mine",
+        artist: "Robin thicke",
+        img: "images/Forever Mine.jpg",
+        src: "Robin Thicke - Forever Mine (2020) MELOVAZ.NET"
+    },
+    {
+        name: "Find A Place",
+        artist: "Trey songz",
+        img: "images/Find A Place.jpg",
+        src: "Find A Place"
+    },
+]
+
+const rAndbStyleBtnPlayer = document.querySelector("#rAndbStyleBtnPlayer")
+
+let songStatusPop;
+
+rAndbStyleBtnPlayer.addEventListener("click",() => {
+    songStylesIndexClear();
+    loadrAndbMusic(rAndbSongsIndex);
+})
+
+//load rAndb songs
+
+let songStatusRAndb;
+
+function loadrAndbMusic(indexNumber){
+    songName.innerHTML = rAndbStyleSongs[indexNumber - 1].name;
+    songArtistName.innerHTML = rAndbStyleSongs[indexNumber - 1].artist;
+    songImage.src = rAndbStyleSongs[indexNumber - 1].img;
+    rAndbSongControler.src = "tracks/R&B/" + rAndbStyleSongs[indexNumber - 1].src + ".mp3";
+    songImage.style.display = "block";
+
+    focusSongControler.pause();
+    popSongControler.pause();
+    chillSongControler.pause();
+    studySongControler.pause();
+    gameSongControler.pause();
+    rAndbSongControler.play();
+    rapSongControler.pause();
+    animeSongControler.pause()
+    calmnessSongControler.pause();
+    classicSongControler.pause();
+    russianSongControler.pause();
+    heavySongControler.pause();
+    canadaSongControler.pause();
+
+    playBtn.style.display = "none";
+    playBtn.style.fill = "red";
+    pauseBtn.style.fill = "red";
+    pauseBtn.style.display = "block";
+
+    songStatusFocus = false;
+    songStatusStudy = false;
+    songStatusPop = false;
+    songStatusChill = false;
+    songStatusGame = false;
+    songStatusRAndb = true;
+    songStatusRap = false;
+    songStatusAnime = false;
+    songStatusCalmness = false;
+    songStatusClassic = false;
+    songStatusRussian = false;
+    songStatusHeavy = false;
+    songStatusCanada = false;
+}
+
+playBtn.addEventListener("click",() => {
+    rAndbSongControler.play();
+})
+pauseBtn.addEventListener("click",() => {
+    rAndbSongControler.pause();
+})
+
+skipNext.addEventListener("click",() => {
+    if(songStatusRAndb == true){
+        nextrAndbSong();
+    }
+})
+
+skipBack.addEventListener("click",() => {
+    if(songStatusRAndb == true){
+        beforerAndbSong();
+    }
+})
+
+//click next song button developing
+
+function nextrAndbSong(){
+    rAndbSongsIndex ++;
+    rAndbSongsIndex > rAndbStyleSongs.length ? rAndbSongsIndex = 1 : rAndbStyleSongs = rAndbStyleSongs;
+
+    loadrAndbMusic(rAndbSongsIndex);
+
+}
+
+//click before song button developing
+
+function beforerAndbSong(){
+    rAndbSongsIndex --;
+    rAndbSongsIndex < 1 ? rAndbSongsIndex = rAndbStyleSongs.length : rAndbSongsIndex = rAndbSongsIndex;
+
+    loadrAndbMusic(rAndbSongsIndex);
+
+}
+
+//updata progressBar with songTime
+
+rAndbSongControler.addEventListener("timeupdate",(e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+
+    let progressWith = (currentTime / duration) * 100;
+    progressBar.style.width = progressWith + "%";    
+
+    let songCurrentTime = document.querySelector("#songTimeLeft"),
+    songDurationTime = document.querySelector("#songTimeRemaining")
+
+    rAndbSongControler.addEventListener("loadeddata", () => {
+
+        //update song total duration
+
+        let songDuration = rAndbSongControler.duration;
+        let totalMin = Math.floor(songDuration / 60);
+        let totalSec = Math.floor(songDuration % 60);
+        songDurationTime.innerHTML = totalMin + ":" + totalSec;
+        if(totalSec < 10){
+            songDurationTime.innerHTML = totalMin + ":0" + totalSec;
+        }
+
+    });
+
+    //update song total current time 
+
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if(currentSec < 10){
+        songCurrentTime.innerHTML = currentMin + ":0" + currentSec;
+    }
+    else{
+        songCurrentTime.innerHTML = currentMin + ":" + currentSec;
+    }
+
+    //update playing song current time with progress bar 
+
+    progressArea.addEventListener("click",(e) => {
+        let progressWithVal = progressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = rAndbSongControler.duration;
+
+        rAndbSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
+});
+
+//developed the repeatand random play button 
+
+let repeatState6 = false;
+let randomState6 = false;
+
+repeatPlayButton.addEventListener("click",() => {
+    if(repeatState6 == false){
+        repeatState6 = true;  
+    }
+    else{
+        repeatState6 = false;
+    }
+})
+randomPlayButton.addEventListener("click",() => {
+    if(randomState6 == false){
+        randomState6 = true;
+    }
+    else{
+        randomState6 = false;
+    }
+})
+
+rAndbSongControler.addEventListener("ended",() => {
+    if(randomState6 == false && repeatState6 == false){
+        nextrAndbSong();
+    }
+    else if(randomState6 == false && repeatState6 == true){
+        rAndbSongControler.currentTime = 0;
+        loadrAndbMusic(rAndbSongsIndex);
+        rAndbSongControler.play();   
+    }
+    else if(randomState6 == true && repeatState6 == false){
+        let randomIndex6 = Math.floor((Math.random() * rAndbStyleSongs.length) + 1);
+
+        do{
+            randomIndex6 = Math.floor((Math.random() * rAndbStyleSongs.length) + 1);            
+        }
+        while(rAndbSongsIndex == randomIndex6)
+
+        rAndbSongsIndex = randomIndex6;
+        loadrAndbMusic(rAndbSongsIndex);
+        rAndbSongControler.play();
+    }
+})
+
+// set the songs in anime sont style
+
+const rapSongsImg = document.querySelectorAll(".rapSongsImg");
+const rapSongsNames = document.querySelectorAll(".rapSongsNames");
+const rapSongsArtistsNames = document.querySelectorAll(".rapSongsArtistName");
+const rapSongsbuttonPlayer = document.querySelectorAll(".rapSongsbuttonPlayer");
+const rapSongControler = document.querySelector("#rapSongControler");
+const rapSongControlerSrc = document.querySelector("#rapSongControlerSrc");
+
+
+for(let i = 0;i < rapSongsbuttonPlayer.length;i++){
+    rapSongsbuttonPlayer[i].addEventListener("click",() => {
+        songStylesIndexClear();
+        //rapSongControlerSrc.src = "tracks/rap/"+ rapSongsbuttonPlayer[i].dataset.songname +".mp3";
+        //rapSongControler.src = rapSongControlerSrc.src;
+        //rapSongControler.play();
+        for(let j = 0;j < rapStyleSongs.length;j++){
+            if(rapSongsbuttonPlayer[i].dataset.songname == rapStyleSongs[j].src){
+                songName.innerHTML = rapStyleSongs[j].name;
+                songArtistName.innerHTML = rapStyleSongs[j].artist;
+                songImage.src = rapStyleSongs[j].img;        
+                rapSongControler.src = "tracks/Rap/" + rapStyleSongs[j].src + ".mp3";
+                songImage.style.display = "block";
+
+                focusSongControler.pause();
+                popSongControler.pause();
+                chillSongControler.pause();
+                studySongControler.pause();
+                gameSongControler.pause();
+                rAndbSongControler.pause();
+                rapSongControler.play();
+                animeSongControler.pause()
+                calmnessSongControler.pause();
+                classicSongControler.pause();
+                russianSongControler.pause();
+                heavySongControler.pause();
+                canadaSongControler.pause();
+
+                rapSongsIndex = i + 1;
+            }
+            
+        }
+        /*songName.innerHTML = rapStyleSongs[indexNumber - 1].name;
+        songArtistName.innerHTML = rapStyleSongs[indexNumber - 1].artist;
+        songImage.src = "images/" + rapStyleSongs[indexNumber - 1].img + ".jpg";
+        rapSongControler.src = "tracks/rap/" + rapStyleSongs[indexNumber - 1].src + ".mp3";
+        songImage.style.display = "block";
+    
+       rapSongControler.play();
+  */  
+        playBtn.style.display = "none";
+        playBtn.style.fill = "red";
+        pauseBtn.style.fill = "red";
+        pauseBtn.style.display = "block";
+        songStatusRap = true;
+
+    })
+}
+
+rapSongsNames[0].innerHTML = "Much Pain";
+rapSongsNames[1].innerHTML = "Amniat";
+rapSongsNames[2].innerHTML = "blessed bass boosted";
+rapSongsNames[3].innerHTML = "Busta Rhymes Touch it";
+rapSongsNames[4].innerHTML = "For The Record";
+rapSongsNames[5].innerHTML = "Gorilla Zoe Na Na";
+rapSongsNames[6].innerHTML = "homicide bass boosted";
+rapSongsNames[7].innerHTML = "lalala bass boosted";
+rapSongsNames[8].innerHTML = "mary jane bass boosted";
+rapSongsNames[9].innerHTML = "NEFFEX Flirt bass boosted";
+rapSongsNames[10].innerHTML = "SHAHMEN Bad Dream Catcher";
+rapSongsNames[11].innerHTML = "UICIDEBOY x TRAVIS BARKER";
+rapSongsNames[12].innerHTML = "UNAVERAGE GANG BONE COLLECTING";
+rapSongsNames[13].innerHTML = "NEFFEX Flirt bass boosted";
+rapSongsNames[14].innerHTML = "NEFFEX Flirt bass boosted";
+rapSongsNames[15].innerHTML = "homicide bass boosted";
+rapSongsNames[16].innerHTML = "mary jane bass boosted";
+rapSongsNames[17].innerHTML = "mary jane bass boosted";
+rapSongsNames[18].innerHTML = "mary jane bass boosted";
+rapSongsNames[19].innerHTML = "homicide bass boosted";
+rapSongsNames[20].innerHTML = "Gorilla-Zoe-Na-Na";
+
+rapSongsArtistsNames[0].innerHTML = "know";
+rapSongsArtistsNames[1].innerHTML = "know";
+rapSongsArtistsNames[2].innerHTML = "know";
+rapSongsArtistsNames[3].innerHTML = "know";
+rapSongsArtistsNames[4].innerHTML = "know";
+rapSongsArtistsNames[5].innerHTML = "know";
+rapSongsArtistsNames[6].innerHTML = "know";
+rapSongsArtistsNames[7].innerHTML = "know";
+rapSongsArtistsNames[8].innerHTML = "know";
+rapSongsArtistsNames[9].innerHTML = "know";
+rapSongsArtistsNames[10].innerHTML = "know";
+rapSongsArtistsNames[11].innerHTML = "know";
+rapSongsArtistsNames[12].innerHTML = "know";
+rapSongsArtistsNames[13].innerHTML = "know";
+rapSongsArtistsNames[14].innerHTML = "know";
+rapSongsArtistsNames[15].innerHTML = "know";
+rapSongsArtistsNames[16].innerHTML = "know";
+rapSongsArtistsNames[17].innerHTML = "know";
+rapSongsArtistsNames[18].innerHTML = "know";
+rapSongsArtistsNames[19].innerHTML = "know";
+rapSongsArtistsNames[20].innerHTML = "know";
+
+rapSongsImg[0].src = "images/Much Pain.jpg";
+rapSongsImg[1].src = "images/Amniat.jpg";
+rapSongsImg[2].src = "images/blessed bass boosted.jpg";
+rapSongsImg[3].src = "images/Busta Rhymes Touch it.jpg";
+rapSongsImg[4].src = "images/For The Record.jpg";
+rapSongsImg[5].src = "images/Gorilla Zoe Na Na.jpg";
+rapSongsImg[6].src = "images/homicide bass boosted.jpg";
+rapSongsImg[7].src = "images/lalala bass boosted.jpg";
+rapSongsImg[8].src = "images/mary jane bass boosted.jpg";
+rapSongsImg[9].src = "images/NEFFEX Flirt bass boosted.jpg";
+rapSongsImg[10].src = "images/SHAHMEN Bad Dream Catcher.jpg";
+rapSongsImg[11].src = "images/UICIDEBOY x TRAVIS BARKER.png";
+rapSongsImg[12].src = "images/UNAVERAGE GANG BONE COLLECTING.jpg";
+rapSongsImg[13].src = "images/NEFFEX Flirt bass boosted.jpg";
+rapSongsImg[14].src = "images/NEFFEX Flirt bass boosted.jpg";
+rapSongsImg[15].src = "images/homicide bass boosted.jpg";
+rapSongsImg[16].src = "images/mary jane bass boosted.jpg";
+rapSongsImg[17].src = "images/mary jane bass boosted.jpg";
+rapSongsImg[18].src = "images/mary jane bass boosted.jpg";
+rapSongsImg[19].src = "images/homicide bass boosted.jpg";
+rapSongsImg[20].src = "images/Gorilla Zoe Na Na.jpg";
+
+let rapStyleSongs = [
+    {
+        name: "Much Pain",
+        artist: "know",
+        img: "images/Much Pain.jpg",
+        src: "2Pac-So-Much-Pain"
+    },
+    {
+        name: "Amniat",
+        artist: "know",
+        img: "images/Amniat.jpg",
+        src: "Amniat - 1 - 128 - 1musics.com"
+    },
+    {
+        name: "blessed bass boosted",
+        artist: "know",
+        img: "images/blessed bass boosted.jpg",
+        src: "blessed-bass-boosted"
+    },
+    {
+        name: "Busta Rhymes Touch it",
+        artist: "know",
+        img: "images/Busta Rhymes Touch it.jpg",
+        src: "Busta-Rhymes-Touch-it"
+    },
+    {
+        name: "For The Record",
+        artist: "know",
+        img: "images/For The Record.jpg",
+        src: "For_The_Record_128"
+    },
+    {
+        name: "Gorilla Zoe Na Na",
+        artist: "know",
+        img: "images/Gorilla Zoe Na Na.jpg",
+        src: "Gorilla-Zoe-Na-Na"
+    },
+    {
+        name: "homicide bass boosted",
+        artist: "know",
+        img: "images/homicide bass boosted.jpg",
+        src: "homicide-bass-boosted"
+    },
+    {
+        name: "lalala bass boosted",
+        artist: "know",
+        img: "images/lalala bass boosted.jpg",
+        src: "lalala-bass-boosted"
+    },
+    {
+        name: "mary jane bass boosted",
+        artist: "know",
+        img: "images/mary jane bass boosted.jpg",
+        src: "mary-jane-bass-boosted"
+    },
+    {
+        name: "NEFFEX Flirt bass boosted",
+        artist: "know",
+        img: "images/NEFFEX Flirt bass boosted.jpg",
+        src: "NEFFEX_Flirt_bass_boosted_128"
+    },
+    {
+        name: "SHAHMEN Bad Dream Catcher",
+        artist: "know",
+        img: "images/SHAHMEN Bad Dream Catcher.jpg",
+        src: "SHAHMEN_Bad_Dream_Catcher_128"
+    },
+    {
+        name: "UICIDEBOY x TRAVIS BARKER",
+        artist: "know",
+        img: "images/UICIDEBOY x TRAVIS BARKER.jpg",
+        src: "UICIDEBOY-x-TRAVIS-BARKER"
+    },
+    {
+        name: "UNAVERAGE GANG BONE COLLECTING",
+        artist: "know",
+        img: "images/UNAVERAGE GANG BONE COLLECTING.jpg",
+        src: "UNAVERAGE_GANG_BONE_COLLECTING_128"
+    },
+    {
+        name: "NEFFEX Flirt bass boosted",
+        artist: "know",
+        img: "images/NEFFEX Flirt bass boosted.jpg",
+        src: "NEFFEX_Flirt_bass_boosted_128"
+    },
+    {
+        name: "NEFFEX Flirt bass boosted",
+        artist: "know",
+        img: "images/NEFFEX Flirt bass boosted.jpg",
+        src: "NEFFEX_Flirt_bass_boosted_128"
+    },
+    {
+        name: "homicide bass boosted",
+        artist: "know",
+        img: "images/homicide bass boosted.jpg",
+        src: "homicide-bass-boosted"
+    },
+    {
+        name: "mary jane bass boosted",
+        artist: "know",
+        img: "images/mary jane bass boosted.jpg",
+        src: "mary-jane-bass-boosted"
+    },
+    {
+        name: "mary jane bass boosted",
+        artist: "know",
+        img: "images/mary jane bass boosted.jpg",
+        src: "mary-jane-bass-boosted"
+    },
+    {
+        name: "mary jane bass boosted",
+        artist: "know",
+        img: "images/mary jane bass boosted.jpg",
+        src: "mary-jane-bass-boosted"
+    },
+    {
+        name: "homicide bass boosted",
+        artist: "know",
+        img: "images/homicide bass boosted.jpg",
+        src: "homicide-bass-boosted"
+    },
+    {
+        name: "Gorilla Zoe Na Na",
+        artist: "know",
+        img: "images/Gorilla Zoe Na Na.jpg",
+        src: "toghetherWeSuccesd"
+    },
+]
+
+const rapStyleBtnPlayer = document.querySelector("#rapStyleBtnPlayer")
+
+rapStyleBtnPlayer.addEventListener("click",() => {
+    songStylesIndexClear();
+    loadrapMusic(rapSongsIndex);
+})
+
+//load rap songs
+
+let songStatusRap;
+
+function loadrapMusic(indexNumber){
+    songName.innerHTML = rapStyleSongs[indexNumber - 1].name;
+    songArtistName.innerHTML = rapStyleSongs[indexNumber - 1].artist;
+    songImage.src = rapStyleSongs[indexNumber - 1].img;
+    rapSongControler.src = "tracks/Rap/" + rapStyleSongs[indexNumber - 1].src + ".mp3";
+    songImage.style.display = "block";
+
+    focusSongControler.pause();
+    popSongControler.pause();
+    chillSongControler.pause();
+    studySongControler.pause();
+    gameSongControler.pause();
+    rAndbSongControler.pause();
+    rapSongControler.play();
+    animeSongControler.pause()
+    calmnessSongControler.pause();
+    classicSongControler.pause();
+    russianSongControler.pause();
+    heavySongControler.pause();
+    canadaSongControler.pause();
+
+    playBtn.style.display = "none";
+    playBtn.style.fill = "red";
+    pauseBtn.style.fill = "red";
+    pauseBtn.style.display = "block";
+
+    songStatusFocus = false;
+    songStatusStudy = false;
+    songStatusPop = false;
+    songStatusChill = false;
+    songStatusGame = false;
+    songStatusRAndb = false;
+    songStatusRap = true;
+    songStatusAnime = false;
+    songStatusCalmness = false;
+    songStatusClassic = false;
+    songStatusRussian = false;
+    songStatusHeavy = false;
+    songStatusCanada = false;
+}
+
+playBtn.addEventListener("click",() => {
+    rapSongControler.play();
+})
+pauseBtn.addEventListener("click",() => {
+    rapSongControler.pause();
+})
+
+skipNext.addEventListener("click",() => {
+    if(songStatusRap == true){
+        nextRapSong();
+    }
+})
+
+skipBack.addEventListener("click",() => {
+    if(songStatusRap == true){
+        beforeRapSong();
+    }
+})
+
+//click next song button developing
+
+function nextRapSong(){
+    rapSongsIndex ++;
+    rapSongsIndex > rapStyleSongs.length ? rapSongsIndex = 1 : rapStyleSongs = rapStyleSongs;
+
+    loadrapMusic(rapSongsIndex);
+
+}
+
+//click before song button developing
+
+function beforeRapSong(){
+    rapSongsIndex --;
+    rapSongsIndex < 1 ? rapSongsIndex = rapStyleSongs.length : rapSongsIndex = rapSongsIndex;
+
+    loadrapMusic(rapSongsIndex);
+
+}
+
+//updata progressBar with songTime
+
+rapSongControler.addEventListener("timeupdate",(e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+
+    let progressWith = (currentTime / duration) * 100;
+    progressBar.style.width = progressWith + "%";    
+
+    let songCurrentTime = document.querySelector("#songTimeLeft"),
+    songDurationTime = document.querySelector("#songTimeRemaining")
+
+    rapSongControler.addEventListener("loadeddata", () => {
+
+        //update song total duration
+
+        let songDuration = rapSongControler.duration;
+        let totalMin = Math.floor(songDuration / 60);
+        let totalSec = Math.floor(songDuration % 60);
+        songDurationTime.innerHTML = totalMin + ":" + totalSec;
+        if(totalSec < 10){
+            songDurationTime.innerHTML = totalMin + ":0" + totalSec;
+        }
+
+    });
+
+    //update song total current time 
+
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if(currentSec < 10){
+        songCurrentTime.innerHTML = currentMin + ":0" + currentSec;
+    }
+    else{
+        songCurrentTime.innerHTML = currentMin + ":" + currentSec;
+    }
+
+    //update playing song current time with progress bar 
+
+    progressArea.addEventListener("click",(e) => {
+        let progressWithVal = progressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = rapSongControler.duration;
+
+        rapSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
+});
+
+//developed the repeatand random play button 
+
+let repeatState7 = false;
+let randomState7 = false;
+
+repeatPlayButton.addEventListener("click",() => {
+    if(repeatState7 == false){
+        repeatState7 = true;  
+    }
+    else{
+        repeatState7 = false;
+    }
+})
+randomPlayButton.addEventListener("click",() => {
+    if(randomState7 == false){
+        randomState7 = true;
+    }
+    else{
+        randomState7 = false;
+    }
+})
+
+rapSongControler.addEventListener("ended",() => {
+    if(randomState7 == false && repeatState7 == false){
+        nextRapSong();
+    }
+    else if(randomState7 == false && repeatState7 == true){
+        rapSongControler.currentTime = 0;
+        loadrapMusic(rapSongsIndex);
+        rapSongControler.play();   
+    }
+    else if(randomState7 == true && repeatState7 == false){
+        let randomIndex7 = Math.floor((Math.random() * rapStyleSongs.length) + 1);
+
+        do{
+            randomIndex7 = Math.floor((Math.random() * rapStyleSongs.length) + 1);            
+        }
+        while(rapSongsIndex == randomIndex7)
+
+        rapSongsIndex = randomIndex7;
+        loadrapMusic(rapSongsIndex);
+        rapSongControler.play();
+    }
+})
+
+// set the songs in anime sont style
+
+const animeSongsImg = document.querySelectorAll(".animeSongsImg");
+const animeSongsNames = document.querySelectorAll(".animeSongsNames");
+const animeSongsArtistsNames = document.querySelectorAll(".animeSongsArtistName");
+const animeSongsbuttonPlayer = document.querySelectorAll(".animeSongsbuttonPlayer");
+const animeSongControler = document.querySelector("#animeSongControler");
+const animeSongControlerSrc = document.querySelector("#animeSongControlerSrc");
+
+
+for(let i = 0;i < animeSongsbuttonPlayer.length;i++){
+    animeSongsbuttonPlayer[i].addEventListener("click",() => {
+        songStylesIndexClear();
+        //animeSongControlerSrc.src = "tracks/anime/"+ animeSongsbuttonPlayer[i].dataset.songname +".mp3";
+        //animeSongControler.src = animeSongControlerSrc.src;
+        //animeSongControler.play();
+        for(let j = 0;j < animeStyleSongs.length;j++){
+            if(animeSongsbuttonPlayer[i].dataset.songname == animeStyleSongs[j].src){
+                songName.innerHTML = animeStyleSongs[j].name;
+                songArtistName.innerHTML = rapStyleSongs[j].artist;
+                songImage.src = animeStyleSongs[j].img;        
+                animeSongControler.src = "tracks/anime/" + animeStyleSongs[j].src + ".mp3";
+                songImage.style.display = "block";
+
+                focusSongControler.pause();
+                popSongControler.pause();
+                chillSongControler.pause();
+                studySongControler.pause();
+                gameSongControler.pause();
+                rAndbSongControler.pause();
+                rapSongControler.pause();
+                animeSongControler.play()
+                calmnessSongControler.pause();
+                classicSongControler.pause();
+                russianSongControler.pause();
+                heavySongControler.pause();
+                canadaSongControler.pause();
+
+                animeSongsIndex = i + 1;
+            }
+            
+        }
+        /*songName.innerHTML = animeStyleSongs[indexNumber - 1].name;
+        songArtistName.innerHTML = animeStyleSongs[indexNumber - 1].artist;
+        songImage.src = "images/" + animeStyleSongs[indexNumber - 1].img + ".jpg";
+       animeSongControler.src = "tracks/anime/" + animeStyleSongs[indexNumber - 1].src + ".mp3";
+        songImage.style.display = "block";
+    
+       rapSongControler.play();
+  */  
+        playBtn.style.display = "none";
+        playBtn.style.fill = "red";
+        pauseBtn.style.fill = "red";
+        pauseBtn.style.display = "block";
+        songStatusAnime = true;
+
+    })
+}
+
+animeSongsNames[0].innerHTML = "Bygone Days";
+animeSongsNames[1].innerHTML = "Floating Museum";
+animeSongsNames[2].innerHTML = "Flying";
+animeSongsNames[3].innerHTML = "Merry Go Round";
+animeSongsNames[4].innerHTML = "Nausicaa of the Valley of the Wind";
+animeSongsNames[5].innerHTML = "One Summer's Day";
+animeSongsNames[6].innerHTML = "Ponyo on the Cliff by the Sea";
+animeSongsNames[7].innerHTML = "Setsuko & Saita";
+animeSongsNames[8].innerHTML = "Tetsuo";
+animeSongsNames[9].innerHTML = "The Girl Who Fell from the Sky";
+animeSongsNames[10].innerHTML = "The Legend of Ashitaka";
+animeSongsNames[11].innerHTML = "The Path of Wind";
+animeSongsNames[12].innerHTML = "The Legend of Ashitaka";
+animeSongsNames[13].innerHTML = "The Legend of Ashitaka";
+animeSongsNames[14].innerHTML = "The Path of Wind";
+animeSongsNames[15].innerHTML = "One Summer's Day";
+animeSongsNames[16].innerHTML = "One Summer's Day";
+animeSongsNames[17].innerHTML = "Nausicaa of the Valley of the Wind";
+animeSongsNames[18].innerHTML = "Tetsuo";
+animeSongsNames[19].innerHTML = "Nausicaa of the Valley of the Wind";
+animeSongsNames[20].innerHTML = "One Summer's Day";
+
+animeSongsArtistsNames[0].innerHTML = "know";
+animeSongsArtistsNames[1].innerHTML = "know";
+animeSongsArtistsNames[2].innerHTML = "know";
+animeSongsArtistsNames[3].innerHTML = "know";
+animeSongsArtistsNames[4].innerHTML = "know";
+animeSongsArtistsNames[5].innerHTML = "know";
+animeSongsArtistsNames[6].innerHTML = "know";
+animeSongsArtistsNames[7].innerHTML = "know";
+animeSongsArtistsNames[8].innerHTML = "know";
+animeSongsArtistsNames[9].innerHTML = "know";
+animeSongsArtistsNames[10].innerHTML = "know";
+animeSongsArtistsNames[11].innerHTML = "know";
+animeSongsArtistsNames[12].innerHTML = "know";
+animeSongsArtistsNames[13].innerHTML = "know";
+animeSongsArtistsNames[14].innerHTML = "know";
+animeSongsArtistsNames[15].innerHTML = "know";
+animeSongsArtistsNames[16].innerHTML = "know";
+animeSongsArtistsNames[17].innerHTML = "know";
+animeSongsArtistsNames[18].innerHTML = "know";
+animeSongsArtistsNames[19].innerHTML = "know";
+animeSongsArtistsNames[20].innerHTML = "know";
+
+animeSongsImg[0].src = "images/By gone Days.jpg";
+animeSongsImg[1].src = "images/Floating Museum.jpg";
+animeSongsImg[2].src = "images/Flying.jpg";
+animeSongsImg[3].src = "images/Merry Go Round.jpg";
+animeSongsImg[4].src = "images/Nausicaa of the Valley of the Wind.jpg";
+animeSongsImg[5].src = "images/One Summer's Day.jpg";
+animeSongsImg[6].src = "images/Ponyo on the Cliff by the Sea.jpg";
+animeSongsImg[7].src = "images/Setsuko & Saita.jpg";
+animeSongsImg[8].src = "images/Tetsuo.jpg";
+animeSongsImg[9].src = "images/The Girl Who Fell from the Sky.jpg";
+animeSongsImg[10].src = "images/The Legend of Ashitaka.jpg";
+animeSongsImg[11].src = "images/The Path of Wind.jpg";
+animeSongsImg[12].src = "images/The Legend of Ashitaka.jpg";
+animeSongsImg[13].src = "images/The Legend of Ashitaka.jpg";
+animeSongsImg[14].src = "images/The Path of Wind.jpg";
+animeSongsImg[15].src = "images/One Summer's Day.jpg";
+animeSongsImg[16].src = "images/One Summer's Day.jpg";
+animeSongsImg[17].src = "images/Nausicaa of the Valley of the Wind.jpg";
+animeSongsImg[18].src = "images/Tetsuo.jpg";
+animeSongsImg[19].src = "images/Nausicaa of the Valley of the Wind.jpg";
+animeSongsImg[20].src = "images/One Summer's Day.jpg";
+
+let animeStyleSongs = [
+    {
+        name: "By gone Days",
+        artist: "Porco Rosso",
+        img: "images/By gone Days.jpg",
+        src: "Bygone Days (From 'Porco Rosso')"
+    },
+    {
+        name: "Floating Museum",
+        artist: "Ghost in the Shell",
+        img: "images/Floating Museum.jpg",
+        src: "Floating Museum (From 'Ghost in the Shell')"
+    },
+    {
+        name: "Flying",
+        artist: "The Tale of the Princess Kaguya",
+        img: "images/Flying.jpg",
+        src: "Flying (From 'The Tale of the Princess Kaguya')"
+    },
+    {
+        name: "Merry Go Round",
+        artist: "Howl's Moving Castle",
+        img: "images/Merry Go Round.jpg",
+        src: "Merry-Go-Round of Life (From 'Howl's Moving Castle')"
+    },
+    {
+        name: "Nausicaa of the Valley of the Wind",
+        artist: "Nausicaa of the Valley of the Wind",
+        img: "images/Nausicaa of the Valley of the Wind.jpg",
+        src: "Nausicaa of the Valley of the Wind - Opening (From 'Nausicaa of the Valley of the Wind')"
+    },
+    {
+        name: "One Summer's Day",
+        artist: "Spirited Away",
+        img: "images/One Summer's Day.jpg",
+        src: "One Summer's Day (From 'Spirited Away')"
+    },
+    {
+        name: "Ponyo on the Cliff by the Sea",
+        artist: "Ponyo on the Cliff by the Sea",
+        img: "images/Ponyo on the Cliff by the Sea.jpg",
+        src: "Ponyo on the Cliff by the Sea (From 'Ponyo on the Cliff by the Sea') (English Version)"
+    },
+    {
+        name: "Setsuko & Saita",
+        artist: "Grave of the Fireflies",
+        img: "images/Setsuko & Saita.jpg",
+        src: "Setsuko & Saita (From 'Grave of the Fireflies')"
+    },
+    {
+        name: "Tetsuo",
+        artist: "Akira",
+        img: "images/Tetsuo.jpg",
+        src: "Tetsuo (From 'Akira')"
+    },
+    {
+        name: "The Girl Who Fell from the Sky",
+        artist: "Laputa- Castle in the Sky",
+        img: "images/The Girl Who Fell from the Sky.jpg",
+        src: "The Girl Who Fell from the Sky (From 'Laputa- Castle in the Sky')"
+    },
+    {
+        name: "The Legend of Ashitaka",
+        artist: "Princess Mononoke",
+        img: "images/The Legend of Ashitaka.jpg",
+        src: "The Legend of Ashitaka - Ending (From 'Princess Mononoke')"
+    },
+    {
+        name: "The Path of Wind",
+        artist: "My Neighbor Totoro",
+        img: "images/The Path of Wind.jpg",
+        src: "The Path of Wind (From 'My Neighbor Totoro')"
+    },
+    {
+        name: "The Legend of Ashitaka",
+        artist: "Princess Mononoke",
+        img: "images/The Legend of Ashitaka.jpg",
+        src: "The Legend of Ashitaka - Ending (From 'Princess Mononoke')"
+    },
+    {
+        name: "The Legend of Ashitaka",
+        artist: "Princess Mononoke",
+        img: "images/The Legend of Ashitaka.jpg",
+        src: "The Legend of Ashitaka - Ending (From 'Princess Mononoke')"
+    },
+    {
+        name: "The Path of Wind",
+        artist: "My Neighbor Totoro",
+        img: "images/The Path of Wind.jpg",
+        src: "The Path of Wind (From 'My Neighbor Totoro')"
+    },
+    {
+        name: "One Summer's Day",
+        artist: "Spirited Away",
+        img: "images/One Summer's Day.jpg",
+        src: "One Summer's Day (From 'Spirited Away')"
+    },
+    {
+        name: "One Summer's Day",
+        artist: "Spirited Away",
+        img: "images/One Summer's Day.jpg",
+        src: "One Summer's Day (From 'Spirited Away')"
+    },
+    {
+        name: "Nausicaa of the Valley of the Wind",
+        artist: "Nausicaa of the Valley of the Wind",
+        img: "images/Nausicaa of the Valley of the Wind.jpg",
+        src: "Nausicaa of the Valley of the Wind - Opening (From 'Nausicaa of the Valley of the Wind')"
+    },
+    {
+        name: "Tetsuo",
+        artist: "Akira",
+        img: "images/Tetsuo.jpg",
+        src: "Tetsuo (From 'Akira')"
+    },
+    {
+        name: "Nausicaa of the Valley of the Wind",
+        artist: "Nausicaa of the Valley of the Wind",
+        img: "images/Nausicaa of the Valley of the Wind.jpg",
+        src: "Nausicaa of the Valley of the Wind - Opening (From 'Nausicaa of the Valley of the Wind')"
+    },
+    {
+        name: "One Summer's Day",
+        artist: "Spirited Away",
+        img: "images/One Summer's Day.jpg",
+        src: "One Summer's Day (From 'Spirited Away')"
+    },
+]
+
+const animeStyleBtnPlayer = document.querySelector("#animeStyleBtnPlayer")
+
+animeStyleBtnPlayer.addEventListener("click",() => {
+    songStylesIndexClear();
+    loadanimeMusic(animeSongsIndex);
+})
+
+//load anime songs
+
+let songStatusAnime;
+
+function loadanimeMusic(indexNumber){
+    songName.innerHTML = animeStyleSongs[indexNumber - 1].name;
+    songArtistName.innerHTML = animeStyleSongs[indexNumber - 1].artist;
+    songImage.src = animeStyleSongs[indexNumber - 1].img;
+    animeSongControler.src = "tracks/Anime/" + animeStyleSongs[indexNumber - 1].src + ".mp3";
+    songImage.style.display = "block";
+
+    focusSongControler.pause();
+    popSongControler.pause();
+    chillSongControler.pause();
+    studySongControler.pause();
+    gameSongControler.pause();
+    rAndbSongControler.pause();
+    rapSongControler.pause();
+    animeSongControler.play()
+    calmnessSongControler.pause();
+    classicSongControler.pause();
+    russianSongControler.pause();
+    heavySongControler.pause();
+    canadaSongControler.pause();
+
+    playBtn.style.display = "none";
+    playBtn.style.fill = "red";
+    pauseBtn.style.fill = "red";
+    pauseBtn.style.display = "block";
+
+    songStatusFocus = false;
+    songStatusStudy = false;
+    songStatusPop = false;
+    songStatusChill = false;
+    songStatusGame = false;
+    songStatusRAndb = false;
+    songStatusRap = false;
+    songStatusAnime = true;
+    songStatusCalmness = false;
+    songStatusClassic = false;
+    songStatusRussian = false;
+    songStatusHeavy = false;
+    songStatusCanada = false;
+}
+
+playBtn.addEventListener("click",() => {
+    animeSongControler.play();
+})
+pauseBtn.addEventListener("click",() => {
+    animeSongControler.pause();
+})
+
+skipNext.addEventListener("click",() => {
+    if(songStatusAnime == true){
+        nextAnimeSong();
+    }
+})
+
+skipBack.addEventListener("click",() => {
+    if(songStatusAnime == true){
+        beforeAnimeSong();
+    }
+})
+
+//click next song button developing
+
+function nextAnimeSong(){
+    animeSongsIndex ++;
+    animeSongsIndex > animeStyleSongs.length ? animeSongsIndex = 1 : animeStyleSongs = animeStyleSongs;
+
+    loadanimeMusic(animeSongsIndex);
+
+}
+
+//click before song button developing
+
+function beforeRapSong(){
+    rapSongsIndex --;
+    rapSongsIndex < 1 ? rapSongsIndex = rapStyleSongs.length : rapSongsIndex = rapSongsIndex;
+
+    loadrapMusic(rapSongsIndex);
+
+}
+
+//updata progressBar with songTime
+
+animeSongControler.addEventListener("timeupdate",(e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+
+    let progressWith = (currentTime / duration) * 100;
+    progressBar.style.width = progressWith + "%";    
+
+    let songCurrentTime = document.querySelector("#songTimeLeft"),
+    songDurationTime = document.querySelector("#songTimeRemaining")
+
+    animeSongControler.addEventListener("loadeddata", () => {
+
+        //update song total duration
+
+        let songDuration = animeSongControler.duration;
+        let totalMin = Math.floor(songDuration / 60);
+        let totalSec = Math.floor(songDuration % 60);
+        songDurationTime.innerHTML = totalMin + ":" + totalSec;
+        if(totalSec < 10){
+            songDurationTime.innerHTML = totalMin + ":0" + totalSec;
+        }
+
+    });
+
+    //update song total current time 
+
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if(currentSec < 10){
+        songCurrentTime.innerHTML = currentMin + ":0" + currentSec;
+    }
+    else{
+        songCurrentTime.innerHTML = currentMin + ":" + currentSec;
+    }
+
+    //update playing song current time with progress bar 
+
+    progressArea.addEventListener("click",(e) => {
+        let progressWithVal = progressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = animeSongControler.duration;
+
+        animeSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
+});
+
+//developed the repeatand random play button 
+
+let repeatState8 = false;
+let randomState8 = false;
+
+repeatPlayButton.addEventListener("click",() => {
+    if(repeatState8 == false){
+        repeatState8 = true;  
+    }
+    else{
+        repeatState8 = false;
+    }
+})
+randomPlayButton.addEventListener("click",() => {
+    if(randomState8 == false){
+        randomState8 = true;
+    }
+    else{
+        randomState8 = false;
+    }
+})
+
+animeSongControler.addEventListener("ended",() => {
+    if(randomState8 == false && repeatState8 == false){
+        nextAnimeSong();
+    }
+    else if(randomState8 == false && repeatState8 == true){
+        animeSongControler.currentTime = 0;
+        loadanimeMusic(animeSongsIndex);
+        animeSongControler.play();   
+    }
+    else if(randomState8 == true && repeatState8 == false){
+        let randomIndex8 = Math.floor((Math.random() * animeStyleSongs.length) + 1);
+
+        do{
+            randomIndex8 = Math.floor((Math.random() * animeStyleSongs.length) + 1);            
+        }
+        while(animeSongsIndex == randomIndex8)
+
+        animeSongsIndex = randomIndex8;
+        loadanimeMusic(animeSongsIndex);
+        animeSongControler.play();
+    }
+})
+
+// set the songs in calmness sont style
+
+const calmnessSongsImg = document.querySelectorAll(".calmnessSongsImg");
+const calmnessSongsNames = document.querySelectorAll(".calmnessSongsNames");
+const calmnessSongsArtistsNames = document.querySelectorAll(".calmnessSongsArtistName");
+const calmnessSongsbuttonPlayer = document.querySelectorAll(".calmnessSongsbuttonPlayer");
+const calmnessSongControler = document.querySelector("#calmnessSongControler");
+const calmnessSongControlerSrc = document.querySelector("#calmnessSongControlerSrc");
+
+
+for(let i = 0;i < calmnessSongsbuttonPlayer.length;i++){
+    calmnessSongsbuttonPlayer[i].addEventListener("click",() => {
+        songStylesIndexClear();
+        //calmnessSongControlerSrc.src = "tracks/calmness/"+ calmnessSongsbuttonPlayer[i].dataset.songname +".mp3";
+        //calmnessSongControler.src = calmnessSongControlerSrc.src;
+        //calmnessSongControler.play();
+        for(let j = 0;j < calmnessStyleSongs.length;j++){
+            if(calmnessSongsbuttonPlayer[i].dataset.songname == calmnessStyleSongs[j].src){
+                songName.innerHTML = calmnessStyleSongs[j].name;
+                songArtistName.innerHTML = rapStyleSongs[j].artist;
+                songImage.src = calmnessStyleSongs[j].img;        
+                calmnessSongControler.src = "tracks/Calmness/" + calmnessStyleSongs[j].src + ".mp3";
+                songImage.style.display = "block";
+
+                focusSongControler.pause();
+                popSongControler.pause();
+                chillSongControler.pause();
+                studySongControler.pause();
+                gameSongControler.pause();
+                rAndbSongControler.pause();
+                rapSongControler.pause();
+                animeSongControler.pause()
+                calmnessSongControler.play();
+                classicSongControler.pause();
+                russianSongControler.pause();
+                heavySongControler.pause();
+                canadaSongControler.pause();
+
+                animeSongsIndex = i + 1;
+            }
+            
+        } 
+        playBtn.style.display = "none";
+        playBtn.style.fill = "red";
+        pauseBtn.style.fill = "red";
+        pauseBtn.style.display = "block";
+        songStatusCalmness = true;
+
+    })
+}
+
+calmnessSongsNames[0].innerHTML = "Conversation";
+calmnessSongsNames[1].innerHTML = "Dusk Till Dawn";
+calmnessSongsNames[2].innerHTML = "Felices los 4";
+calmnessSongsNames[3].innerHTML = "In the Air Tonight";
+calmnessSongsNames[4].innerHTML = "Little Wound";
+calmnessSongsNames[5].innerHTML = "Love Is in the Air";
+calmnessSongsNames[6].innerHTML = "One Kiss";
+calmnessSongsNames[7].innerHTML = "Promises";
+calmnessSongsNames[8].innerHTML = "Sleepless";
+calmnessSongsNames[9].innerHTML = "Sunflower";
+calmnessSongsNames[10].innerHTML = "Tenderness";
+calmnessSongsNames[11].innerHTML = "The Moons Detriment";
+calmnessSongsNames[12].innerHTML = "We are Young";
+calmnessSongsNames[13].innerHTML = "What About Us";
+calmnessSongsNames[14].innerHTML = "We are Young";
+calmnessSongsNames[15].innerHTML = "We are Young";
+calmnessSongsNames[16].innerHTML = "Tenderness";
+calmnessSongsNames[17].innerHTML = "Promises";
+calmnessSongsNames[18].innerHTML = "Promises";
+calmnessSongsNames[19].innerHTML = "Tenderness";
+calmnessSongsNames[20].innerHTML = "Tenderness";
+
+calmnessSongsArtistsNames[0].innerHTML = "Locy rose";
+calmnessSongsArtistsNames[1].innerHTML = "Amanda yang";
+calmnessSongsArtistsNames[2].innerHTML = "Aberola";
+calmnessSongsArtistsNames[3].innerHTML = "Tom speight";
+calmnessSongsArtistsNames[4].innerHTML = "Violetta zironi";
+calmnessSongsArtistsNames[5].innerHTML = "Flora martinez";
+calmnessSongsArtistsNames[6].innerHTML = "Sara farell";
+calmnessSongsArtistsNames[7].innerHTML = "Sara farell";
+calmnessSongsArtistsNames[8].innerHTML = "Novo amor";
+calmnessSongsArtistsNames[9].innerHTML = "Sara farell";
+calmnessSongsArtistsNames[10].innerHTML = "Laura gibson";
+calmnessSongsArtistsNames[11].innerHTML = "Shannon lay";
+calmnessSongsArtistsNames[12].innerHTML = "The Mayries";
+calmnessSongsArtistsNames[13].innerHTML = "Thomas daniel";
+calmnessSongsArtistsNames[14].innerHTML = "The Mayries";
+calmnessSongsArtistsNames[15].innerHTML = "The Mayries";
+calmnessSongsArtistsNames[16].innerHTML = "Laura gibson";
+calmnessSongsArtistsNames[17].innerHTML = "Sara farell";
+calmnessSongsArtistsNames[18].innerHTML = "Sara farell";
+calmnessSongsArtistsNames[19].innerHTML = "Laura gibson";
+calmnessSongsArtistsNames[20].innerHTML = "Laura gibson";
+
+calmnessSongsImg[0].src = "images/Conversation.jpg";
+calmnessSongsImg[1].src = "images/Dusk Till Dawn.jpg";
+calmnessSongsImg[2].src = "images/Felices los 4.jpg";
+calmnessSongsImg[3].src = "images/In the Air Tonight.jpg";
+calmnessSongsImg[4].src = "images/Little Wound.jpg";
+calmnessSongsImg[5].src = "images/Love Is in the Air.jpg";
+calmnessSongsImg[6].src = "images/One Kiss.jpg";
+calmnessSongsImg[7].src = "images/Promises.png";
+calmnessSongsImg[8].src = "images/Sleepless.jpg";
+calmnessSongsImg[9].src = "images/Sunflower.jpg";
+calmnessSongsImg[10].src = "images/Tenderness.jpg";
+calmnessSongsImg[11].src = "images/The Moons Detriment.jpg";
+calmnessSongsImg[12].src = "images/We are Young.jpg";
+calmnessSongsImg[13].src = "images/What About Us.jpg";
+calmnessSongsImg[14].src = "images/We are Young.jpg";
+calmnessSongsImg[15].src = "images/We are Young.jpg";
+calmnessSongsImg[16].src = "images/Tenderness.jpg";
+calmnessSongsImg[17].src = "images/Promises.png";
+calmnessSongsImg[18].src = "images/Promises.png";
+calmnessSongsImg[19].src = "images/Tenderness.jpg";
+calmnessSongsImg[20].src = "images/Tenderness.jpg";
+
+let calmnessStyleSongs = [
+    {
+        name: "Conversation",
+        artist: "Locy rose",
+        img: "images/Conversation.jpg",
+        src: "Conversation"
+    },
+    {
+        name: "Dusk Till Dawn",
+        artist: "Amanda yang",
+        img: "images/Dusk Till Dawn.jpg",
+        src: "Dusk Till Dawn"
+    },
+    {
+        name: "Felices los 4",
+        artist: "Aberola",
+        img: "images/Felices los 4.jpg",
+        src: "Felices los 4 (Acoustic Version)"
+    },
+    {
+        name: "In the Air Tonight",
+        artist: "Tom speight",
+        img: "images/In the Air Tonight.jpg",
+        src: "In the Air Tonight"
+    },
+    {
+        name: "Little Wound",
+        artist: "Violetta zironi",
+        img: "images/Little Wound.jpg",
+        src: "Little Wound"
+    },
+    {
+        name: "Love Is in the Air",
+        artist: "Flora martinez",
+        img: "images/Love Is in the Air.jpg",
+        src: "Love Is in the Air"
+    },
+    {
+        name: "One Kiss",
+        artist: "Sara farell",
+        img: "images/One Kiss.jpg",
+        src: "One Kiss"
+    },
+    {
+        name: "Promises",
+        artist: "Sara farell",
+        img: "images/Promises.png",
+        src: "Promises"
+    },
+    {
+        name: "Sleepless",
+        artist: "Novo amor",
+        img: "images/Sleepless.jpg",
+        src: "Sleepless"
+    },
+    {
+        name: "Sunflower",
+        artist: "Sara farell",
+        img: "images/Sunflower.jpg",
+        src: "Sunflower"
+    },
+    {
+        name: "Tenderness",
+        artist: "Laura gibson",
+        img: "images/Tenderness.jpg",
+        src: "Tenderness"
+    },
+    {
+        name: "The Moons Detriment",
+        artist: "Shannon lay",
+        img: "images/The Moons Detriment.jpg",
+        src: "The Moons Detriment"
+    },
+    {
+        name: "We are Young",
+        artist: "The Mayries",
+        img: "images/We are Young.jpg",
+        src: "We are Young"
+    },
+    {
+        name: "What About Us",
+        artist: "Thomas daniel",
+        img: "images/What About Us.jpg",
+        src: "What About Us"
+    },
+    {
+        name: "We are Young",
+        artist: "The Mayries",
+        img: "images/We are Young.jpg",
+        src: "We are Young"
+    },
+    {
+        name: "We are Young",
+        artist: "The Mayries",
+        img: "images/We are Young.jpg",
+        src: "We are Young"
+    },
+    {
+        name: "Tenderness",
+        artist: "Laura gibson",
+        img: "images/Tenderness.jpg",
+        src: "Tenderness"
+    },
+    {
+        name: "Promises",
+        artist: "Sara farell",
+        img: "images/Promises.png",
+        src: "Promises"
+    },
+    {
+        name: "Promises",
+        artist: "Sara farell",
+        img: "images/Promises.png",
+        src: "Promises"
+    },
+    {
+        name: "Tenderness",
+        artist: "Laura gibson",
+        img: "images/Tenderness.jpg",
+        src: "Tenderness"
+    },
+    {
+        name: "Tenderness",
+        artist: "Laura gibson",
+        img: "images/Tenderness.jpg",
+        src: "Tenderness"
+    },
+]
+
+const calmnessStyleBtnPlayer = document.querySelector("#calmnessStyleBtnPlayer")
+
+calmnessStyleBtnPlayer.addEventListener("click",() => {
+    songStylesIndexClear();
+    loadcalmnessMusic(calmnessSongsIndex);
+})
+
+//load calmness songs
+
+let songStatusCalmness;
+
+function loadcalmnessMusic(indexNumber){
+    songName.innerHTML = calmnessStyleSongs[indexNumber - 1].name;
+    songArtistName.innerHTML = calmnessStyleSongs[indexNumber - 1].artist;
+    songImage.src = calmnessStyleSongs[indexNumber - 1].img;
+    calmnessSongControler.src = "tracks/Calmness/" + calmnessStyleSongs[indexNumber - 1].src + ".mp3";
+    songImage.style.display = "block";
+
+    focusSongControler.pause();
+    popSongControler.pause();
+    chillSongControler.pause();
+    studySongControler.pause();
+    gameSongControler.pause();
+    rAndbSongControler.pause();
+    rapSongControler.pause();
+    animeSongControler.pause()
+    calmnessSongControler.play();
+    classicSongControler.pause();
+    russianSongControler.pause();
+    heavySongControler.pause();
+    canadaSongControler.pause();
+
+    playBtn.style.display = "none";
+    playBtn.style.fill = "red";
+    pauseBtn.style.fill = "red";
+    pauseBtn.style.display = "block";
+
+    songStatusFocus = false;
+    songStatusStudy = false;
+    songStatusPop = false;
+    songStatusChill = false;
+    songStatusGame = false;
+    songStatusRAndb = false;
+    songStatusRap = false;
+    songStatusAnime = false;
+    songStatusCalmness = true;
+    songStatusClassic = false;
+    songStatusRussian = false;
+    songStatusHeavy = false;
+    songStatusCanada = false;
+
+}
+
+playBtn.addEventListener("click",() => {
+    calmnessSongControler.play();
+})
+pauseBtn.addEventListener("click",() => {
+    calmnessSongControler.pause();
+})
+
+skipNext.addEventListener("click",() => {
+    if(songStatusCalmness == true){
+        nextCalmnessSong();
+    }
+})
+
+skipBack.addEventListener("click",() => {
+    if(songStatusCalmness == true){
+        beforeCalmnessSong();
+    }
+})
+
+//click next song button developing
+
+function nextCalmnessSong(){
+    calmnessSongsIndex ++;
+    calmnessSongsIndex > calmnessStyleSongs.length ? calmnessSongsIndex = 1 : calmnessStyleSongs = calmnessStyleSongs;
+
+    loadcalmnessMusic(calmnessSongsIndex);
+
+}
+
+//click before song button developing
+
+function beforeCalmnessSong(){
+    calmnessSongsIndex --;
+    calmnessSongsIndex < 1 ? calmnessSongsIndex = calmnessStyleSongs.length : calmnessSongsIndex = calmnessSongsIndex;
+
+    loadcalmnessMusic(calmnessSongsIndex);
+
+}
+
+//updata progressBar with songTime
+
+calmnessSongControler.addEventListener("timeupdate",(e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+
+    let progressWith = (currentTime / duration) * 100;
+    progressBar.style.width = progressWith + "%";    
+
+    let songCurrentTime = document.querySelector("#songTimeLeft"),
+    songDurationTime = document.querySelector("#songTimeRemaining")
+
+    calmnessSongControler.addEventListener("loadeddata", () => {
+
+        //update song total duration
+
+        let songDuration = calmnessSongControler.duration;
+        let totalMin = Math.floor(songDuration / 60);
+        let totalSec = Math.floor(songDuration % 60);
+        songDurationTime.innerHTML = totalMin + ":" + totalSec;
+        if(totalSec < 10){
+            songDurationTime.innerHTML = totalMin + ":0" + totalSec;
+        }
+
+    });
+
+    //update song total current time 
+
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if(currentSec < 10){
+        songCurrentTime.innerHTML = currentMin + ":0" + currentSec;
+    }
+    else{
+        songCurrentTime.innerHTML = currentMin + ":" + currentSec;
+    }
+
+    //update playing song current time with progress bar 
+
+    progressArea.addEventListener("click",(e) => {
+        let progressWithVal = progressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = calmnessSongControler.duration;
+
+        calmnessSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
+});
+
+//developed the repeatand random play button 
+
+let repeatState9 = false;
+let randomState9 = false;
+
+repeatPlayButton.addEventListener("click",() => {
+    if(repeatState9 == false){
+        repeatState9 = true;  
+    }
+    else{
+        repeatState9 = false;
+    }
+})
+randomPlayButton.addEventListener("click",() => {
+    if(randomState9 == false){
+        randomState9 = true;
+    }
+    else{
+        randomState9 = false;
+    }
+})
+
+calmnessSongControler.addEventListener("ended",() => {
+    if(randomState9 == false && repeatState9 == false){
+        nextCalmnessSong();
+    }
+    else if(randomState9 == false && repeatState9 == true){
+        calmnessSongControler.currentTime = 0;
+        loadcalmnessMusic(calmnessSongsIndex);
+        calmnessSongControler.play();   
+    }
+    else if(randomState9 == true && repeatState9 == false){
+        let randomIndex9 = Math.floor((Math.random() * calmnessStyleSongs.length) + 1);
+
+        do{
+            randomIndex9 = Math.floor((Math.random() * calmnessStyleSongs.length) + 1);            
+        }
+        while(calmnessSongsIndex == randomIndex9)
+
+        calmnessSongsIndex = randomIndex9;
+        loadcalmnessMusic(calmnessSongsIndex);
+        calmnessSongControler.play();
+    }
+})
+
+// set the songs in classic sont style
+
+const classicSongsImg = document.querySelectorAll(".classicSongsImg");
+const classicSongsNames = document.querySelectorAll(".classicSongsNames");
+const classicSongsArtistsNames = document.querySelectorAll(".classicSongsArtistName");
+const classicSongsbuttonPlayer = document.querySelectorAll(".classicSongsbuttonPlayer");
+const classicSongControler = document.querySelector("#classicSongControler");
+const classicSongControlerSrc = document.querySelector("#classicSongControlerSrc");
+
+
+for(let i = 0;i < classicSongsbuttonPlayer.length;i++){
+    classicSongsbuttonPlayer[i].addEventListener("click",() => {
+        songStylesIndexClear();
+        for(let j = 0;j < classicStyleSongs.length;j++){
+            if(classicSongsbuttonPlayer[i].dataset.songname == classicStyleSongs[j].src){
+                songName.innerHTML = classicStyleSongs[j].name;
+                songArtistName.innerHTML = rapStyleSongs[j].artist;
+                songImage.src = classicStyleSongs[j].img;        
+                classicSongControler.src = "tracks/Classic/" + classicStyleSongs[j].src + ".mp3";
+                songImage.style.display = "block";
+
+                focusSongControler.pause();
+                popSongControler.pause();
+                chillSongControler.pause();
+                studySongControler.pause();
+                gameSongControler.pause();
+                rAndbSongControler.pause();
+                rapSongControler.pause();
+                animeSongControler.pause()
+                calmnessSongControler.pause();
+                classicSongControler.play();
+                russianSongControler.pause();
+                heavySongControler.pause();
+                canadaSongControler.pause();
+
+                classicSongsIndex = i + 1;
+            }
+            
+        } 
+        playBtn.style.display = "none";
+        playBtn.style.fill = "red";
+        pauseBtn.style.fill = "red";
+        pauseBtn.style.display = "block";
+        songStatusClassic = true;
+
+    })
+}
+
+classicSongsNames[0].innerHTML = "Baby I Need Your Loving";
+classicSongsNames[1].innerHTML = "I'm Sorry";
+classicSongsNames[2].innerHTML = "It's Not for Me to Say";
+classicSongsNames[3].innerHTML = "My Cherie Amour";
+classicSongsNames[4].innerHTML = "My Guy";
+classicSongsNames[5].innerHTML = "Only You";
+classicSongsNames[6].innerHTML = "Puppy Love";
+classicSongsNames[7].innerHTML = "Put Your Head On My Shoulder";
+classicSongsNames[8].innerHTML = "Respect";
+classicSongsNames[9].innerHTML = "Rock-A-Bye Your Baby";
+classicSongsNames[10].innerHTML = "Stand by Me";
+classicSongsNames[11].innerHTML = "Stop! In The Name Of Love";
+classicSongsNames[12].innerHTML = "The Loco-Motion";
+classicSongsNames[13].innerHTML = "Tonight You Belong To Me";
+classicSongsNames[14].innerHTML = "You, You, You";
+classicSongsNames[15].innerHTML = "The Loco-Motion";
+classicSongsNames[16].innerHTML = "You, You, You";
+classicSongsNames[17].innerHTML = "You, You, You";
+classicSongsNames[18].innerHTML = "Stand by Me";
+classicSongsNames[19].innerHTML = "The Loco-Motion";
+classicSongsNames[20].innerHTML = "The Loco-Motion";
+
+classicSongsArtistsNames[0].innerHTML = "Four tops";
+classicSongsArtistsNames[1].innerHTML = "Brande lee";
+classicSongsArtistsNames[2].innerHTML = "Johnny mathis";
+classicSongsArtistsNames[3].innerHTML = "Stevie wonder";
+classicSongsArtistsNames[4].innerHTML = "Mary wells";
+classicSongsArtistsNames[5].innerHTML = "Franck pourcel";
+classicSongsArtistsNames[6].innerHTML = "Paul anka";
+classicSongsArtistsNames[7].innerHTML = "Paul anka";
+classicSongsArtistsNames[8].innerHTML = "Aretha franklin";
+classicSongsArtistsNames[9].innerHTML = "Jerru lewis";
+classicSongsArtistsNames[10].innerHTML = "Ben E";
+classicSongsArtistsNames[11].innerHTML = "The supremes";
+classicSongsArtistsNames[12].innerHTML = "Little eva";
+classicSongsArtistsNames[13].innerHTML = "Patience & prude";
+classicSongsArtistsNames[14].innerHTML = "The ames brothers";
+classicSongsArtistsNames[15].innerHTML = "Little eva";
+classicSongsArtistsNames[16].innerHTML = "The ames brothers";
+classicSongsArtistsNames[17].innerHTML = "The ames brothers";
+classicSongsArtistsNames[18].innerHTML = "Ben E";
+classicSongsArtistsNames[19].innerHTML = "Little eva";
+classicSongsArtistsNames[20].innerHTML = "Little eva";
+
+classicSongsImg[0].src = "images/Baby I Need Your Loving.jpg";
+classicSongsImg[1].src = "images/I'm Sorry.jpg";
+classicSongsImg[2].src = "images/It's Not for Me to Say.jpg";
+classicSongsImg[3].src = "images/My Cherie Amour.jpg";
+classicSongsImg[4].src = "images/My Guy.jpg";
+classicSongsImg[5].src = "images/Only You.jpg";
+classicSongsImg[6].src = "images/Puppy Love.jpg";
+classicSongsImg[7].src = "images/Put Your Head On My Shoulder.jpg";
+classicSongsImg[8].src = "images/Respect.jpg";
+classicSongsImg[9].src = "images/Rock-A-Bye Your Baby.jpg";
+classicSongsImg[10].src = "images/Stand by Me.jpg";
+classicSongsImg[11].src = "images/Stop! In The Name Of Love.png";
+classicSongsImg[12].src = "images/The Loco-Motion.jpg";
+classicSongsImg[13].src = "images/Tonight You Belong To Me.jpg";
+classicSongsImg[14].src = "images/You, You, You.jpg";
+classicSongsImg[15].src = "images/The Loco-Motion.jpg";
+classicSongsImg[16].src = "images/You, You, You.jpg";
+classicSongsImg[17].src = "images/You, You, You.jpg";
+classicSongsImg[18].src = "images/Stand by Me.jpg";
+classicSongsImg[19].src = "images/The Loco-Motion.jpg";
+classicSongsImg[20].src = "images/The Loco-Motion.jpg";
+
+let classicStyleSongs = [
+    {
+        name: "Baby I Need Your Loving",
+        artist: "Locy rose",
+        img: "images/Baby I Need Your Loving.jpg",
+        src: "Baby I Need Your Loving"
+    },
+    {
+        name: "I'm Sorry",
+        artist: "Amanda yang",
+        img: "images/I'm Sorry.jpg",
+        src: "I'm Sorry (Single Version)"
+    },
+    {
+        name: "It's Not for Me to Say",
+        artist: "Aberola",
+        img: "images/It's Not for Me to Say.jpg",
+        src: "It's Not for Me to Say (From the MGM Film _Lizzie_)"
+    },
+    {
+        name: "My Cherie Amour",
+        artist: "Tom speight",
+        img: "images/My Cherie Amour.jpg",
+        src: "My Cherie Amour"
+    },
+    {
+        name: "My Guy",
+        artist: "Violetta zironi",
+        img: "images/My Guy.jpg",
+        src: "My Guy"
+    },
+    {
+        name: "Only You",
+        artist: "Flora martinez",
+        img: "images/Only You.jpg",
+        src: "Only You"
+    },
+    {
+        name: "Puppy Love",
+        artist: "Sara farell",
+        img: "images/Puppy Love.jpg",
+        src: "Puppy Love"
+    },
+    {
+        name: "Put Your Head On My Shoulder",
+        artist: "Sara farell",
+        img: "images/Put Your Head On My Shoulder.png",
+        src: "Put Your Head On My Shoulder"
+    },
+    {
+        name: "Respect",
+        artist: "Novo amor",
+        img: "images/Respect.jpg",
+        src: "Respect"
+    },
+    {
+        name: "Rock-A-Bye Your Baby",
+        artist: "Sara farell",
+        img: "images/Rock-A-Bye Your Baby.jpg",
+        src: "Rock-A-Bye Your Baby With A Dixie Melody"
+    },
+    {
+        name: "Stand by Me",
+        artist: "Laura gibson",
+        img: "images/Stand by Me.jpg",
+        src: "Stand by Me"
+    },
+    {
+        name: "Stop! In The Name Of Love",
+        artist: "Shannon lay",
+        img: "images/Stop! In The Name Of Lovet.png",
+        src: "Stop! In The Name Of Love"
+    },
+    {
+        name: "The Loco-Motion",
+        artist: "The Mayries",
+        img: "images/The Loco-Motion.jpg",
+        src: "The Loco-Motion (Single Version)"
+    },
+    {
+        name: "Tonight You Belong To Me",
+        artist: "Thomas daniel",
+        img: "images/Tonight You Belong To Me.jpg",
+        src: "Tonight You Belong To Me"
+    },
+    {
+        name: "You, You, You",
+        artist: "The Mayries",
+        img: "images/You, You, You.jpg",
+        src: "You, You, You"
+    },
+    {
+        name: "The Loco-Motion",
+        artist: "The Mayries",
+        img: "images/The Loco-Motion.jpg",
+        src: "The Loco-Motion (Single Version)"
+    },
+    {
+        name: "You, You, You",
+        artist: "Laura gibson",
+        img: "images/You, You, You.jpg",
+        src: "You, You, You"
+    },
+    {
+        name: "You, You, You",
+        artist: "Sara farell",
+        img: "images/You, You, You.png",
+        src: "You, You, You"
+    },
+    {
+        name: "Stand by Me",
+        artist: "Sara farell",
+        img: "images/Stand by Me.png",
+        src: "Stand by Me"
+    },
+    {
+        name: "The Loco-Motion",
+        artist: "Laura gibson",
+        img: "images/The Loco-Motion.jpg",
+        src: "The Loco-Motion (Single Version)"
+    },
+    {
+        name: "The Loco-Motion",
+        artist: "Laura gibson",
+        img: "images/The Loco-Motion.jpg",
+        src: "The Loco-Motion (Single Version)"
+    },
+]
+
+const classicStyleBtnPlayer = document.querySelector("#classicStyleBtnPlayer")
+
+classicStyleBtnPlayer.addEventListener("click",() => {
+    songStylesIndexClear();
+    loadclassicMusic(classicSongsIndex);
+})
+
+//load classic songs
+
+let songStatusClassic;
+
+function loadclassicMusic(indexNumber){
+    songName.innerHTML = classicStyleSongs[indexNumber - 1].name;
+    songArtistName.innerHTML = classicStyleSongs[indexNumber - 1].artist;
+    songImage.src = classicStyleSongs[indexNumber - 1].img;
+    classicSongControler.src = "tracks/Classic/" + classicStyleSongs[indexNumber - 1].src + ".mp3";
+    songImage.style.display = "block";
+
+    focusSongControler.pause();
+    popSongControler.pause();
+    chillSongControler.pause();
+    studySongControler.pause();
+    gameSongControler.pause();
+    rAndbSongControler.pause();
+    rapSongControler.pause();
+    animeSongControler.pause()
+    calmnessSongControler.pause();
+    classicSongControler.play();
+    russianSongControler.pause();
+    heavySongControler.pause();
+    canadaSongControler.pause();
+
+    playBtn.style.display = "none";
+    playBtn.style.fill = "red";
+    pauseBtn.style.fill = "red";
+    pauseBtn.style.display = "block";
+
+    songStatusFocus = false;
+    songStatusStudy = false;
+    songStatusPop = false;
+    songStatusChill = false;
+    songStatusGame = false;
+    songStatusRAndb = false;
+    songStatusRap = false;
+    songStatusAnime = false;
+    songStatusCalmness = false;
+    songStatusClassic = true;
+    songStatusRussian = false;
+    songStatusHeavy = false;
+    songStatusCanada = false;
+
+}
+
+playBtn.addEventListener("click",() => {
+    classicSongControler.play();
+})
+pauseBtn.addEventListener("click",() => {
+    classicSongControler.pause();
+})
+
+skipNext.addEventListener("click",() => {
+    if(songStatusClassic == true){
+        nextClassicSong();
+    }
+})
+
+skipBack.addEventListener("click",() => {
+    if(songStatusClassic == true){
+        beforeClassicSong();
+    }
+})
+
+//click next song button developing
+
+function nextClassicSong(){
+    classicSongsIndex ++;
+    classicSongsIndex > classicStyleSongs.length ? classicSongsIndex = 1 : classicStyleSongs = classicStyleSongs;
+
+    loadclassicMusic(classicSongsIndex);
+
+}
+
+//click before song button developing
+
+function beforeClassicSong(){
+    classicSongsIndex --;
+    classicSongsIndex < 1 ? classicSongsIndex = classicStyleSongs.length : classicSongsIndex = classicSongsIndex;
+
+    loadclassicMusic(classicSongsIndex);
+
+}
+
+//updata progressBar with songTime
+
+classicSongControler.addEventListener("timeupdate",(e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+
+    let progressWith = (currentTime / duration) * 100;
+    progressBar.style.width = progressWith + "%";    
+
+    let songCurrentTime = document.querySelector("#songTimeLeft"),
+    songDurationTime = document.querySelector("#songTimeRemaining")
+
+    classicSongControler.addEventListener("loadeddata", () => {
+
+        //update song total duration
+
+        let songDuration = classicSongControler.duration;
+        let totalMin = Math.floor(songDuration / 60);
+        let totalSec = Math.floor(songDuration % 60);
+        songDurationTime.innerHTML = totalMin + ":" + totalSec;
+        if(totalSec < 10){
+            songDurationTime.innerHTML = totalMin + ":0" + totalSec;
+        }
+
+    });
+
+    //update song total current time 
+
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if(currentSec < 10){
+        songCurrentTime.innerHTML = currentMin + ":0" + currentSec;
+    }
+    else{
+        songCurrentTime.innerHTML = currentMin + ":" + currentSec;
+    }
+
+    //update playing song current time with progress bar 
+
+    progressArea.addEventListener("click",(e) => {
+        let progressWithVal = progressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = classicSongControler.duration;
+
+        classicSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
+});
+
+//developed the repeatand random play button 
+
+let repeatState10 = false;
+let randomState10 = false;
+
+repeatPlayButton.addEventListener("click",() => {
+    if(repeatState10 == false){
+        repeatState10 = true;  
+    }
+    else{
+        repeatState10 = false;
+    }
+})
+randomPlayButton.addEventListener("click",() => {
+    if(randomState10 == false){
+        randomState10 = true;
+    }
+    else{
+        randomState10 = false;
+    }
+})
+
+classicSongControler.addEventListener("ended",() => {
+    if(randomState10 == false && repeatState10 == false){
+        nextClassicSong();
+    }
+    else if(randomState10 == false && repeatState10 == true){
+        classicSongControler.currentTime = 0;
+        loadclassicMusic(classicSongsIndex);
+        classicSongControler.play();   
+    }
+    else if(randomState10 == true && repeatState10 == false){
+        let randomIndex10 = Math.floor((Math.random() * classicStyleSongs.length) + 1);
+
+        do{
+            randomIndex10 = Math.floor((Math.random() * classicStyleSongs.length) + 1);            
+        }
+        while(classicSongsIndex == randomIndex10)
+
+        classicSongsIndex = randomIndex10;
+        loadclassicMusic(classicSongsIndex);
+        classicSongControler.play();
+    }
+})
+
+// set the songs in russian sont style
+
+const russianSongsImg = document.querySelectorAll(".russianSongsImg");
+const russianSongsNames = document.querySelectorAll(".russianSongsNames");
+const russianSongsArtistsNames = document.querySelectorAll(".russianSongsArtistName");
+const russianSongsbuttonPlayer = document.querySelectorAll(".russianSongsbuttonPlayer");
+const russianSongControler = document.querySelector("#russianSongControler");
+const russianSongControlerSrc = document.querySelector("#russianSongControlerSrc");
+
+
+for(let i = 0;i < russianSongsbuttonPlayer.length;i++){
+    russianSongsbuttonPlayer[i].addEventListener("click",() => {
+        songStylesIndexClear();
+        for(let j = 0;j < russianStyleSongs.length;j++){
+            if(russianSongsbuttonPlayer[i].dataset.songname == russianStyleSongs[j].src){
+                songName.innerHTML = russianStyleSongs[j].name;
+                songArtistName.innerHTML = russianStyleSongs[j].artist;
+                songImage.src = russianStyleSongs[j].img;        
+                russianSongControler.src = "tracks/Russian/" + russianStyleSongs[j].src + ".mp3";
+                songImage.style.display = "block";
+
+                focusSongControler.pause();
+                popSongControler.pause();
+                chillSongControler.pause();
+                studySongControler.pause();
+                gameSongControler.pause();
+                rAndbSongControler.pause();
+                rapSongControler.pause();
+                animeSongControler.pause()
+                calmnessSongControler.pause();
+                classicSongControler.pause();
+                russianSongControler.play();
+                heavySongControler.pause();
+                canadaSongControler.pause();
+
+                russianSongsIndex = i + 1;
+            }
+            
+        } 
+        playBtn.style.display = "none";
+        playBtn.style.fill = "red";
+        pauseBtn.style.fill = "red";
+        pauseBtn.style.display = "block";
+        songStatusRussian = true;
+
+    })
+}
+
+russianSongsNames[0].innerHTML = "gio-pika";
+russianSongsNames[1].innerHTML = "re";
+russianSongsNames[2].innerHTML = "polovina";
+russianSongsNames[3].innerHTML = "mansouri-sho";
+russianSongsNames[4].innerHTML = "tanir-and-tyomcha-da-da";
+russianSongsNames[5].innerHTML = "мирзаев-без-тебя-я-не";
+russianSongsNames[6].innerHTML = "dioronabeat";
+russianSongsNames[7].innerHTML = "gafur-луна";
+russianSongsNames[8].innerHTML = "ic3peak";
+russianSongsNames[9].innerHTML = "девочка";
+russianSongsNames[10].innerHTML = "morgenshtern";
+russianSongsNames[11].innerHTML = "ramzan_abitov_minimum";
+russianSongsNames[12].innerHTML = "rap";
+russianSongsNames[13].innerHTML = "childhood";
+russianSongsNames[14].innerHTML = "ганвест-никотин";
+russianSongsNames[15].innerHTML = "дикая";
+russianSongsNames[16].innerHTML = "фонтанчик";
+russianSongsNames[17].innerHTML = "дикая";
+russianSongsNames[18].innerHTML = "дикая";
+russianSongsNames[19].innerHTML = "childhood";
+russianSongsNames[20].innerHTML = "childhood";
+
+russianSongsArtistsNames[0].innerHTML = "Russian";
+russianSongsArtistsNames[1].innerHTML = "Russian";
+russianSongsArtistsNames[2].innerHTML = "Russian";
+russianSongsArtistsNames[3].innerHTML = "Russian";
+russianSongsArtistsNames[4].innerHTML = "Russian";
+russianSongsArtistsNames[5].innerHTML = "Russian";
+russianSongsArtistsNames[6].innerHTML = "Russian";
+russianSongsArtistsNames[7].innerHTML = "Russian";
+russianSongsArtistsNames[8].innerHTML = "Russian";
+russianSongsArtistsNames[9].innerHTML = "Russian";
+russianSongsArtistsNames[10].innerHTML = "Russian";
+russianSongsArtistsNames[11].innerHTML = "Russian";
+russianSongsArtistsNames[12].innerHTML = "Russian";
+russianSongsArtistsNames[13].innerHTML = "Russian";
+russianSongsArtistsNames[14].innerHTML = "Russian";
+russianSongsArtistsNames[15].innerHTML = "Russian";
+russianSongsArtistsNames[16].innerHTML = "Russian";
+russianSongsArtistsNames[17].innerHTML = "Russian";
+russianSongsArtistsNames[18].innerHTML = "Russian";
+russianSongsArtistsNames[19].innerHTML = "Russian";
+russianSongsArtistsNames[20].innerHTML = "Russian";
+
+russianSongsImg[0].src = "images/gio-pika.jpg";
+russianSongsImg[1].src = "images/re.jpg";
+russianSongsImg[2].src = "images/polovina.jpg";
+russianSongsImg[3].src = "images/mansouri-sho.jpg";
+russianSongsImg[4].src = "images/tanir-and-tyomcha-da-da.jpg";
+russianSongsImg[5].src = "images/мирзаев-без-тебя-я-не.jpg";
+russianSongsImg[6].src = "images/dioronabeat.jpg";
+russianSongsImg[7].src = "images/gafur-луна.jpg";
+russianSongsImg[8].src = "images/ic3peak.jpg";
+russianSongsImg[9].src = "images/девочка.jpg";
+russianSongsImg[10].src = "images/morgenshtern.jpg";
+russianSongsImg[11].src = "images/ramzan_abitov_minimum.jpg";
+russianSongsImg[12].src = "images/rap.jpg";
+russianSongsImg[13].src = "images/childhood.jpg";
+russianSongsImg[14].src = "images/ганвест-никотин.jpg";
+russianSongsImg[15].src = "images/дикая.jpg";
+russianSongsImg[16].src = "images/фонтанчик.jpg";
+russianSongsImg[17].src = "images/дикая.jpg";
+russianSongsImg[18].src = "images/дикая.jpg";
+russianSongsImg[19].src = "images/childhood.jpg";
+russianSongsImg[20].src = "images/childhood.jpg";
+
+let russianStyleSongs = [
+    {
+        name: "gio-pika",
+        artist: "Russian",
+        img: "images/gio-pika.jpg",
+        src: "2021-adam-maniac-remix-gio-pika"
+    },
+    {
+        name: "re",
+        artist: "Russian",
+        img: "images/re.jpg",
+        src: "2021ka-re"
+    },
+    {
+        name: "polovina",
+        artist: "Russian",
+        img: "images/polovina.jpg",
+        src: "2021-ka-re-polovina"
+    },
+    {
+        name: "mansouri-sho",
+        artist: "Russian",
+        img: "images/mansouri-sho.jpg",
+        src: "2021sasan-mansouri-sho"
+    },
+    {
+        name: "tanir-and-tyomcha-da-da",
+        artist: "Russian",
+        img: "images/tanir-and-tyomcha-da-da.jpg",
+        src: "2021tanir-and-tyomcha-da-da"
+    },
+    {
+        name: "мирзаев-без-тебя-я-не",
+        artist: "Russian",
+        img: "images/мирзаев-без-тебя-я-не.jpg",
+        src: "2022вусал-мирзаев-без-тебя-я-не"
+    },
+    {
+        name: "dioronabeat",
+        artist: "Russian",
+        img: "images/dioronabeat.jpg",
+        src: "dioronabeat"
+    },
+    {
+        name: "gafur-луна",
+        artist: "Russian",
+        img: "images/gafur-луна.jpg",
+        src: "gafur-луна-"
+    },
+    {
+        name: "ic3peak",
+        artist: "Russian",
+        img: "images/ic3peak.jpg",
+        src: "ic3peak--trrst[remix]"
+    },
+    {
+        name: "девочка",
+        artist: "Russian",
+        img: "images/девочка.jpg",
+        src: "miko-девочка-в"
+    },
+    {
+        name: "morgenshtern",
+        artist: "Russian",
+        img: "images/morgenshtern.jpg",
+        src: "morgenshtern"
+    },
+    {
+        name: "ramzan_abitov_minimum",
+        artist: "Russian",
+        img: "images/ramzan_abitov_minimum.jpg",
+        src: "ramzan_abitov_minimum_t2"
+    },
+    {
+        name: "rap",
+        artist: "Russian",
+        img: "images/rap.jpg",
+        src: "rap"
+    },
+    {
+        name: "childhood",
+        artist: "Russian",
+        img: "images/childhood.jpg",
+        src: "rauf_faik_childhood_t2"
+    },
+    {
+        name: "ганвест-никотин",
+        artist: "Russian",
+        img: "images/ганвест-никотин.jpg",
+        src: "ганвест-никотин[remix]"
+    },
+    {
+        name: "дикая",
+        artist: "Russian",
+        img: "images/дикая.jpg",
+        src: "дикая"
+    },
+    {
+        name: "фонтанчик",
+        artist: "Russian",
+        img: "images/фонтанчик.jpg",
+        src: "фонтанчик-с"
+    },
+    {
+        name: "дикая",
+        artist: "Russian",
+        img: "images/дикая.jpg",
+        src: "дикая"
+    },
+    {
+        name: "дикая",
+        artist: "Russian",
+        img: "images/дикая.jpg",
+        src: "дикая"
+    },
+    {
+        name: "childhood",
+        artist: "Russian",
+        img: "images/childhood.jpg",
+        src: "rauf_faik_childhood_t2"
+    },
+    {
+        name: "childhood",
+        artist: "Russian",
+        img: "images/childhood.jpg",
+        src: "Trauf_faik_childhood_t2"
+    },
+]
+
+const russianStyleBtnPlayer = document.querySelector("#russianStyleBtnPlayer")
+
+russianStyleBtnPlayer.addEventListener("click",() => {
+    songStylesIndexClear();
+    loadrussianMusic(russianSongsIndex);
+})
+
+//load russian songs
+
+let songStatusRussian;
+
+function loadrussianMusic(indexNumber){
+    songName.innerHTML = russianStyleSongs[indexNumber - 1].name;
+    songArtistName.innerHTML = russianStyleSongs[indexNumber - 1].artist;
+    songImage.src = russianStyleSongs[indexNumber - 1].img;
+    russianSongControler.src = "tracks/Russian/" + russianStyleSongs[indexNumber - 1].src + ".mp3";
+    songImage.style.display = "block";
+
+    focusSongControler.pause();
+    popSongControler.pause();
+    chillSongControler.pause();
+    studySongControler.pause();
+    gameSongControler.pause();
+    rAndbSongControler.pause();
+    rapSongControler.pause();
+    animeSongControler.pause()
+    calmnessSongControler.pause();
+    classicSongControler.pause();
+    russianSongControler.play();
+    heavySongControler.pause();
+    canadaSongControler.pause();
+
+    playBtn.style.display = "none";
+    playBtn.style.fill = "red";
+    pauseBtn.style.fill = "red";
+    pauseBtn.style.display = "block";
+
+    songStatusFocus = false;
+    songStatusStudy = false;
+    songStatusPop = false;
+    songStatusChill = false;
+    songStatusGame = false;
+    songStatusRAndb = false;
+    songStatusRap = false;
+    songStatusAnime = false;
+    songStatusCalmness = false;
+    songStatusClassic = false;
+    songStatusRussian = true;
+    songStatusHeavy = false;
+    songStatusCanada = false;
+
+}
+
+playBtn.addEventListener("click",() => {
+    russianSongControler.play();
+})
+pauseBtn.addEventListener("click",() => {
+    russianSongControler.pause();
+})
+
+skipNext.addEventListener("click",() => {
+    if(songStatusRussian == true){
+        nextRussianSong();
+    }
+})
+
+skipBack.addEventListener("click",() => {
+    if(songStatusRussian == true){
+        beforeRussianSong();
+    }
+})
+
+//click next song button developing
+
+function nextRussianSong(){
+    russianSongsIndex ++;
+    russianSongsIndex > russianStyleSongs.length ? russianSongsIndex = 1 : russianStyleSongs = russianStyleSongs;
+
+    loadrussianMusic(russianSongsIndex);
+
+}
+
+//click before song button developing
+
+function beforeRussianSong(){
+    russianSongsIndex --;
+    russianSongsIndex < 1 ? russianSongsIndex = russianStyleSongs.length : russianSongsIndex = russianSongsIndex;
+
+    loadrussianMusic(russianSongsIndex);
+
+}
+
+//updata progressBar with songTime
+
+russianSongControler.addEventListener("timeupdate",(e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+
+    let progressWith = (currentTime / duration) * 100;
+    progressBar.style.width = progressWith + "%";    
+
+    let songCurrentTime = document.querySelector("#songTimeLeft"),
+    songDurationTime = document.querySelector("#songTimeRemaining")
+
+    russianSongControler.addEventListener("loadeddata", () => {
+
+        //update song total duration
+
+        let songDuration = russianSongControler.duration;
+        let totalMin = Math.floor(songDuration / 60);
+        let totalSec = Math.floor(songDuration % 60);
+        songDurationTime.innerHTML = totalMin + ":" + totalSec;
+        if(totalSec < 10){
+            songDurationTime.innerHTML = totalMin + ":0" + totalSec;
+        }
+
+    });
+
+    //update song total current time 
+
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if(currentSec < 10){
+        songCurrentTime.innerHTML = currentMin + ":0" + currentSec;
+    }
+    else{
+        songCurrentTime.innerHTML = currentMin + ":" + currentSec;
+    }
+
+    //update playing song current time with progress bar 
+
+    progressArea.addEventListener("click",(e) => {
+        let progressWithVal = progressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = russianSongControler.duration;
+
+        russianSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
+});
+
+//developed the repeatand random play button 
+
+let repeatState11 = false;
+let randomState11 = false;
+
+repeatPlayButton.addEventListener("click",() => {
+    if(repeatState11 == false){
+        repeatState11 = true;  
+    }
+    else{
+        repeatState11 = false;
+    }
+})
+randomPlayButton.addEventListener("click",() => {
+    if(randomState11 == false){
+        randomState11 = true;
+    }
+    else{
+        randomState11 = false;
+    }
+})
+
+russianSongControler.addEventListener("ended",() => {
+    if(randomState11 == false && repeatState11 == false){
+        nextRussianSong();
+    }
+    else if(randomState11 == false && repeatState11 == true){
+        russianSongControler.currentTime = 0;
+        loadrussianMusic(russianSongsIndex);
+        russianSongControler.play();   
+    }
+    else if(randomState11 == true && repeatState11 == false){
+        let randomIndex11 = Math.floor((Math.random() * russianStyleSongs.length) + 1);
+
+        do{
+            randomIndex11 = Math.floor((Math.random() * russianStyleSongs.length) + 1);            
+        }
+        while(russianSongsIndex == randomIndex11)
+
+        russianSongsIndex = randomIndex11;
+        loadrussianMusic(russianSongsIndex);
+        russianSongControler.play();
+    }
+})
+
+// set the songs in heavy sont style
+
+const heavySongsImg = document.querySelectorAll(".heavySongsImg");
+const heavySongsNames = document.querySelectorAll(".heavySongsNames");
+const heavySongsArtistsNames = document.querySelectorAll(".heavySongsArtistName");
+const heavySongsbuttonPlayer = document.querySelectorAll(".heavySongsbuttonPlayer");
+const heavySongControler = document.querySelector("#heavySongControler");
+const heavySongControlerSrc = document.querySelector("#heavySongControlerSrc");
+
+
+for(let i = 0;i < heavySongsbuttonPlayer.length;i++){
+    heavySongsbuttonPlayer[i].addEventListener("click",() => {
+        songStylesIndexClear();
+        for(let j = 0;j < heavyStyleSongs.length;j++){
+            if(heavySongsbuttonPlayer[i].dataset.songname == heavyStyleSongs[j].src){
+                songName.innerHTML = heavyStyleSongs[j].name;
+                songArtistName.innerHTML = heavyStyleSongs[j].artist;
+                songImage.src = heavyStyleSongs[j].img;        
+                heavySongControler.src = "tracks/Heavy/" + heavyStyleSongs[j].src + ".mp3";
+                songImage.style.display = "block";
+
+                focusSongControler.pause();
+                popSongControler.pause();
+                chillSongControler.pause();
+                studySongControler.pause();
+                gameSongControler.pause();
+                rAndbSongControler.pause();
+                rapSongControler.pause();
+                animeSongControler.pause()
+                calmnessSongControler.pause();
+                classicSongControler.pause();
+                russianSongControler.pause();
+                heavySongControler.play();
+                canadaSongControler.pause();
+
+                heavySongsIndex = i + 1;
+            }
+            
+        } 
+        playBtn.style.display = "none";
+        playBtn.style.fill = "red";
+        pauseBtn.style.fill = "red";
+        pauseBtn.style.display = "block";
+        songStatusHeavy = true;
+
+    })
+}
+
+heavySongsNames[0].innerHTML = "All Nigh";
+heavySongsNames[1].innerHTML = "LA LA LA";
+heavySongsNames[2].innerHTML = "You And I";
+heavySongsNames[3].innerHTML = "Sweet";
+heavySongsNames[4].innerHTML = "Bugatti";
+heavySongsNames[5].innerHTML = "Sorry";
+heavySongsNames[6].innerHTML = "Sensei";
+heavySongsNames[7].innerHTML = "Gang";
+heavySongsNames[8].innerHTML = "If I Can";
+heavySongsNames[9].innerHTML = "You And I";
+heavySongsNames[10].innerHTML = "If I Can";
+heavySongsNames[11].innerHTML = "You And I";
+heavySongsNames[12].innerHTML = "If I Can";
+heavySongsNames[13].innerHTML = "You And I";
+heavySongsNames[14].innerHTML = "If I Can";
+heavySongsNames[15].innerHTML = "You And I";
+heavySongsNames[16].innerHTML = "If I Can";
+heavySongsNames[17].innerHTML = "You And I";
+heavySongsNames[18].innerHTML = "If I Can";
+heavySongsNames[19].innerHTML = "You And I";
+heavySongsNames[20].innerHTML = "If I Can";
+
+heavySongsArtistsNames[0].innerHTML = "Russian";
+heavySongsArtistsNames[1].innerHTML = "Russian";
+heavySongsArtistsNames[2].innerHTML = "Russian";
+heavySongsArtistsNames[3].innerHTML = "Russian";
+heavySongsArtistsNames[4].innerHTML = "Russian";
+heavySongsArtistsNames[5].innerHTML = "Russian";
+heavySongsArtistsNames[6].innerHTML = "Russian";
+heavySongsArtistsNames[7].innerHTML = "Russian";
+heavySongsArtistsNames[8].innerHTML = "Russian";
+heavySongsArtistsNames[9].innerHTML = "Russian";
+heavySongsArtistsNames[10].innerHTML = "Russian";
+heavySongsArtistsNames[11].innerHTML = "Russian";
+heavySongsArtistsNames[12].innerHTML = "Russian";
+heavySongsArtistsNames[13].innerHTML = "Russian";
+heavySongsArtistsNames[14].innerHTML = "Russian";
+heavySongsArtistsNames[15].innerHTML = "Russian";
+heavySongsArtistsNames[16].innerHTML = "Russian";
+heavySongsArtistsNames[17].innerHTML = "Russian";
+heavySongsArtistsNames[18].innerHTML = "Russian";
+heavySongsArtistsNames[19].innerHTML = "Russian";
+heavySongsArtistsNames[20].innerHTML = "Russian";
+
+heavySongsImg[0].src = "images/All Nigh.jpg";
+heavySongsImg[1].src = "images/LA LA LA.jpg";
+heavySongsImg[2].src = "images/You And I.png";
+heavySongsImg[3].src = "images/Sweet.jpg";
+heavySongsImg[4].src = "images/Bugatti.jpg";
+heavySongsImg[5].src = "images/Sorry.jpg";
+heavySongsImg[6].src = "images/Sensei.jpg";
+heavySongsImg[7].src = "images/Gang.jpg";
+heavySongsImg[8].src = "images/If I Can.jpg";
+heavySongsImg[9].src = "images/You And I.png";
+heavySongsImg[10].src = "images/If I Can.jpg";
+heavySongsImg[11].src = "images/You And I.png";
+heavySongsImg[12].src = "images/If I Can.jpg";
+heavySongsImg[13].src = "images/You And I.png";
+heavySongsImg[14].src = "images/If I Can.jpg";
+heavySongsImg[15].src = "images/You And I.png";
+heavySongsImg[16].src = "images/If I Can.jpg";
+heavySongsImg[17].src = "images/You And I.png";
+heavySongsImg[18].src = "images/If I Can.jpg";
+heavySongsImg[19].src = "images/You And I.png";
+heavySongsImg[20].src = "images/If I Can.jpg";
+
+let heavyStyleSongs = [
+    {
+        name: "All Night",
+        artist: "Astian",
+        img: "images/All Nigh.jpg",
+        src: "1. Astian, WYR GEMI - All Night (320)"
+    },
+    {
+        name: "LA LA LA",
+        artist: "Azvre",
+        img: "images/LA LA LA.jpg",
+        src: "1. AZVRE, PRYCEWELL - LA LA LA (320)"
+    },
+    {
+        name: "You And I",
+        artist: "Bladdy",
+        img: "images/You And I.png",
+        src: "1. Bladdy-T - You And I (320)"
+    },
+    {
+        name: "Sweet",
+        artist: "Butch U",
+        img: "images/Sweet.jpg",
+        src: "1. Butch U - Sweet (320)"
+    },
+    {
+        name: "Bugatti",
+        artist: "Alex",
+        img: "images/Bugatti.jpg",
+        src: "1. Dimax White, Alex Lande - Bugatti (320)"
+    },
+    {
+        name: "Sorry",
+        artist: "Dipiens",
+        img: "images/Sorry.jpg",
+        src: "1. DIPIENS, RETROFRIEND - Sorry (320)"
+    },
+    {
+        name: "Sensei",
+        artist: "Libercio",
+        img: "images/Sensei.jpg",
+        src: "1. Libercio - Sensei (320)"
+    },
+    {
+        name: "Gang",
+        artist: "Mier",
+        img: "images/Gang.jpg",
+        src: "1. Mier - Gang (320)"
+    },
+    {
+        name: "If I Can",
+        artist: "Rejackt",
+        img: "images/If I Can.jpg",
+        src: "1. Rejackt - If I Can (320)"
+    },
+    {
+        name: "You And I",
+        artist: "Bladdy",
+        img: "images/You And I.png",
+        src: "1. Bladdy-T - You And I (320)"
+    },
+    {
+        name: "If I Can",
+        artist: "Rejackt",
+        img: "images/If I Can.jpg",
+        src: "1. Rejackt - If I Can (320)"
+    },
+    {
+        name: "You And I",
+        artist: "Bladdy",
+        img: "images/You And I.jpg",
+        src: "1. Bladdy-T - You And I (320)"
+    },
+    {
+        name: "If I Can",
+        artist: "Rejackt",
+        img: "images/If I Can.jpg",
+        src: "1. Rejackt - If I Can (320)"
+    },
+    {
+        name: "You And I",
+        artist: "Bladdy",
+        img: "images/You And I.png",
+        src: "1. Bladdy-T - You And I (320)"
+    },
+    {
+        name: "If I Can",
+        artist: "Rejackt",
+        img: "images/If I Can.jpg",
+        src: "1. Rejackt - If I Can (320)"
+    },
+    {
+        name: "You And I",
+        artist: "Bladdy",
+        img: "images/You And I.png",
+        src: "1. Bladdy-T - You And I (320)"
+    },
+    {
+        name: "If I Can",
+        artist: "Rejackt",
+        img: "images/If I Can.jpg",
+        src: "1. Rejackt - If I Can (320)"
+    },
+    {
+        name: "You And I",
+        artist: "Bladdy",
+        img: "images/You And I.png",
+        src: "1. Bladdy-T - You And I (320)"
+    },
+    {
+        name: "If I Can",
+        artist: "Rejackt",
+        img: "images/If I Can.jpg",
+        src: "1. Rejackt - If I Can (320)"
+    },
+    {
+        name: "You And I",
+        artist: "Bladdy",
+        img: "images/You And I.png",
+        src: "1. Bladdy-T - You And I (320)"
+    },
+    {
+        name: "If I Can",
+        artist: "Rejackt",
+        img: "images/If I Can.jpg",
+        src: "1. Rejackt - If I Can (320)"
+    },
+]
+
+const heavyStyleBtnPlayer = document.querySelector("#heavyStyleBtnPlayer")
+
+heavyStyleBtnPlayer.addEventListener("click",() => {
+    songStylesIndexClear();
+    loadheavyMusic(heavySongsIndex);
+})
+
+//load heavy songs
+
+let songStatusHeavy;
+
+function loadheavyMusic(indexNumber){
+    songName.innerHTML = heavyStyleSongs[indexNumber - 1].name;
+    songArtistName.innerHTML = heavyStyleSongs[indexNumber - 1].artist;
+    songImage.src = heavyStyleSongs[indexNumber - 1].img;
+    heavySongControler.src = "tracks/Heavy/" + heavyStyleSongs[indexNumber - 1].src + ".mp3";
+    songImage.style.display = "block";
+
+    focusSongControler.pause();
+    popSongControler.pause();
+    chillSongControler.pause();
+    studySongControler.pause();
+    gameSongControler.pause();
+    rAndbSongControler.pause();
+    rapSongControler.pause();
+    animeSongControler.pause()
+    calmnessSongControler.pause();
+    classicSongControler.pause();
+    russianSongControler.pause();
+    heavySongControler.play();
+    canadaSongControler.pause();
+
+    playBtn.style.display = "none";
+    playBtn.style.fill = "red";
+    pauseBtn.style.fill = "red";
+    pauseBtn.style.display = "block";
+
+    songStatusFocus = false;
+    songStatusStudy = false;
+    songStatusPop = false;
+    songStatusChill = false;
+    songStatusGame = false;
+    songStatusRAndb = false;
+    songStatusRap = false;
+    songStatusAnime = false;
+    songStatusCalmness = false;
+    songStatusClassic = false;
+    songStatusRussian = false;
+    songStatusHeavy = true;
+    songStatusCanada = false;
+
+}
+
+playBtn.addEventListener("click",() => {
+    heavySongControler.play();
+})
+pauseBtn.addEventListener("click",() => {
+    heavySongControler.pause();
+})
+
+skipNext.addEventListener("click",() => {
+    if(songStatusHeavy == true){
+        nextHeavySong();
+    }
+})
+
+skipBack.addEventListener("click",() => {
+    if(songStatusHeavy == true){
+        beforeHeavySong();
+    }
+})
+
+//click next song button developing
+
+function nextHeavySong(){
+    heavySongsIndex ++;
+    heavySongsIndex > heavyStyleSongs.length ? heavySongsIndex = 1 : heavyStyleSongs = heavyStyleSongs;
+
+    loadheavyMusic(heavySongsIndex);
+
+}
+
+//click before song button developing
+
+function beforeHeavySong(){
+    heavySongsIndex --;
+    heavySongsIndex < 1 ? heavySongsIndex = heavyStyleSongs.length : heavySongsIndex = heavySongsIndex;
+
+    loadheavyMusic(heavySongsIndex);
+
+}
+
+//updata progressBar with songTime
+
+heavySongControler.addEventListener("timeupdate",(e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+
+    let progressWith = (currentTime / duration) * 100;
+    progressBar.style.width = progressWith + "%";    
+
+    let songCurrentTime = document.querySelector("#songTimeLeft"),
+    songDurationTime = document.querySelector("#songTimeRemaining")
+
+    heavySongControler.addEventListener("loadeddata", () => {
+
+        //update song total duration
+
+        let songDuration = heavySongControler.duration;
+        let totalMin = Math.floor(songDuration / 60);
+        let totalSec = Math.floor(songDuration % 60);
+        songDurationTime.innerHTML = totalMin + ":" + totalSec;
+        if(totalSec < 10){
+            songDurationTime.innerHTML = totalMin + ":0" + totalSec;
+        }
+
+    });
+
+    //update song total current time 
+
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if(currentSec < 10){
+        songCurrentTime.innerHTML = currentMin + ":0" + currentSec;
+    }
+    else{
+        songCurrentTime.innerHTML = currentMin + ":" + currentSec;
+    }
+
+    //update playing song current time with progress bar 
+
+    progressArea.addEventListener("click",(e) => {
+        let progressWithVal = progressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = heavySongControler.duration;
+
+        heavySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
+});
+
+//developed the repeatand random play button 
+
+let repeatState12 = false;
+let randomState12 = false;
+
+repeatPlayButton.addEventListener("click",() => {
+    if(repeatState12 == false){
+        repeatState12 = true;  
+    }
+    else{
+        repeatState12 = false;
+    }
+})
+randomPlayButton.addEventListener("click",() => {
+    if(randomState12 == false){
+        randomState12 = true;
+    }
+    else{
+        randomState12 = false;
+    }
+})
+
+heavySongControler.addEventListener("ended",() => {
+    if(randomState12 == false && repeatState12 == false){
+        nextHeavySong();
+    }
+    else if(randomState12 == false && repeatState12 == true){
+        heavySongControler.currentTime = 0;
+        loadheavyMusic(heavySongsIndex);
+        heavySongControler.play();   
+    }
+    else if(randomState12 == true && repeatState12 == false){
+        let randomIndex12 = Math.floor((Math.random() * heavyStyleSongs.length) + 1);
+
+        do{
+            randomIndex12 = Math.floor((Math.random() * heavyStyleSongs.length) + 1);            
+        }
+        while(heavySongsIndex == randomIndex12)
+
+        heavySongsIndex = randomIndex12;
+        loadheavyMusic(heavySongsIndex);
+        heavySongControler.play();
+    }
+})
+
+
+// set the songs in canada sont style
+
+const canadaSongsImg = document.querySelectorAll(".canadaSongsImg");
+const canadaSongsNames = document.querySelectorAll(".canadaSongsNames");
+const canadaSongsArtistsNames = document.querySelectorAll(".canadaSongsArtistName");
+const canadaSongsbuttonPlayer = document.querySelectorAll(".canadaSongsbuttonPlayer");
+const canadaSongControler = document.querySelector("#canadaSongControler");
+const canadaSongControlerSrc = document.querySelector("#canadaSongControlerSrc");
+
+
+for(let i = 0;i < canadaSongsbuttonPlayer.length;i++){
+    canadaSongsbuttonPlayer[i].addEventListener("click",() => {
+        songStylesIndexClear();
+        for(let j = 0;j < canadaStyleSongs.length;j++){
+            if(canadaSongsbuttonPlayer[i].dataset.songname == canadaStyleSongs[j].src){
+                songName.innerHTML = canadaStyleSongs[j].name;
+                songArtistName.innerHTML = canadaStyleSongs[j].artist;
+                songImage.src = canadaStyleSongs[j].img;        
+                canadaSongControler.src = "tracks/Canada/" + canadaStyleSongs[j].src + ".mp3";
+                songImage.style.display = "block";
+
+                chillSongControler.pause();
+                focusSongControler.pause();
+                popSongControler.pause();
+                studySongControler.pause();
+                rAndbSongControler.pause();
+                rapSongControler.pause();
+                calmnessSongControler.pause();
+                animeSongControler.pause();
+                classicSongControler.pause();
+                russianSongControler.pause();
+                heavySongControler.pause();
+                canadaSongControler.play();
+
+                canadaSongsIndex = i + 1;
+            }
+            
+        } 
+        playBtn.style.display = "none";
+        playBtn.style.fill = "red";
+        pauseBtn.style.fill = "red";
+        pauseBtn.style.display = "block";
+        songStatusCanada = true;
+
+    })
+}
+
+canadaSongsNames[0].innerHTML = "Break up with your girlfriend, i'm bored";
+canadaSongsNames[1].innerHTML = "Happier";
+canadaSongsNames[2].innerHTML = "I Can't Get Enough";
+canadaSongsNames[3].innerHTML = "MIDDLE CHILD";
+canadaSongsNames[4].innerHTML = "Murder On My Mind";
+canadaSongsNames[5].innerHTML = "Pure Water";
+canadaSongsNames[6].innerHTML = "rings";
+canadaSongsNames[7].innerHTML = "Robbery";
+canadaSongsNames[8].innerHTML = "Shallow";
+canadaSongsNames[9].innerHTML = "SICKO MODE";
+canadaSongsNames[10].innerHTML = "Sucker";
+canadaSongsNames[11].innerHTML = "Sunflowert";
+canadaSongsNames[12].innerHTML = "thank u, next";
+canadaSongsNames[13].innerHTML = "Without Me";
+canadaSongsNames[14].innerHTML = "Wow";
+canadaSongsNames[15].innerHTML = "Without Me";
+canadaSongsNames[16].innerHTML = "Without Me";
+canadaSongsNames[17].innerHTML = "Sucker";
+canadaSongsNames[18].innerHTML = "SICKO MODE";
+canadaSongsNames[19].innerHTML = "Sucker";
+canadaSongsNames[20].innerHTML = "Without Me";
+
+canadaSongsArtistsNames[0].innerHTML = "Ariana Grande";
+canadaSongsArtistsNames[1].innerHTML = "Marshmello";
+canadaSongsArtistsNames[2].innerHTML = "Russian";
+canadaSongsArtistsNames[3].innerHTML = "Russian";
+canadaSongsArtistsNames[4].innerHTML = "Russian";
+canadaSongsArtistsNames[5].innerHTML = "Russian";
+canadaSongsArtistsNames[6].innerHTML = "Russian";
+canadaSongsArtistsNames[7].innerHTML = "Russian";
+canadaSongsArtistsNames[8].innerHTML = "Russian";
+canadaSongsArtistsNames[9].innerHTML = "Russian";
+canadaSongsArtistsNames[10].innerHTML = "Russian";
+canadaSongsArtistsNames[11].innerHTML = "Russian";
+canadaSongsArtistsNames[12].innerHTML = "Russian";
+canadaSongsArtistsNames[13].innerHTML = "Russian";
+canadaSongsArtistsNames[14].innerHTML = "Russian";
+canadaSongsArtistsNames[15].innerHTML = "Russian";
+canadaSongsArtistsNames[16].innerHTML = "Russian";
+canadaSongsArtistsNames[17].innerHTML = "Russian";
+canadaSongsArtistsNames[18].innerHTML = "Russian";
+canadaSongsArtistsNames[19].innerHTML = "Russian";
+canadaSongsArtistsNames[20].innerHTML = "Russian";
+
+canadaSongsImg[0].src = "images/Break up with your girlfriend, i'm bored.jpg";
+canadaSongsImg[1].src = "images/Happier.png";
+canadaSongsImg[2].src = "images/I Can't Get Enough.jpg";
+canadaSongsImg[3].src = "images/MIDDLE CHILD.jpg";
+canadaSongsImg[4].src = "images/Murder On My Mind.jpg";
+canadaSongsImg[5].src = "images/Pure Water.jpg";
+canadaSongsImg[6].src = "images/rings.jpg";
+canadaSongsImg[7].src = "images/Robbery.png";
+canadaSongsImg[8].src = "images/Shallow.jpg";
+canadaSongsImg[9].src = "images/SICKO MODE.jpg";
+canadaSongsImg[10].src = "images/Sucker.png";
+canadaSongsImg[11].src = "images/Sunflower.jpg";
+canadaSongsImg[12].src = "images/thank u, next.jpg";
+canadaSongsImg[13].src = "images/Without Me.png";
+canadaSongsImg[14].src = "images/Wow.jpg";
+canadaSongsImg[15].src = "images/Without Me.png";
+canadaSongsImg[16].src = "images/Without Me.png";
+canadaSongsImg[17].src = "images/Sucker.png";
+canadaSongsImg[18].src = "images/SICKO MODE.jpg";
+canadaSongsImg[19].src = "images/Sucker.png";
+canadaSongsImg[20].src = "images/Without Me.png";
+
+let canadaStyleSongs = [
+    {
+        name: "Break up with your girlfriend, i'm bored",
+        artist: "Ariana Grande",
+        img: "images/break up with your girlfriend, i'm bored.jpg",
+        src: "break up with your girlfriend, i'm bored"
+    },
+    {
+        name: "Happier",
+        artist: "Marshmello",
+        img: "images/Happier.png",
+        src: "Happier"
+    },
+    {
+        name: "I Can't Get Enough",
+        artist: "Benny blanco",
+        img: "images/I Can't Get Enough.jpg",
+        src: "I Can't Get Enough"
+    },
+    {
+        name: "MIDDLE CHILD",
+        artist: "J",
+        img: "images/MIDDLE CHILD.jpg",
+        src: "MIDDLE CHILD"
+    },
+    {
+        name: "Murder On My Mind",
+        artist: "YNW Melly",
+        img: "images/Murder On My Mind.jpg",
+        src: "Murder On My Mind"
+    },
+    {
+        name: "Pure Water",
+        artist: "Murder",
+        img: "images/Pure Water.jpg",
+        src: "Pure Water"
+    },
+    {
+        name: "rings",
+        artist: "Araina grande",
+        img: "images/rings.jpg",
+        src: "rings"
+    },
+    {
+        name: "Robbery",
+        artist: "Juice Wrld",
+        img: "images/Robbery.jpg",
+        src: "Robbery"
+    },
+    {
+        name: "Shallow",
+        artist: "Lady gaga",
+        img: "images/Shallow.jpg",
+        src: "Shallow"
+    },
+    {
+        name: "SICKO MODE",
+        artist: "Travis scotts",
+        img: "images/SICKO MODE.png",
+        src: "SICKO MODE"
+    },
+    {
+        name: "Sucker",
+        artist: "Jonas brothers",
+        img: "images/Sucker.jpg",
+        src: "Sucker"
+    },
+    {
+        name: "Sunflower",
+        artist: "Post malone",
+        img: "images/Sunflower.jpg",
+        src: "Sunflower"
+    },
+    {
+        name: "thank u, next",
+        artist: "Araina grande",
+        img: "imagesthank u, next.jpg",
+        src: "thank u, next"
+    },
+    {
+        name: "Without Me",
+        artist: "Halsey",
+        img: "images/You And I.png",
+        src: "Without Me"
+    },
+    {
+        name: "Wow",
+        artist: "Post malone",
+        img: "images/Wow.jpg",
+        src: "Wow."
+    },
+    {
+        name: "Without Me",
+        artist: "Halsey",
+        img: "images/Without Me.png",
+        src: "Without Me"
+    },
+    {
+        name: "Without Me",
+        artist: "Halsey",
+        img: "images/Without Me.jpg",
+        src: "Without Me"
+    },
+    {
+        name: "Sucker",
+        artist: "Bladdy",
+        img: "images/Sucker.jpg",
+        src: "Sucker"
+    },
+    {
+        name: "SICKO MODE",
+        artist: "Rejackt",
+        img: "images/SICKO MODE.jpg",
+        src: "SICKO MODE"
+    },
+    {
+        name: "Sucker",
+        artist: "Bladdy",
+        img: "images/Sucker.png",
+        src: "Sucker"
+    },
+    {
+        name: "Without Me",
+        artist: "Halsey",
+        img: "images/Without Me.png",
+        src: "Without Me"
+    },
+]
+
+const canadaStyleBtnPlayer = document.querySelector("#canadaStyleBtnPlayer")
+
+canadaStyleBtnPlayer.addEventListener("click",() => {
+        songStylesIndexClear();
+    loadcanadaMusic(canadaSongsIndex);
+})
+
+//load canada songs
+
+let songStatusCanada;
+
+function loadcanadaMusic(indexNumber){
+    songName.innerHTML = canadaStyleSongs[indexNumber - 1].name;
+    songArtistName.innerHTML = canadaStyleSongs[indexNumber - 1].artist;
+    songImage.src = canadaStyleSongs[indexNumber - 1].img;
+    canadaSongControler.src = "tracks/Canada/" + canadaStyleSongs[indexNumber - 1].src + ".mp3";
+    songImage.style.display = "block";
+
+    focusSongControler.pause();
+    popSongControler.pause();
+    chillSongControler.pause();
+    studySongControler.pause();
+    gameSongControler.pause();
+    rAndbSongControler.pause();
+    rapSongControler.pause();
+    animeSongControler.pause()
+    calmnessSongControler.pause();
+    classicSongControler.pause();
+    russianSongControler.pause();
+    heavySongControler.pause();
+    canadaSongControler.play();
+
+    playBtn.style.display = "none";
+    playBtn.style.fill = "red";
+    pauseBtn.style.fill = "red";
+    pauseBtn.style.display = "block";
+
+    songStatusFocus = false;
+    songStatusStudy = false;
+    songStatusPop = false;
+    songStatusChill = false;
+    songStatusGame = false;
+    songStatusRAndb = false;
+    songStatusRap = false;
+    songStatusAnime = false;
+    songStatusCalmness = false;
+    songStatusClassic = false;
+    songStatusRussian = false;
+    songStatusHeavy = false;
+    songStatusCanada = true;
+
+}
+
+playBtn.addEventListener("click",() => {
+    canadaSongControler.play();
+})
+pauseBtn.addEventListener("click",() => {
+    canadaSongControler.pause();
+})
+
+skipNext.addEventListener("click",() => {
+    if(songStatusCanada == true){
+        nextCanadaSong();
+    }
+})
+
+skipBack.addEventListener("click",() => {
+    if(songStatusCanada == true){
+        beforeCanadaSong();
+    }
+})
+
+//click next song button developing
+
+function nextCanadaSong(){
+    canadaSongsIndex ++;
+    canadaSongsIndex > canadaStyleSongs.length ? canadaSongsIndex = 1 : canadaStyleSongs = canadaStyleSongs;
+
+    loadcanadaMusic(canadaSongsIndex);
+
+}
+
+//click before song button developing
+
+function beforeCanadaSong(){
+    canadaSongsIndex --;
+    canadaSongsIndex < 1 ? canadaSongsIndex = canadaStyleSongs.length : canadaSongsIndex = canadaSongsIndex;
+
+    loadcanadaMusic(canadaSongsIndex);
+
+}
+
+//updata progressBar with songTime
+
+canadaSongControler.addEventListener("timeupdate",(e) => {
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+
+    let progressWith = (currentTime / duration) * 100;
+    progressBar.style.width = progressWith + "%";    
+
+    let songCurrentTime = document.querySelector("#songTimeLeft"),
+    songDurationTime = document.querySelector("#songTimeRemaining")
+
+    canadaSongControler.addEventListener("loadeddata", () => {
+
+        //update song total duration
+
+        let songDuration = canadaSongControler.duration;
+        let totalMin = Math.floor(songDuration / 60);
+        let totalSec = Math.floor(songDuration % 60);
+        songDurationTime.innerHTML = totalMin + ":" + totalSec;
+        if(totalSec < 10){
+            songDurationTime.innerHTML = totalMin + ":0" + totalSec;
+        }
+
+    });
+
+    //update song total current time 
+
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if(currentSec < 10){
+        songCurrentTime.innerHTML = currentMin + ":0" + currentSec;
+    }
+    else{
+        songCurrentTime.innerHTML = currentMin + ":" + currentSec;
+    }
+
+    //update playing song current time with progress bar 
+
+    progressArea.addEventListener("click",(e) => {
+        let progressWithVal = progressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = canadaSongControler.duration;
+
+        canadaSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
+});
+
+//developed the repeatand random play button 
+
+let repeatState13 = false;
+let randomState13 = false;
+
+repeatPlayButton.addEventListener("click",() => {
+    if(repeatState13 == false){
+        repeatState13 = true;  
+    }
+    else{
+        repeatState13 = false;
+    }
+})
+randomPlayButton.addEventListener("click",() => {
+    if(randomState13 == false){
+        randomState13 = true;
+    }
+    else{
+        randomState13 = false;
+    }
+})
+
+canadaSongControler.addEventListener("ended",() => {
+    if(randomState13 == false && repeatState13 == false){
+        nextCanadaSong();
+    }
+    else if(randomState13 == false && repeatState13 == true){
+        canadaSongControler.currentTime = 0;
+        loadcanadaMusic(canadaSongsIndex);
+        canadaSongControler.play();   
+    }
+    else if(randomState13 == true && repeatState13 == false){
+        let randomIndex13 = Math.floor((Math.random() * canadaStyleSongs.length) + 1);
+
+        do{
+            randomIndex13 = Math.floor((Math.random() * canadaStyleSongs.length) + 1);            
+        }
+        while(canadaSongsIndex == randomIndex13)
+
+        canadaSongsIndex = randomIndex13;
+        loadcanadaMusic(canadaSongsIndex);
+        canadaSongControler.play();
     }
 })

@@ -39,6 +39,7 @@
     justify-content: center;
     align-items: center;
     display: flex;
+    transform: translateX(13px);
 }
 .container .navBar .goz li #account img{
     width: 30px;
@@ -51,12 +52,13 @@
 .container .navBar .goz li #accountTxt{
     position: absolute;
     color: rgb(230, 230, 230);
-    left: 13.4%;
+    left: 22.4%;
     top: 19px;
+    transform: translateX(12px);
     font-size: 1.2em;
     cursor: pointer;
     user-select: none;
-    overflow-x: visible;
+    width: 300px;
 }
 .container .navBar .goz li #moreProfileOption{
     position: relative;
@@ -68,6 +70,7 @@
     user-select: none;
     filter: brightness(80%);
     margin-left:40px ;
+    left: -140px;
 }
 .container .navBar .goz{
     position: absolute;
@@ -104,7 +107,7 @@
     height: 0px;
     border-radius: 4px;
     background-color: rgb(64, 61, 87);
-    left: 16%;
+    left: 13%;
     top: 50px;
     overflow: hidden;
     transition: 0.2s;
@@ -446,6 +449,11 @@
     background-color: rgb(32, 29, 37);
     border-top: 2px solid black;
 }
+.container .songControler #songImage #songImageImg{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
 .container .songControler #pause{
     position: absolute;
     fill: rgb(190, 0, 0);
@@ -529,60 +537,56 @@
 .container .songControler #songArtistName:hover{
     color: rgb(156, 156, 156);
 }
-.container .songControler #progressBarValue{
+.container .songControler .progressArea{
     position: absolute;
-    left: 25.0%;
     top: 70%;
-    background-color: rgb(47, 42, 61);
-}
-.container .songControler #rangeHelper{
-    position: absolute;
+    left: 26%;
     height: 5px;
+    width: 40%;
     cursor: pointer;
-    width: 0px;
-    border-radius: 20px;
-    background-color: rgb(255, 0, 0);
-    left: 26.1%;
-    top: 70%;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
-    z-index: 90;
+    border-radius: 10px;
+    background-color: rgb(53, 50, 65);
+}
+.container .songControler .progressArea .progressBar{
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background-color: rgb(173, 1, 1);
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.container .songControler .progressArea:hover .progressBar{
+    background-color: rgb(235, 0, 0);
+}
+.container .songControler .progressArea .progressBar::before{
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 10px;
+    background-color: rgb(235, 0, 0);
+    transition: 0.2s;
+    position: absolute;
+    right: -10px;
+    top: -5;
+    opacity: 0;
+}
+.container .songControler .progressArea:hover .progressBar::before{
+    opacity: 1;
 }
 .container .songControler #songTimeLeft{
     position: absolute;
     font-size: 0.9em;
     color: rgb(179, 179, 179);
-    left: 23%;
+    left: 22%;
     top: 63%;
 }
 .container .songControler #songTimeRemaining{
     position: absolute;
     font-size: 0.9em;
     color: rgb(179, 179, 179);
-    left: 67%;
+    left: 68%;
     top: 63%;
-}
-.container .songControler input[type = "range"]{
-    -webkit-appearance: none;
-    outline: none;
-    height: 5px;
-    cursor: pointer;
-    margin: 0 15px;
-    width: 40%;
-    border-radius: 20px;
-    fill: rgb(192, 35, 35);
-  
-}
-.container .songControler input[type = "range"]::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    height: 20px;
-    width: 20px;
-    background-color: #ff0000;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); ;
-}
-.container .songControler input[type = "range"]:hover::-webkit-slider-thumb{
-    display: block;
 }
 .container .songControler #addSong{
     position: absolute;
@@ -3078,11 +3082,11 @@
 }
 .container .profilePnl #editHider{
     position: absolute;
-    width: 340px;
+    width:900px;
     height: 300px;
     transform: translateX(180px);
     user-select: none;
-    z-index: 100;
+    z-index: 1200;
 }
 .container .profilePnl .profileBioValue{
     background-color: transparent;
@@ -3139,6 +3143,14 @@
     left: 240px;
     top: -100px;
 }
+.container .gameStyle .aGameSong .image .gameSongsImg{
+    border-radius: 7px;
+    transition: 0.3s;
+    filter:  brightness(80%);
+}
+.container .gameStyle .aGameSong:hover .image .gameSongsImg{
+       filter:  brightness(100%);
+}
 .container .gameStyle .imageHelper{
     position: absolute;
     width: 1170px;
@@ -3146,6 +3158,12 @@
     left: 0px;
     top: 250px;
     background:linear-gradient(transparent,#14131b);
+}
+.container .gameStyle #gameSongControler{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    display: none;
 }
 .container .gameStyle h1{
     position: absolute;
@@ -3202,7 +3220,7 @@
     font-weight: bold;
     font-size: 4em;
 }
-.container .gameStyle .aGameSong .image .mfyPlayBox{
+.container .gameStyle .aGameSong .image .gameSongsbuttonPlayer{
     width: 50px;
     height: 50px;
     z-index: 100;
@@ -3211,11 +3229,11 @@
     transition: 0.3s;
     transform: translate(123px,140px);
 }
-.container .gameStyle .aGameSong:hover .image .mfyPlayBox{
+.container .gameStyle .aGameSong:hover .image .gameSongsbuttonPlayer{
     opacity: 1;
     transform: translate(123px,120px);
 }
-.container .gameStyle .aGameSong .image .mfyPlayBox:hover{
+.container .gameStyle .aGameSong .image .gameSongsbuttonPlayer:hover{
     filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
 }
 .container .gameStyle .aGameSong .image img{
@@ -3226,7 +3244,7 @@
     user-select: none;
     height: 100%;
 }
-.container .gameStyle .aGameSong .mfySongName{
+.container .gameStyle .aGameSong .gameSongsNames{
     position: absolute;
     color :rgb(255, 255, 255);
     top: 81%;
@@ -3235,7 +3253,7 @@
     user-select: none;
     font-size: 1.1em;
 }
-.container .gameStyle .aGameSong .mfyArtistSongName{
+.container .gameStyle .aGameSong .gameSongsArtistName{
     position: absolute;
     color :rgb(182, 182, 182);
     top: 87%;
@@ -3249,7 +3267,7 @@
 .container .chillStyle{
     position: absolute;
     width: 84.6%;
-    height: 77%;
+    height: 80%;
     display: none;
     top: 10%;
     overflow-y: auto;
@@ -3260,6 +3278,12 @@
     width: 1170px;
     height: 500px;
     left: 0px;
+}
+.container .chillStyle #chillSongControler{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    display: none;
 }
 .container .chillStyle .imageHelper{
     position: absolute;
@@ -3300,7 +3324,7 @@
     overflow: hidden;
     z-index: 10;
     display: inline-block;
-    transform: translate(80px,200px);
+    transform: translate(80px,160px);
 }
 .container .chillStyle .aChillSong:hover{
     background-color: rgb(47, 49, 77);
@@ -3325,7 +3349,7 @@
     font-weight: bold;
     font-size: 4em;
 }
-.container .chillStyle .aChillSong .image .mfyPlayBox{
+.container .chillStyle .aChillSong .image .chillSongsbuttonPlayer{
     width: 50px;
     height: 50px;
     z-index: 100;
@@ -3334,11 +3358,11 @@
     transition: 0.3s;
     transform: translate(123px,140px);
 }
-.container .chillStyle .aChillSong:hover .image .mfyPlayBox{
+.container .chillStyle .aChillSong:hover .image .chillSongsbuttonPlayer{
     opacity: 1;
     transform: translate(123px,120px);
 }
-.container .chillStyle .aChillSong .image .mfyPlayBox:hover{
+.container .chillStyle .aChillSong .image .chillSongsbuttonPlayer:hover{
     filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
 }
 .container .chillStyle .aChillSong .image img{
@@ -3349,7 +3373,15 @@
     user-select: none;
     height: 100%;
 }
-.container .chillStyle .aChillSong .mfySongName{
+.container .chillStyle .aChillSong .image .chillSongsImg{
+    border-radius: 7px;
+    transition: 0.3s;
+    filter:  brightness(80%);
+}
+.container .chillStyle .aChillSong:hover .image .chillSongsImg{
+       filter:  brightness(100%);
+}
+.container .chillStyle .aChillSong .chillSongsNames{
     position: absolute;
     color :rgb(255, 255, 255);
     top: 81%;
@@ -3358,7 +3390,7 @@
     user-select: none;
     font-size: 1.1em;
 }
-.container .chillStyle .aChillSong .mfyArtistSongName{
+.container .chillStyle .aChillSong .chillSongsArtistName{
     position: absolute;
     color :rgb(182, 182, 182);
     top: 87%;
@@ -3393,11 +3425,18 @@
     top: 200px;
     background:linear-gradient(transparent,#14131b);
 }
+.container .focusStyle #focusSongControler{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    display: none;
+}
 .container .focusStyle h1{
     position: absolute;
     font-size: 2.2em;
     color: #fff;
     transform: translate(70px,10px);
+    z-index: 100;
 }
 .container .focusStyle::-webkit-scrollbar{
     width: 9px;
@@ -3443,12 +3482,22 @@
     align-items: center;
     display: flex;
 }
+.container .focusStyle .aFocusSong .FocusSongsImg{
+    border: none;
+    border-radius: 13px;
+    outline: none;
+    filter: brightness(90%);
+    transition: 0.4s;    
+}
+.container .focusStyle .afocusSong:hover .focusSongsImg{
+    filter: brightness(100%);
+}
 .container .focusStyle .aFocusSong .image p{
     color: rgba(35, 36, 51, 0.685);
     font-weight: bold;
     font-size: 4em;
 }
-.container .focusStyle .aFocusSong .image .mfyPlayBox{
+.container .focusStyle .aFocusSong .image .focusSongsbuttonPlayer{
     width: 50px;
     height: 50px;
     z-index: 100;
@@ -3457,11 +3506,11 @@
     transition: 0.3s;
     transform: translate(123px,140px);
 }
-.container .focusStyle .aFocusSong:hover .image .mfyPlayBox{
+.container .focusStyle .aFocusSong:hover .image .focusSongsbuttonPlayer{
     opacity: 1;
     transform: translate(123px,120px);
 }
-.container .focusStyle .aFocusSong .image .mfyPlayBox:hover{
+.container .focusStyle .aFocusSong .image .focusSongsbuttonPlayer:hover{
     filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
 }
 .container .focusStyle .aFocusSong .image img{
@@ -3472,7 +3521,7 @@
     user-select: none;
     height: 100%;
 }
-.container .focusStyle .aFocusSong .mfySongName{
+.container .focusStyle .aFocusSong .focusSongsNames{
     position: absolute;
     color :rgb(255, 255, 255);
     top: 81%;
@@ -3481,7 +3530,7 @@
     user-select: none;
     font-size: 1.1em;
 }
-.container .focusStyle .aFocusSong .mfyArtistSongName{
+.container .focusStyle .aFocusSong .focusSongsArtistName{
     position: absolute;
     color :rgb(182, 182, 182);
     top: 87%;
@@ -3518,6 +3567,12 @@
     top: 200px;
     background:linear-gradient(transparent,#14131b);
 }
+.container .studyStyle #studySongControler{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    display: none;
+}
 .container .studyStyle h1{
     position: absolute;
     font-size: 2.2em;
@@ -3533,6 +3588,16 @@
 .container .studyStyle::-webkit-scrollbar-thumb {
     background: rgb(43, 40, 56);
     cursor: pointer;
+}
+.container .studyStyle .aStudySong .studySongsImg{
+    border: none;
+    border-radius: 13px;
+    outline: none;
+    filter: brightness(90%);
+    transition: 0.4s;    
+}
+.container .studyStyle .aStudySong:hover .studySongsImg{
+    filter: brightness(100%);
 }
 .container .studyStyle .aStudySong{
     position: relative;
@@ -3573,7 +3638,7 @@
     font-weight: bold;
     font-size: 4em;
 }
-.container .studyStyle .aStudySong .image .mfyPlayBox{
+.container .studyStyle .aStudySong .image .studySongsbuttonPlayer{
     width: 50px;
     height: 50px;
     z-index: 100;
@@ -3582,11 +3647,11 @@
     transition: 0.3s;
     transform: translate(123px,140px);
 }
-.container .studyStyle .aStudySong:hover .image .mfyPlayBox{
+.container .studyStyle .aStudySong:hover .image .studySongsbuttonPlayer{
     opacity: 1;
     transform: translate(123px,120px);
 }
-.container .studyStyle .aStudySong .image .mfyPlayBox:hover{
+.container .studyStyle .aStudySong .image .studySongsbuttonPlayer:hover{
     filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
 }
 .container .studyStyle .aStudySong .image img{
@@ -3597,7 +3662,7 @@
     user-select: none;
     height: 100%;
 }
-.container .studyStyle .aStudySong .mfySongName{
+.container .studyStyle .aStudySong .studySongsNames{
     position: absolute;
     color :rgb(255, 255, 255);
     top: 81%;
@@ -3606,7 +3671,7 @@
     user-select: none;
     font-size: 1.1em;
 }
-.container .studyStyle .aStudySong .mfyArtistSongName{
+.container .studyStyle .aStudySong .studySongsArtistName{
     position: absolute;
     color :rgb(182, 182, 182);
     top: 87%;
@@ -3696,7 +3761,13 @@
     font-weight: bold;
     font-size: 4em;
 }
-.container .animeStyle .aAnimeSong .image .mfyPlayBox{
+.container .animeStyle #animeSongControler{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    display: none;
+}
+.container .animeStyle .aAnimeSong .image .animeSongsbuttonPlayer{
     width: 50px;
     height: 50px;
     z-index: 100;
@@ -3705,11 +3776,11 @@
     transition: 0.3s;
     transform: translate(123px,140px);
 }
-.container .animeStyle .aAnimeSong:hover .image .mfyPlayBox{
+.container .animeStyle .aAnimeSong:hover .image .animeSongsbuttonPlayer{
     opacity: 1;
     transform: translate(123px,120px);
 }
-.container .animeStyle .aAnimeSong .image .mfyPlayBox:hover{
+.container .animeStyle .aAnimeSong .image .animeSongsbuttonPlayer:hover{
     filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
 }
 .container .animeStyle .aAnimeSong .image img{
@@ -3720,7 +3791,7 @@
     user-select: none;
     height: 100%;
 }
-.container .animeStyle .aAnimeSong .mfySongName{
+.container .animeStyle .aAnimeSong .animeSongsNames{
     position: absolute;
     color :rgb(255, 255, 255);
     top: 81%;
@@ -3729,7 +3800,7 @@
     user-select: none;
     font-size: 1.1em;
 }
-.container .animeStyle .aAnimeSong .mfyArtistSongName{
+.container .animeStyle .aAnimeSong .animeSongsArtistName{
     position: absolute;
     color :rgb(182, 182, 182);
     top: 87%;
@@ -3820,7 +3891,13 @@
     font-weight: bold;
     font-size: 4em;
 }
-.container .RapStyle .aRapSong .image .mfyPlayBox{
+.container .RapStyle #rapSongControler{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    display: none;
+}
+.container .RapStyle .aRapSong .image .rapSongsbuttonPlayer{
     width: 50px;
     height: 50px;
     z-index: 100;
@@ -3829,11 +3906,11 @@
     transition: 0.3s;
     transform: translate(123px,140px);
 }
-.container .RapStyle .aRapSong:hover .image .mfyPlayBox{
+.container .RapStyle .aRapSong:hover .image .rapSongsbuttonPlayer{
     opacity: 1;
     transform: translate(123px,120px);
 }
-.container .RapStyle .aRapSong .image .mfyPlayBox:hover{
+.container .RapStyle .aRapSong .image .rapSongsbuttonPlayer:hover{
     filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
 }
 .container .RapStyle .aRapSong .image img{
@@ -3844,7 +3921,7 @@
     user-select: none;
     height: 100%;
 }
-.container .RapStyle .aRapSong .mfySongName{
+.container .RapStyle .aRapSong .rapSongsNames{
     position: absolute;
     color :rgb(255, 255, 255);
     top: 81%;
@@ -3853,7 +3930,7 @@
     user-select: none;
     font-size: 1.1em;
 }
-.container .RapStyle .aRapSong .mfyArtistSongName{
+.container .RapStyle .aRapSong .rapSongsArtistName{
     position: absolute;
     color :rgb(182, 182, 182);
     top: 87%;
@@ -3879,6 +3956,12 @@
     height: 640px;
     left: 0px;
     top:0px;
+}
+.container .PopStyle #popSongControler{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    display: none;
 }
 .container .PopStyle .imageHelper{
     position: absolute;
@@ -3950,7 +4033,7 @@
     font-weight: bold;
     font-size: 4em;
 }
-.container .PopStyle .aPopSong .image .mfyPlayBox{
+.container .PopStyle .aPopSong .image .popSongsbuttonPlayer{
     width: 50px;
     height: 50px;
     z-index: 100;
@@ -3959,11 +4042,11 @@
     transition: 0.3s;
     transform: translate(123px,140px);
 }
-.container .PopStyle .aPopSong:hover .image .mfyPlayBox{
+.container .PopStyle .aPopSong:hover .image .popSongsbuttonPlayer{
     opacity: 1;
     transform: translate(123px,120px);
 }
-.container .PopStyle .aPopSong .image .mfyPlayBox:hover{
+.container .PopStyle .aPopSong .image .popSongsbuttonPlayer:hover{
     filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
 }
 .container .PopStyle .aPopSong .image img{
@@ -3974,7 +4057,7 @@
     user-select: none;
     height: 100%;
 }
-.container .PopStyle .aPopSong .mfySongName{
+.container .PopStyle .aPopSong .popSongsNames{
     position: absolute;
     color :rgb(255, 255, 255);
     top: 81%;
@@ -3983,13 +4066,23 @@
     user-select: none;
     font-size: 1.1em;
 }
-.container .PopStyle .aPopSong .mfyArtistSongName{
+.container .PopStyle .aPopSong .popSongsArtistName{
     position: absolute;
     color :rgb(182, 182, 182);
     top: 87%;
     left: 8%;
     user-select: none;
     font-size: 0.9em;
+}
+.container .PopStyle .aPopSong .popSongsImg{
+    border: none;
+    border-radius: 13px;
+    outline: none;
+    filter: brightness(90%);
+    transition: 0.4s;    
+}
+.container .PopStyle .aPopSong:hover .popSongsImg{
+    filter: brightness(100%);
 }
 
 /*----------------chill songs style----------------*/
@@ -4074,7 +4167,13 @@
     font-weight: bold;
     font-size: 4em;
 }
-.container .rAndbStyle .arANDbSong .image .mfyPlayBox{
+.container .rAndbStyle #rAndbSongControler{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    display: none;
+}
+.container .rAndbStyle .arANDbSong .image .rAndbSongsbuttonPlayer{
     width: 50px;
     height: 50px;
     z-index: 100;
@@ -4083,11 +4182,11 @@
     transition: 0.3s;
     transform: translate(123px,140px);
 }
-.container .rAndbStyle .arANDbSong:hover .image .mfyPlayBox{
+.container .rAndbStyle .arANDbSong:hover .image .rAndbSongsbuttonPlayer{
     opacity: 1;
     transform: translate(123px,120px);
 }
-.container .rAndbStyle .arANDbSong .image .mfyPlayBox:hover{
+.container .rAndbStyle .arANDbSong .image .rAndbSongsbuttonPlayer:hover{
     filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
 }
 .container .rAndbStyle .arANDbSong .image img{
@@ -4098,7 +4197,15 @@
     user-select: none;
     height: 100%;
 }
-.container .rAndbStyle .arANDbSong .mfySongName{
+.container .rAndbStyle .arANDbSong .rAndbSongsArtistName{
+    position: absolute;
+    color :rgb(182, 182, 182);
+    top: 87%;
+    left: 8%;
+    user-select: none;
+    font-size: 0.9em;
+}
+.container .rAndbStyle .arANDbSong .rAndbSongsNames{
     position: absolute;
     color :rgb(255, 255, 255);
     top: 81%;
@@ -4107,13 +4214,15 @@
     user-select: none;
     font-size: 1.1em;
 }
-.container .rAndbStyle .arANDbSong .mfyArtistSongName{
-    position: absolute;
-    color :rgb(182, 182, 182);
-    top: 87%;
-    left: 8%;
-    user-select: none;
-    font-size: 0.9em;
+.container .rAndbStyle .arANDbSong .rAndbSongsImg{
+    border: none;
+    border-radius: 13px;
+    outline: none;
+    filter: brightness(90%);
+    transition: 0.4s;    
+}
+.container .rAndbStyle .arANDbSong:hover .rAndbSongsImg{
+    filter: brightness(100%);
 }
 
 /*----------------calmness songs style----------------*/
@@ -4198,7 +4307,13 @@
     font-weight: bold;
     font-size: 4em;
 }
-.container .calmnessStyle .aCalmnessSong .image .mfyPlayBox{
+.container .calmnessStyle #calmnessSongControler{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    display: none;
+}
+.container .calmnessStyle .aCalmnessSong .image .calmnessSongsbuttonPlayer{
     width: 50px;
     height: 50px;
     z-index: 100;
@@ -4207,11 +4322,11 @@
     transition: 0.3s;
     transform: translate(123px,140px);
 }
-.container .calmnessStyle .aCalmnessSong:hover .image .mfyPlayBox{
+.container .calmnessStyle .aCalmnessSong:hover .image .calmnessSongsbuttonPlayer{
     opacity: 1;
     transform: translate(123px,120px);
 }
-.container .calmnessStyle .aCalmnessSong .image .mfyPlayBox:hover{
+.container .calmnessStyle .aCalmnessSong .image .calmnessSongsbuttonPlayer:hover{
     filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
 }
 .container .calmnessStyle .aCalmnessSong .image img{
@@ -4222,7 +4337,7 @@
     user-select: none;
     height: 100%;
 }
-.container .calmnessStyle .aCalmnessSong .mfySongName{
+.container .calmnessStyle .aCalmnessSong .calmnessSongsNames{
     position: absolute;
     color :rgb(255, 255, 255);
     top: 81%;
@@ -4231,7 +4346,7 @@
     user-select: none;
     font-size: 1.1em;
 }
-.container .calmnessStyle .aCalmnessSong .mfyArtistSongName{
+.container .calmnessStyle .aCalmnessSong .calmnessSongsArtistName{
     position: absolute;
     color :rgb(182, 182, 182);
     top: 87%;
@@ -4323,7 +4438,13 @@
     font-weight: bold;
     font-size: 4em;
 }
-.container .ClassicStyle .aClassicSong .image .mfyPlayBox{
+.container .ClassicStyle #classicSongControler{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    display: none;
+}
+.container .ClassicStyle .aClassicSong .image .classicSongsbuttonPlayer{
     width: 50px;
     height: 50px;
     z-index: 100;
@@ -4332,11 +4453,11 @@
     transition: 0.3s;
     transform: translate(123px,140px);
 }
-.container .ClassicStyle .aClassicSong:hover .image .mfyPlayBox{
+.container .ClassicStyle .aClassicSong:hover .image .classicSongsbuttonPlayer{
     opacity: 1;
     transform: translate(123px,120px);
 }
-.container .ClassicStyle .aClassicSong .image .mfyPlayBox:hover{
+.container .ClassicStyle .aClassicSong .image .classicSongsbuttonPlayer:hover{
     filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
 }
 .container .ClassicStyle .aClassicSong .image img{
@@ -4347,7 +4468,7 @@
     user-select: none;
     height: 100%;
 }
-.container .ClassicStyle .aClassicSong .mfySongName{
+.container .ClassicStyle .aClassicSong .classicSongsNames{
     position: absolute;
     color :rgb(255, 255, 255);
     top: 81%;
@@ -4356,7 +4477,7 @@
     user-select: none;
     font-size: 1.1em;
 }
-.container .ClassicStyle .aClassicSong .mfyArtistSongName{
+.container .ClassicStyle .aClassicSong .classicSongsArtistName{
     position: absolute;
     color :rgb(182, 182, 182);
     top: 87%;
@@ -4448,7 +4569,13 @@
     font-weight: bold;
     font-size: 4em;
 }
-.container .russianStyle .aRussianSong .image .mfyPlayBox{
+.container .russianStyle #russianSongControler{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    display: none;
+}
+.container .russianStyle .aRussianSong .image .russianSongsbuttonPlayer{
     width: 50px;
     height: 50px;
     z-index: 100;
@@ -4457,11 +4584,11 @@
     transition: 0.3s;
     transform: translate(123px,140px);
 }
-.container .russianStyle .aRussianSong:hover .image .mfyPlayBox{
+.container .russianStyle .aRussianSong:hover .image .russianSongsbuttonPlayer{
     opacity: 1;
     transform: translate(123px,120px);
 }
-.container .russianStyle .aRussianSong .image .mfyPlayBox:hover{
+.container .russianStyle .aRussianSong .image .russianSongsbuttonPlayer:hover{
     filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
 }
 .container .russianStyle .aRussianSong .image img{
@@ -4472,7 +4599,7 @@
     user-select: none;
     height: 100%;
 }
-.container .russianStyle .aRussianSong .mfySongName{
+.container .russianStyle .aRussianSong .russianSongsNames{
     position: absolute;
     color :rgb(255, 255, 255);
     top: 81%;
@@ -4481,7 +4608,7 @@
     user-select: none;
     font-size: 1.1em;
 }
-.container .russianStyle .aRussianSong .mfyArtistSongName{
+.container .russianStyle .aRussianSong .russianSongsArtistName{
     position: absolute;
     color :rgb(182, 182, 182);
     top: 87%;
@@ -4516,6 +4643,12 @@
     left: 0px;
     top: 250px;
     background:linear-gradient(transparent,#14131b);
+}
+.container .heavyStyle #heavySongControler{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    display: none;
 }
 .container .heavyStyle h1{
     position: absolute;
@@ -4573,7 +4706,7 @@
     font-weight: bold;
     font-size: 4em;
 }
-.container .heavyStyle .aHeavySong .image .mfyPlayBox{
+.container .heavyStyle .aHeavySong .image .heavySongsbuttonPlayer{
     width: 50px;
     height: 50px;
     z-index: 100;
@@ -4582,11 +4715,11 @@
     transition: 0.3s;
     transform: translate(123px,140px);
 }
-.container .heavyStyle .aHeavySong:hover .image .mfyPlayBox{
+.container .heavyStyle .aHeavySong:hover .image .heavySongsbuttonPlayer{
     opacity: 1;
     transform: translate(123px,120px);
 }
-.container .heavyStyle .aHeavySong .image .mfyPlayBox:hover{
+.container .heavyStyle .aHeavySong .image .heavySongsbuttonPlayer:hover{
     filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
 }
 .container .heavyStyle .aHeavySong .image img{
@@ -4597,7 +4730,7 @@
     user-select: none;
     height: 100%;
 }
-.container .heavyStyle .aHeavySong .mfySongName{
+.container .heavyStyle .aHeavySong .heavySongsNames{
     position: absolute;
     color :rgb(255, 255, 255);
     top: 81%;
@@ -4606,7 +4739,7 @@
     user-select: none;
     font-size: 1.1em;
 }
-.container .heavyStyle .aHeavySong .mfyArtistSongName{
+.container .heavyStyle .aHeavySong .heavySongsArtistName{
     position: absolute;
     color :rgb(182, 182, 182);
     top: 87%;
@@ -4641,6 +4774,12 @@
     left: 0px;
     top: 240px;
     background:linear-gradient(transparent,#14131b);
+}
+.container .canadaStyle #canadaSongControler{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    display: none;
 }
 .container .canadaStyle h1{
     position: absolute;
@@ -4698,7 +4837,7 @@
     font-weight: bold;
     font-size: 4em;
 }
-.container .canadaStyle .aCanadaSong .image .mfyPlayBox{
+.container .canadaStyle .aCanadaSong .image .canadaSongsbuttonPlayer{
     width: 50px;
     height: 50px;
     z-index: 100;
@@ -4707,11 +4846,11 @@
     transition: 0.3s;
     transform: translate(123px,140px);
 }
-.container .canadaStyle .aCanadaSong:hover .image .mfyPlayBox{
+.container .canadaStyle .aCanadaSong:hover .image .canadaSongsbuttonPlayer{
     opacity: 1;
     transform: translate(123px,120px);
 }
-.container .canadaStyle .aCanadaSong .image .mfyPlayBox:hover{
+.container .canadaStyle .aCanadaSong .image .canadaSongsbuttonPlayer:hover{
     filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
 }
 .container .canadaStyle .aCanadaSong .image img{
@@ -4722,7 +4861,7 @@
     user-select: none;
     height: 100%;
 }
-.container .canadaStyle .aCanadaSong .mfySongName{
+.container .canadaStyle .aCanadaSong .canadaSongsNames{
     position: absolute;
     color :rgb(255, 255, 255);
     top: 81%;
@@ -4731,7 +4870,7 @@
     user-select: none;
     font-size: 1.1em;
 }
-.container .canadaStyle .aCanadaSong .mfyArtistSongName{
+.container .canadaStyle .aCanadaSong .canadaSongsArtistName{
     position: absolute;
     color :rgb(182, 182, 182);
     top: 87%;
