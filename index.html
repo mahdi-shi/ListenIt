@@ -118,6 +118,9 @@
                 <img id="songImageImg" src="" alt="song image">
               </div>
               
+              <p class="sourceSong">i am the SOURCE</p>
+              <p class="sourceSongImg">i am the image Source</p>
+
               <svg id="middlePlayerOpener" xmlns="http://www.w3.org/2000/svg" width="37" height="104" fill="currentColor" class="bi bi-chevron-compact-up" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M7.776 5.553a.5.5 0 0 1 .448 0l6 3a.5.5 0 1 1-.448.894L8 6.56 2.224 9.447a.5.5 0 1 1-.448-.894l6-3z"/>
               </svg>
@@ -129,6 +132,11 @@
               <svg id="addSong" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
               </svg>
+              <div id="playlistList">
+                <ul class="playlistUlList">
+                  
+                </ul>
+              </div>
               <div id="hider"></div>
         </div>
         <!--------------------- Home panel ---------------------->
@@ -621,8 +629,12 @@
             <li class="libraryPnlItem3">Artists</li>
           </ul>
 
+          <audio controls id="playlistsSongControler">
+            <source id="playlistsSongControlerSrc">
+          </audio>
+
           <div class="playListPnl">
-            <div class="addPlaylist">
+           <div class="addPlaylist">
               <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
               </svg>
@@ -644,6 +656,7 @@
                   <textarea id="addPlaylistDetailsDescriptionBox" onchange="textareaFixed()"></textarea>
                 </li>
               </ul>
+              <p class="addPlaylistDetailsErrorText">i am the ERROR</p>
               <i>Lt</i>
               <button id="addPlaylistDetailsButton">Create</button>
             </div>
@@ -983,74 +996,15 @@
           </div>
           <div class="recentlySearched">
             <h2>Recent Search</h2>
+            <audio controls id="recentlySongControler">
+              <source id="recentlySongControlerSrc">
+            </audio>
             <ul id="rsList">
               <li class="rsLi">
                 <div class="rsListBox">
                   <div class="image">
-                  <p>Lt</p>
-                  </div>
-                  <h3 class="rsName">isak danielson</h3>
-                </div>
-              </li>
-               <li class="rsLi">
-                <div class="rsListBox">
-                  <div class="image">
-                  <p>Lt</p>
-                  </div>
-                  <h3 class="rsName">isak danielson</h3>
-                </div>
-              </li>
-               <li class="rsLi">
-                <div class="rsListBox">
-                  <div class="image">
-                  <p>Lt</p>
-                  </div>
-                  <h3 class="rsName">isak danielson</h3>
-                </div>
-              </li>
-               <li class="rsLi">
-                <div class="rsListBox">
-                  <div class="image">
-                  <p>Lt</p>
-                  </div>
-                  <h3 class="rsName">isak danielson</h3>
-                </div>
-              </li>
-               <li class="rsLi">
-                <div class="rsListBox">
-                  <div class="image">
-                  <p>Lt</p>
-                  </div>
-                  <h3 class="rsName">isak danielson</h3>
-                </div>
-              </li>
-               <li class="rsLi">
-                <div class="rsListBox">
-                  <div class="image">
-                  <p>Lt</p>
-                  </div>
-                  <h3 class="rsName">isak danielson</h3>
-                </div>
-              </li>
-                 <li class="rsLi">
-                <div class="rsListBox">
-                  <div class="image">
-                  <p>Lt</p>
-                  </div>
-                  <h3 class="rsName">isak danielson</h3>
-                </div>
-              </li>
-                 <li class="rsLi">
-                <div class="rsListBox">
-                  <div class="image">
-                  <p>Lt</p>
-                  </div>
-                  <h3 class="rsName">isak danielson</h3>
-                </div>
-              </li><li class="rsLi">
-                <div class="rsListBox">
-                  <div class="image">
-                  <p>Lt</p>
+                    <p>Lt</p>
+                    <img class="resentlySongsbuttonPlayer" src="images/play-64.png" alt="loading">
                   </div>
                   <h3 class="rsName">isak danielson</h3>
                 </div>

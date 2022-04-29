@@ -135,7 +135,7 @@
     height: 30px;
     position: absolute;
     left: 56%;
-    top: 20px;
+    top: 50px;
 }
 .container .navBar #messageBox #messageBoxTxt{
     color: #b00000;  
@@ -607,7 +607,60 @@
     opacity: 0.7;
     display: none;
 }
+.container .songControler #playlistList{
+     position: absolute;
+     width: 140px;
+     height: auto;
+     left: 85%;
+     top: -1px;
+     background-color: red;
+     transition: 0.3s;
+     opacity: 0;
+}
+.container .songControler .sourceSong{
+    font-size: 1em;
+    font-weight: bold;
+    color: red;
+    left: 20%;
+    position: absolute;
+    top: 10%;
+    display: none;
+}
+.container .songControler .sourceSongImg{
+    font-size: 1em;
+    font-weight: bold;
+    color: red;
+    left: 20%;
+    position: absolute;
+    top: 40%;
+    display:none;
+}
+.container .songControler #playlistList .playlistUlList{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.container .songControler #playlistList .playlistUlList .playlistLiList{
+    position: relative;
+    height: 40px;
+    width: 100%;
+    color: #9f99ca;
+    background-color: #181c25;
+    border-bottom: 1px solid black;
+    list-style: none;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-top: 12px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.container .songControler #playlistList .playlistUlList .playlistLiList:hover{
+    color: #ad1a00;
+}
+
 /*             home panel style               */
+
 .container .home{
     position: absolute;
     width: 81.2%;
@@ -1952,6 +2005,102 @@
     user-select: none;
     font-size: 1.1em;
 }
+.container .library #playlistsSongControler{
+    position: absolute;
+    left: 40%;
+    top: -10%;
+    display: none;
+}
+
+/*----------------playlist Songs style----------------*/
+
+.playlistSongImage{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    filter: brightness(70%);
+    transition: 0.3s;
+}
+.playlistSongImageBox{
+    position: absolute;
+    width: 84%;
+    height: 66%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 6%;
+    z-index: 1;
+    background-color: rgb(20, 19, 32);
+    border-radius: 5px;
+    overflow: visible;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.AplayListSong{
+    position: relative;
+    width: 200px;
+    height: 240px;
+    transition: 0.3s;
+    margin-top: 50px;
+    margin-left:60px;
+    background-color: rgb(30, 31, 49);
+    opacity: 0.5;
+    border-radius: 7px;
+    overflow: hidden;
+    z-index: 10;
+    transform: translateY(100px);
+    z-index: 500;
+    display: inline-block;
+}
+.AplayListSong{
+    opacity: 1;
+}
+.AplayListSongName{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    top: 79%;
+    left: 8%;
+    user-select: none;
+    font-size: 1.1em;
+}
+.AplayListSongArtistName{
+    position: absolute;
+    color: rgb(194, 194, 194);
+    top: 88%;
+    left: 8%;
+    user-select: none;
+    font-size: 0.9em;
+}
+.playSongPlaylistImage{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(90px,100px);
+    cursor: pointer;
+}
+.playSongPlaylistImage:hover{
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(90px,100px);
+    cursor: pointer;
+    filter: drop-shadow(0 0 5px red);
+}
+.playlistSongDefulfImage{
+    color: rgba(35, 36, 51, 0.685);
+    font-weight: bold;
+    font-size: 5em;
+    transform: translateX(-20px);
+}
 .container .library .hiderPnl{
     position: absolute;
     width: 100%;
@@ -1978,6 +2127,18 @@
     background-color: rgb(30, 31, 49);
     overflow: hidden;
     display: none;
+}
+.container .library .playListPnl .addPlaylistDetails .addPlaylistDetailsErrorText{
+    color: rgb(182, 0, 0);
+    font-weight: bold;
+    font-size: 0.9em;
+    position: absolute;
+    left:50%;
+    top: 87%;
+    transition: 0.3s;
+    transform: translateY(10px);
+    opacity: 0;
+    user-select: none;
 }
 .container .library .playListPnl .addPlaylistDetails h2{
     transform: translate(20px,20px);
@@ -2567,6 +2728,11 @@
     overflow: hidden;
     z-index: 10;
 }
+.container .search .recentlySearched #recentlySongControler{
+    position: absolute;
+    left:70%;
+    display: none;
+}
 .container .search .recentlySearched h2{
     color: white;
     font-size: 2em;
@@ -2632,6 +2798,30 @@
     width: 100%;
     user-select: none;
     height: 100%;
+}
+.container .search .recentlySearched ul li div .image .rsImage{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    height: 100%;
+}
+.container .search .recentlySearched ul li div .image .resentlySongsbuttonPlayer{
+    width:70px;
+    height: 70px;
+    z-index: 100;
+    opacity: 0;
+    user-select: none;
+    transition: 0.3s;
+    transform: translate(140px,160px);
+}
+.container .search .recentlySearched ul li div:hover .image .resentlySongsbuttonPlayer{
+    opacity: 1;
+    transform: translate(140px,140px);
+}
+.container .search .recentlySearched ul li .rsListBox div .image .resentlySongsbuttonPlayer:hover{
+    filter: drop-shadow(0 0 6px rgba(255,0,0,0.8));
 }
 .container .search .recentlySearched ul li div  .rsName{
     color: aliceblue;
