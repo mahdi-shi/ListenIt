@@ -25,7 +25,7 @@ Rbtn.addEventListener("click", () => {
 const  likedSongControler = document.querySelector("#likedSongControler");
 const liked = document.querySelector("#like");
 const unliked = document.querySelector("#unlike");
-let ongStatusLiked = false;
+let songStatusLiked = false;
 let likedSongIndex;
 
 liked.addEventListener("click", () => {
@@ -303,8 +303,38 @@ playBtn.addEventListener("click", () => {
     pauseBtn.style.fill = "red";
     pauseBtn.style.display = "block";
     songStatus = true;
+
+    playSongBtn.style.display = "none";
+    pauseSongBtn.style.display = "block";
 })
 pauseBtn.addEventListener("click", () => {
+    playBtn.style.display = "block";
+    pauseBtn.style.fill = "red";
+    pauseBtn.style.display = "none";
+    songStatus = false;
+
+    playSongBtn.style.display = "block";
+    pauseSongBtn.style.display = "none";
+})
+
+let playSongBtn = document.querySelector("#playSongBtn");
+let pauseSongBtn = document.querySelector("#pauseSongBtn");
+
+playSongBtn.addEventListener("click",() => {
+    playSongBtn.style.display = "none";
+    pauseSongBtn.style.display = "block";
+
+    playBtn.style.display = "none";
+    playBtn.style.fill = "red";
+    pauseBtn.style.fill = "red";
+    pauseBtn.style.display = "block";
+    songStatus = true;
+})
+
+pauseSongBtn.addEventListener("click",() => {
+    playSongBtn.style.display = "block";
+    pauseSongBtn.style.display = "none";
+
     playBtn.style.display = "block";
     pauseBtn.style.fill = "red";
     pauseBtn.style.display = "none";
@@ -989,6 +1019,9 @@ addPlaylistDetailsButton.addEventListener("click", () => {
                                 songArtistName.innerHTML = playlistsArray[j][indexNumber - 1].artist;
                                 songImage.src = playlistsArray[j][indexNumber - 1].img;
                                 playlistsSongControler.src = playlistsArray[j][indexNumber - 1].src + ".mp3";
+                                MiddleSongName.innerHTML = playlistsArray[j][indexNumber - 1].name;
+                                middlePlayerimageBoxImg.src = playlistsArray[j][indexNumber - 1].img;;
+                                middlePlayerimageBoxImg.style.display = "block";
                                 songImage.style.display = "block";
                             
                                 songStylesIndexClear();
@@ -2147,6 +2180,7 @@ likeFullBtn.addEventListener("click", () => {
 likeEmptyBtn.addEventListener("click", () => {
     likeFullBtn.style.display = "block";
     likeEmptyBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(0px,0px)"
 })
 
 // order play song setting for fullScreen page 
@@ -2636,6 +2670,8 @@ for (let i = 0; i < popSongsbuttonPlayer.length; i++) {
         for (let j = 0; j < popStyleSongs.length; j++) {
             if (popSongsbuttonPlayer[i].dataset.songname == popStyleSongs[j].src) {
 
+
+
                 popName = popStyleSongs[j].name;
                 popImage = "images/" + popStyleSongs[j].img + ".jpg";
                 popSong = "tracks/pop/" + popStyleSongs[j].src + ".mp3";
@@ -2648,6 +2684,9 @@ for (let i = 0; i < popSongsbuttonPlayer.length; i++) {
                 songImage.src = "images/" + popStyleSongs[j].img + ".jpg";
                 popSongControler.src = "tracks/pop/" + popStyleSongs[j].src + ".mp3";
                 songImage.style.display = "block";
+                MiddleSongName.innerHTML = popStyleSongs[j].name;
+                middlePlayerimageBoxImg.src = "images/" + popStyleSongs[j].img + ".jpg";
+                middlePlayerimageBoxImg.style.display = "block";
 
                 focusSongControler.pause();
                 popSongControler.play();
@@ -2665,9 +2704,9 @@ for (let i = 0; i < popSongsbuttonPlayer.length; i++) {
                 playlistsSongControler.pause();
                 likedSongControler.pause();
 
-                    unliked.style.display = "block";
-    liked.style.display = "none";
-    liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+                unliked.style.display = "block";
+                liked.style.display = "none";
+                liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
 
                 popSongsIndex++;
@@ -3088,7 +3127,10 @@ function loadPopMusic(indexNumber) {
     songArtistName.innerHTML = popStyleSongs[indexNumber - 1].artist;
     songImage.src = "images/" + popStyleSongs[indexNumber - 1].img + ".jpg";
     popSongControler.src = "tracks/pop/" + popStyleSongs[indexNumber - 1].src + ".mp3";
+    MiddleSongName.innerHTML = popStyleSongs[indexNumber - 1].name;
+    middlePlayerimageBoxImg.src = popStyleSongs[indexNumber - 1].img ;
     songImage.style.display = "block";
+    middlePlayerimageBoxImg.style.display = "block";
 
     focusSongControler.pause();
     popSongControler.play();
@@ -3107,15 +3149,23 @@ function loadPopMusic(indexNumber) {
     playlistsSongControler.pause();
     likedSongControler.pause();
 
-        unliked.style.display = "block";
+    unliked.style.display = "block";
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
     playBtn.style.display = "none";
     playBtn.style.fill = "red";
     pauseBtn.style.fill = "red";
     pauseBtn.style.display = "block";
+
+    playSongBtn.style.display = "none";
+    playSongBtn.style.fill = "red";
+    pauseSongBtn.style.fill = "red";
+    pauseSongBtn.style.display = "block";
 
     songStatusFocus = false;
     songStatusStudy = false;
@@ -3130,25 +3180,51 @@ function loadPopMusic(indexNumber) {
     songStatusRussian = false;
     songStatusHeavy = false;
     songStatusCanada = false;
+
 }
 
-playBtn.addEventListener("click", () => {
+let MiddleSongName = document.querySelector("#MiddleSongName");
+let middlePlayerimageBoxImg = document.querySelector(".middlePlayerimageBoxImg");
+let play = document.querySelector("#play");
+let pause = document.querySelector("#pause");
+
+playSongBtn.addEventListener("click", () => {
     popSongControler.play();
 })
-pauseBtn.addEventListener("click", () => {
+playSongBtn.addEventListener("click", () => {
+    popSongControler.play();
+})
+pauseSongBtn.addEventListener("click", () => {
+    popSongControler.pause();
+})
+pauseSongBtn.addEventListener("click", () => {
     popSongControler.pause();
 })
 
 const skipNext = document.querySelector("#skipNext"),
     skipBack = document.querySelector("#skipBack");
 
+const nextSongBtn = document.querySelector("#nextSongBtn"),
+beforeSongBtn = document.querySelector("#beforeSongBtn");
+
 skipNext.addEventListener("click", () => {
     if (songStatusPop == true) {
         nextPopSong();
     }
 })
+nextSongBtn.addEventListener("click", () => {
+    if (songStatusPop == true) {
+        nextPopSong();
+    }
+})
+
 
 skipBack.addEventListener("click", () => {
+    if (songStatusPop == true) {
+        beforePopSong();
+    }
+})
+beforeSongBtn.addEventListener("click", () => {
     if (songStatusPop == true) {
         beforePopSong();
     }
@@ -3178,6 +3254,8 @@ function beforePopSong() {
 
 const progressBar = document.querySelector(".progressBar"),
     progressArea = document.querySelector(".progressArea");
+const middleProgressBar = document.querySelector(".middleProgressBar"),
+    middleProgressArea = document.querySelector(".middleProgressArea");
 
 popSongControler.addEventListener("timeupdate", (e) => {
     const currentTime = e.target.currentTime;
@@ -3185,6 +3263,7 @@ popSongControler.addEventListener("timeupdate", (e) => {
 
     let progressWith = (currentTime / duration) * 100;
     progressBar.style.width = progressWith + "%";
+    middleProgressBar.style.width = progressWith + "%";
 
     let songCurrentTime = document.querySelector("#songTimeLeft"),
         songDurationTime = document.querySelector("#songTimeRemaining")
@@ -3223,6 +3302,13 @@ popSongControler.addEventListener("timeupdate", (e) => {
 
         popSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
     })
+    middleProgressArea.addEventListener("click", (e) => {
+        let progressWithVal = middleProgressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = popSongControler.duration;
+
+        popSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
 });
 
 //developed the repeatand random play button 
@@ -3241,7 +3327,26 @@ repeatPlayButton.addEventListener("click", () => {
         repeatState1 = false;
     }
 })
+
+songRepeatBtn.addEventListener("click", () => {
+    if (repeatState1 == false) {
+        repeatState1 = true;
+    }
+    else {
+        repeatState1 = false;
+    }
+})
+
 randomPlayButton.addEventListener("click", () => {
+    if (randomState1 == false) {
+        randomState1 = true;
+    }
+    else {
+        randomState1 = false;
+    }
+})
+
+songOrderBtn.addEventListener("click", () => {
     if (randomState1 == false) {
         randomState1 = true;
     }
@@ -3304,6 +3409,9 @@ for (let i = 0; i < chillSongsbuttonPlayer.length; i++) {
                 songImage.src = "images/" + chillStyleSongs[j].img + ".jpg";
                 chillSongControler.src = "tracks/chill/" + chillStyleSongs[j].src + ".mp3";
                 songImage.style.display = "block";
+                MiddleSongName.innerHTML =chillStyleSongs[j].name;
+                middlePlayerimageBoxImg.src = chillStyleSongs[j].img;
+                middlePlayerimageBoxImg.style.display = "block";
 
                 focusSongControler.pause();
                 popSongControler.pause();
@@ -3332,6 +3440,16 @@ for (let i = 0; i < chillSongsbuttonPlayer.length; i++) {
         playBtn.style.fill = "red";
         pauseBtn.style.fill = "red";
         pauseBtn.style.display = "block";
+
+        likeEmptyBtn.style.display = "block";
+        likeFullBtn.style.display = "none";
+        likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+
+        playSongBtn.style.display = "none";
+        playSongBtn.style.fill = "red";
+        pauseSongBtn.style.fill = "red";
+        pauseSongBtn.style.display = "block";
+
         songStatusChill = true;
         songStatusPop = false;
 
@@ -3385,8 +3503,11 @@ searchItem.addEventListener("click", () => {
         gozBazar2[i].addEventListener("click", () => {
             recentlySongControler.src = gozBazar2[i].dataset.rchillsongname;
             songName.innerHTML = gozBazar2[i].dataset.rchillnamesong;
-            songImage.src = gozBazar2[i].dataset.rchillsongimage
+            songImage.src = gozBazar2[i].dataset.rchillsongimage;
             songArtistName.innerHTML = gozBazar2[i].dataset.rchillsongartistname;
+            MiddleSongName.innerHTML = gozBazar2[i].dataset.rchillnamesong;
+            middlePlayerimageBoxImg.src = gozBazar2[i].dataset.rchillsongimage;
+            middlePlayerimageBoxImg.style.display = "block";
             recentlySongControler.play();
 
             songStylesIndexClear();
@@ -3404,12 +3525,20 @@ searchItem.addEventListener("click", () => {
             heavySongControler.pause();
             canadaSongControler.pause();
             playlistsSongControler.pause();
-
             likedSongControler.pause();
-                unliked.style.display = "block";
-    liked.style.display = "none";
-    liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
+            unliked.style.display = "block";
+            liked.style.display = "none";
+            liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+
+            likeEmptyBtn.style.display = "block";
+            likeFullBtn.style.display = "none";
+            likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+        
+            playSongBtn.style.display = "none";
+            playSongBtn.style.fill = "red";
+            pauseSongBtn.style.fill = "red";
+            pauseSongBtn.style.display = "block";
 
             playBtn.style.display = "none";
             playBtn.style.fill = "red";
@@ -3436,6 +3565,12 @@ searchItem.addEventListener("click", () => {
             pauseBtn.addEventListener("click", () => {
                 recentlySongControler.pause();
             })
+            play.addEventListener("click", () => {
+                recentlySongControler.play();
+            })
+            pause.addEventListener("click", () => {
+                recentlySongControler.pause();
+            })
 
             //updata progressBar with songTime
 
@@ -3448,6 +3583,7 @@ searchItem.addEventListener("click", () => {
 
                 let progressWith = (currentTime / duration) * 100;
                 progressBar.style.width = progressWith + "%";
+                middleProgressBar.style.width = progressWith + "%";
 
                 let songCurrentTime = document.querySelector("#songTimeLeft"),
                     songDurationTime = document.querySelector("#songTimeRemaining")
@@ -3484,6 +3620,14 @@ searchItem.addEventListener("click", () => {
                     let clickedOffsetX = e.offsetX;
                     let songDuration = recentlySongControler.duration;
 
+                    recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+                })
+
+                middleProgressArea.addEventListener("click", (e) => {
+                    let progressWithVal = middleProgressArea.clientWidth;
+                    let clickedOffsetX = e.offsetX;
+                    let songDuration = recentlySongControler.duration;
+                
                     recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
                 })
             });
@@ -3726,6 +3870,9 @@ function loadchillMusic(indexNumber) {
     songArtistName.innerHTML = chillStyleSongs[indexNumber - 1].artist;
     songImage.src = "images/" + chillStyleSongs[indexNumber - 1].img + ".jpg";
     chillSongControler.src = "tracks/chill/" + chillStyleSongs[indexNumber - 1].src + ".mp3";
+    MiddleSongName.innerHTML = chillStyleSongs[indexNumber - 1].name;
+    middlePlayerimageBoxImg.src = chillStyleSongs[indexNumber - 1].img;
+    middlePlayerimageBoxImg.style.display = "block";
     songImage.style.display = "block";
 
     focusSongControler.pause();
@@ -3755,6 +3902,15 @@ function loadchillMusic(indexNumber) {
     pauseBtn.style.fill = "red";
     pauseBtn.style.display = "block";
 
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+
+    playSongBtn.style.display = "none";
+    playSongBtn.style.fill = "red";
+    pauseSongBtn.style.fill = "red";
+    pauseSongBtn.style.display = "block";
+
     songStatusFocus = false;
     songStatusStudy = false;
     songStatusPop = false;
@@ -3777,6 +3933,12 @@ playBtn.addEventListener("click", () => {
 pauseBtn.addEventListener("click", () => {
     chillSongControler.pause();
 })
+playSongBtn.addEventListener("click", () => {
+    chillSongControler.play();
+})
+pauseSongBtn.addEventListener("click", () => {
+    chillSongControler.pause();
+})
 
 skipNext.addEventListener("click", () => {
     if (songStatusChill == true) {
@@ -3785,6 +3947,18 @@ skipNext.addEventListener("click", () => {
 })
 
 skipBack.addEventListener("click", () => {
+    if (songStatusChill == true) {
+        beforeChillSong();
+    }
+})
+
+nextSongBtn.addEventListener("click", () => {
+    if (songStatusChill == true) {
+        nextChillSong();
+    }
+})
+
+beforeSongBtn.addEventListener("click", () => {
     if (songStatusChill == true) {
         beforeChillSong();
     }
@@ -3818,6 +3992,7 @@ chillSongControler.addEventListener("timeupdate", (e) => {
 
     let progressWith = (currentTime / duration) * 100;
     progressBar.style.width = progressWith + "%";
+    middleProgressBar.style.width = progressWith + "%";
 
     let songCurrentTime = document.querySelector("#songTimeLeft"),
         songDurationTime = document.querySelector("#songTimeRemaining")
@@ -3856,6 +4031,13 @@ chillSongControler.addEventListener("timeupdate", (e) => {
 
         chillSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
     })
+    middleProgressArea.addEventListener("click", (e) => {
+        let progressWithVal = middleProgressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = popSongControler.duration;
+    
+        chillSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
 });
 
 //developed the repeatand random play button 
@@ -3872,6 +4054,23 @@ repeatPlayButton.addEventListener("click", () => {
     }
 })
 randomPlayButton.addEventListener("click", () => {
+    if (randomState2 == false) {
+        randomState2 = true;
+    }
+    else {
+        randomState2 = false;
+    }
+})
+songRepeatBtn.addEventListener("click", () => {
+    if (repeatState2 == false) {
+        repeatState2 = true;
+    }
+    else {
+        repeatState2 = false;
+    }
+})
+
+songOrderBtn.addEventListener("click", () => {
     if (randomState2 == false) {
         randomState2 = true;
     }
@@ -3932,6 +4131,9 @@ for (let i = 0; i < focusSongsbuttonPlayer.length; i++) {
                 songArtistName.innerHTML = focusStyleSongs[j].artist;
                 songImage.src = focusStyleSongs[j].img;
                 focusSongControler.src = "tracks/Focus/" + focusStyleSongs[j].src + ".mp3";
+                MiddleSongName.innerHTML = focusStyleSongs[i].name;
+                middlePlayerimageBoxImg.src = "images/" + focusStyleSongs[i].img + ".jpg";
+                middlePlayerimageBoxImg.style.display = "block";
                 songImage.style.display = "block";
 
                 chillSongControler.pause();
@@ -3946,9 +4148,14 @@ for (let i = 0; i < focusSongsbuttonPlayer.length; i++) {
                 likedSongControler.pause();
 
                     unliked.style.display = "block";
-    liked.style.display = "none";
-    liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+                    liked.style.display = "none";
+                    liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
                 russianSongControler.pause();
+
+                
+                    likeEmptyBtn.style.display = "block";
+                    likeFullBtn.style.display = "none";
+                    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
                 heavySongControler.pause();
                 recentlySongControler.pause();
@@ -3964,6 +4171,12 @@ for (let i = 0; i < focusSongsbuttonPlayer.length; i++) {
         playBtn.style.fill = "red";
         pauseBtn.style.fill = "red";
         pauseBtn.style.display = "block";
+
+        playSongBtn.style.display = "none";
+        playSongBtn.style.fill = "red";
+        pauseSongBtn.style.fill = "red";
+        pauseSongBtn.style.display = "block";
+
         songStatusFocus = true;
 
         if (focusRecently >= 2) {
@@ -4014,6 +4227,9 @@ searchItem.addEventListener("click", () => {
             songName.innerHTML = gozBazarFocus[i].dataset.rfocusnamesong;
             songImage.src = gozBazarFocus[i].dataset.rfocussongimage
             songArtistName.innerHTML = gozBazarFocus[i].dataset.rfocussongartistname;
+            MiddleSongName.innerHTML = gozBazarFocus[i].dataset.rfocusnamesong;
+            middlePlayerimageBoxImg.src = "images/" + gozBazarFocus[i].dataset.rfocussongimage + ".jpg";
+            middlePlayerimageBoxImg.style.display = "block";
             recentlySongControler.play();
 
             songStylesIndexClear();
@@ -4037,11 +4253,19 @@ searchItem.addEventListener("click", () => {
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
             playlistsSongControler.pause();
 
+            likeEmptyBtn.style.display = "block";
+            likeFullBtn.style.display = "none";
+            likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
             playBtn.style.display = "none";
             playBtn.style.fill = "red";
             pauseBtn.style.fill = "red";
             pauseBtn.style.display = "block";
+
+            playSongBtn.style.display = "none";
+            playSongBtn.style.fill = "red";
+            pauseSongBtn.style.fill = "red";
+            pauseSongBtn.style.display = "block";
 
             songStatusFocus = false;
             songStatusStudy = false;
@@ -4064,6 +4288,15 @@ searchItem.addEventListener("click", () => {
                 recentlySongControler.pause();
             })
 
+            playSongBtn.addEventListener("click", () => {
+                recentlySongControler.play();
+            })
+            
+            pauseSongBtn.addEventListener("click", () => {
+                recentlySongControler.pause();
+            })
+            
+
             //updata progressBar with songTime
 
             const progressBar = document.querySelector(".progressBar"),
@@ -4075,6 +4308,7 @@ searchItem.addEventListener("click", () => {
 
                 let progressWith = (currentTime / duration) * 100;
                 progressBar.style.width = progressWith + "%";
+                middleProgressBar.style.width = progressWith + "%";
 
                 let songCurrentTime = document.querySelector("#songTimeLeft"),
                     songDurationTime = document.querySelector("#songTimeRemaining")
@@ -4111,6 +4345,13 @@ searchItem.addEventListener("click", () => {
                     let clickedOffsetX = e.offsetX;
                     let songDuration = recentlySongControler.duration;
 
+                    recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+                })
+                middleProgressArea.addEventListener("click", (e) => {
+                    let progressWithVal = middleProgressArea.clientWidth;
+                    let clickedOffsetX = e.offsetX;
+                    let songDuration = recentlySongControler.duration;
+                
                     recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
                 })
             });
@@ -4339,6 +4580,9 @@ function loadfocusMusic(indexNumber) {
     songArtistName.innerHTML = focusStyleSongs[indexNumber - 1].artist;
     songImage.src = focusStyleSongs[indexNumber - 1].img;
     focusSongControler.src = "tracks/Focus/" + focusStyleSongs[indexNumber - 1].src + ".mp3";
+    MiddleSongName.innerHTML = focusStyleSongs[indexNumber - 1].name;
+    middlePlayerimageBoxImg.src = focusStyleSongs[indexNumber - 1].img;
+    middlePlayerimageBoxImg.style.display = "block";
     songImage.style.display = "block";
 
     focusSongControler.play();
@@ -4367,6 +4611,15 @@ function loadfocusMusic(indexNumber) {
     playBtn.style.fill = "red";
     pauseBtn.style.fill = "red";
     pauseBtn.style.display = "block";
+
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+
+    playSongBtn.style.display = "none";
+    playSongBtn.style.fill = "red";
+    pauseSongBtn.style.fill = "red";
+    pauseSongBtn.style.display = "block";
 
     songStatusFocus = true;
     songStatusStudy = false;
@@ -4403,6 +4656,26 @@ skipBack.addEventListener("click", () => {
     }
 })
 
+playSongBtn.addEventListener("click", () => {
+    focusSongControler.play();
+})
+
+pauseSongBtn.addEventListener("click", () => {
+    focusSongControler.pause();
+})
+
+nextSongBtn.addEventListener("click", () => {
+    if (songStatusFocus == true) {
+        nextFocusSong();
+    }
+})
+
+beforeSongBtn.addEventListener("click", () => {
+    if (songStatusFocus == true) {
+        beforeFocusSong();
+    }
+})
+
 //click next song button developing
 
 function nextFocusSong() {
@@ -4431,6 +4704,7 @@ focusSongControler.addEventListener("timeupdate", (e) => {
 
     let progressWith = (currentTime / duration) * 100;
     progressBar.style.width = progressWith + "%";
+    middleProgressBar.style.width = progressWith + "%";
 
     let songCurrentTime = document.querySelector("#songTimeLeft"),
         songDurationTime = document.querySelector("#songTimeRemaining")
@@ -4469,6 +4743,13 @@ focusSongControler.addEventListener("timeupdate", (e) => {
 
         focusSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
     })
+    middleProgressArea.addEventListener("click", (e) => {
+        let progressWithVal = middleProgressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = focusSongControler.duration;
+    
+        focusSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
 });
 
 //developed the repeatand random play button 
@@ -4485,6 +4766,23 @@ repeatPlayButton.addEventListener("click", () => {
     }
 })
 randomPlayButton.addEventListener("click", () => {
+    if (randomState3 == false) {
+        randomState3 = true;
+    }
+    else {
+        randomState3 = false;
+    }
+})
+songRepeatBtn.addEventListener("click", () => {
+    if (repeatState3 == false) {
+        repeatState3 = true;
+    }
+    else {
+        repeatState3 = false;
+    }
+})
+
+songOrderBtn.addEventListener("click", () => {
     if (randomState3 == false) {
         randomState3 = true;
     }
@@ -4545,6 +4843,9 @@ for (let i = 0; i < studySongsbuttonPlayer.length; i++) {
                 songArtistName.innerHTML = studyStyleSongs[j].artist;
                 songImage.src = studyStyleSongs[j].img;
                 studySongControler.src = "tracks/study/" + studyStyleSongs[j].src + ".mp3";
+                MiddleSongName.innerHTML = studyStyleSongs[i].name;
+                middlePlayerimageBoxImg.src = studyStyleSongs[indexNumber - 1].img;
+                middlePlayerimageBoxImg.style.display = "block";
                 songImage.style.display = "block";
 
                 focusSongControler.pause();
@@ -4563,20 +4864,27 @@ for (let i = 0; i < studySongsbuttonPlayer.length; i++) {
                 canadaSongControler.pause();
                 playlistsSongControler.pause();
                 likedSongControler.pause();
-
-                    unliked.style.display = "block";
-    liked.style.display = "none";
-    liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
-
-
                 studySongsIndex = i + 1;
             }
-
         }
+        unliked.style.display = "block";
+        liked.style.display = "none";
+        liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+        likeEmptyBtn.style.display = "block";
+        likeFullBtn.style.display = "none";
+        likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
         playBtn.style.display = "none";
         playBtn.style.fill = "red";
         pauseBtn.style.fill = "red";
         pauseBtn.style.display = "block";
+        playSongBtn.style.display = "none";
+        playSongBtn.style.fill = "red";
+        pauseSongBtn.style.fill = "red";
+        pauseSongBtn.style.display = "block";
+        playSongBtn.style.display = "none";
+        playSongBtn.style.fill = "red";
+        pauseSongBtn.style.fill = "red";
+        pauseSongBtn.style.display = "block";
         songStatusClassic = true;
 
         if (studyRecently >= 2) {
@@ -4629,6 +4937,9 @@ searchItem.addEventListener("click", () => {
             songName.innerHTML = gozBazarStudy[i].dataset.rstudynamesong;
             songImage.src = gozBazarStudy[i].dataset.rstudysongimage
             songArtistName.innerHTML = gozBazarStudy[i].dataset.rstudysongartistname;
+            MiddleSongName.innerHTML = gozBazarStudy[i].name;
+            middlePlayerimageBoxImg.src = gozBazarStudy[i].img;
+            middlePlayerimageBoxImg.style.display = "block";
             recentlySongControler.play();
 
             songStylesIndexClear();
@@ -4651,12 +4962,20 @@ searchItem.addEventListener("click", () => {
                 unliked.style.display = "block";
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
 
             playBtn.style.display = "none";
             playBtn.style.fill = "red";
             pauseBtn.style.fill = "red";
             pauseBtn.style.display = "block";
+
+            playSongBtn.style.display = "none";
+            playSongBtn.style.fill = "red";
+            pauseSongBtn.style.fill = "red";
+            pauseSongBtn.style.display = "block";
 
             songStatusFocus = false;
             songStatusStudy = false;
@@ -4678,6 +4997,13 @@ searchItem.addEventListener("click", () => {
             pauseBtn.addEventListener("click", () => {
                 recentlySongControler.pause();
             })
+            playSongBtn.addEventListener("click", () => {
+                recentlySongControler.play();
+            })
+            
+            pauseSongBtn.addEventListener("click", () => {
+                recentlySongControler.pause();
+            })
 
             //updata progressBar with songTime
 
@@ -4690,6 +5016,7 @@ searchItem.addEventListener("click", () => {
 
                 let progressWith = (currentTime / duration) * 100;
                 progressBar.style.width = progressWith + "%";
+                middleProgressBar.style.width = progressWith + "%";
 
                 let songCurrentTime = document.querySelector("#songTimeLeft"),
                     songDurationTime = document.querySelector("#songTimeRemaining")
@@ -4728,6 +5055,13 @@ searchItem.addEventListener("click", () => {
 
                     recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
                 })
+                middleProgressArea.addEventListener("click", (e) => {
+                    let progressWithVal = middleProgressArea.clientWidth;
+                    let clickedOffsetX = e.offsetX;
+                    let songDuration = recentlySongControler.duration;
+
+                    recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+})
             });
 
         })
@@ -4955,6 +5289,9 @@ function loadstudyMusic(indexNumber) {
     songArtistName.innerHTML = studyStyleSongs[indexNumber - 1].artist;
     songImage.src = studyStyleSongs[indexNumber - 1].img;
     studySongControler.src = "tracks/study/" + studyStyleSongs[indexNumber - 1].src + ".mp3";
+    MiddleSongName.innerHTML = studyStyleSongs[indexNumber - 1].name;
+    middlePlayerimageBoxImg.src = studyStyleSongs[indexNumber - 1].img;
+    middlePlayerimageBoxImg.style.display = "block";
     songImage.style.display = "block";
 
     focusSongControler.pause();
@@ -4978,11 +5315,19 @@ function loadstudyMusic(indexNumber) {
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
     playBtn.style.display = "none";
     playBtn.style.fill = "red";
     pauseBtn.style.fill = "red";
     pauseBtn.style.display = "block";
+
+    playSongBtn.style.display = "none";
+    playSongBtn.style.fill = "red";
+    pauseSongBtn.style.fill = "red";
+    pauseSongBtn.style.display = "block";
 
     songStatusFocus = false;
     songStatusStudy = true;
@@ -5019,6 +5364,26 @@ skipBack.addEventListener("click", () => {
     }
 })
 
+playSongBtn.addEventListener("click", () => {
+    popSongControler.play();
+})
+
+pauseSongBtn.addEventListener("click", () => {
+    popSongControler.pause();
+})
+
+nextSongBtn.addEventListener("click", () => {
+    if (songStatusPop == true) {
+        nextPopSong();
+    }
+})
+
+beforeSongBtn.addEventListener("click", () => {
+    if (songStatusPop == true) {
+        beforePopSong();
+    }
+})
+
 //click next song button developing
 
 function nextStudySong() {
@@ -5047,6 +5412,8 @@ studySongControler.addEventListener("timeupdate", (e) => {
 
     let progressWith = (currentTime / duration) * 100;
     progressBar.style.width = progressWith + "%";
+    middleProgressBar.style.width = progressWith + "%";
+
 
     let songCurrentTime = document.querySelector("#songTimeLeft"),
         songDurationTime = document.querySelector("#songTimeRemaining")
@@ -5085,6 +5452,13 @@ studySongControler.addEventListener("timeupdate", (e) => {
 
         studySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
     })
+    middleProgressArea.addEventListener("click", (e) => {
+        let progressWithVal = middleProgressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = studySongControler.duration;
+    
+        studySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
 });
 
 //developed the repeatand random play button 
@@ -5101,6 +5475,23 @@ repeatPlayButton.addEventListener("click", () => {
     }
 })
 randomPlayButton.addEventListener("click", () => {
+    if (randomState4 == false) {
+        randomState4 = true;
+    }
+    else {
+        randomState4 = false;
+    }
+})
+songRepeatBtn.addEventListener("click", () => {
+    if (repeatState4 == false) {
+        repeatState4 = true;
+    }
+    else {
+        repeatState4 = false;
+    }
+})
+
+songOrderBtn.addEventListener("click", () => {
     if (randomState4 == false) {
         randomState4 = true;
     }
@@ -5162,6 +5553,9 @@ for (let i = 0; i < gameSongsbuttonPlayer.length; i++) {
                 sourceSong.innerHTML = "tracks/game/" + gameStyleSongs[j].src;
                 songImage.src = gameStyleSongs[j].img;
                 gameSongControler.src = "tracks/game/" + gameStyleSongs[j].src + ".mp3";
+                MiddleSongName.innerHTML = gameStyleSongs[i].name;
+                middlePlayerimageBoxImg.src = gameStyleSongs[i].img;
+                middlePlayerimageBoxImg.style.display = "block";
                 songImage.style.display = "block";
 
                 focusSongControler.pause();
@@ -5184,6 +5578,9 @@ for (let i = 0; i < gameSongsbuttonPlayer.length; i++) {
                     unliked.style.display = "block";
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
 
                 gameSongsIndex = i + 1;
@@ -5195,6 +5592,12 @@ for (let i = 0; i < gameSongsbuttonPlayer.length; i++) {
         playBtn.style.fill = "red";
         pauseBtn.style.fill = "red";
         pauseBtn.style.display = "block";
+
+        playSongBtn.style.display = "none";
+        playSongBtn.style.fill = "red";
+        pauseSongBtn.style.fill = "red";
+        pauseSongBtn.style.display = "block";
+
         songStatusGame = true;
 
         if (gameRecently >= 2) {
@@ -5248,6 +5651,9 @@ searchItem.addEventListener("click", () => {
             songName.innerHTML = gozBazarGame[i].dataset.rgamenamesong;
             songImage.src = gozBazarGame[i].dataset.rgamesongimage
             songArtistName.innerHTML = gozBazarGame[i].dataset.rgamesongartistname;
+            MiddleSongName.innerHTML = gozBazarGame[i].dataset.name;
+            middlePlayerimageBoxImg.src = gozBazarGame[i].dataset.img;
+            middlePlayerimageBoxImg.style.display = "block";
             recentlySongControler.play();
 
             songStylesIndexClear();
@@ -5270,12 +5676,19 @@ searchItem.addEventListener("click", () => {
                 unliked.style.display = "block";
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
 
             playBtn.style.display = "none";
             playBtn.style.fill = "red";
             pauseBtn.style.fill = "red";
             pauseBtn.style.display = "block";
+            playSongBtn.style.display = "none";
+            playSongBtn.style.fill = "red";
+            pauseSongBtn.style.fill = "red";
+            pauseSongBtn.style.display = "block";
 
             songStatusFocus = false;
             songStatusStudy = false;
@@ -5297,6 +5710,13 @@ searchItem.addEventListener("click", () => {
             pauseBtn.addEventListener("click", () => {
                 recentlySongControler.pause();
             })
+            play.addEventListener("click", () => {
+                recentlySongControler.play();
+            })
+            
+            pause.addEventListener("click", () => {
+                recentlySongControler.pause();
+            })
 
             //updata progressBar with songTime
 
@@ -5309,6 +5729,8 @@ searchItem.addEventListener("click", () => {
 
                 let progressWith = (currentTime / duration) * 100;
                 progressBar.style.width = progressWith + "%";
+                middleProgressBar.style.width = progressWith + "%";
+
 
                 let songCurrentTime = document.querySelector("#songTimeLeft"),
                     songDurationTime = document.querySelector("#songTimeRemaining")
@@ -5345,6 +5767,13 @@ searchItem.addEventListener("click", () => {
                     let clickedOffsetX = e.offsetX;
                     let songDuration = recentlySongControler.duration;
 
+                    recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+                })
+                middleProgressArea.addEventListener("click", (e) => {
+                    let progressWithVal = middleProgressArea.clientWidth;
+                    let clickedOffsetX = e.offsetX;
+                    let songDuration = recentlySongControler.duration;
+                
                     recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
                 })
             });
@@ -5564,6 +5993,9 @@ function loadgameMusic(indexNumber) {
     songArtistName.innerHTML = gameStyleSongs[indexNumber - 1].artist;
     songImage.src = gameStyleSongs[indexNumber - 1].img;
     gameSongControler.src = "tracks/game/" + gameStyleSongs[indexNumber - 1].src + ".mp3";
+    MiddleSongName.innerHTML = gameStyleSongs[indexNumber - 1].name;
+    middlePlayerimageBoxImg.src = gameStyleSongs[indexNumber - 1].img;
+    middlePlayerimageBoxImg.style.display = "block";
     songImage.style.display = "block";
 
     focusSongControler.pause();
@@ -5587,6 +6019,14 @@ function loadgameMusic(indexNumber) {
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+
+    playSongBtn.style.display = "none";
+    playSongBtn.style.fill = "red";
+    pauseSongBtn.style.fill = "red";
+    pauseSongBtn.style.display = "block";
 
     playBtn.style.display = "none";
     playBtn.style.fill = "red";
@@ -5627,7 +6067,25 @@ skipBack.addEventListener("click", () => {
         beforeGameSong();
     }
 })
+playSongBtn.addEventListener("click", () => {
+    gameSongControler.play();
+})
 
+pauseSongBtn.addEventListener("click", () => {
+    gameSongControler.pause();
+})
+
+nextSongBtn.addEventListener("click", () => {
+    if (songStatusGame == true) {
+        nextPopSong();
+    }
+})
+
+beforeSongBtn.addEventListener("click", () => {
+    if (songStatusGame == true) {
+        beforePopSong();
+    }
+})
 //click next song button developing
 
 function nextGameSong() {
@@ -5656,6 +6114,7 @@ gameSongControler.addEventListener("timeupdate", (e) => {
 
     let progressWith = (currentTime / duration) * 100;
     progressBar.style.width = progressWith + "%";
+    middleProgressBar.style.width = progressWith + "%";
 
     let songCurrentTime = document.querySelector("#songTimeLeft"),
         songDurationTime = document.querySelector("#songTimeRemaining")
@@ -5694,6 +6153,14 @@ gameSongControler.addEventListener("timeupdate", (e) => {
 
         gameSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
     })
+    middleProgressArea.addEventListener("click", (e) => {
+        let progressWithVal = middleProgressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = gameSongControler.duration;
+    
+        gameSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
+    
 });
 
 //developed the repeatand random play button 
@@ -5710,6 +6177,23 @@ repeatPlayButton.addEventListener("click", () => {
     }
 })
 randomPlayButton.addEventListener("click", () => {
+    if (randomState5 == false) {
+        randomState5 = true;
+    }
+    else {
+        randomState5 = false;
+    }
+})
+songRepeatBtn.addEventListener("click", () => {
+    if (repeatState5 == false) {
+        repeatState5 = true;
+    }
+    else {
+        repeatState5 = false;
+    }
+})
+
+songOrderBtn.addEventListener("click", () => {
     if (randomState5 == false) {
         randomState5 = true;
     }
@@ -5772,6 +6256,9 @@ for (let i = 0; i < rAndbSongsbuttonPlayer.length; i++) {
                 songArtistName.innerHTML = rAndbStyleSongs[j].artist;
                 songImage.src = rAndbStyleSongs[j].img;
                 rAndbSongControler.src = "tracks/R&B/" + rAndbStyleSongs[j].src + ".mp3";
+                MiddleSongName.innerHTML = rAndbStyleSongs[i].name;
+                middlePlayerimageBoxImg.src = rAndbStyleSongs[i].img;
+                middlePlayerimageBoxImg.style.display = "block";
                 songImage.style.display = "block";
 
                 focusSongControler.pause();
@@ -5795,6 +6282,9 @@ for (let i = 0; i < rAndbSongsbuttonPlayer.length; i++) {
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
+        likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
                 rAndbSongsIndex = i + 1;
             }
@@ -5805,6 +6295,10 @@ for (let i = 0; i < rAndbSongsbuttonPlayer.length; i++) {
         playBtn.style.fill = "red";
         pauseBtn.style.fill = "red";
         pauseBtn.style.display = "block";
+        playSongBtn.style.display = "none";
+        playSongBtn.style.fill = "red";
+        pauseSongBtn.style.fill = "red";
+        pauseSongBtn.style.display = "block";
         songStatusrRAndb = true;
 
         if (rAndbRecently >= 2) {
@@ -5856,8 +6350,11 @@ searchItem.addEventListener("click", () => {
         gozBazarRAndb[i].addEventListener("click", () => {
             recentlySongControler.src = gozBazarRAndb[i].dataset.rrAndbsongname;
             songName.innerHTML = gozBazarRAndb[i].dataset.rrAndbnamesong;
-            songImage.src = gozBazarRAndb[i].dataset.rrAndbsongimage
+            songImage.src = gozBazarRAndb[i].dataset.rrAndbsongimage;
             songArtistName.innerHTML = gozBazarRAndb[i].dataset.rrAndbsongartistname;
+            MiddleSongName.innerHTML = gozBazarRAndb[i].datase.rrAndbnamesong;
+            middlePlayerimageBoxImg.src = gozBazarRAndb[i].datase.rrAndbsongimage;
+            middlePlayerimageBoxImg.style.display = "block";
             recentlySongControler.play();
 
             songStylesIndexClear();
@@ -5881,11 +6378,19 @@ searchItem.addEventListener("click", () => {
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
             playBtn.style.display = "none";
             playBtn.style.fill = "red";
             pauseBtn.style.fill = "red";
             pauseBtn.style.display = "block";
+
+            playSongBtn.style.display = "none";
+            playSongBtn.style.fill = "red";
+            pauseSongBtn.style.fill = "red";
+            pauseSongBtn.style.display = "block";
 
             songStatusFocus = false;
             songStatusStudy = false;
@@ -5907,6 +6412,13 @@ searchItem.addEventListener("click", () => {
             pauseBtn.addEventListener("click", () => {
                 recentlySongControler.pause();
             })
+            playSongBtn.addEventListener("click", () => {
+                recentlySongControler.play();
+            })
+            
+            pauseSongBtn.addEventListener("click", () => {
+                recentlySongControler.pause();
+            })
 
             //updata progressBar with songTime
 
@@ -5919,6 +6431,7 @@ searchItem.addEventListener("click", () => {
 
                 let progressWith = (currentTime / duration) * 100;
                 progressBar.style.width = progressWith + "%";
+                middleProgressBar.style.width = progressWith + "%";
 
                 let songCurrentTime = document.querySelector("#songTimeLeft"),
                     songDurationTime = document.querySelector("#songTimeRemaining")
@@ -5955,6 +6468,13 @@ searchItem.addEventListener("click", () => {
                     let clickedOffsetX = e.offsetX;
                     let songDuration = recentlySongControler.duration;
 
+                    recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+                })
+                middleProgressArea.addEventListener("click", (e) => {
+                    let progressWithVal = middleProgressArea.clientWidth;
+                    let clickedOffsetX = e.offsetX;
+                    let songDuration = recentlySongControler.duration;
+                
                     recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
                 })
             });
@@ -6176,6 +6696,9 @@ function loadrAndbMusic(indexNumber) {
     songArtistName.innerHTML = rAndbStyleSongs[indexNumber - 1].artist;
     songImage.src = rAndbStyleSongs[indexNumber - 1].img;
     rAndbSongControler.src = "tracks/R&B/" + rAndbStyleSongs[indexNumber - 1].src + ".mp3";
+    MiddleSongName.innerHTML = rAndbStyleSongs[indexNumber - 1].name;
+    middlePlayerimageBoxImg.src = rAndbStyleSongs[indexNumber - 1].img;
+    middlePlayerimageBoxImg.style.display = "block";
     songImage.style.display = "block";
 
     focusSongControler.pause();
@@ -6198,12 +6721,19 @@ function loadrAndbMusic(indexNumber) {
         unliked.style.display = "block";
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
-
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
     playBtn.style.display = "none";
     playBtn.style.fill = "red";
     pauseBtn.style.fill = "red";
     pauseBtn.style.display = "block";
+
+    playSongBtn.style.display = "none";
+    playSongBtn.style.fill = "red";
+    pauseSongBtn.style.fill = "red";
+    pauseSongBtn.style.display = "block";
 
     songStatusFocus = false;
     songStatusStudy = false;
@@ -6238,6 +6768,25 @@ skipBack.addEventListener("click", () => {
         beforerAndbSong();
     }
 })
+playSongBtn.addEventListener("click", () => {
+    rAndbSongControler.play();
+})
+
+pauseSongBtn.addEventListener("click", () => {
+    rAndbSongControler.pause();
+})
+
+nextSongBtn.addEventListener("click", () => {
+    if (songStatusPop == true) {
+        nextrAndbSong();
+    }
+})
+
+beforeSongBtn.addEventListener("click", () => {
+    if (songStatusPop == true) {
+        beforerAndbSong();
+    }
+})
 
 //click next song button developing
 
@@ -6267,6 +6816,7 @@ rAndbSongControler.addEventListener("timeupdate", (e) => {
 
     let progressWith = (currentTime / duration) * 100;
     progressBar.style.width = progressWith + "%";
+    middleProgressBar.style.width = progressWith + "%";
 
     let songCurrentTime = document.querySelector("#songTimeLeft"),
         songDurationTime = document.querySelector("#songTimeRemaining")
@@ -6305,6 +6855,13 @@ rAndbSongControler.addEventListener("timeupdate", (e) => {
 
         rAndbSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
     })
+    middleProgressArea.addEventListener("click", (e) => {
+        let progressWithVal = middleProgressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = rAndbSongControler.duration;
+    
+        rAndbSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
 });
 
 //developed the repeatand random play button 
@@ -6321,6 +6878,23 @@ repeatPlayButton.addEventListener("click", () => {
     }
 })
 randomPlayButton.addEventListener("click", () => {
+    if (randomState6 == false) {
+        randomState6 = true;
+    }
+    else {
+        randomState6 = false;
+    }
+})
+songRepeatBtn.addEventListener("click", () => {
+    if (repeatState6 == false) {
+        repeatState6 = true;
+    }
+    else {
+        repeatState6 = false;
+    }
+})
+
+songOrderBtn.addEventListener("click", () => {
     if (randomState6 == false) {
         randomState6 = true;
     }
@@ -6382,6 +6956,9 @@ for (let i = 0; i < rapSongsbuttonPlayer.length; i++) {
                 songArtistName.innerHTML = rapStyleSongs[j].artist;
                 songImage.src = rapStyleSongs[j].img;
                 rapSongControler.src = "tracks/Rap/" + rapStyleSongs[j].src + ".mp3";
+                MiddleSongName.innerHTML = rapStyleSongs[i].name;
+                middlePlayerimageBoxImg.src = rapStyleSongs[i].img;
+                middlePlayerimageBoxImg.style.display = "block";
                 songImage.style.display = "block";
 
                 focusSongControler.pause();
@@ -6404,6 +6981,9 @@ for (let i = 0; i < rapSongsbuttonPlayer.length; i++) {
                     unliked.style.display = "block";
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
 
                 rapSongsIndex = i + 1;
@@ -6414,6 +6994,12 @@ for (let i = 0; i < rapSongsbuttonPlayer.length; i++) {
         playBtn.style.fill = "red";
         pauseBtn.style.fill = "red";
         pauseBtn.style.display = "block";
+
+        playSongBtn.style.display = "none";
+        playSongBtn.style.fill = "red";
+        pauseSongBtn.style.fill = "red";
+        pauseSongBtn.style.display = "block";
+
         songStatusRap = true;
 
         if (rapRecently >= 2) {
@@ -6465,8 +7051,11 @@ searchItem.addEventListener("click", () => {
         gozBazarRap[i].addEventListener("click", () => {
             recentlySongControler.src = gozBazarRap[i].dataset.rrapsongname;
             songName.innerHTML = gozBazarRap[i].dataset.rrapnamesong;
-            songImage.src = gozBazarRap[i].dataset.rrapsongimage
+            songImage.src = gozBazarRap[i].dataset.rrapsongimage;
             songArtistName.innerHTML = gozBazarRap[i].dataset.rrapsongartistname;
+            MiddleSongName.innerHTML = gozBazarRap[i].dataset.rrapnamesong;
+            middlePlayerimageBoxImg.src = gozBazarRap[i].dataset.rrapsongimage;
+            middlePlayerimageBoxImg.style.display = "block";
             recentlySongControler.play();
 
             songStylesIndexClear();
@@ -6490,11 +7079,19 @@ searchItem.addEventListener("click", () => {
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
-
             playBtn.style.display = "none";
             playBtn.style.fill = "red";
             pauseBtn.style.fill = "red";
             pauseBtn.style.display = "block";
+
+            likeEmptyBtn.style.display = "block";
+            likeFullBtn.style.display = "none";
+            likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+        
+            playSongBtn.style.display = "none";
+            playSongBtn.style.fill = "red";
+            pauseSongBtn.style.fill = "red";
+            pauseSongBtn.style.display = "block";
 
             songStatusFocus = false;
             songStatusStudy = false;
@@ -6517,6 +7114,13 @@ searchItem.addEventListener("click", () => {
                 recentlySongControler.pause();
             })
 
+            playSongBtn.addEventListener("click", () => {
+                recentlySongControler.play();
+            })
+            
+            pauseSongBtn.addEventListener("click", () => {
+                recentlySongControler.pause();
+            })
             //updata progressBar with songTime
 
             const progressBar = document.querySelector(".progressBar"),
@@ -6528,6 +7132,8 @@ searchItem.addEventListener("click", () => {
 
                 let progressWith = (currentTime / duration) * 100;
                 progressBar.style.width = progressWith + "%";
+                middleProgressBar.style.width = progressWith + "%";
+
 
                 let songCurrentTime = document.querySelector("#songTimeLeft"),
                     songDurationTime = document.querySelector("#songTimeRemaining")
@@ -6564,6 +7170,13 @@ searchItem.addEventListener("click", () => {
                     let clickedOffsetX = e.offsetX;
                     let songDuration = recentlySongControler.duration;
 
+                    recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+                })
+                middleProgressArea.addEventListener("click", (e) => {
+                    let progressWithVal = middleProgressArea.clientWidth;
+                    let clickedOffsetX = e.offsetX;
+                    let songDuration = recentlySongControler.duration;
+                
                     recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
                 })
             });
@@ -6783,6 +7396,9 @@ function loadrapMusic(indexNumber) {
     songArtistName.innerHTML = rapStyleSongs[indexNumber - 1].artist;
     songImage.src = rapStyleSongs[indexNumber - 1].img;
     rapSongControler.src = "tracks/Rap/" + rapStyleSongs[indexNumber - 1].src + ".mp3";
+    MiddleSongName.innerHTML = rapStyleSongs[i].name;
+    middlePlayerimageBoxImg.src = rapStyleSongs[i].img;
+    middlePlayerimageBoxImg.style.display = "block";
     songImage.style.display = "block";
 
     focusSongControler.pause();
@@ -6810,7 +7426,16 @@ function loadrapMusic(indexNumber) {
     playBtn.style.display = "none";
     playBtn.style.fill = "red";
     pauseBtn.style.fill = "red";
-    pauseBtn.style.display = "block";
+    pauseBtn.style.display = "block";    
+    
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+
+    playSongBtn.style.display = "none";
+    playSongBtn.style.fill = "red";
+    pauseSongBtn.style.fill = "red";
+    pauseSongBtn.style.display = "block";
 
     songStatusFocus = false;
     songStatusStudy = false;
@@ -6845,6 +7470,25 @@ skipBack.addEventListener("click", () => {
         beforeRapSong();
     }
 })
+playSongBtn.addEventListener("click", () => {
+    rapSongControler.play();
+})
+
+pauseSongBtn.addEventListener("click", () => {
+    rapSongControler.pause();
+})
+
+nextSongBtn.addEventListener("click", () => {
+    if (songStatusRap == true) {
+        nextPopSong();
+    }
+})
+
+beforeSongBtn.addEventListener("click", () => {
+    if (songStatusRap == true) {
+        beforePopSong();
+    }
+})
 
 //click next song button developing
 
@@ -6874,6 +7518,8 @@ rapSongControler.addEventListener("timeupdate", (e) => {
 
     let progressWith = (currentTime / duration) * 100;
     progressBar.style.width = progressWith + "%";
+    middleProgressBar.style.width = progressWith + "%";
+
 
     let songCurrentTime = document.querySelector("#songTimeLeft"),
         songDurationTime = document.querySelector("#songTimeRemaining")
@@ -6912,6 +7558,13 @@ rapSongControler.addEventListener("timeupdate", (e) => {
 
         rapSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
     })
+    middleProgressArea.addEventListener("click", (e) => {
+    let progressWithVal = middleProgressArea.clientWidth;
+    let clickedOffsetX = e.offsetX;
+    let songDuration = rapSongControler.duration;
+
+    rapSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+})
 });
 
 //developed the repeatand random play button 
@@ -6928,6 +7581,24 @@ repeatPlayButton.addEventListener("click", () => {
     }
 })
 randomPlayButton.addEventListener("click", () => {
+    if (randomState7 == false) {
+        randomState7 = true;
+    }
+    else {
+        randomState7 = false;
+    }
+})
+
+songRepeatBtn.addEventListener("click", () => {
+    if (repeatState7 == false) {
+        repeatState7 = true;
+    }
+    else {
+        repeatState7 = false;
+    }
+})
+
+songOrderBtn.addEventListener("click", () => {
     if (randomState7 == false) {
         randomState7 = true;
     }
@@ -6992,6 +7663,9 @@ for (let i = 0; i < animeSongsbuttonPlayer.length; i++) {
                 songArtistName.innerHTML = rapStyleSongs[j].artist;
                 songImage.src = animeStyleSongs[j].img;
                 animeSongControler.src = "tracks/anime/" + animeStyleSongs[j].src + ".mp3";
+                MiddleSongName.innerHTML = animeStyleSongs[i].name;
+                middlePlayerimageBoxImg.src = animeStyleSongs[i].img;
+                middlePlayerimageBoxImg.style.display = "block";
                 songImage.style.display = "block";
 
                 focusSongControler.pause();
@@ -7015,6 +7689,9 @@ for (let i = 0; i < animeSongsbuttonPlayer.length; i++) {
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
                 animeSongsIndex = i + 1;
             }
@@ -7032,6 +7709,10 @@ for (let i = 0; i < animeSongsbuttonPlayer.length; i++) {
         playBtn.style.fill = "red";
         pauseBtn.style.fill = "red";
         pauseBtn.style.display = "block";
+        playSongBtn.style.display = "none";
+        playSongBtn.style.fill = "red";
+        pauseSongBtn.style.fill = "red";
+        pauseSongBtn.style.display = "block";
         songStatusAnime = true;
 
         if (animeRecently >= 2) {
@@ -7083,8 +7764,11 @@ searchItem.addEventListener("click", () => {
         gozBazarAnime[i].addEventListener("click", () => {
             recentlySongControler.src = gozBazarAnime[i].dataset.ranimesongname;
             songName.innerHTML = gozBazarAnime[i].dataset.ranimenamesong;
-            songImage.src = gozBazarAnime[i].dataset.ranimesongimage
+            songImage.src = gozBazarAnime[i].dataset.ranimesongimage;
             songArtistName.innerHTML = gozBazarAnime[i].dataset.ranimesongartistname;
+            MiddleSongName.innerHTML = gozBazarAnime[i].dataset.ranimenamesong;
+            middlePlayerimageBoxImg.src = gozBazarAnime[i].dataset.ranimesongimage;
+            middlePlayerimageBoxImg.style.display = "block";
             recentlySongControler.play();
 
             songStylesIndexClear();
@@ -7114,6 +7798,15 @@ searchItem.addEventListener("click", () => {
             pauseBtn.style.fill = "red";
             pauseBtn.style.display = "block";
 
+            likeEmptyBtn.style.display = "block";
+            likeFullBtn.style.display = "none";
+            likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+        
+            playSongBtn.style.display = "none";
+            playSongBtn.style.fill = "red";
+            pauseSongBtn.style.fill = "red";
+            pauseSongBtn.style.display = "block";
+
             songStatusFocus = false;
             songStatusStudy = false;
             songStatusPop = false;
@@ -7134,6 +7827,13 @@ searchItem.addEventListener("click", () => {
             pauseBtn.addEventListener("click", () => {
                 recentlySongControler.pause();
             })
+            playSongBtn.addEventListener("click", () => {
+                recentlySongControler.play();
+            })
+            
+            pauseSongBtn.addEventListener("click", () => {
+                recentlySongControler.pause();
+            })
 
             //updata progressBar with songTime
 
@@ -7146,6 +7846,7 @@ searchItem.addEventListener("click", () => {
 
                 let progressWith = (currentTime / duration) * 100;
                 progressBar.style.width = progressWith + "%";
+                middleProgressBar.style.width = progressWith + "%";
 
                 let songCurrentTime = document.querySelector("#songTimeLeft"),
                     songDurationTime = document.querySelector("#songTimeRemaining")
@@ -7182,6 +7883,13 @@ searchItem.addEventListener("click", () => {
                     let clickedOffsetX = e.offsetX;
                     let songDuration = recentlySongControler.duration;
 
+                    recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+                })
+                middleProgressArea.addEventListener("click", (e) => {
+                    let progressWithVal = middleProgressArea.clientWidth;
+                    let clickedOffsetX = e.offsetX;
+                    let songDuration = recentlySongControler.duration;
+                
                     recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
                 })
             });
@@ -7401,6 +8109,9 @@ function loadanimeMusic(indexNumber) {
     songArtistName.innerHTML = animeStyleSongs[indexNumber - 1].artist;
     songImage.src = animeStyleSongs[indexNumber - 1].img;
     animeSongControler.src = "tracks/Anime/" + animeStyleSongs[indexNumber - 1].src + ".mp3";
+    MiddleSongName.innerHTML = animeStyleSongs[indexNumber - 1].name;
+    middlePlayerimageBoxImg.src = animeStyleSongs[indexNumber - 1].img;
+    middlePlayerimageBoxImg.style.display = "block";
     songImage.style.display = "block";
 
     focusSongControler.pause();
@@ -7420,7 +8131,7 @@ function loadanimeMusic(indexNumber) {
     playlistsSongControler.pause();
 
     likedSongControler.pause();
-        unliked.style.display = "block";
+    unliked.style.display = "block";
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
@@ -7429,6 +8140,35 @@ function loadanimeMusic(indexNumber) {
     playBtn.style.fill = "red";
     pauseBtn.style.fill = "red";
     pauseBtn.style.display = "block";
+
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+
+    playSongBtn.style.display = "none";
+    playSongBtn.style.fill = "red";
+    pauseSongBtn.style.fill = "red";
+    pauseSongBtn.style.display = "block";
+
+    playSongBtn.addEventListener("click", () => {
+    animeSongControler.play();
+})
+
+    pauseSongBtn.addEventListener("click", () => {
+    animeSongControler.pause();
+})
+
+nextSongBtn.addEventListener("click", () => {
+    if (songStatusAnime == true) {
+        nextAnimeSong();
+    }
+})
+
+beforeSongBtn.addEventListener("click", () => {
+    if (songStatusAnime == true) {
+        beforeAnimeSong();
+    }
+})
 
     songStatusFocus = false;
     songStatusStudy = false;
@@ -7492,6 +8232,8 @@ animeSongControler.addEventListener("timeupdate", (e) => {
 
     let progressWith = (currentTime / duration) * 100;
     progressBar.style.width = progressWith + "%";
+    middleProgressBar.style.width = progressWith + "%";
+
 
     let songCurrentTime = document.querySelector("#songTimeLeft"),
         songDurationTime = document.querySelector("#songTimeRemaining")
@@ -7530,6 +8272,13 @@ animeSongControler.addEventListener("timeupdate", (e) => {
 
         animeSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
     })
+    middleProgressArea.addEventListener("click", (e) => {
+        let progressWithVal = middleProgressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = popSongControler.duration;
+    
+        popSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
 });
 
 //developed the repeatand random play button 
@@ -7546,6 +8295,24 @@ repeatPlayButton.addEventListener("click", () => {
     }
 })
 randomPlayButton.addEventListener("click", () => {
+    if (randomState8 == false) {
+        randomState8 = true;
+    }
+    else {
+        randomState8 = false;
+    }
+})
+
+songRepeatBtn.addEventListener("click", () => {
+    if (repeatState8 == false) {
+        repeatState8 = true;
+    }
+    else {
+        repeatState8 = false;
+    }
+})
+
+songOrderBtn.addEventListener("click", () => {
     if (randomState8 == false) {
         randomState8 = true;
     }
@@ -7602,11 +8369,14 @@ for (let i = 0; i < calmnessSongsbuttonPlayer.length; i++) {
                 resentlyPlayImage.dataset.rcalmnesssongartistname = calmnessArtistName;
                 resentlyPlayImage.dataset.rcalmnesssongimage = calmnessImage;
                 songName.innerHTML = calmnessStyleSongs[j].name;
-                songArtistName.innerHTML = rapStyleSongs[j].artist;
+                songArtistName.innerHTML = calmnessStyleSongs[j].artist;
                 sourceSongImg.innerHTML = calmnessStyleSongs[j].img;
                 sourceSong.innerHTML = "tracks/Calmness/" + calmnessStyleSongs[j].src;
                 songImage.src = calmnessStyleSongs[j].img;
                 calmnessSongControler.src = "tracks/Calmness/" + calmnessStyleSongs[j].src + ".mp3";
+                MiddleSongName.innerHTML = calmnessStyleSongs[i].name;
+                middlePlayerimageBoxImg.src = calmnessStyleSongs[i].img;
+                middlePlayerimageBoxImg.style.display = "block";
                 songImage.style.display = "block";
 
                 focusSongControler.pause();
@@ -7630,6 +8400,9 @@ for (let i = 0; i < calmnessSongsbuttonPlayer.length; i++) {
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
                 calmnessSongsIndex = i + 1;
             }
@@ -7639,6 +8412,12 @@ for (let i = 0; i < calmnessSongsbuttonPlayer.length; i++) {
         playBtn.style.fill = "red";
         pauseBtn.style.fill = "red";
         pauseBtn.style.display = "block";
+
+            playSongBtn.style.display = "none";
+    playSongBtn.style.fill = "red";
+    pauseSongBtn.style.fill = "red";
+    pauseSongBtn.style.display = "block";
+
         songStatusCalmness = true;
 
         if (calmnessRecently >= 2) {
@@ -7690,8 +8469,11 @@ searchItem.addEventListener("click", () => {
         gozBazarCalmness[i].addEventListener("click", () => {
             recentlySongControler.src = gozBazarCalmness[i].dataset.rcalmnesssongname;
             songName.innerHTML = gozBazarCalmness[i].dataset.rcalmnessnamesong;
-            songImage.src = gozBazarCalmness[i].dataset.rcalmnesssongimage
+            songImage.src = gozBazarCalmness[i].dataset.rcalmnesssongimage;
             songArtistName.innerHTML = gozBazarCalmness[i].dataset.rcalmnesssongartistname;
+            MiddleSongName.innerHTML = gozBazarCalmness[i].dataset.rcalmnessnamesong;
+            middlePlayerimageBoxImg.src = gozBazarCalmness[i].dataset.rcalmnesssongimage;
+            middlePlayerimageBoxImg.style.display = "block";
             recentlySongControler.play();
 
             songStylesIndexClear();
@@ -7715,11 +8497,19 @@ searchItem.addEventListener("click", () => {
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
             playBtn.style.display = "none";
             playBtn.style.fill = "red";
             pauseBtn.style.fill = "red";
             pauseBtn.style.display = "block";
+
+            playSongBtn.style.display = "none";
+            playSongBtn.style.fill = "red";
+            pauseSongBtn.style.fill = "red";
+            pauseSongBtn.style.display = "block";
 
             songStatusFocus = false;
             songStatusStudy = false;
@@ -7741,6 +8531,13 @@ searchItem.addEventListener("click", () => {
             pauseBtn.addEventListener("click", () => {
                 recentlySongControler.pause();
             })
+            playSongBtn.addEventListener("click", () => {
+                recentlySongControler.play();
+            })
+            
+            pauseSongBtn.addEventListener("click", () => {
+                recentlySongControler.pause();
+            })
 
             //updata progressBar with songTime
 
@@ -7753,6 +8550,7 @@ searchItem.addEventListener("click", () => {
 
                 let progressWith = (currentTime / duration) * 100;
                 progressBar.style.width = progressWith + "%";
+                middleProgressBar.style.width = progressWith + "%";
 
                 let songCurrentTime = document.querySelector("#songTimeLeft"),
                     songDurationTime = document.querySelector("#songTimeRemaining")
@@ -7789,6 +8587,13 @@ searchItem.addEventListener("click", () => {
                     let clickedOffsetX = e.offsetX;
                     let songDuration = recentlySongControler.duration;
 
+                    recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+                })
+                middleProgressArea.addEventListener("click", (e) => {
+                    let progressWithVal = middleProgressArea.clientWidth;
+                    let clickedOffsetX = e.offsetX;
+                    let songDuration = recentlySongControler.duration;
+                
                     recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
                 })
             });
@@ -8008,6 +8813,9 @@ function loadcalmnessMusic(indexNumber) {
     songArtistName.innerHTML = calmnessStyleSongs[indexNumber - 1].artist;
     songImage.src = calmnessStyleSongs[indexNumber - 1].img;
     calmnessSongControler.src = "tracks/Calmness/" + calmnessStyleSongs[indexNumber - 1].src + ".mp3";
+    MiddleSongName.innerHTML = calmnessStyleSongs[indexNumber - 1].name;
+    middlePlayerimageBoxImg.src = calmnessStyleSongs[indexNumber - 1].img;
+    middlePlayerimageBoxImg.style.display = "block";
     songImage.style.display = "block";
 
     focusSongControler.pause();
@@ -8036,6 +8844,23 @@ function loadcalmnessMusic(indexNumber) {
     playBtn.style.fill = "red";
     pauseBtn.style.fill = "red";
     pauseBtn.style.display = "block";
+
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+
+    playSongBtn.style.display = "none";
+    playSongBtn.style.fill = "red";
+    pauseSongBtn.style.fill = "red";
+    pauseSongBtn.style.display = "block";
+
+    playSongBtn.addEventListener("click", () => {
+    calmnessSongControler.play();
+})
+
+pauseSongBtn.addEventListener("click", () => {
+    calmnessSongControler.pause();
+})
 
     songStatusFocus = false;
     songStatusStudy = false;
@@ -8072,6 +8897,18 @@ skipBack.addEventListener("click", () => {
     }
 })
 
+nextSongBtn.addEventListener("click", () => {
+    if (songStatusCalmness == true) {
+        nextCalmnessSong();
+    }
+})
+
+beforeSongBtn.addEventListener("click", () => {
+    if (songStatusCalmness == true) {
+        beforeCalmnessSong();
+    }
+})
+
 //click next song button developing
 
 function nextCalmnessSong() {
@@ -8100,6 +8937,8 @@ calmnessSongControler.addEventListener("timeupdate", (e) => {
 
     let progressWith = (currentTime / duration) * 100;
     progressBar.style.width = progressWith + "%";
+    middleProgressBar.style.width = progressWith + "%";
+
 
     let songCurrentTime = document.querySelector("#songTimeLeft"),
         songDurationTime = document.querySelector("#songTimeRemaining")
@@ -8138,6 +8977,13 @@ calmnessSongControler.addEventListener("timeupdate", (e) => {
 
         calmnessSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
     })
+    middleProgressArea.addEventListener("click", (e) => {
+        let progressWithVal = middleProgressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = calmnessSongControler.duration;
+    
+        calmnessSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
 });
 
 //developed the repeatand random play button 
@@ -8154,6 +9000,24 @@ repeatPlayButton.addEventListener("click", () => {
     }
 })
 randomPlayButton.addEventListener("click", () => {
+    if (randomState9 == false) {
+        randomState9 = true;
+    }
+    else {
+        randomState9 = false;
+    }
+})
+
+songRepeatBtn.addEventListener("click", () => {
+    if (repeatState9 == false) {
+        repeatState9 = true;
+    }
+    else {
+        repeatState9 = false;
+    }
+})
+
+songOrderBtn.addEventListener("click", () => {
     if (randomState9 == false) {
         randomState9 = true;
     }
@@ -8215,6 +9079,9 @@ for (let i = 0; i < classicSongsbuttonPlayer.length; i++) {
                 sourceSong.innerHTML = "tracks/classic/" + classicStyleSongs[j].src;
                 songImage.src = classicStyleSongs[j].img;
                 classicSongControler.src = "tracks/Classic/" + classicStyleSongs[j].src + ".mp3";
+                MiddleSongName.innerHTML = classicStyleSongs[i].name;
+                middlePlayerimageBoxImg.src = classicStyleSongs[i].img;
+                middlePlayerimageBoxImg.style.display = "block";
                 songImage.style.display = "block";
 
                 focusSongControler.pause();
@@ -8236,6 +9103,9 @@ for (let i = 0; i < classicSongsbuttonPlayer.length; i++) {
                     unliked.style.display = "block";
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
                 playlistsSongControler.pause();
 
 
@@ -8247,9 +9117,14 @@ for (let i = 0; i < classicSongsbuttonPlayer.length; i++) {
         playBtn.style.fill = "red";
         pauseBtn.style.fill = "red";
         pauseBtn.style.display = "block";
+        
+    playSongBtn.style.display = "none";
+    playSongBtn.style.fill = "red";
+    pauseSongBtn.style.fill = "red";
+    pauseSongBtn.style.display = "block";
         songStatusClassic = true;
 
-        if (popRecently >= 2) {
+        if (classicRecently >= 2) {
 
             var resentlyUl = document.querySelector("#rsList");
             var resentlyLi = document.createElement("li");
@@ -8298,8 +9173,11 @@ searchItem.addEventListener("click", () => {
         gozBazarClassic[i].addEventListener("click", () => {
             recentlySongControler.src = gozBazarClassic[i].dataset.rclassicsongname;
             songName.innerHTML = gozBazarClassic[i].dataset.rclassicnamesong;
-            songImage.src = gozBazarClassic[i].dataset.rclassicsongimage
+            songImage.src = gozBazarClassic[i].dataset.rclassicsongimage;
             songArtistName.innerHTML = gozBazarClassic[i].dataset.rclassicsongartistname;
+            MiddleSongName.innerHTML = gozBazarClassic[i].dataset.rclassicnamesong;
+            middlePlayerimageBoxImg.src = gozBazarClassic[i].dataset.rclassicsongimage;
+            middlePlayerimageBoxImg.style.display = "block";
             recentlySongControler.play();
 
             songStylesIndexClear();
@@ -8350,6 +9228,23 @@ searchItem.addEventListener("click", () => {
                 recentlySongControler.pause();
             })
 
+            likeEmptyBtn.style.display = "block";
+            likeFullBtn.style.display = "none";
+            likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+        
+            playSongBtn.style.display = "none";
+            playSongBtn.style.fill = "red";
+            pauseSongBtn.style.fill = "red";
+            pauseSongBtn.style.display = "block";
+        
+            playSongBtn.addEventListener("click", () => {
+            classicSongControler.play();
+        })
+        
+        pauseSongBtn.addEventListener("click", () => {
+            classicSongControler.pause();
+        })
+
             //updata progressBar with songTime
 
             const progressBar = document.querySelector(".progressBar"),
@@ -8361,6 +9256,8 @@ searchItem.addEventListener("click", () => {
 
                 let progressWith = (currentTime / duration) * 100;
                 progressBar.style.width = progressWith + "%";
+                middleProgressBar.style.width = progressWith + "%";
+
 
                 let songCurrentTime = document.querySelector("#songTimeLeft"),
                     songDurationTime = document.querySelector("#songTimeRemaining")
@@ -8397,6 +9294,13 @@ searchItem.addEventListener("click", () => {
                     let clickedOffsetX = e.offsetX;
                     let songDuration = recentlySongControler.duration;
 
+                    recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+                })
+                middleProgressArea.addEventListener("click", (e) => {
+                    let progressWithVal = middleProgressArea.clientWidth;
+                    let clickedOffsetX = e.offsetX;
+                    let songDuration = recentlySongControler.duration;
+                
                     recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
                 })
             });
@@ -8616,6 +9520,9 @@ function loadclassicMusic(indexNumber) {
     songArtistName.innerHTML = classicStyleSongs[indexNumber - 1].artist;
     songImage.src = classicStyleSongs[indexNumber - 1].img;
     classicSongControler.src = "tracks/Classic/" + classicStyleSongs[indexNumber - 1].src + ".mp3";
+    MiddleSongName.innerHTML = classicStyleSongs[indexNumber - 1].name;
+    middlePlayerimageBoxImg.src = classicStyleSongs[indexNumber - 1].img;
+    middlePlayerimageBoxImg.style.display = "block";
     songImage.style.display = "block";
 
     focusSongControler.pause();
@@ -8644,6 +9551,35 @@ function loadclassicMusic(indexNumber) {
     playBtn.style.fill = "red";
     pauseBtn.style.fill = "red";
     pauseBtn.style.display = "block";
+
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+
+    playSongBtn.style.display = "none";
+    playSongBtn.style.fill = "red";
+    pauseSongBtn.style.fill = "red";
+    pauseSongBtn.style.display = "block";
+
+    playSongBtn.addEventListener("click", () => {
+    classicSongControler.play();
+})
+
+pauseSongBtn.addEventListener("click", () => {
+    classicSongControler.pause();
+})
+
+nextSongBtn.addEventListener("click", () => {
+    if (songStatusClassic == true) {
+        nextClassicSong();
+    }
+})
+
+beforeSongBtn.addEventListener("click", () => {
+    if (songStatusClassic == true) {
+        beforeClassicSong();
+    }
+})
 
     songStatusFocus = false;
     songStatusStudy = false;
@@ -8708,6 +9644,7 @@ classicSongControler.addEventListener("timeupdate", (e) => {
 
     let progressWith = (currentTime / duration) * 100;
     progressBar.style.width = progressWith + "%";
+    middleProgressBar.style.width = progressWith + "%";
 
     let songCurrentTime = document.querySelector("#songTimeLeft"),
         songDurationTime = document.querySelector("#songTimeRemaining")
@@ -8746,6 +9683,13 @@ classicSongControler.addEventListener("timeupdate", (e) => {
 
         classicSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
     })
+    middleProgressArea.addEventListener("click", (e) => {
+        let progressWithVal = middleProgressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = classicSongControler.duration;
+    
+        classicSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
 });
 
 //developed the repeatand random play button 
@@ -8762,6 +9706,24 @@ repeatPlayButton.addEventListener("click", () => {
     }
 })
 randomPlayButton.addEventListener("click", () => {
+    if (randomState10 == false) {
+        randomState10 = true;
+    }
+    else {
+        randomState10 = false;
+    }
+})
+
+songRepeatBtn.addEventListener("click", () => {
+    if (repeatState10 == false) {
+        repeatState10 = true;
+    }
+    else {
+        repeatState10 = false;
+    }
+})
+
+songOrderBtn.addEventListener("click", () => {
     if (randomState10 == false) {
         randomState10 = true;
     }
@@ -8823,6 +9785,9 @@ for (let i = 0; i < russianSongsbuttonPlayer.length; i++) {
                 songImage.src = russianStyleSongs[j].img;
                 sourceSong.innerHTML = "tracks/Russain/" + russianStyleSongs[j].src;
                 russianSongControler.src = "tracks/Russian/" + russianStyleSongs[j].src + ".mp3";
+                MiddleSongName.innerHTML = russianStyleSongs[i].name;
+                middlePlayerimageBoxImg.src =  russianStyleSongs[i].img;
+                middlePlayerimageBoxImg.style.display = "block";
                 songImage.style.display = "block";
 
                 focusSongControler.pause();
@@ -8842,15 +9807,24 @@ for (let i = 0; i < russianSongsbuttonPlayer.length; i++) {
                 canadaSongControler.pause();
                 likedSongControler.pause();
 
-                    unliked.style.display = "block";
-    liked.style.display = "none";
-    liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
-
+                unliked.style.display = "block";
+                liked.style.display = "none";
+                liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
                 russianSongsIndex = i + 1;
             }
 
         }
+
+        likeEmptyBtn.style.display = "block";
+        likeFullBtn.style.display = "none";
+        likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+    
+        playSongBtn.style.display = "none";
+        playSongBtn.style.fill = "red";
+        pauseSongBtn.style.fill = "red";
+        pauseSongBtn.style.display = "block";
+
         playBtn.style.display = "none";
         playBtn.style.fill = "red";
         pauseBtn.style.fill = "red";
@@ -8906,8 +9880,11 @@ searchItem.addEventListener("click", () => {
         gozBazarRussian[i].addEventListener("click", () => {
             recentlySongControler.src = gozBazarRussian[i].dataset.rrussiansongname;
             songName.innerHTML = gozBazarRussian[i].dataset.rrussiannamesong;
-            songImage.src = gozBazarRussian[i].dataset.rrussiansongimage
+            songImage.src = gozBazarRussian[i].dataset.rrussiansongimage;
             songArtistName.innerHTML = gozBazarRussian[i].dataset.rrussiansongartistname;
+            MiddleSongName.innerHTML = gozBazarRussian[i].dataset.rrussiannamesong;
+            middlePlayerimageBoxImg.src = gozBazarRussian[i].dataset.rrussiansongimage;
+            middlePlayerimageBoxImg.style.display = "block";
             recentlySongControler.play();
 
             songStylesIndexClear();
@@ -8957,6 +9934,23 @@ searchItem.addEventListener("click", () => {
                 recentlySongControler.pause();
             })
 
+            likeEmptyBtn.style.display = "block";
+            likeFullBtn.style.display = "none";
+            likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+        
+            playSongBtn.style.display = "none";
+            playSongBtn.style.fill = "red";
+            pauseSongBtn.style.fill = "red";
+            pauseSongBtn.style.display = "block";
+        
+            playSongBtn.addEventListener("click", () => {
+                recentlySongControler.play();
+            })
+
+            pauseSongBtn.addEventListener("click", () => {
+                recentlySongControler.pause();
+            })
+
             //updata progressBar with songTime
 
             const progressBar = document.querySelector(".progressBar"),
@@ -8968,6 +9962,7 @@ searchItem.addEventListener("click", () => {
 
                 let progressWith = (currentTime / duration) * 100;
                 progressBar.style.width = progressWith + "%";
+                middleProgressBar.style.width = progressWith + "%";
 
                 let songCurrentTime = document.querySelector("#songTimeLeft"),
                     songDurationTime = document.querySelector("#songTimeRemaining")
@@ -9004,6 +9999,13 @@ searchItem.addEventListener("click", () => {
                     let clickedOffsetX = e.offsetX;
                     let songDuration = recentlySongControler.duration;
 
+                    recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+                })
+                middleProgressArea.addEventListener("click", (e) => {
+                    let progressWithVal = middleProgressArea.clientWidth;
+                    let clickedOffsetX = e.offsetX;
+                    let songDuration = recentlySongControler.duration;
+                
                     recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
                 })
             });
@@ -9223,6 +10225,9 @@ function loadrussianMusic(indexNumber) {
     songArtistName.innerHTML = russianStyleSongs[indexNumber - 1].artist;
     songImage.src = russianStyleSongs[indexNumber - 1].img;
     russianSongControler.src = "tracks/Russian/" + russianStyleSongs[indexNumber - 1].src + ".mp3";
+    MiddleSongName.innerHTML = russianStyleSongs[indexNumber - 1].name;
+    middlePlayerimageBoxImg.src = russianStyleSongs[indexNumber - 1].img;
+    middlePlayerimageBoxImg.style.display = "block";
     songImage.style.display = "block";
 
     focusSongControler.pause();
@@ -9286,6 +10291,34 @@ skipBack.addEventListener("click", () => {
         beforeRussianSong();
     }
 })
+likeEmptyBtn.style.display = "block";
+likeFullBtn.style.display = "none";
+likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+
+playSongBtn.style.display = "none";
+playSongBtn.style.fill = "red";
+pauseSongBtn.style.fill = "red";
+pauseSongBtn.style.display = "block";
+
+playSongBtn.addEventListener("click", () => {
+    russianSongControler.play();
+})
+
+pauseSongBtn.addEventListener("click", () => {
+    russianSongControler.pause();
+})
+
+nextSongBtn.addEventListener("click", () => {
+if (songStatusRussian == true) {
+    nextRussianSong();
+}
+})
+
+beforeSongBtn.addEventListener("click", () => {
+if (songStatusRussian == true) {
+    beforeRussianSong();
+}
+})
 
 //click next song button developing
 
@@ -9315,6 +10348,8 @@ russianSongControler.addEventListener("timeupdate", (e) => {
 
     let progressWith = (currentTime / duration) * 100;
     progressBar.style.width = progressWith + "%";
+    middleProgressBar.style.width = progressWith + "%";
+
 
     let songCurrentTime = document.querySelector("#songTimeLeft"),
         songDurationTime = document.querySelector("#songTimeRemaining")
@@ -9353,6 +10388,13 @@ russianSongControler.addEventListener("timeupdate", (e) => {
 
         russianSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
     })
+    middleProgressArea.addEventListener("click", (e) => {
+        let progressWithVal = middleProgressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = russianSongControler.duration;
+    
+        russianSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
 });
 
 //developed the repeatand random play button 
@@ -9369,6 +10411,24 @@ repeatPlayButton.addEventListener("click", () => {
     }
 })
 randomPlayButton.addEventListener("click", () => {
+    if (randomState11 == false) {
+        randomState11 = true;
+    }
+    else {
+        randomState11 = false;
+    }
+})
+
+songRepeatBtn.addEventListener("click", () => {
+    if (repeatState11 == false) {
+        repeatState11 = true;
+    }
+    else {
+        repeatState11 = false;
+    }
+})
+
+songOrderBtn.addEventListener("click", () => {
     if (randomState11 == false) {
         randomState11 = true;
     }
@@ -9426,6 +10486,9 @@ for (let i = 0; i < heavySongsbuttonPlayer.length; i++) {
                 heavySongControler.src = "tracks/Heavy/" + heavyStyleSongs[j].src + ".mp3";
                 sourceSongImg.innerHTML = heavyStyleSongs[j].img;
                 sourceSong.innerHTML = "tracks/Heavy/" + heavyStyleSongs[j].src;
+                MiddleSongName.innerHTML = heavyStyleSongs[i].name;
+                middlePlayerimageBoxImg.src = heavyStyleSongs[i].img;
+                middlePlayerimageBoxImg.style.display = "block";
                 songImage.style.display = "block";
 
                 focusSongControler.pause();
@@ -9448,6 +10511,15 @@ for (let i = 0; i < heavySongsbuttonPlayer.length; i++) {
                     unliked.style.display = "block";
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+
+    playSongBtn.style.display = "none";
+    playSongBtn.style.fill = "red";
+    pauseSongBtn.style.fill = "red";
+    pauseSongBtn.style.display = "block";
 
 
                 heavySongsIndex = i + 1;
@@ -9509,8 +10581,11 @@ searchItem.addEventListener("click", () => {
         gozBazarHeavy[i].addEventListener("click", () => {
             recentlySongControler.src = gozBazarHeavy[i].dataset.rheavysongname;
             songName.innerHTML = gozBazarHeavy[i].dataset.rheavynamesong;
-            songImage.src = gozBazarHeavy[i].dataset.rheavysongimage
+            songImage.src = gozBazarHeavy[i].dataset.rheavysongimage;
             songArtistName.innerHTML = gozBazarHeavy[i].dataset.rheavysongartistname;
+            MiddleSongName.innerHTML = gozBazarHeavy[i].dataset.rheavynamesong;
+            middlePlayerimageBoxImg.src = gozBazarHeavy[i].dataset.rheavysongimage;
+            middlePlayerimageBoxImg.style.display = "block";
             recentlySongControler.play();
 
             songStylesIndexClear();
@@ -9561,6 +10636,23 @@ searchItem.addEventListener("click", () => {
                 recentlySongControler.pause();
             })
 
+            likeEmptyBtn.style.display = "block";
+            likeFullBtn.style.display = "none";
+            likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+        
+            playSongBtn.style.display = "none";
+            playSongBtn.style.fill = "red";
+            pauseSongBtn.style.fill = "red";
+            pauseSongBtn.style.display = "block";
+        
+            playSongBtn.addEventListener("click", () => {
+                russianSongControler.play();
+            })
+        
+            pauseSongBtn.addEventListener("click", () => {
+                russianSongControler.pause();
+            })
+
             //updata progressBar with songTime
 
             const progressBar = document.querySelector(".progressBar"),
@@ -9572,6 +10664,8 @@ searchItem.addEventListener("click", () => {
 
                 let progressWith = (currentTime / duration) * 100;
                 progressBar.style.width = progressWith + "%";
+                middleProgressBar.style.width = progressWith + "%";
+
 
                 let songCurrentTime = document.querySelector("#songTimeLeft"),
                     songDurationTime = document.querySelector("#songTimeRemaining")
@@ -9608,6 +10702,13 @@ searchItem.addEventListener("click", () => {
                     let clickedOffsetX = e.offsetX;
                     let songDuration = recentlySongControler.duration;
 
+                    recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+                })
+                middleProgressArea.addEventListener("click", (e) => {
+                    let progressWithVal = middleProgressArea.clientWidth;
+                    let clickedOffsetX = e.offsetX;
+                    let songDuration = recentlySongControler.duration;
+                
                     recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
                 })
             });
@@ -9827,6 +10928,9 @@ function loadheavyMusic(indexNumber) {
     songArtistName.innerHTML = heavyStyleSongs[indexNumber - 1].artist;
     songImage.src = heavyStyleSongs[indexNumber - 1].img;
     heavySongControler.src = "tracks/Heavy/" + heavyStyleSongs[indexNumber - 1].src + ".mp3";
+    MiddleSongName.innerHTML = heavyStyleSongs[indexNumber - 1].name;
+    middlePlayerimageBoxImg.src = heavyStyleSongs[indexNumber - 1].img;
+    middlePlayerimageBoxImg.style.display = "block";
     songImage.style.display = "block";
 
     focusSongControler.pause();
@@ -9890,6 +10994,34 @@ skipBack.addEventListener("click", () => {
         beforeHeavySong();
     }
 })
+likeEmptyBtn.style.display = "block";
+likeFullBtn.style.display = "none";
+likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+
+playSongBtn.style.display = "none";
+playSongBtn.style.fill = "red";
+pauseSongBtn.style.fill = "red";
+pauseSongBtn.style.display = "block";
+
+playSongBtn.addEventListener("click", () => {
+    heavySongControler.play();
+})
+
+pauseSongBtn.addEventListener("click", () => {
+    heavySongControler.pause();
+})
+
+nextSongBtn.addEventListener("click", () => {
+if (songStatusHeavy == true) {
+    nextHeavySong();
+}
+})
+
+beforeSongBtn.addEventListener("click", () => {
+if (songStatusHeavy == true) {
+    beforeHeavySong();
+}
+})
 
 //click next song button developing
 
@@ -9919,6 +11051,8 @@ heavySongControler.addEventListener("timeupdate", (e) => {
 
     let progressWith = (currentTime / duration) * 100;
     progressBar.style.width = progressWith + "%";
+    middleProgressBar.style.width = progressWith + "%";
+
 
     let songCurrentTime = document.querySelector("#songTimeLeft"),
         songDurationTime = document.querySelector("#songTimeRemaining")
@@ -9957,6 +11091,13 @@ heavySongControler.addEventListener("timeupdate", (e) => {
 
         heavySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
     })
+    middleProgressArea.addEventListener("click", (e) => {
+        let progressWithVal = middleProgressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = heavySongControler.duration;
+    
+        heavySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
 });
 
 //developed the repeatand random play button 
@@ -9973,6 +11114,24 @@ repeatPlayButton.addEventListener("click", () => {
     }
 })
 randomPlayButton.addEventListener("click", () => {
+    if (randomState12 == false) {
+        randomState12 = true;
+    }
+    else {
+        randomState12 = false;
+    }
+})
+
+songRepeatBtn.addEventListener("click", () => {
+    if (repeatState12 == false) {
+        repeatState12 = true;
+    }
+    else {
+        repeatState12 = false;
+    }
+})
+
+songOrderBtn.addEventListener("click", () => {
     if (randomState12 == false) {
         randomState12 = true;
     }
@@ -10004,7 +11163,6 @@ heavySongControler.addEventListener("ended", () => {
     }
 })
 
-
 // set the songs in canada sont style
 
 const canadaSongsImg = document.querySelectorAll(".canadaSongsImg");
@@ -10035,6 +11193,9 @@ for (let i = 0; i < canadaSongsbuttonPlayer.length; i++) {
                 songImage.src = canadaStyleSongs[j].img;
                 sourceSong.innerHTML = "tracks/Canada/" + canadaStyleSongs[j].src;
                 canadaSongControler.src = "tracks/Canada/" + canadaStyleSongs[j].src + ".mp3";
+                MiddleSongName.innerHTML = canadaStyleSongs[i].name;
+                middlePlayerimageBoxImg.src = canadaStyleSongs[i].img;
+                middlePlayerimageBoxImg.style.display = "block";
                 songImage.style.display = "block";
 
                 chillSongControler.pause();
@@ -10056,6 +11217,9 @@ for (let i = 0; i < canadaSongsbuttonPlayer.length; i++) {
     liked.style.display = "none";
     liked.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
+    likeEmptyBtn.style.display = "block";
+    likeFullBtn.style.display = "none";
+    likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
 
                 canadaSongsIndex++;
             }
@@ -10065,6 +11229,13 @@ for (let i = 0; i < canadaSongsbuttonPlayer.length; i++) {
         playBtn.style.fill = "red";
         pauseBtn.style.fill = "red";
         pauseBtn.style.display = "block";
+
+        
+    playSongBtn.style.display = "none";
+    playSongBtn.style.fill = "red";
+    pauseSongBtn.style.fill = "red";
+    pauseSongBtn.style.display = "block"; 
+
         songStatusCanada = true;
 
         if (canadaRecently >= 2) {
@@ -10116,8 +11287,11 @@ searchItem.addEventListener("click", () => {
         gozBazarCanada[i].addEventListener("click", () => {
             recentlySongControler.src = gozBazarCanada[i].dataset.rcanadasongname;
             songName.innerHTML = gozBazarCanada[i].dataset.rcanadanamesong;
-            songImage.src = gozBazarCanada[i].dataset.rcanadasongimage
+            songImage.src = gozBazarCanada[i].dataset.rcanadasongimage;
             songArtistName.innerHTML = gozBazarCanada[i].dataset.rcanadasongartistname;
+            MiddleSongName.innerHTML = gozBazarCanada[i].dataset.rcanadanamesong;
+            middlePlayerimageBoxImg.src =gozBazarCanada[i].dataset.rcanadasongimage + ".jpg";
+            middlePlayerimageBoxImg.style.display = "block";
             recentlySongControler.play();
 
             songStylesIndexClear();
@@ -10167,6 +11341,23 @@ searchItem.addEventListener("click", () => {
                 recentlySongControler.pause();
             })
 
+            likeEmptyBtn.style.display = "block";
+            likeFullBtn.style.display = "none";
+            likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+        
+            playSongBtn.style.display = "none";
+            playSongBtn.style.fill = "red";
+            pauseSongBtn.style.fill = "red";
+            pauseSongBtn.style.display = "block";
+        
+            playSongBtn.addEventListener("click", () => {
+            recentlySongControler.play();
+        })
+        
+        pauseSongBtn.addEventListener("click", () => {
+            recentlySongControler.pause();
+        })
+
             //updata progressBar with songTime
 
             const progressBar = document.querySelector(".progressBar"),
@@ -10178,6 +11369,7 @@ searchItem.addEventListener("click", () => {
 
                 let progressWith = (currentTime / duration) * 100;
                 progressBar.style.width = progressWith + "%";
+                middleProgressBar.style.width = progressWith + "%";
 
                 let songCurrentTime = document.querySelector("#songTimeLeft"),
                     songDurationTime = document.querySelector("#songTimeRemaining")
@@ -10214,6 +11406,13 @@ searchItem.addEventListener("click", () => {
                     let clickedOffsetX = e.offsetX;
                     let songDuration = recentlySongControler.duration;
 
+                    recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+                })
+                middleProgressArea.addEventListener("click", (e) => {
+                    let progressWithVal = middleProgressArea.clientWidth;
+                    let clickedOffsetX = e.offsetX;
+                    let songDuration = recentlySongControler.duration;
+                
                     recentlySongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
                 })
             });
@@ -10433,6 +11632,9 @@ function loadcanadaMusic(indexNumber) {
     songArtistName.innerHTML = canadaStyleSongs[indexNumber - 1].artist;
     songImage.src = canadaStyleSongs[indexNumber - 1].img;
     canadaSongControler.src = "tracks/Canada/" + canadaStyleSongs[indexNumber - 1].src + ".mp3";
+    MiddleSongName.innerHTML = canadaStyleSongs[indexNumber - 1].name;
+    middlePlayerimageBoxImg.src = canadaStyleSongs[indexNumber - 1].img;
+    middlePlayerimageBoxImg.style.display = "block";
     songImage.style.display = "block";
 
     focusSongControler.pause();
@@ -10476,6 +11678,35 @@ function loadcanadaMusic(indexNumber) {
     songStatusCanada = true;
 
 }
+
+likeEmptyBtn.style.display = "block";
+likeFullBtn.style.display = "none";
+likeFullBtn.style.transform = "translate(" + 125 + "px," + 10 + "px)";
+
+playSongBtn.style.display = "none";
+playSongBtn.style.fill = "red";
+pauseSongBtn.style.fill = "red";
+pauseSongBtn.style.display = "block";
+
+pauseSongBtn.addEventListener("click", () => {
+canadaSongControler.pause();
+})
+
+playSongBtn.addEventListener("click", () => {
+canadaSongControler.play();
+})
+
+nextSongBtn.addEventListener("click", () => {
+if (songStatusCanada == true) {
+    nextCanadaSong();
+}
+})
+
+beforeSongBtn.addEventListener("click", () => {
+if (songStatusCanada == true) {
+    beforeCanadaSong();
+}
+})
 
 playBtn.addEventListener("click", () => {
     canadaSongControler.play();
@@ -10524,6 +11755,8 @@ canadaSongControler.addEventListener("timeupdate", (e) => {
 
     let progressWith = (currentTime / duration) * 100;
     progressBar.style.width = progressWith + "%";
+    middleProgressBar.style.width = progressWith + "%";
+
 
     let songCurrentTime = document.querySelector("#songTimeLeft"),
         songDurationTime = document.querySelector("#songTimeRemaining")
@@ -10562,6 +11795,13 @@ canadaSongControler.addEventListener("timeupdate", (e) => {
 
         canadaSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
     })
+    middleProgressArea.addEventListener("click", (e) => {
+        let progressWithVal = middleProgressArea.clientWidth;
+        let clickedOffsetX = e.offsetX;
+        let songDuration = canadaSongControler.duration;
+    
+        canadaSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+    })
 });
 
 //developed the repeatand random play button 
@@ -10578,6 +11818,24 @@ repeatPlayButton.addEventListener("click", () => {
     }
 })
 randomPlayButton.addEventListener("click", () => {
+    if (randomState13 == false) {
+        randomState13 = true;
+    }
+    else {
+        randomState13 = false;
+    }
+})
+
+songRepeatBtn.addEventListener("click", () => {
+    if (repeatState13 == false) {
+        repeatState13 = true;
+    }
+    else {
+        repeatState13 = false;
+    }
+})
+
+songOrderBtn.addEventListener("click", () => {
     if (randomState13 == false) {
         randomState13 = true;
     }
@@ -10693,4 +11951,257 @@ addSong.addEventListener("click", () => {
         }, 100)
 
     }
+})
+
+//liked the songs from middle song controler box
+
+likeEmptyBtn.addEventListener("click",() => {
+
+    var ALikedSong = document.createElement("div");
+    var LikedSongName = document.createElement("H3");
+    var LikedSongArtistName = document.createElement("p");
+    var LikedSongArtistNameContent = document.createTextNode(songArtistName.innerHTML)
+    var LikedSongNameSongContent = document.createTextNode(songName.innerHTML);
+    var LikedSongImageBox = document.createElement("div");
+    var LikedSongDefulfImage = document.createElement("p");
+    var LikedSongDefulfImageContent = document.createTextNode("Lt");
+    var playSongLikedImage = document.createElement("img");
+    var LikedSongImage = document.createElement("img");
+
+    LikedSongImage.classList.add("likedSongImage");
+    LikedSongImage.src = sourceSongImg.innerHTML;
+    LikedSongImageBox.appendChild(LikedSongImage);
+    playSongLikedImage.classList.add("mfyPlayBox");
+    playSongLikedImage.classList.add("playSongLikedImage");
+    playSongLikedImage.style.zIndex = 100000;
+    playSongLikedImage.src = "images/play-64.png";
+    LikedSongImageBox.appendChild(playSongLikedImage);
+    playSongLikedImage.dataset.src = sourceSong.innerHTML;
+    playSongLikedImage.dataset.img = songImage.src;
+    playSongLikedImage.dataset.name = songName.innerHTML;
+    playSongLikedImage.dataset.artist = songArtistName.innerHTML;
+    playSongLikedImage.dataset.index = likedSongsArrayCounter;
+    ALikedSong.classList.add("AsongLiked");
+    LikedSongImageBox.classList.add("image");
+    LikedSongImageBox.appendChild(LikedSongDefulfImage)
+    LikedSongName.appendChild(LikedSongNameSongContent)
+    LikedSongName.classList.add("AlikedSongName");
+    LikedSongDefulfImage.appendChild(LikedSongDefulfImageContent);
+    LikedSongDefulfImage.classList.add("likedSongDefulfImage");
+    LikedSongArtistName.appendChild(LikedSongArtistNameContent);
+    LikedSongArtistName.classList.add("AplayListSongArtistName");
+    LikedSongImageBox.appendChild(LikedSongImage);
+    ALikedSong.appendChild(LikedSongName);
+    ALikedSong.appendChild(LikedSongImageBox);
+    ALikedSong.appendChild(LikedSongArtistName);
+
+    likesPnl.appendChild(ALikedSong);
+
+    likedSongsArray[likedSongsArrayCounter] = { name : songName.innerHTML, artist : songArtistName.innerHTML, img: sourceSongImg.innerHTML, src: sourceSong.innerHTML};
+    likedSongsArrayCounter++;
+
+    messageBoxTxt.innerHTML = "the song liked";
+    messageBoxTxt.style.opacity = 1;
+
+    setTimeout(() => {
+        messageBoxTxt.style.opacity = 0;
+    }, 5000)
+    setTimeout(() => {
+        messageBoxTxt.innerHTML = "";
+    }, 5500)
+
+    // play songs in liked song panel
+
+    var playSongLikedButtons = document.querySelectorAll(".playSongLikedImage"); 
+
+    for(let i = 0;i < playSongLikedButtons.length;i++){
+        playSongLikedButtons[i].addEventListener("click",() => {
+
+            likedSongIndex = playSongLikedButtons[i].dataset.index
+
+            function loadLikedMusic(){
+                likedSongControler.src = likedSongsArray[likedSongIndex].src + ".mp3";
+                likedSongControler.play();
+    
+                songImage.src = playSongLikedButtons[likedSongIndex].dataset.img;
+                songName.innerHTML = playSongLikedButtons[likedSongIndex].dataset.name;
+                songArtistName.innerHTML = playSongLikedButtons[likedSongIndex].dataset.artist;
+    
+                liked.style.display = "block";
+                unliked.style.display = "none";
+    
+                songStylesIndexClear();
+                focusSongControler.pause();
+                popSongControler.pause();
+                chillSongControler.pause();
+                studySongControler.pause();
+                gameSongControler.pause();
+                rAndbSongControler.pause();
+                rapSongControler.pause();
+                animeSongControler.pause()
+                calmnessSongControler.pause();
+                classicSongControler.pause();
+                russianSongControler.pause();
+                heavySongControler.pause();
+                canadaSongControler.pause();
+                playlistsSongControler.pause();
+                likedSongControler.play()
+    
+                playBtn.style.display = "none";
+                playBtn.style.fill = "red";
+                pauseBtn.style.fill = "red";
+                pauseBtn.style.display = "block";
+    
+                songStatusFocus = false;
+                songStatusStudy = false;
+                songStatusPop = false;
+                songStatusChill = false;
+                songStatusGame = false;
+                songStatusRAndb = false;
+                songStatusRap = false;
+                songStatusAnime = false;
+                songStatusCalmness = false;
+                songStatusPlaylist = false;
+                songStatusClassic = false;
+                songStatusRussian = false;
+                songStatusHeavy = false;
+                songStatusCanada = false;
+                songStatusLiked = true;
+            }
+
+            loadLikedMusic()
+
+            playBtn.addEventListener("click", () => {
+                likedSongControler.play();
+            })
+            pauseBtn.addEventListener("click", () => {
+                likedSongControler.pause();
+            })
+
+            //updata progressBar with songTime
+
+            const progressBar = document.querySelector(".progressBar"),
+                progressArea = document.querySelector(".progressArea");
+
+            likedSongControler.addEventListener("timeupdate", (e) => {
+                const currentTime = e.target.currentTime;
+                const duration = e.target.duration;
+
+                let progressWith = (currentTime / duration) * 100;
+                progressBar.style.width = progressWith + "%";
+
+                let songCurrentTime = document.querySelector("#songTimeLeft"),
+                    songDurationTime = document.querySelector("#songTimeRemaining")
+
+                likedSongControler.addEventListener("loadeddata", () => {
+
+                    //update song total duration
+
+                    let songDuration = likedSongControler.duration;
+                    let totalMin = Math.floor(songDuration / 60);
+                    let totalSec = Math.floor(songDuration % 60);
+                    songDurationTime.innerHTML = totalMin + ":" + totalSec;
+                    if (totalSec < 10) {
+                        songDurationTime.innerHTML = totalMin + ":0" + totalSec;
+                    }
+
+                });
+
+                //update song total current time 
+
+                let currentMin = Math.floor(currentTime / 60);
+                let currentSec = Math.floor(currentTime % 60);
+                if (currentSec < 10) {
+                    songCurrentTime.innerHTML = currentMin + ":0" + currentSec;
+                }
+                else {
+                    songCurrentTime.innerHTML = currentMin + ":" + currentSec;
+                }
+
+                //update playing song current time with progress bar 
+
+                progressArea.addEventListener("click", (e) => {
+                    let progressWithVal = progressArea.clientWidth;
+                    let clickedOffsetX = e.offsetX;
+                    let songDuration = likedSongControler.duration;
+
+                    likedSongControler.currentTime = (clickedOffsetX / progressWithVal) * songDuration;
+                })
+            });
+            skipNext.addEventListener("click", () => {
+                if (songStatusLiked == true) {
+                    nextLikedSong();
+                }
+            })
+            
+            skipBack.addEventListener("click", () => {
+                if (songStatusLiked == true) {
+                    beforeLikedSong();
+                }
+            })
+            
+            //click next song button developing
+            
+            function nextLikedSong() {
+                likedSongIndex++;
+                likedSongIndex > likedSongsArray.length ? likedSongIndex = 1 : likedSongsArray = likedSongsArray;
+            
+                loadLikedMusic(likedSongIndex);
+            
+            }
+            
+            //click before song button developing
+            
+            function beforeLikedSong() {
+                likedSongIndex--;
+                likedSongIndex < 1 ? likedSongIndex = likedSongsArray.length : likedSongIndex = likedSongIndex;
+            
+                loadLikedMusic(likedSongIndex);
+            
+            }
+            let repeatStateLiked = false;
+            let randomStateLiked = false;
+
+            repeatPlayButton.addEventListener("click", () => {              
+            if (repeatStateLiked == false) {
+                repeatStateLiked = true;
+            }
+            else {
+                repeatStateLiked = false;
+            }
+                })
+                randomPlayButton.addEventListener("click", () => {              
+                    if (randomStateLiked == false) {
+                        randomStateLiked = true;
+                    }
+                    else {
+                        randomStateLiked = false;
+                    }
+                })
+
+    likedSongControler.addEventListener("ended", () => {
+    if (randomStateLiked == false && repeatStateLiked == false) {
+        nextLikedSong();
+    }
+    else if (randomStateLiked == false && repeatStateLiked == true) {
+        likedSongControler.currentTime = 0;
+        loadLikedMusic(likedSongIndex);
+        likedSongControler.play();
+    }
+    else if (randomStateLiked == true && repeatStateLiked == false) {
+        let randomIndexLiked = Math.floor((Math.random() * focusStyleSongs.length) + 1);
+
+        do {
+            randomIndexLiked = Math.floor((Math.random() * focusStyleSongs.length) + 1);
+        }
+        while (likedSongIndex == randomIndexLiked)
+
+        likedSongIndex = randomIndexLiked;
+        loadLikedMusic(likedSongIndex);
+        likedSongControler.play();
+    }
+    })
+   })
+    }
+
 })

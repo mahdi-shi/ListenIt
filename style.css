@@ -6221,9 +6221,13 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    fill: #b00000;
     top: 87%;
     cursor: pointer;
     display: none;
+}
+.container .songPlayerMiddleBox #pauseSongBtn:hover{
+    fill:red;
 }
 .container .songPlayerMiddleBox #nextSongBtn{
     position: absolute;
@@ -6231,7 +6235,8 @@
     top: 87%;
     fill: #b00000;
     display: block;
-    transition: 0.1s;    cursor: pointer;
+    transition: 0.1s; 
+    cursor: pointer;
 }
 .container .songPlayerMiddleBox #nextSongBtn:hover{
     fill: red;
@@ -6297,23 +6302,42 @@
 .container .songPlayerMiddleBox input[type = "range"]:hover::-webkit-slider-thumb{
     display: block;
 }
-.container .songPlayerMiddleBox #progressBarValue2{
+.container .songPlayerMiddleBox .middleProgressArea{
     position: absolute;
-    left: 5.0%;
     top: 80%;
-    background-color: rgb(47, 42, 61);
-}
-.container .songPlayerMiddleBox #rangeHelper2{
-    position: absolute;
-    height: 5px;
+    left: 13%;
+    height: 6px;
+    width: 73%;
     cursor: pointer;
-    width: 0px;
-    border-radius: 20px;
-    background-color: rgb(255, 0, 0);
-    left: 9%;
-    top: 80%;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
-    z-index: 90;
+    border-radius: 10px;
+    background-color: rgb(53, 50, 65);
+}
+.container .songPlayerMiddleBox .middleProgressArea .middleProgressBar{
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background-color: rgb(173, 1, 1);
+    transition: 0.2s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.container .songPlayerMiddleBox .middleProgressArea:hover .middleProgressBar{
+    background-color: rgb(235, 0, 0);
+}
+.container .songPlayerMiddleBox .middleProgressArea .middleProgressBar::before{
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 10px;
+    background-color: rgb(235, 0, 0);
+    transition: 0.2s;
+    position: absolute;
+    right: -10px;
+    top: -5;
+    opacity: 0;
+}
+.container .songPlayerMiddleBox .middleProgressArea:hover .middleProgressBar::before{
+    opacity: 1;
 }
 .container .songPlayerMiddleBox #audioLowBtn{
     position: absolute;
@@ -6419,6 +6443,14 @@
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
     left: 13%;
     top: 12%;
+    border-radius: 4px;
+}
+.container .songPlayerMiddleBox .PlayerimageBox .middlePlayerimageBoxImg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    display: none;
 }
 .container .songPlayerMiddleBox #MiddleSongName{
     color: #8780b4;
