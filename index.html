@@ -101,7 +101,7 @@
               <svg id="voloumNone" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-volume-off" viewBox="0 0 16 16">
                 <path d="M10.717 3.55A.5.5 0 0 1 11 4v8a.5.5 0 0 1-.812.39L7.825 10.5H5.5A.5.5 0 0 1 5 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zM10 5.04 8.312 6.39A.5.5 0 0 1 8 6.5H6v3h2a.5.5 0 0 1 .312.11L10 10.96V5.04z"/>
               </svg>        
-              <input type="range" value="0" id="voloumBarValue" min="0" max="100" onchange="voloumRangeChainger()">
+              <input type="range" value="100" id="voloumBarValue" min="0" max="100" onchange="voloumRangeChainger()">
               <span id="voloumRangeHelper"></span>
               <svg id="pause" xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-pause-circle-fill" viewBox="0 0 16 16">
                 <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.25 5C5.56 5 5 5.56 5 6.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C7.5 5.56 6.94 5 6.25 5zm3.5 0c-.69 0-1.25.56-1.25 1.25v3.5a1.25 1.25 0 1 0 2.5 0v-3.5C11 5.56 10.44 5 9.75 5z"/>
@@ -142,6 +142,10 @@
         <!--------------------- Home panel ---------------------->
 
         <div class="home" id="home">
+
+          <audio controls id="recentlyPlayedSongControler">
+            <source id="recentlyPlayedSongControlerSource">
+          </audio>
 
           <div class="backgroundObject">
             <div class="blob"> 
@@ -337,54 +341,6 @@
                 <li class="rpLi"><div class="rpListBox">
                   <div class="image">
                       <img class="rpPlayBox" src="images/play-64.png" alt="loading">
-                    <p>Lt</p>
-                  </div>
-                  <h3 class="rpSongName">let me go please</h3>
-                  <h4 class="rpArtistSongName">isak danielson</h4>
-                </div></li>
-                <li class="rpLi"><div class="rpListBox">
-                  <div class="image">
-                    <img class="rpPlayBox" src="images/play-64.png" alt="loading">
-                    <p>Lt</p>
-                  </div>
-                  <h3 class="rpSongName">let me go please</h3>
-                  <h4 class="rpArtistSongName">isak danielson</h4>
-                </div></li>
-                <li class="rpLi"><div class="rpListBox">
-                  <div class="image">
-                    <img class="rpPlayBox" src="images/play-64.png" alt="loading">
-                    <p>Lt</p>
-                  </div>
-                  <h3 class="rpSongName">let me go please</h3>
-                  <h4 class="rpArtistSongName">isak danielson</h4>
-                </div></li>
-                <li class="rpLi"><div class="rpListBox">
-                  <div class="image">
-                    <img class="rpPlayBox" src="images/play-64.png" alt="loading">
-                    <p>Lt</p>
-                  </div>
-                  <h3 class="rpSongName">let me go please</h3>
-                  <h4 class="rpArtistSongName">isak danielson</h4>
-                </div></li>
-                <li class="rpLi"><div class="rpListBox">
-                  <div class="image">
-                    <img class="rpPlayBox" src="images/play-64.png" alt="loading">
-                    <p>Lt</p>
-                  </div>
-                  <h3 class="rpSongName">let me go please</h3>
-                  <h4 class="rpArtistSongName">isak danielson</h4>
-                </div></li>
-                <li class="rpLi"><div class="rpListBox">
-                  <div class="image">
-                    <img class="rpPlayBox" src="images/play-64.png" alt="loading">
-                    <p>Lt</p>
-                  </div>
-                  <h3 class="rpSongName">let me go please</h3>
-                  <h4 class="rpArtistSongName">isak danielson</h4>
-                </div></li>
-                <li class="rpLi"><div class="rpListBox">
-                  <div class="image">
-                    <img class="rpPlayBox" src="images/play-64.png" alt="loading">
                     <p>Lt</p>
                   </div>
                   <h3 class="rpSongName">let me go please</h3>
@@ -593,24 +549,6 @@
                     <div class="image">
                     <img class="yfssPlayBox" src="images/play-64.png" alt="loading">
                     <p>Lt</p>
-                    </div>
-                    <h3 class="yfssName">let me go please</h3>
-                  </div>
-                </li>
-                <li>
-                  <div class="yfssListBox">
-                    <div class="image">
-                    <img class="yfssPlayBox" src="images/play-64.png" alt="loading">
-                    <p>Lt</p>
-                    </div>
-                    <h3 class="yfssName">let me go please</h3>
-                  </div>
-                </li>
-                <li>
-                  <div class="yfssListBox">
-                    <div class="image">
-                    <img class="yfssPlayBox" src="images/play-64.png" alt="loading">
-                      <p>Lt</p>
                     </div>
                     <h3 class="yfssName">let me go please</h3>
                   </div>
@@ -5042,7 +4980,7 @@
             <div class="middleProgressBar"></div>
           </div>
 
-          <input type="range" value="0" id="voloumBarValue2" min="0" max="100" onchange="voloumRangeChainger2()">
+          <input type="range" value="100" id="voloumBarValue2" min="0" max="100" onchange="voloumRangeChainger2()">
               <span id="voloumRangeHelper2"></span>
 
           <svg id="fullScreenBtn" xmlns="http://www.w3.org/2000/svg" width="29" height="29" fill="currentColor" class="bi bi-aspect-ratio" viewBox="0 0 16 16">
@@ -5076,7 +5014,7 @@
           </svg>
 
           <div class="PlayerimageBoxFullS">
-            <img src="images/heavyBg.jpg" alt="loading...">
+            <img id = "fullPlayerimageBoxImg" src="images/heavyBg.jpg" alt="loading...">
           </div>
 
           <svg  class="show" id="songRepeatFullSBtn" xmlns="http://www.w3.org/2000/svg" width="39" height="39" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
@@ -5084,10 +5022,11 @@
             <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
           </svg>
 
-          <input class="show" type="range" value="0" id="progressBarFullSValue2" min="0" max="100" onchange="rangeChainger2FullS()">
-          <span class="show" id="rangeHelper2FullS"></span>
+          <div class="fullProgressArea">
+            <div class="fullProgressBar"></div>
+          </div>
 
-          <input class="show" type="range" value="0" id="voloumBarFullSValue2" min="0" max="100" onchange="voloumRangeChainger2FullS()">
+          <input class="show" type="range" value="100" id="voloumBarFullSValue2" min="0" max="100" onchange="voloumRangeChainger2FullS()">
           <span class="show" id="voloumRangeHelper2FullS"></span>
 
           <p class="show" id="FullSTimeLeft">0:00</p>
