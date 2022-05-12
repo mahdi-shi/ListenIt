@@ -3857,6 +3857,20 @@ for (let i = 0; i < chillSongsbuttonPlayer.length; i++) {
 
         songStatusChill = true;
         songStatusPop = false;
+        songStatusFocus = false;
+        songStatusStudy = false;
+        songStatusPop = false;
+        songStatusChill = false;
+        songStatusGame = false;
+        songStatusRAndb = false;
+        songStatusRap = false;
+        songStatusAnime = false;
+        songStatusCalmness = false;
+        songStatusClassic = false;
+        songStatusRussian = false;
+        songStatusHeavy = false;
+        songStatusCanada = false;
+        songStatusRecently = false;
 
         if (chillRecently >= 2) {
 
@@ -3908,10 +3922,10 @@ for (let i = 0; i < chillSongsbuttonPlayer.length; i++) {
             var resentlyPlayedParaText2 = document.createTextNode("Lt");
             var resentlyPlayedSongNameText2 = document.createTextNode(chillName);
 
-            resentlyPlayedPlayImage2.dataset.rpopsongname = popSong;
-            resentlyPlayedPlayImage2.dataset.rpopnamesong = popName;
-            resentlyPlayedPlayImage2.dataset.rpopsongartistname = popArtistName;
-            resentlyPlayedPlayImage2.dataset.rpopsongimage = popImage;
+            resentlyPlayedPlayImage2.dataset.rchillsongname = chillSong;
+            resentlyPlayedPlayImage2.dataset.rchillnamesong = chillName;
+            resentlyPlayedPlayImage2.dataset.rchillsongartistname = chillArtistName;
+            resentlyPlayedPlayImage2.dataset.rchillsongimage = chillImage;
             resentlyPlayedLi2.classList.add("rpLi");
             resentlyPlayedDiv2.classList.add("rpListBox");
             resentlyPlayedDivImage2.classList.add("image");
@@ -4542,8 +4556,8 @@ function loadchillMusic(indexNumber) {
     songImage.src = "images/" + chillStyleSongs[indexNumber - 1].img + ".jpg";
     chillSongControler.src = "tracks/chill/" + chillStyleSongs[indexNumber - 1].src + ".mp3";
     MiddleSongName.innerHTML = chillStyleSongs[indexNumber - 1].name;
-    middlePlayerimageBoxImg.src = chillStyleSongs[indexNumber - 1].img;
-    fullPlayerimageBoxImg.src = chillStyleSongs[indexNumber - 1].img;
+    middlePlayerimageBoxImg.src = "images/" + chillStyleSongs[indexNumber - 1].img  + ".jpg" || ".png";
+    fullPlayerimageBoxImg.src = "images/" + chillStyleSongs[indexNumber - 1].img + ".jpg" || ".png";
     fullPlayerimageBoxImg.style.display = "block";
     middlePlayerimageBoxImg.style.display = "block";
     songImage.style.display = "block";
